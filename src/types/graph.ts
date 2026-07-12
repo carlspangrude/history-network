@@ -49,3 +49,23 @@ export interface KnowledgeGraph {
   nodes: KnowledgeNode[];
   edges: KnowledgeEdge[];
 }
+
+export interface GraphNode extends KnowledgeNode {
+  x?: number;
+  y?: number;
+  vx?: number;
+  vy?: number;
+  fx?: number;
+  fy?: number;
+}
+
+export interface GraphLink
+  extends Omit<KnowledgeEdge, "source" | "target"> {
+  source: string | GraphNode;
+  target: string | GraphNode;
+}
+
+export interface ForceGraphData {
+  nodes: GraphNode[];
+  links: GraphLink[];
+}

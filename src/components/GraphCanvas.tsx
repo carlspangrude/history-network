@@ -1,41 +1,50 @@
+import { useMemo } from "react";
+import ForceGraph2D from "react-force-graph-2d";
 import { sampleGraph } from "../data/sampleGraph";
+import type {
+  ForceGraphData,
+  GraphLink,
+  GraphNode,
+} from "../types/graph";
 
 function GraphCanvas() {
+  const graphData = useMemo<ForceGraphData>(
+    () => ({
+      nodes: sampleGraph.nodes.map((node) => ({ ...node })),
+      links: sampleGraph.edges.map((edge) => ({ ...edge })),
+    }),
+    [],
+  );
+
   return (
     <section className="canvas">
-      <div className="graph-content">
-        <div className="graph-heading">
-          <div>
-            <p className="eyebrow">Prototype dataset</p>
-            <h2>Knowledge Graph</h2>
-          </div>
-
-          <div className="graph-stats">
-            <span>{sampleGraph.nodes.length} nodes</span>
-            <span>{sampleGraph.edges.length} relationships</span>
-          </div>
+      <div className="graph-toolbar">
+        <div>
+          <p className="eyebrow">Prototype dataset</p>
+          <h2>Knowledge Graph</h2>
         </div>
 
-        <div className="node-grid">
-          {sampleGraph.nodes.map((node) => (
-            <article className="node-card" key={node.id}>
-              <span className={`node-type node-type-${node.type}`}>
-                {node.type}
-              </span>
-
-              <h3>{node.name}</h3>
-
-              {(node.startYear || node.endYear) && (
-                <p className="node-years">
-                  {node.startYear ?? "Unknown"}
-                  {node.endYear ? `–${node.endYear}` : ""}
-                </p>
-              )}
-
-              <p>{node.description}</p>
-            </article>
-          ))}
+        <div className="graph-stats">
+          <span>{graphData.nodes.length} nodes</span>
+          <span>{graphData.links.length} relationships</span>
         </div>
+      </div>
+
+      <div className="force-graph-container">
+        <ForceGraph2D<GraphNode, GraphLink>
+          graphData={graphData}
+          nodeId="id"
+          nodeLabel={(node: GraphNode) =>
+            `${node.name} · ${node.type}`
+          }
+          linkSource="source"
+          linkTarget="target"
+          backgroundColor="#181818"
+          linkColor={() => "rgba(220, 220, 220, 0.65)"}
+          linkWidth={2}
+          linkDirectionalArrowLength={5}
+          linkDirectionalArrowRelPos={1}
+        />
       </div>
     </section>
   );

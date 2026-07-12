@@ -70,7 +70,9 @@ body {
 }
 
 .canvas {
+  position: relative;
   min-width: 0;
+  min-height: 0;
   background: #181818;
   overflow: hidden;
 }
@@ -86,24 +88,9 @@ h2 {
   font-weight: 500;
 }
 
-.graph-content {
-  width: 100%;
-  height: 100%;
-  padding: 24px;
-  overflow-y: auto;
-}
-
 .canvas {
   display: block;
   overflow: hidden;
-}
-
-.graph-heading {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: flex-start;
-  margin-bottom: 24px;
 }
 
 .eyebrow {
@@ -114,69 +101,59 @@ h2 {
   text-transform: uppercase;
 }
 
+.graph-toolbar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 24px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 24, 24, 0.94),
+    rgba(24, 24, 24, 0)
+  );
+}
+
+.graph-toolbar > * {
+  pointer-events: auto;
+}
+
+.graph-toolbar h2 {
+  font-size: 1.15rem;
+}
+
 .graph-stats {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .graph-stats span {
-  padding: 8px 10px;
+  padding: 7px 10px;
   border: 1px solid #414141;
   border-radius: 999px;
+  background: rgba(30, 30, 30, 0.82);
   color: #cfcfcf;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
 }
 
-.node-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-  gap: 16px;
+.force-graph-container {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
-.node-card {
-  padding: 18px;
-  border: 1px solid #3d3d3d;
-  border-radius: 12px;
-  background: #222;
-}
-
-.node-card h3 {
-  margin: 12px 0 6px;
-  font-size: 1rem;
-}
-
-.node-card p {
-  color: #bdbdbd;
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
-
-.node-card .node-years {
-  margin-bottom: 10px;
-  color: #8f8f8f;
-}
-
-.node-type {
-  display: inline-block;
-  padding: 4px 8px;
-  border: 1px solid #555;
-  border-radius: 999px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.node-type-person {
-  border-color: #5876a3;
-}
-
-.node-type-publication {
-  border-color: #9b7247;
-}
-
-.node-type-theory {
-  border-color: #765da3;
+.force-graph-container canvas {
+  display: block;
 }
 
 .panel-toggle {
