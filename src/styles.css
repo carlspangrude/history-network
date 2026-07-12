@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "JetBrains Mono", sans-serif;
+  background: #1e1e1e;
+  color: white;
+}
+
+#root {
+  height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: 70px 1fr 120px;
+  height: 100vh;
+}
+
+.header {
+  background: #202124;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid #444;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+}
+
+.sidebar,
+.details {
+  background: #2b2b2b;
+  padding: 20px;
+}
+
+.canvas {
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline {
+  background: #202124;
+  border-top: 1px solid #444;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+}
