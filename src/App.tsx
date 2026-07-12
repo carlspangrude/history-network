@@ -1,27 +1,21 @@
+import DetailsPanel from "./components/DetailsPanel";
+import GraphCanvas from "./components/GraphCanvas";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Timeline from "./components/Timeline";
+
 function App() {
   return (
     <div className="app">
-      <header className="header">
-        <h1>History Network</h1>
-      </header>
+      <Header />
 
       <main className="main">
-        <aside className="sidebar">
-          <h2>Filters</h2>
-        </aside>
-
-        <section className="canvas">
-          <h2>Knowledge Graph</h2>
-        </section>
-
-        <aside className="details">
-          <h2>Details</h2>
-        </aside>
+        <Sidebar />
+        <GraphCanvas />
+        <DetailsPanel />
       </main>
 
-      <footer className="timeline">
-        <h2>Timeline</h2>
-      </footer>
+      <Timeline />
     </div>
   );
 }
