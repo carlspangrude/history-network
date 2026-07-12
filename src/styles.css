@@ -29,20 +29,50 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 250px 1fr 300px;
+  grid-template-columns: 220px minmax(0, 1fr) 44px;
+  min-height: 0;
+  overflow: hidden;
+  transition: grid-template-columns 180ms ease;
+}
+
+.main.sidebar-closed {
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+}
+
+.main.details-open {
+  grid-template-columns: 220px minmax(0, 1fr) 280px;
+}
+
+.main.sidebar-closed.details-open {
+  grid-template-columns: 44px minmax(0, 1fr) 280px;
 }
 
 .sidebar,
 .details {
-  background: #2b2b2b;
+  position: relative;
+  min-width: 0;
+  background: #242424;
+  overflow: hidden;
+}
+
+.sidebar {
+  border-right: 1px solid #3b3b3b;
+}
+
+.details {
+  border-left: 1px solid #3b3b3b;
+}
+
+.panel-content {
+  height: 100%;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .canvas {
+  min-width: 0;
   background: #181818;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 .timeline {
@@ -54,4 +84,199 @@ body {
 h1,
 h2 {
   font-weight: 500;
+}
+
+.graph-content {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.canvas {
+  display: block;
+  overflow: hidden;
+}
+
+.graph-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+  color: #a6a6a6;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.graph-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.graph-stats span {
+  padding: 8px 10px;
+  border: 1px solid #414141;
+  border-radius: 999px;
+  color: #cfcfcf;
+  font-size: 0.75rem;
+}
+
+.node-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 16px;
+}
+
+.node-card {
+  padding: 18px;
+  border: 1px solid #3d3d3d;
+  border-radius: 12px;
+  background: #222;
+}
+
+.node-card h3 {
+  margin: 12px 0 6px;
+  font-size: 1rem;
+}
+
+.node-card p {
+  color: #bdbdbd;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.node-card .node-years {
+  margin-bottom: 10px;
+  color: #8f8f8f;
+}
+
+.node-type {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #555;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.node-type-person {
+  border-color: #5876a3;
+}
+
+.node-type-publication {
+  border-color: #9b7247;
+}
+
+.node-type-theory {
+  border-color: #765da3;
+}
+
+.panel-toggle {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  width: 28px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #4a4a4a;
+  border-radius: 8px;
+  background: #303030;
+  color: #e5e5e5;
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.panel-toggle:hover {
+  background: #3a3a3a;
+}
+
+.sidebar-toggle {
+  right: 8px;
+}
+
+.details-toggle {
+  left: 8px;
+}
+
+.panel-closed .panel-toggle {
+  left: 8px;
+  right: auto;
+}
+
+.sidebar.panel-open .panel-content {
+  padding-right: 48px;
+}
+
+.details.panel-open .panel-content {
+  padding-left: 48px;
+}
+
+.filter-section {
+  margin-top: 24px;
+}
+
+.filter-section h3 {
+  margin-bottom: 12px;
+  color: #a8a8a8;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.filter-section label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin: 10px 0;
+  color: #d0d0d0;
+  font-size: 0.82rem;
+}
+
+.empty-details {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px dashed #484848;
+  border-radius: 10px;
+}
+
+.empty-details p {
+  color: #9f9f9f;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .main,
+  .main.sidebar-closed,
+  .main.details-open,
+  .main.sidebar-closed.details-open {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+  }
+
+  .sidebar.panel-open,
+  .details.panel-open {
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+    bottom: 120px;
+    width: min(300px, 85vw);
+  }
+
+  .sidebar.panel-open {
+    left: 0;
+  }
+
+  .details.panel-open {
+    right: 0;
+  }
 }

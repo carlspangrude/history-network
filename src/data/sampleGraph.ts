@@ -1,0 +1,165 @@
+import type { KnowledgeGraph } from "../types/graph";
+
+export const sampleGraph: KnowledgeGraph = {
+  nodes: [
+    {
+      id: "galileo",
+      name: "Galileo Galilei",
+      type: "person",
+      description:
+        "Italian astronomer and physicist whose observations and experiments helped transform early modern science.",
+      startYear: 1564,
+      endYear: 1642,
+      disciplines: ["Physics", "Astronomy"],
+      tags: ["Scientific Revolution", "Heliocentrism"],
+    },
+    {
+      id: "newton",
+      name: "Isaac Newton",
+      type: "person",
+      description:
+        "English mathematician and physicist who developed classical mechanics and made foundational contributions to optics and calculus.",
+      startYear: 1643,
+      endYear: 1727,
+      disciplines: ["Physics", "Mathematics", "Astronomy"],
+      tags: ["Scientific Revolution", "Classical Mechanics"],
+    },
+    {
+      id: "principia",
+      name: "Philosophiæ Naturalis Principia Mathematica",
+      type: "publication",
+      description:
+        "Newton's 1687 work presenting the laws of motion and universal gravitation.",
+      startYear: 1687,
+      disciplines: ["Physics", "Mathematics"],
+      tags: ["Mechanics", "Gravitation"],
+    },
+    {
+      id: "laws-of-motion",
+      name: "Laws of Motion",
+      type: "theory",
+      description:
+        "Three principles describing the relationship between force, mass, and motion.",
+      startYear: 1687,
+      disciplines: ["Physics"],
+      tags: ["Mechanics"],
+    },
+    {
+      id: "universal-gravitation",
+      name: "Universal Gravitation",
+      type: "theory",
+      description:
+        "The principle that every mass attracts every other mass.",
+      startYear: 1687,
+      disciplines: ["Physics", "Astronomy"],
+      tags: ["Gravity", "Mechanics"],
+    },
+    {
+      id: "maxwell",
+      name: "James Clerk Maxwell",
+      type: "person",
+      description:
+        "Scottish physicist who unified electricity, magnetism, and light in a single mathematical framework.",
+      startYear: 1831,
+      endYear: 1879,
+      disciplines: ["Physics", "Mathematics"],
+      tags: ["Electromagnetism"],
+    },
+    {
+      id: "electromagnetism",
+      name: "Classical Electromagnetism",
+      type: "theory",
+      description:
+        "A unified account of electric and magnetic phenomena expressed through Maxwell's equations.",
+      startYear: 1865,
+      disciplines: ["Physics"],
+      tags: ["Electricity", "Magnetism", "Light"],
+    },
+    {
+      id: "einstein",
+      name: "Albert Einstein",
+      type: "person",
+      description:
+        "German-born theoretical physicist whose work reshaped modern understandings of space, time, gravity, and light.",
+      startYear: 1879,
+      endYear: 1955,
+      disciplines: ["Physics"],
+      tags: ["Relativity", "Quantum Theory"],
+    },
+    {
+      id: "special-relativity",
+      name: "Special Relativity",
+      type: "theory",
+      description:
+        "A theory describing space and time for observers moving at constant velocity.",
+      startYear: 1905,
+      disciplines: ["Physics"],
+      tags: ["Relativity", "Spacetime"],
+    },
+  ],
+
+  edges: [
+    {
+      id: "galileo-newton",
+      source: "galileo",
+      target: "newton",
+      relationship: "influenced",
+      description:
+        "Galileo's work on motion and experimentation helped establish foundations later developed by Newton.",
+      confidence: 0.95,
+    },
+    {
+      id: "newton-principia",
+      source: "newton",
+      target: "principia",
+      relationship: "authored",
+      confidence: 1,
+    },
+    {
+      id: "principia-motion",
+      source: "principia",
+      target: "laws-of-motion",
+      relationship: "formalized",
+      confidence: 1,
+    },
+    {
+      id: "principia-gravity",
+      source: "principia",
+      target: "universal-gravitation",
+      relationship: "formalized",
+      confidence: 1,
+    },
+    {
+      id: "newton-maxwell",
+      source: "newton",
+      target: "maxwell",
+      relationship: "influenced",
+      description:
+        "Maxwell worked within and extended the mathematical physical tradition shaped by Newtonian mechanics.",
+      confidence: 0.9,
+    },
+    {
+      id: "maxwell-electromagnetism",
+      source: "maxwell",
+      target: "electromagnetism",
+      relationship: "formalized",
+      confidence: 1,
+    },
+    {
+      id: "electromagnetism-einstein",
+      source: "electromagnetism",
+      target: "einstein",
+      relationship: "influenced",
+      description:
+        "Tensions between Maxwellian electrodynamics and Newtonian mechanics helped motivate special relativity.",
+      confidence: 0.95,
+    },
+    {
+      id: "einstein-special-relativity",
+      source: "einstein",
+      target: "special-relativity",
+      relationship: "formalized",
+      confidence: 1,
+    },
+  ],
+};
