@@ -1,16 +1,30 @@
-import type { GraphNode } from "../types/graph";
+import type {
+  GraphNode,
+  KnowledgeEdge,
+} from "../types/graph";
 
 interface DetailsPanelProps {
   isOpen: boolean;
   selectedNode: GraphNode | null;
+  relationships: KnowledgeEdge[];
+  graphNodes: GraphNode[];
   onToggle: () => void;
+}
+
+function formatRelationship(value: string) {
+  return value.replaceAll("_", " ");
 }
 
 function DetailsPanel({
   isOpen,
   selectedNode,
+  relationships,
+  graphNodes,
   onToggle,
 }: DetailsPanelProps) {
+  const findNode = (id: string) =>
+    graphNodes.find((node) => node.id === id);
+
   return (
     <aside className={`details ${isOpen ? "panel-open" : "panel-closed"}`}>
       <button
@@ -29,7 +43,9 @@ function DetailsPanel({
 
           {selectedNode ? (
             <article className="node-details">
-              <span className="details-node-type">{selectedNode.type}</span>
+              <span className="details-node-type">
+                {selectedNode.type}
+              </span>
 
               <h2>{selectedNode.name}</h2>
 
@@ -71,6 +87,60 @@ function DetailsPanel({
                   </div>
                 </section>
               )}
+
+              <section className="details-section">
+                <h3>Relationships</h3>
+
+                {relationships.length > 0 ? (
+                  <div className="relationship-list">
+                    {relationships.map((edge) => {
+                      const isOutgoing =
+                        edge.source === selectedNode.id;
+
+                      const connectedNodeId = isOutgoing
+                        ? edge.target
+                        : edge.source;
+
+                      const connectedNode = findNode(connectedNodeId);
+
+                      return (
+                        <article
+                          className="relationship-item"
+                          key={edge.id}
+                        >
+                          <p className="relationship-direction">
+                            {isOutgoing ? "Outgoing" : "Incoming"}
+                          </p>
+
+                          <p>
+                            <strong>
+                              {formatRelationship(edge.relationship)}
+                            </strong>{" "}
+                            {connectedNode?.name ?? connectedNodeId}
+                          </p>
+
+                          {edge.description && (
+                            <p className="relationship-description">
+                              {edge.description}
+                            </p>
+                          )}
+
+                          {edge.confidence !== undefined && (
+                            <p className="relationship-confidence">
+                              Confidence:{" "}
+                              {Math.round(edge.confidence * 100)}%
+                            </p>
+                          )}
+                        </article>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="empty-relationships">
+                    No relationships recorded.
+                  </p>
+                )}
+              </section>
             </article>
           ) : (
             <div className="empty-details">
