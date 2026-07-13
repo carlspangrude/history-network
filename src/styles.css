@@ -30,6 +30,8 @@
   --text-subtle: #969696;
   --text-placeholder: #9f9f9f;
   --text-dim: #888;
+  --text-link: #8fbcff;
+  --text-link-hover: #b5d3ff;
 
   --header-height: 70px;
   --timeline-height: 120px;
@@ -385,6 +387,30 @@ h2 {
 .relationship-list {
   display: grid;
   gap: 12px;
+}
+
+.relationship-node-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.relationship-node-link:hover {
+  color: var(--text-link-hover);
+  text-decoration-color: currentColor;
+}
+
+.relationship-node-link:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
 }
 
 /* ==========================================================================

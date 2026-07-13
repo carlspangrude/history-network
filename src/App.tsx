@@ -84,6 +84,7 @@ function App() {
           selectedNode={selectedNode}
           relationships={selectedRelationships}
           graphNodes={graphData.nodes}
+          onNodeSelect={handleNodeSelect}
           onToggle={() => setIsDetailsOpen((current) => !current)}
         />
       </main>

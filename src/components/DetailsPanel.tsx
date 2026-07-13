@@ -8,6 +8,7 @@ interface DetailsPanelProps {
   selectedNode: GraphNode | null;
   relationships: KnowledgeEdge[];
   graphNodes: GraphNode[];
+  onNodeSelect: (node: GraphNode) => void;
   onToggle: () => void;
 }
 
@@ -20,6 +21,7 @@ function DetailsPanel({
   selectedNode,
   relationships,
   graphNodes,
+  onNodeSelect,
   onToggle,
 }: DetailsPanelProps) {
   const findNode = (id: string) =>
@@ -113,12 +115,21 @@ function DetailsPanel({
                           </p>
 
                           <p>
-                            <strong>
-                              {formatRelationship(edge.relationship)}
-                            </strong>{" "}
-                            {connectedNode?.name ?? connectedNodeId}
-                          </p>
+                          <strong>{formatRelationship(edge.relationship)}</strong>{" "}
 
+                          {connectedNode ? (
+                            <button
+                              className="relationship-node-link"
+                              type="button"
+                              onClick={() => onNodeSelect(connectedNode)}
+                            >
+                              {connectedNode.name}
+                            </button>
+                          ) : (
+                            connectedNodeId
+                          )}
+                        </p>
+                      
                           {edge.description && (
                             <p className="relationship-description">
                               {edge.description}
