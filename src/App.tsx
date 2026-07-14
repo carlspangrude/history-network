@@ -9,6 +9,7 @@ import type {
   ForceGraphData,
   GraphNode,
   KnowledgeEdge,
+  NodeType,
 } from "./types/graph";
 
 function App() {
@@ -19,30 +20,60 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const [visibleNodeTypes, setVisibleNodeTypes] = useState<Set<NodeType>>(
+    new Set<NodeType>(["person", "theory", "publication"]),
+  );
 
   // ===========================================================================
   // Derived Data
   // ===========================================================================
 
-  const graphData = useMemo<ForceGraphData>(
+  const fullGraphData = useMemo<ForceGraphData>(
     () => ({
       nodes: sampleGraph.nodes.map((node) => ({ ...node })),
       links: sampleGraph.edges.map((edge) => ({ ...edge })),
     }),
     [],
   );
+  
+  const graphData = useMemo<ForceGraphData>(() => {
+    const visibleNodes = fullGraphData.nodes.filter((node) =>
+      visibleNodeTypes.has(node.type),
+    );
+  
+    const visibleNodeIds = new Set(visibleNodes.map((node) => node.id));
+  
+    const visibleLinks = fullGraphData.links.filter((link) => {
+      const sourceId =
+        typeof link.source === "string" ? link.source : link.source.id;
+  
+      const targetId =
+        typeof link.target === "string" ? link.target : link.target.id;
+  
+      return visibleNodeIds.has(sourceId) && visibleNodeIds.has(targetId);
+    });
+  
+    return {
+      nodes: visibleNodes,
+      links: visibleLinks,
+    };
+  }, [fullGraphData, visibleNodeTypes]);
 
   const selectedRelationships = useMemo<KnowledgeEdge[]>(() => {
     if (!selectedNode) {
       return [];
     }
-
+  
+    const visibleNodeIds = new Set(graphData.nodes.map((node) => node.id));
+  
     return sampleGraph.edges.filter(
       (edge) =>
-        edge.source === selectedNode.id ||
-        edge.target === selectedNode.id,
+        visibleNodeIds.has(edge.source) &&
+        visibleNodeIds.has(edge.target) &&
+        (edge.source === selectedNode.id ||
+          edge.target === selectedNode.id),
     );
-  }, [selectedNode]);
+  }, [graphData.nodes, selectedNode]);
 
   // ===========================================================================
   // Event Handlers
@@ -51,6 +82,27 @@ function App() {
   const handleNodeSelect = (node: GraphNode) => {
     setSelectedNode(node);
     setIsDetailsOpen(true);
+  };
+
+  const handleNodeTypeToggle = (nodeType: NodeType) => {
+    const isBeingHidden = visibleNodeTypes.has(nodeType);
+  
+    setVisibleNodeTypes((current) => {
+      const next = new Set(current);
+  
+      if (next.has(nodeType)) {
+        next.delete(nodeType);
+      } else {
+        next.add(nodeType);
+      }
+  
+      return next;
+    });
+  
+    if (isBeingHidden && selectedNode?.type === nodeType) {
+      setSelectedNode(null);
+      setIsDetailsOpen(false);
+    }
   };
 
   // ===========================================================================
@@ -70,6 +122,8 @@ function App() {
       >
         <Sidebar
           isOpen={isSidebarOpen}
+          visibleNodeTypes={visibleNodeTypes}
+          onNodeTypeToggle={handleNodeTypeToggle}
           onToggle={() => setIsSidebarOpen((current) => !current)}
         />
 

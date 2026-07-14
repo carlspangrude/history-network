@@ -4,6 +4,19 @@ import {
 } from "../constants/graphVisuals";
 import type { NodeType } from "../types/graph";
 
+interface SidebarProps {
+  isOpen: boolean;
+  visibleNodeTypes: Set<NodeType>;
+  onNodeTypeToggle: (nodeType: NodeType) => void;
+  onToggle: () => void;
+}
+
+const filterableNodeTypes: NodeType[] = [
+  "person",
+  "theory",
+  "publication",
+];
+
 const visibleLegendTypes: NodeType[] = [
   "person",
   "theory",
@@ -13,12 +26,12 @@ const visibleLegendTypes: NodeType[] = [
   "institution",
 ];
 
-interface SidebarProps {
-  isOpen: boolean;
-  onToggle: () => void;
-}
-
-function Sidebar({ isOpen, onToggle }: SidebarProps) {
+function Sidebar({
+  isOpen,
+  visibleNodeTypes,
+  onNodeTypeToggle,
+  onToggle,
+}: SidebarProps) {
   return (
     <aside className={`sidebar ${isOpen ? "panel-open" : "panel-closed"}`}>
       <button
@@ -43,20 +56,17 @@ function Sidebar({ isOpen, onToggle }: SidebarProps) {
           <div className="filter-section">
             <h3>Node Type</h3>
 
-            <label>
-              <input type="checkbox" defaultChecked />
-              People
-            </label>
+            {filterableNodeTypes.map((nodeType) => (
+              <label key={nodeType}>
+                <input
+                  type="checkbox"
+                  checked={visibleNodeTypes.has(nodeType)}
+                  onChange={() => onNodeTypeToggle(nodeType)}
+                />
 
-            <label>
-              <input type="checkbox" defaultChecked />
-              Theories
-            </label>
-
-            <label>
-              <input type="checkbox" defaultChecked />
-              Publications
-            </label>
+                {NODE_TYPE_LABELS[nodeType]}
+              </label>
+            ))}
           </div>
 
           {/* ================================================================
