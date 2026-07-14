@@ -1,5 +1,9 @@
-import { useMemo } from "react";
-import ForceGraph2D from "react-force-graph-2d";
+import { useEffect, useMemo, useRef, useState } from "react";
+import ForceGraph2D, {
+  type ForceGraphMethods,
+  type LinkObject,
+  type NodeObject,
+} from "react-force-graph-2d";
 import { NODE_TYPE_COLORS } from "../constants/graphVisuals";
 import type {
   ForceGraphData,
@@ -24,6 +28,22 @@ function GraphCanvas({
   onNodeSelect,
   onSelectionClear
 }: GraphCanvasProps) {
+
+const graphRef = useRef<
+  | ForceGraphMethods<
+      NodeObject<GraphNode>,
+      LinkObject<GraphNode, GraphLink>
+    >
+  | undefined
+>(undefined);
+
+const containerRef = useRef<HTMLDivElement | null>(null);
+
+const [dimensions, setDimensions] = useState({
+  width: 0,
+  height: 0,
+});
+
   // ===========================================================================
   // Derived Data
   // ===========================================================================
@@ -52,6 +72,55 @@ function GraphCanvas({
 
     return ids;
   }, [graphData.links, selectedNode]);
+
+  // ===========================================================================
+  // Effects
+  // ===========================================================================
+
+  useEffect(() => {
+    const container = containerRef.current;
+  
+    if (!container) {
+      return;
+    }
+  
+    const updateDimensions = () => {
+      setDimensions({
+        width: container.clientWidth,
+        height: container.clientHeight,
+      });
+    };
+  
+    updateDimensions();
+  
+    const resizeObserver = new ResizeObserver(updateDimensions);
+    resizeObserver.observe(container);
+  
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (
+      dimensions.width === 0 ||
+      dimensions.height === 0 ||
+      !selectedNode ||
+      selectedNode.x === undefined ||
+      selectedNode.y === undefined
+    ) {
+      return;
+    }
+  
+    const animationFrame = window.requestAnimationFrame(() => {
+      graphRef.current?.centerAt(selectedNode.x, selectedNode.y, 500);
+      graphRef.current?.zoom(3, 500);
+    });
+  
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, [dimensions.height, dimensions.width, selectedNode]);
 
   // ===========================================================================
   // Visual Accessors
@@ -135,24 +204,29 @@ function GraphCanvas({
         </div>
       </div>
 
-      <div className="force-graph-container">
-        <ForceGraph2D<GraphNode, GraphLink>
-          graphData={graphData}
-          nodeId="id"
-          nodeLabel={(node: GraphNode) => `${node.name} · ${node.type}`}
-          nodeColor={getNodeColor}
-          nodeVal={getNodeSize}
-          nodeRelSize={1}
-          linkSource="source"
-          linkTarget="target"
-          linkColor={getLinkColor}
-          linkWidth={getLinkWidth}
-          linkDirectionalArrowLength={5}
-          linkDirectionalArrowRelPos={1}
-          backgroundColor="#181818"
-          onNodeClick={(node: GraphNode) => onNodeSelect(node)}
-          onBackgroundClick={onSelectionClear}
-        />
+      <div className="force-graph-container" ref={containerRef}>
+        {dimensions.width > 0 && dimensions.height > 0 && (
+          <ForceGraph2D<GraphNode, GraphLink>
+            ref={graphRef}
+            width={dimensions.width}
+            height={dimensions.height}
+            graphData={graphData}
+            nodeId="id"
+            nodeLabel={(node: GraphNode) => `${node.name} · ${node.type}`}
+            nodeColor={getNodeColor}
+            nodeVal={getNodeSize}
+            nodeRelSize={1}
+            linkSource="source"
+            linkTarget="target"
+            linkColor={getLinkColor}
+            linkWidth={getLinkWidth}
+            linkDirectionalArrowLength={5}
+            linkDirectionalArrowRelPos={1}
+            backgroundColor="#181818"
+            onNodeClick={(node: GraphNode) => onNodeSelect(node)}
+            onBackgroundClick={onSelectionClear}
+          />
+        )}
       </div>
     </section>
   );
