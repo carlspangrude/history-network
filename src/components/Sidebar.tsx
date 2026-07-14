@@ -6,10 +6,18 @@ import type { NodeType } from "../types/graph";
 
 interface SidebarProps {
   isOpen: boolean;
+  visibleDisciplines: Set<string>;
   visibleNodeTypes: Set<NodeType>;
+  onDisciplineToggle: (discipline: string) => void;
   onNodeTypeToggle: (nodeType: NodeType) => void;
   onToggle: () => void;
 }
+
+const filterableDisciplines = [
+  "Physics",
+  "Mathematics",
+  "Philosophy",
+];
 
 const filterableNodeTypes: NodeType[] = [
   "person",
@@ -28,7 +36,9 @@ const visibleLegendTypes: NodeType[] = [
 
 function Sidebar({
   isOpen,
+  visibleDisciplines,
   visibleNodeTypes,
+  onDisciplineToggle,
   onNodeTypeToggle,
   onToggle,
 }: SidebarProps) {
@@ -76,20 +86,17 @@ function Sidebar({
           <div className="filter-section">
             <h3>Discipline</h3>
 
-            <label>
-              <input type="checkbox" defaultChecked />
-              Physics
-            </label>
+            {filterableDisciplines.map((discipline) => (
+              <label key={discipline}>
+                <input
+                  type="checkbox"
+                  checked={visibleDisciplines.has(discipline)}
+                  onChange={() => onDisciplineToggle(discipline)}
+                />
 
-            <label>
-              <input type="checkbox" defaultChecked />
-              Mathematics
-            </label>
-
-            <label>
-              <input type="checkbox" />
-              Philosophy
-            </label>
+                {discipline}
+              </label>
+            ))}
           </div>
 
           {/* ================================================================
