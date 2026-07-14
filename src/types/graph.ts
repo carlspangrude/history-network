@@ -32,6 +32,7 @@ export interface KnowledgeNode {
   description: string;
   startYear?: number;
   endYear?: number;
+  importance?: number;
   disciplines?: string[];
   tags?: string[];
 }

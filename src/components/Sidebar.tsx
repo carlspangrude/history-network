@@ -1,3 +1,18 @@
+import {
+  NODE_TYPE_COLORS,
+  NODE_TYPE_LABELS,
+} from "../constants/graphVisuals";
+import type { NodeType } from "../types/graph";
+
+const visibleLegendTypes: NodeType[] = [
+  "person",
+  "theory",
+  "publication",
+  "discovery",
+  "invention",
+  "institution",
+];
+
 interface SidebarProps {
   isOpen: boolean;
   onToggle: () => void;
@@ -21,8 +36,12 @@ function Sidebar({ isOpen, onToggle }: SidebarProps) {
           <p className="eyebrow">Explore</p>
           <h2>Filters</h2>
 
+          {/* ================================================================
+              Node Type Filters
+              ================================================================ */}
+
           <div className="filter-section">
-            <h3>Node type</h3>
+            <h3>Node Type</h3>
 
             <label>
               <input type="checkbox" defaultChecked />
@@ -39,6 +58,10 @@ function Sidebar({ isOpen, onToggle }: SidebarProps) {
               Publications
             </label>
           </div>
+
+          {/* ================================================================
+              Discipline Filters
+              ================================================================ */}
 
           <div className="filter-section">
             <h3>Discipline</h3>
@@ -58,6 +81,29 @@ function Sidebar({ isOpen, onToggle }: SidebarProps) {
               Philosophy
             </label>
           </div>
+
+          {/* ================================================================
+              Graph Legend
+              ================================================================ */}
+
+          <section className="graph-legend">
+            <h3>Legend</h3>
+
+            <div className="legend-list">
+              {visibleLegendTypes.map((type) => (
+                <div className="legend-item" key={type}>
+                  <span
+                    className="legend-swatch"
+                    style={{
+                      backgroundColor: NODE_TYPE_COLORS[type],
+                    }}
+                  />
+
+                  <span>{NODE_TYPE_LABELS[type]}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       )}
     </aside>

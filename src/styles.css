@@ -20,6 +20,13 @@
   --border-muted: #484848;
   --border-strong: #555;
 
+  --node-discovery: #65d6a6;
+  --node-institution: #67c7d4;
+  --node-invention: #ff9f68;
+  --node-person: #6ea8fe;
+  --node-publication: #e3b466;
+  --node-theory: #aa89e8;
+
   --text-primary: #f0f0f0;
   --text-body: #c8c8c8;
   --text-secondary: #cfcfcf;
@@ -172,6 +179,42 @@ h2 {
   margin: 10px 0;
   color: var(--text-filter);
   font-size: 0.82rem;
+}
+
+.graph-legend {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-default);
+}
+
+.graph-legend h3 {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legend-item {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--text-filter);
+  font-size: 0.78rem;
+}
+
+.legend-list {
+  display: grid;
+  gap: 10px;
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
 }
 
 .sidebar {

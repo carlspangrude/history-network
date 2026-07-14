@@ -6,6 +6,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "galileo",
       name: "Galileo Galilei",
       type: "person",
+      importance: 7,
       description:
         "Italian astronomer and physicist whose observations and experiments helped transform early modern science.",
       startYear: 1564,
@@ -17,6 +18,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "newton",
       name: "Isaac Newton",
       type: "person",
+      importance: 10,
       description:
         "English mathematician and physicist who developed classical mechanics and made foundational contributions to optics and calculus.",
       startYear: 1643,
@@ -28,6 +30,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "principia",
       name: "Philosophiæ Naturalis Principia Mathematica",
       type: "publication",
+      importance: 8,
       description:
         "Newton's 1687 work presenting the laws of motion and universal gravitation.",
       startYear: 1687,
@@ -38,6 +41,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "laws-of-motion",
       name: "Laws of Motion",
       type: "theory",
+      importance: 6,
       description:
         "Three principles describing the relationship between force, mass, and motion.",
       startYear: 1687,
@@ -48,6 +52,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "universal-gravitation",
       name: "Universal Gravitation",
       type: "theory",
+      importance: 7,
       description:
         "The principle that every mass attracts every other mass.",
       startYear: 1687,
@@ -58,6 +63,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "maxwell",
       name: "James Clerk Maxwell",
       type: "person",
+      importance: 8,
       description:
         "Scottish physicist who unified electricity, magnetism, and light in a single mathematical framework.",
       startYear: 1831,
@@ -69,6 +75,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "electromagnetism",
       name: "Classical Electromagnetism",
       type: "theory",
+      importance: 8,
       description:
         "A unified account of electric and magnetic phenomena expressed through Maxwell's equations.",
       startYear: 1865,
@@ -79,6 +86,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "einstein",
       name: "Albert Einstein",
       type: "person",
+      importance: 10,
       description:
         "German-born theoretical physicist whose work reshaped modern understandings of space, time, gravity, and light.",
       startYear: 1879,
@@ -90,6 +98,7 @@ export const sampleGraph: KnowledgeGraph = {
       id: "special-relativity",
       name: "Special Relativity",
       type: "theory",
+      importance: 8,
       description:
         "A theory describing space and time for observers moving at constant velocity.",
       startYear: 1905,
