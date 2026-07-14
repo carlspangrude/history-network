@@ -479,6 +479,31 @@ h2 {
    Buttons and Controls
    ========================================================================== */
 
+   .clear-selection-button {
+    display: block;
+    margin-top: 14px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-link);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.72rem;
+    text-align: left;
+  }
+  
+  .clear-selection-button:hover {
+    color: var(--text-link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  
+  .clear-selection-button:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid var(--text-link);
+    outline-offset: 3px;
+  }
+
 .panel-toggle {
   position: absolute;
   z-index: 2;

@@ -9,6 +9,7 @@ interface DetailsPanelProps {
   relationships: KnowledgeEdge[];
   graphNodes: GraphNode[];
   onNodeSelect: (node: GraphNode) => void;
+  onSelectionClear: () => void;
   onToggle: () => void;
 }
 
@@ -22,6 +23,7 @@ function DetailsPanel({
   relationships,
   graphNodes,
   onNodeSelect,
+  onSelectionClear,
   onToggle,
 }: DetailsPanelProps) {
   const findNode = (id: string) =>
@@ -49,6 +51,14 @@ function DetailsPanel({
                 {selectedNode.type}
               </span>
 
+              <button
+                className="clear-selection-button"
+                type="button"
+                onClick={onSelectionClear}
+              >
+                Clear selection
+              </button>
+              
               <h2>{selectedNode.name}</h2>
 
               {(selectedNode.startYear !== undefined ||

@@ -96,6 +96,11 @@ const selectedRelationships = useMemo(() => {
     setIsDetailsOpen(true);
   };
 
+  const handleSelectionClear = () => {
+    setSelectedNode(null);
+    setIsDetailsOpen(false);
+  };
+
   const handleNodeTypeToggle = (nodeType: NodeType) => {
     const isBeingHidden = visibleNodeTypes.has(nodeType);
   
@@ -112,8 +117,7 @@ const selectedRelationships = useMemo(() => {
     });
   
     if (isBeingHidden && selectedNode?.type === nodeType) {
-      setSelectedNode(null);
-      setIsDetailsOpen(false);
+      handleSelectionClear();
     }
   };
 
@@ -141,8 +145,7 @@ const selectedRelationships = useMemo(() => {
           !visibleDisciplines.has(nodeDiscipline),
       )
     ) {
-      setSelectedNode(null);
-      setIsDetailsOpen(false);
+      handleSelectionClear();
     }
   };
 
@@ -174,6 +177,7 @@ const selectedRelationships = useMemo(() => {
           graphData={graphData}
           selectedNode={selectedNode}
           onNodeSelect={handleNodeSelect}
+          onSelectionClear={handleSelectionClear}
         />
 
         <DetailsPanel
@@ -182,6 +186,7 @@ const selectedRelationships = useMemo(() => {
           relationships={selectedRelationships}
           graphNodes={graphData.nodes}
           onNodeSelect={handleNodeSelect}
+          onSelectionClear={handleSelectionClear}
           onToggle={() => setIsDetailsOpen((current) => !current)}
         />
       </main>

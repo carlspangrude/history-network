@@ -11,6 +11,7 @@ interface GraphCanvasProps {
   graphData: ForceGraphData;
   selectedNode: GraphNode | null;
   onNodeSelect: (node: GraphNode) => void;
+  onSelectionClear: () => void;
 }
 
 function getEndpointId(endpoint: string | GraphNode): string {
@@ -21,6 +22,7 @@ function GraphCanvas({
   graphData,
   selectedNode,
   onNodeSelect,
+  onSelectionClear
 }: GraphCanvasProps) {
   // ===========================================================================
   // Derived Data
@@ -149,6 +151,7 @@ function GraphCanvas({
           linkDirectionalArrowRelPos={1}
           backgroundColor="#181818"
           onNodeClick={(node: GraphNode) => onNodeSelect(node)}
+          onBackgroundClick={onSelectionClear}
         />
       </div>
     </section>
