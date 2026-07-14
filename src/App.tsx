@@ -11,6 +11,12 @@ import type {
   NodeType,
 } from "./types/graph";
 
+const INITIAL_DISCIPLINES = Array.from(
+  new Set(
+    sampleGraph.nodes.flatMap((node) => node.disciplines ?? []),
+  ),
+).sort();
+
 function App() {
   // ===========================================================================
   // State
@@ -25,7 +31,7 @@ function App() {
   );
 
   const [visibleDisciplines, setVisibleDisciplines] = useState<Set<string>>(
-    new Set(["Physics", "Mathematics", "Philosophy"]),
+    new Set(INITIAL_DISCIPLINES),
   );
 
   // ===========================================================================
@@ -40,6 +46,18 @@ function App() {
     [],
   );
   
+  const availableDisciplines = useMemo(() => {
+    const disciplines = new Set<string>();
+  
+    fullGraphData.nodes.forEach((node) => {
+      node.disciplines?.forEach((discipline) => {
+        disciplines.add(discipline);
+      });
+    });
+  
+    return Array.from(disciplines).sort();
+  }, [fullGraphData.nodes]);
+
   const graphData = useMemo<ForceGraphData>(() => {
   const visibleNodes = fullGraphData.nodes.filter((node) => {
     const isTypeVisible = visibleNodeTypes.has(node.type);
@@ -165,6 +183,7 @@ const selectedRelationships = useMemo(() => {
         ].join(" ")}
       >
         <Sidebar
+          availableDisciplines={availableDisciplines}
           isOpen={isSidebarOpen}
           visibleDisciplines={visibleDisciplines}
           visibleNodeTypes={visibleNodeTypes}
