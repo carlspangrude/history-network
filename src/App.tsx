@@ -173,7 +173,10 @@ const selectedRelationships = useMemo(() => {
 
   return (
     <div className="app">
-      <Header />
+      <Header
+        nodes={graphData.nodes}
+        onNodeSelect={handleNodeSelect}
+      />
 
       <main
         className={[
