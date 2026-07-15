@@ -1,6 +1,8 @@
+import { useMemo } from "react";
 import type {
   GraphNode,
   KnowledgeEdge,
+  RelationshipType,
 } from "../types/graph";
 
 interface DetailsPanelProps {
@@ -13,8 +15,40 @@ interface DetailsPanelProps {
   onToggle: () => void;
 }
 
-function formatRelationship(value: string) {
-  return value.replaceAll("_", " ");
+interface RelationshipGroup {
+  relationship: RelationshipType;
+  edges: KnowledgeEdge[];
+}
+
+function formatRelationship(
+  relationship: RelationshipType,
+  direction: "incoming" | "outgoing",
+) {
+  const formatted = relationship.replaceAll("_", " ");
+
+  if (direction === "incoming") {
+    switch (relationship) {
+      case "influenced":
+        return "Influenced by";
+
+      case "authored":
+        return "Authored by";
+
+      case "formalized":
+        return "Formalized by";
+
+      case "discovered":
+        return "Discovered by";
+
+      case "invented":
+        return "Invented by";
+
+      default:
+        return formatted;
+    }
+  }
+
+  return formatted;
 }
 
 function DetailsPanel({
@@ -26,8 +60,119 @@ function DetailsPanel({
   onSelectionClear,
   onToggle,
 }: DetailsPanelProps) {
+  // ===========================================================================
+  // Derived Data
+  // ===========================================================================
+
+  const incomingRelationshipGroups = useMemo<RelationshipGroup[]>(() => {
+    if (!selectedNode) {
+      return [];
+    }
+
+    const incomingEdges = relationships.filter(
+      (edge) => edge.target === selectedNode.id,
+    );
+
+    const groupedEdges = new Map<RelationshipType, KnowledgeEdge[]>();
+
+    incomingEdges.forEach((edge) => {
+      const existingEdges = groupedEdges.get(edge.relationship) ?? [];
+      groupedEdges.set(edge.relationship, [...existingEdges, edge]);
+    });
+
+    return Array.from(groupedEdges, ([relationship, edges]) => ({
+      relationship,
+      edges,
+    })).sort((firstGroup, secondGroup) =>
+      firstGroup.relationship.localeCompare(secondGroup.relationship),
+    );
+  }, [relationships, selectedNode]);
+
+  const outgoingRelationshipGroups = useMemo<RelationshipGroup[]>(() => {
+    if (!selectedNode) {
+      return [];
+    }
+
+    const outgoingEdges = relationships.filter(
+      (edge) => edge.source === selectedNode.id,
+    );
+
+    const groupedEdges = new Map<RelationshipType, KnowledgeEdge[]>();
+
+    outgoingEdges.forEach((edge) => {
+      const existingEdges = groupedEdges.get(edge.relationship) ?? [];
+      groupedEdges.set(edge.relationship, [...existingEdges, edge]);
+    });
+
+    return Array.from(groupedEdges, ([relationship, edges]) => ({
+      relationship,
+      edges,
+    })).sort((firstGroup, secondGroup) =>
+      firstGroup.relationship.localeCompare(secondGroup.relationship),
+    );
+  }, [relationships, selectedNode]);
+
+  // ===========================================================================
+  // Helpers
+  // ===========================================================================
+
   const findNode = (id: string) =>
     graphNodes.find((node) => node.id === id);
+
+  const renderRelationshipGroup = (
+    group: RelationshipGroup,
+    direction: "incoming" | "outgoing",
+  ) => {
+    return (
+      <section className="relationship-group" key={group.relationship}>
+        <h4 className="relationship-group-title">
+          {formatRelationship(group.relationship, direction)}
+          <span>{group.edges.length}</span>
+        </h4>
+
+        <div className="relationship-group-items">
+          {group.edges.map((edge) => {
+            const connectedNodeId =
+              direction === "outgoing" ? edge.target : edge.source;
+
+            const connectedNode = findNode(connectedNodeId);
+
+            return (
+              <article className="relationship-item" key={edge.id}>
+                {connectedNode ? (
+                  <button
+                    className="relationship-node-link"
+                    type="button"
+                    onClick={() => onNodeSelect(connectedNode)}
+                  >
+                    {connectedNode.name}
+                  </button>
+                ) : (
+                  <p>{connectedNodeId}</p>
+                )}
+
+                {edge.description && (
+                  <p className="relationship-description">
+                    {edge.description}
+                  </p>
+                )}
+
+                {edge.confidence !== undefined && (
+                  <p className="relationship-confidence">
+                    Confidence: {Math.round(edge.confidence * 100)}%
+                  </p>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    );
+  };
+
+  // ===========================================================================
+  // Render
+  // ===========================================================================
 
   return (
     <aside className={`details ${isOpen ? "panel-open" : "panel-closed"}`}>
@@ -58,7 +203,7 @@ function DetailsPanel({
               >
                 Clear selection
               </button>
-              
+
               <h2>{selectedNode.name}</h2>
 
               {(selectedNode.startYear !== undefined ||
@@ -104,57 +249,34 @@ function DetailsPanel({
                 <h3>Relationships</h3>
 
                 {relationships.length > 0 ? (
-                  <div className="relationship-list">
-                    {relationships.map((edge) => {
-                      const isOutgoing =
-                        edge.source === selectedNode.id;
+                  <div className="relationship-directions">
+                    {incomingRelationshipGroups.length > 0 && (
+                      <section className="relationship-direction-group">
+                        <h4 className="relationship-direction-title">
+                          Incoming
+                        </h4>
 
-                      const connectedNodeId = isOutgoing
-                        ? edge.target
-                        : edge.source;
-
-                      const connectedNode = findNode(connectedNodeId);
-
-                      return (
-                        <article
-                          className="relationship-item"
-                          key={edge.id}
-                        >
-                          <p className="relationship-direction">
-                            {isOutgoing ? "Outgoing" : "Incoming"}
-                          </p>
-
-                          <p>
-                          <strong>{formatRelationship(edge.relationship)}</strong>{" "}
-
-                          {connectedNode ? (
-                            <button
-                              className="relationship-node-link"
-                              type="button"
-                              onClick={() => onNodeSelect(connectedNode)}
-                            >
-                              {connectedNode.name}
-                            </button>
-                          ) : (
-                            connectedNodeId
+                        <div className="relationship-groups">
+                          {incomingRelationshipGroups.map((group) =>
+                            renderRelationshipGroup(group, "incoming"),
                           )}
-                        </p>
-                      
-                          {edge.description && (
-                            <p className="relationship-description">
-                              {edge.description}
-                            </p>
-                          )}
+                        </div>
+                      </section>
+                    )}
 
-                          {edge.confidence !== undefined && (
-                            <p className="relationship-confidence">
-                              Confidence:{" "}
-                              {Math.round(edge.confidence * 100)}%
-                            </p>
+                    {outgoingRelationshipGroups.length > 0 && (
+                      <section className="relationship-direction-group">
+                        <h4 className="relationship-direction-title">
+                          Outgoing
+                        </h4>
+
+                        <div className="relationship-groups">
+                          {outgoingRelationshipGroups.map((group) =>
+                            renderRelationshipGroup(group, "outgoing"),
                           )}
-                        </article>
-                      );
-                    })}
+                        </div>
+                      </section>
+                    )}
                   </div>
                 ) : (
                   <p className="empty-relationships">
@@ -166,6 +288,7 @@ function DetailsPanel({
           ) : (
             <div className="empty-details">
               <h2>Details</h2>
+
               <p>
                 Select a person, theory, publication, or discovery to explore
                 it.

@@ -199,6 +199,9 @@ function App() {
           "main",
           isSidebarOpen ? "sidebar-open" : "sidebar-closed",
           isDetailsOpen ? "details-open" : "details-closed",
+          selectedNode && selectedNode.name.length > 24
+            ? "details-wide"
+            : "details-standard",
         ].join(" ")}
       >
         <Sidebar
