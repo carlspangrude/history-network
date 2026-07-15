@@ -68,17 +68,61 @@ function DetailsPanel({
 const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
   new Set(),
 );
+
+const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
   
   // ===========================================================================
   // Derived Data
   // ===========================================================================
+
+  const graphNodeById = useMemo(
+    () => new Map(graphNodes.map((node) => [node.id, node])),
+    [graphNodes],
+  );
+  
+  const filteredRelationships = useMemo(() => {
+    const normalizedQuery = relationshipSearchQuery.trim().toLowerCase();
+  
+    if (!selectedNode || !normalizedQuery) {
+      return relationships;
+    }
+  
+    return relationships.filter((edge) => {
+      const direction =
+        edge.source === selectedNode.id ? "outgoing" : "incoming";
+  
+      const connectedNodeId =
+        direction === "outgoing" ? edge.target : edge.source;
+  
+      const connectedNode = graphNodeById.get(connectedNodeId);
+  
+      const searchableValues = [
+        edge.relationship,
+        formatRelationship(edge.relationship, direction),
+        edge.description ?? "",
+        connectedNode?.name ?? "",
+        connectedNode?.type ?? "",
+        ...(connectedNode?.disciplines ?? []),
+        ...(connectedNode?.tags ?? []),
+      ];
+  
+      return searchableValues.some((value) =>
+        value.toLowerCase().includes(normalizedQuery),
+      );
+    });
+  }, [
+    graphNodeById,
+    relationshipSearchQuery,
+    relationships,
+    selectedNode,
+  ]);
 
   const incomingRelationshipGroups = useMemo<RelationshipGroup[]>(() => {
     if (!selectedNode) {
       return [];
     }
 
-    const incomingEdges = relationships.filter(
+    const incomingEdges = filteredRelationships.filter(
       (edge) => edge.target === selectedNode.id,
     );
 
@@ -95,14 +139,14 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
     })).sort((firstGroup, secondGroup) =>
       firstGroup.relationship.localeCompare(secondGroup.relationship),
     );
-  }, [relationships, selectedNode]);
+  }, [filteredRelationships, selectedNode]);
 
   const outgoingRelationshipGroups = useMemo<RelationshipGroup[]>(() => {
     if (!selectedNode) {
       return [];
     }
 
-    const outgoingEdges = relationships.filter(
+    const outgoingEdges = filteredRelationships.filter(
       (edge) => edge.source === selectedNode.id,
     );
 
@@ -119,7 +163,7 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
     })).sort((firstGroup, secondGroup) =>
       firstGroup.relationship.localeCompare(secondGroup.relationship),
     );
-  }, [relationships, selectedNode]);
+  }, [filteredRelationships, selectedNode]);
 
   // ===========================================================================
   // Helpers
@@ -130,8 +174,7 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
     direction: "incoming" | "outgoing",
   ) => `${direction}:${relationship}`;
   
-  const findNode = (id: string) =>
-    graphNodes.find((node) => node.id === id);
+  const findNode = (id: string) => graphNodeById.get(id);
 
   const renderRelationshipGroup = (
     group: RelationshipGroup,
@@ -143,7 +186,7 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
     );
   
     const isCollapsed = collapsedGroups.has(groupKey);
-  
+
     return (
       <section className="relationship-group" key={groupKey}>
         <button
@@ -301,38 +344,79 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
               )}
 
               <section className="details-section">
-                <h3>Relationships</h3>
+                <div className="relationship-section-heading">
+                  <h3>Relationships</h3>
+
+                  {relationshipSearchQuery && (
+                    <button
+                      className="relationship-search-clear"
+                      type="button"
+                      onClick={() => setRelationshipSearchQuery("")}
+                    >
+                      Clear
+                    </button>
+                  )}
+                </div>
+
+                {relationships.length > 0 && (
+                  <div className="relationship-search">
+                    <label
+                      className="relationship-search-label"
+                      htmlFor="relationship-search"
+                    >
+                      Search relationships
+                    </label>
+
+                    <input
+                      id="relationship-search"
+                      className="relationship-search-input"
+                      type="search"
+                      value={relationshipSearchQuery}
+                      placeholder="Search relationships..."
+                      autoComplete="off"
+                      onChange={(event) =>
+                        setRelationshipSearchQuery(event.target.value)
+                      }
+                    />
+                  </div>
+                )}
 
                 {relationships.length > 0 ? (
-                  <div className="relationship-directions">
-                    {incomingRelationshipGroups.length > 0 && (
-                      <section className="relationship-direction-group">
-                        <h4 className="relationship-direction-title">
-                          Incoming
-                        </h4>
+                  filteredRelationships.length > 0 ? (
+                    <div className="relationship-directions">
+                      {incomingRelationshipGroups.length > 0 && (
+                        <section className="relationship-direction-group">
+                          <h4 className="relationship-direction-title">
+                            Incoming
+                          </h4>
 
-                        <div className="relationship-groups">
-                          {incomingRelationshipGroups.map((group) =>
-                            renderRelationshipGroup(group, "incoming"),
-                          )}
-                        </div>
-                      </section>
-                    )}
+                          <div className="relationship-groups">
+                            {incomingRelationshipGroups.map((group) =>
+                              renderRelationshipGroup(group, "incoming"),
+                            )}
+                          </div>
+                        </section>
+                      )}
 
-                    {outgoingRelationshipGroups.length > 0 && (
-                      <section className="relationship-direction-group">
-                        <h4 className="relationship-direction-title">
-                          Outgoing
-                        </h4>
+                      {outgoingRelationshipGroups.length > 0 && (
+                        <section className="relationship-direction-group">
+                          <h4 className="relationship-direction-title">
+                            Outgoing
+                          </h4>
 
-                        <div className="relationship-groups">
-                          {outgoingRelationshipGroups.map((group) =>
-                            renderRelationshipGroup(group, "outgoing"),
-                          )}
-                        </div>
-                      </section>
-                    )}
-                  </div>
+                          <div className="relationship-groups">
+                            {outgoingRelationshipGroups.map((group) =>
+                              renderRelationshipGroup(group, "outgoing"),
+                            )}
+                          </div>
+                        </section>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="empty-relationships">
+                      No relationships match “{relationshipSearchQuery}”.
+                    </p>
+                  )
                 ) : (
                   <p className="empty-relationships">
                     No relationships recorded.

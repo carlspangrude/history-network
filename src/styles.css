@@ -178,25 +178,28 @@ h2 {
  font-size: 0.78rem;
 }
 
-.search-input {
- width: 100%;
- padding: 10px 14px;
- border: 1px solid var(--border-search);
- border-radius: var(--radius-small);
- outline: none;
- background: var(--background-search);
- color: var(--text-primary);
- font: inherit;
- font-size: 0.8rem;
+.search-input,
+.relationship-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-search);
+  border-radius: var(--radius-small);
+  outline: none;
+  background: var(--background-search);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.8rem;
 }
 
-.search-input::placeholder {
- color: var(--text-dim);
+.search-input::placeholder,
+.relationship-search-input::placeholder {
+  color: var(--text-dim);
 }
 
-.search-input:focus {
- border-color: var(--text-link);
- box-shadow: 0 0 0 2px rgba(143, 188, 255, 0.18);
+.search-input:focus,
+.relationship-search-input:focus {
+  border-color: var(--text-link);
+  box-shadow: 0 0 0 2px rgba(143, 188, 255, 0.18);
 }
 
 .search-label {
