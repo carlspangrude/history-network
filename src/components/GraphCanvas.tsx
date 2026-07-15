@@ -29,6 +29,10 @@ function GraphCanvas({
   onSelectionClear
 }: GraphCanvasProps) {
 
+  // ===========================================================================
+  // Refs and State
+  // ===========================================================================
+
 const graphRef = useRef<
   | ForceGraphMethods<
       NodeObject<GraphNode>,
@@ -77,6 +81,7 @@ const [dimensions, setDimensions] = useState({
   // Effects
   // ===========================================================================
 
+  // measure container
   useEffect(() => {
     const container = containerRef.current;
   
@@ -101,10 +106,9 @@ const [dimensions, setDimensions] = useState({
     };
   }, []);
 
+  // center on selected node
   useEffect(() => {
     if (
-      dimensions.width === 0 ||
-      dimensions.height === 0 ||
       !selectedNode ||
       selectedNode.x === undefined ||
       selectedNode.y === undefined
@@ -121,6 +125,14 @@ const [dimensions, setDimensions] = useState({
       window.cancelAnimationFrame(animationFrame);
     };
   }, [dimensions.height, dimensions.width, selectedNode]);
+
+  // ===========================================================================
+  // Event Handlers
+  // ===========================================================================
+
+  const handleFitGraph = () => {
+    graphRef.current?.zoomToFit(500, 60);
+  };
 
   // ===========================================================================
   // Visual Accessors
@@ -185,7 +197,7 @@ const [dimensions, setDimensions] = useState({
       ? 3
       : 0.75;
   };
-
+  
   // ===========================================================================
   // Render
   // ===========================================================================
@@ -198,9 +210,19 @@ const [dimensions, setDimensions] = useState({
           <h2>Knowledge Graph</h2>
         </div>
 
-        <div className="graph-stats">
-          <span>{graphData.nodes.length} nodes</span>
-          <span>{graphData.links.length} relationships</span>
+        <div className="graph-toolbar-actions">
+          <button
+            className="fit-graph-button"
+            type="button"
+            onClick={handleFitGraph}
+          >
+            Fit graph
+          </button>
+
+          <div className="graph-stats">
+            <span>{graphData.nodes.length} nodes</span>
+            <span>{graphData.links.length} relationships</span>
+          </div>
         </div>
       </div>
 
@@ -223,8 +245,8 @@ const [dimensions, setDimensions] = useState({
             linkDirectionalArrowLength={5}
             linkDirectionalArrowRelPos={1}
             backgroundColor="#181818"
-            onNodeClick={(node: GraphNode) => onNodeSelect(node)}
             onBackgroundClick={onSelectionClear}
+            onNodeClick={(node: GraphNode) => onNodeSelect(node)}
           />
         )}
       </div>

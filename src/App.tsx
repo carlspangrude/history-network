@@ -57,53 +57,69 @@ function App() {
   
     return Array.from(disciplines).sort();
   }, [fullGraphData.nodes]);
-
+  
+  const visibleNodeIds = useMemo(() => {
+    return fullGraphData.nodes
+      .filter((node) => {
+        const isTypeVisible = visibleNodeTypes.has(node.type);
+  
+        const matchesVisibleDiscipline =
+          node.disciplines == null ||
+          node.disciplines.some((discipline) =>
+            visibleDisciplines.has(discipline),
+          );
+  
+        return isTypeVisible && matchesVisibleDiscipline;
+      })
+      .map((node) => node.id)
+      .sort();
+  }, [fullGraphData.nodes, visibleDisciplines, visibleNodeTypes]);
+  
+  const visibleNodeKey = visibleNodeIds.join("|");
+  
   const graphData = useMemo<ForceGraphData>(() => {
-  const visibleNodes = fullGraphData.nodes.filter((node) => {
-    const isTypeVisible = visibleNodeTypes.has(node.type);
-
-      const matchesVisibleDiscipline =
-      node.disciplines == null ||
-      node.disciplines.some((discipline) =>
-        visibleDisciplines.has(discipline),
+    const visibleNodeIdSet = new Set(
+      visibleNodeKey ? visibleNodeKey.split("|") : [],
+    );
+  
+    const visibleNodes = fullGraphData.nodes.filter((node) =>
+      visibleNodeIdSet.has(node.id),
+    );
+  
+    const visibleLinks = fullGraphData.links.filter((link) => {
+      const sourceId =
+        typeof link.source === "string" ? link.source : link.source.id;
+  
+      const targetId =
+        typeof link.target === "string" ? link.target : link.target.id;
+  
+      return (
+        visibleNodeIdSet.has(sourceId) &&
+        visibleNodeIdSet.has(targetId)
       );
+    });
+  
+    return {
+      nodes: visibleNodes,
+      links: visibleLinks,
+    };
+  }, [fullGraphData, visibleNodeKey]);
 
-    return isTypeVisible && matchesVisibleDiscipline;
-  });
-
-  const visibleNodeIds = new Set(visibleNodes.map((node) => node.id));
-
-  const visibleLinks = fullGraphData.links.filter((link) => {
-    const sourceId =
-      typeof link.source === "string" ? link.source : link.source.id;
-
-    const targetId =
-      typeof link.target === "string" ? link.target : link.target.id;
-
-    return visibleNodeIds.has(sourceId) && visibleNodeIds.has(targetId);
-  });
-
-  return {
-    nodes: visibleNodes,
-    links: visibleLinks,
-  };
-}, [fullGraphData, visibleDisciplines, visibleNodeTypes]);
-
-const selectedRelationships = useMemo(() => {
-  if (!selectedNode) {
-    return [];
-  }
-
-  const visibleNodeIds = new Set(graphData.nodes.map((node) => node.id));
-
-  return sampleGraph.edges.filter(
-    (edge) =>
-      visibleNodeIds.has(edge.source) &&
-      visibleNodeIds.has(edge.target) &&
-      (edge.source === selectedNode.id ||
-        edge.target === selectedNode.id),
-  );
-}, [graphData.nodes, selectedNode]);
+  const selectedRelationships = useMemo(() => {
+    if (!selectedNode) {
+      return [];
+    }
+  
+    const visibleNodeIdSet = new Set(graphData.nodes.map((node) => node.id));
+  
+    return sampleGraph.edges.filter(
+      (edge) =>
+        visibleNodeIdSet.has(edge.source) &&
+        visibleNodeIdSet.has(edge.target) &&
+        (edge.source === selectedNode.id ||
+          edge.target === selectedNode.id),
+    );
+  }, [graphData.nodes, selectedNode]);
 
   // ===========================================================================
   // Event Handlers

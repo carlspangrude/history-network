@@ -412,6 +412,13 @@ h2 {
   font-size: 1.15rem;
 }
 
+.graph-toolbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 /* ==========================================================================
    Details Panel
    ========================================================================== */
@@ -603,6 +610,27 @@ h2 {
   
   .clear-selection-button:focus-visible {
     border-radius: 3px;
+    outline: 2px solid var(--text-link);
+    outline-offset: 3px;
+  }
+
+  .fit-graph-button {
+    padding: 7px 10px;
+    border: 1px solid var(--border-pill);
+    border-radius: var(--radius-pill);
+    background: rgba(30, 30, 30, 0.82);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.72rem;
+  }
+  
+  .fit-graph-button:hover {
+    border-color: var(--text-link);
+    color: var(--text-primary);
+  }
+  
+  .fit-graph-button:focus-visible {
     outline: 2px solid var(--text-link);
     outline-offset: 3px;
   }
