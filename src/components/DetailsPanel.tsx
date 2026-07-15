@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type {
   GraphNode,
   KnowledgeEdge,
@@ -60,6 +60,15 @@ function DetailsPanel({
   onSelectionClear,
   onToggle,
 }: DetailsPanelProps) {
+  
+  // ===========================================================================
+  // State
+  // ===========================================================================
+
+const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
+  new Set(),
+);
+  
   // ===========================================================================
   // Derived Data
   // ===========================================================================
@@ -116,6 +125,11 @@ function DetailsPanel({
   // Helpers
   // ===========================================================================
 
+  const getRelationshipGroupKey = (
+    relationship: RelationshipType,
+    direction: "incoming" | "outgoing",
+  ) => `${direction}:${relationship}`;
+  
   const findNode = (id: string) =>
     graphNodes.find((node) => node.id === id);
 
@@ -123,51 +137,92 @@ function DetailsPanel({
     group: RelationshipGroup,
     direction: "incoming" | "outgoing",
   ) => {
+    const groupKey = getRelationshipGroupKey(
+      group.relationship,
+      direction,
+    );
+  
+    const isCollapsed = collapsedGroups.has(groupKey);
+  
     return (
-      <section className="relationship-group" key={group.relationship}>
-        <h4 className="relationship-group-title">
-          {formatRelationship(group.relationship, direction)}
-          <span>{group.edges.length}</span>
-        </h4>
-
-        <div className="relationship-group-items">
-          {group.edges.map((edge) => {
-            const connectedNodeId =
-              direction === "outgoing" ? edge.target : edge.source;
-
-            const connectedNode = findNode(connectedNodeId);
-
-            return (
-              <article className="relationship-item" key={edge.id}>
-                {connectedNode ? (
-                  <button
-                    className="relationship-node-link"
-                    type="button"
-                    onClick={() => onNodeSelect(connectedNode)}
-                  >
-                    {connectedNode.name}
-                  </button>
-                ) : (
-                  <p>{connectedNodeId}</p>
-                )}
-
-                {edge.description && (
-                  <p className="relationship-description">
-                    {edge.description}
-                  </p>
-                )}
-
-                {edge.confidence !== undefined && (
-                  <p className="relationship-confidence">
-                    Confidence: {Math.round(edge.confidence * 100)}%
-                  </p>
-                )}
-              </article>
-            );
-          })}
-        </div>
+      <section className="relationship-group" key={groupKey}>
+        <button
+          className="relationship-group-toggle"
+          type="button"
+          onClick={() => handleRelationshipGroupToggle(groupKey)}
+          aria-expanded={!isCollapsed}
+        >
+          <span className="relationship-group-icon" aria-hidden="true">
+            {isCollapsed ? "›" : "⌄"}
+          </span>
+  
+          <span className="relationship-group-label">
+            {formatRelationship(group.relationship, direction)}
+          </span>
+  
+          <span className="relationship-group-count">
+            {group.edges.length}
+          </span>
+        </button>
+  
+        {!isCollapsed && (
+          <div className="relationship-group-items">
+            {group.edges.map((edge) => {
+              const connectedNodeId =
+                direction === "outgoing" ? edge.target : edge.source;
+  
+              const connectedNode = findNode(connectedNodeId);
+  
+              return (
+                <article className="relationship-item" key={edge.id}>
+                  {connectedNode ? (
+                    <button
+                      className="relationship-node-link"
+                      type="button"
+                      onClick={() => onNodeSelect(connectedNode)}
+                    >
+                      {connectedNode.name}
+                    </button>
+                  ) : (
+                    <p>{connectedNodeId}</p>
+                  )}
+  
+                  {edge.description && (
+                    <p className="relationship-description">
+                      {edge.description}
+                    </p>
+                  )}
+  
+                  {edge.confidence !== undefined && (
+                    <p className="relationship-confidence">
+                      Confidence: {Math.round(edge.confidence * 100)}%
+                    </p>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        )}
       </section>
     );
+  };
+
+  // ===========================================================================
+  // Event Handlers
+  // ===========================================================================
+  
+  const handleRelationshipGroupToggle = (groupKey: string) => {
+    setCollapsedGroups((current) => {
+      const next = new Set(current);
+  
+      if (next.has(groupKey)) {
+        next.delete(groupKey);
+      } else {
+        next.add(groupKey);
+      }
+  
+      return next;
+    });
   };
 
   // ===========================================================================

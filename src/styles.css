@@ -565,27 +565,56 @@ h2 {
   gap: 8px;
 }
 
-.relationship-group-title {
-  display: flex;
-  gap: 8px;
+.relationship-group-count {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  margin-left: auto;
+  padding: 0 6px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  color: var(--text-dim);
+  font-size: 0.62rem;
+}
+
+.relationship-group-icon {
+  width: 14px;
+  flex: 0 0 auto;
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.relationship-group-label {
   color: var(--text-muted);
   font-size: 0.7rem;
   font-weight: 500;
   text-transform: capitalize;
 }
 
-.relationship-group-title span {
-  display: inline-flex;
+.relationship-group-toggle {
+  display: flex;
+  gap: 8px;
   align-items: center;
-  justify-content: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 6px;
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-pill);
-  color: var(--text-dim);
-  font-size: 0.62rem;
+  width: 100%;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.relationship-group-toggle:hover .relationship-group-label {
+  color: var(--text-primary);
+}
+
+.relationship-group-toggle:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
 }
 
 .relationship-groups {
