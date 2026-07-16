@@ -14,6 +14,7 @@ import type {
 interface GraphCanvasProps {
   graphData: ForceGraphData;
   selectedNode: GraphNode | null;
+  selectedRelationshipId: string | null;
   onNodeSelect: (node: GraphNode) => void;
   onSelectionClear: () => void;
 }
@@ -25,6 +26,7 @@ function getEndpointId(endpoint: string | GraphNode): string {
 function GraphCanvas({
   graphData,
   selectedNode,
+  selectedRelationshipId,
   onNodeSelect,
   onSelectionClear
 }: GraphCanvasProps) {
@@ -76,6 +78,27 @@ const [dimensions, setDimensions] = useState({
 
     return ids;
   }, [graphData.links, selectedNode]);
+
+  const selectedRelationshipNodeIds = useMemo(() => {
+    const ids = new Set<string>();
+  
+    if (!selectedRelationshipId) {
+      return ids;
+    }
+  
+    const selectedLink = graphData.links.find(
+      (link) => link.id === selectedRelationshipId,
+    );
+  
+    if (!selectedLink) {
+      return ids;
+    }
+  
+    ids.add(getEndpointId(selectedLink.source));
+    ids.add(getEndpointId(selectedLink.target));
+  
+    return ids;
+  }, [graphData.links, selectedRelationshipId]);
 
   // ===========================================================================
   // Effects
@@ -139,18 +162,26 @@ const [dimensions, setDimensions] = useState({
   // ===========================================================================
 
   const getNodeColor = (node: GraphNode) => {
+    if (selectedRelationshipId) {
+      if (selectedRelationshipNodeIds.has(node.id)) {
+        return NODE_TYPE_COLORS[node.type];
+      }
+  
+      return "rgba(110, 110, 110, 0.18)";
+    }
+  
     if (!selectedNode) {
       return NODE_TYPE_COLORS[node.type];
     }
-
+  
     if (node.id === selectedNode.id) {
       return "#ffffff";
     }
-
+  
     if (connectedNodeIds.has(node.id)) {
       return NODE_TYPE_COLORS[node.type];
     }
-
+  
     return "rgba(110, 110, 110, 0.22)";
   };
 
@@ -160,7 +191,12 @@ const [dimensions, setDimensions] = useState({
   
     let area = isKeyNode ? 110 : 24;
   
-    if (node.id === selectedNode?.id) {
+    if (
+      selectedRelationshipId &&
+      selectedRelationshipNodeIds.has(node.id)
+    ) {
+      area *= 1.35;
+    } else if (node.id === selectedNode?.id) {
       area *= 1.8;
     } else if (selectedNode && connectedNodeIds.has(node.id)) {
       area *= 1.15;
@@ -170,32 +206,46 @@ const [dimensions, setDimensions] = useState({
   };
 
   const getLinkColor = (link: GraphLink) => {
+    if (selectedRelationshipId) {
+      return link.id === selectedRelationshipId
+        ? "rgba(255, 230, 64, 1)"
+        : "rgba(110, 110, 110, 0.08)";
+    }
+  
     if (!selectedNode) {
       return "rgba(220, 220, 220, 0.6)";
     }
-
+  
     const sourceId = getEndpointId(link.source);
     const targetId = getEndpointId(link.target);
-
+  
     const isConnected =
       sourceId === selectedNode.id || targetId === selectedNode.id;
-
+  
     return isConnected
       ? "rgba(255, 255, 255, 0.9)"
       : "rgba(110, 110, 110, 0.12)";
   };
 
   const getLinkWidth = (link: GraphLink) => {
+    if (selectedRelationshipId) {
+      return link.id === selectedRelationshipId ? 5 : 0.5;
+    }
+  
     if (!selectedNode) {
       return 1.5;
     }
-
+  
     const sourceId = getEndpointId(link.source);
     const targetId = getEndpointId(link.target);
-
+  
     return sourceId === selectedNode.id || targetId === selectedNode.id
       ? 3
       : 0.75;
+  };
+
+  const getLinkArrowLength = (link: GraphLink) => {
+    return link.id === selectedRelationshipId ? 10 : 5;
   };
   
   // ===========================================================================
@@ -242,7 +292,8 @@ const [dimensions, setDimensions] = useState({
             linkTarget="target"
             linkColor={getLinkColor}
             linkWidth={getLinkWidth}
-            linkDirectionalArrowLength={5}
+            linkDirectionalArrowColor={getLinkColor}
+            linkDirectionalArrowLength={getLinkArrowLength}
             linkDirectionalArrowRelPos={1}
             backgroundColor="#181818"
             onBackgroundClick={onSelectionClear}

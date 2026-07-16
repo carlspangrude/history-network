@@ -40,6 +40,8 @@
   --radius-small: 8px;
   --radius-medium: 10px;
   --radius-pill: 999px;
+  --relationship-highlight: #ffe640;
+  --relationship-highlight-background: rgba(255, 230, 64, 0.1);
 
   --sidebar-open-width: 220px;
 
@@ -55,9 +57,7 @@
   --text-dim: #888;
   --text-link: #8fbcff;
   --text-link-hover: #b5d3ff;
-
   --timeline-height: 120px;
-
   --transition-panel: 180ms ease;
 
 }
@@ -684,6 +684,36 @@ h2 {
 .relationship-search-clear:focus-visible {
   outline: 2px solid var(--text-link);
   outline-offset: 3px;
+}
+
+.relationship-highlight-button {
+  display: block;
+  margin-top: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.66rem;
+  text-align: left;
+}
+
+.relationship-highlight-button:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.relationship-highlight-button:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.relationship-item-selected {
+  border-color: var(--relationship-highlight);
+  background: var(--relationship-highlight-background);
 }
 
 /* ==========================================================================

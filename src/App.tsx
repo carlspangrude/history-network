@@ -34,6 +34,8 @@ function App() {
     new Set(INITIAL_DISCIPLINES),
   );
 
+  const [selectedRelationshipId, setSelectedRelationshipId] = useState<string | null>(null);
+
   // ===========================================================================
   // Derived Data
   // ===========================================================================
@@ -127,12 +129,20 @@ function App() {
 
   const handleNodeSelect = (node: GraphNode) => {
     setSelectedNode(node);
+    setSelectedRelationshipId(null);
     setIsDetailsOpen(true);
   };
 
   const handleSelectionClear = () => {
     setSelectedNode(null);
+    setSelectedRelationshipId(null);
     setIsDetailsOpen(false);
+  };
+
+  const handleRelationshipSelect = (relationshipId: string) => {
+    setSelectedRelationshipId((current) =>
+      current === relationshipId ? null : relationshipId,
+    );
   };
 
   const handleNodeTypeToggle = (nodeType: NodeType) => {
@@ -217,6 +227,7 @@ function App() {
         <GraphCanvas
           graphData={graphData}
           selectedNode={selectedNode}
+          selectedRelationshipId={selectedRelationshipId}
           onNodeSelect={handleNodeSelect}
           onSelectionClear={handleSelectionClear}
         />
@@ -224,9 +235,11 @@ function App() {
         <DetailsPanel
           isOpen={isDetailsOpen}
           selectedNode={selectedNode}
+          selectedRelationshipId={selectedRelationshipId}
           relationships={selectedRelationships}
           graphNodes={graphData.nodes}
           onNodeSelect={handleNodeSelect}
+          onRelationshipSelect={handleRelationshipSelect}
           onSelectionClear={handleSelectionClear}
           onToggle={() => setIsDetailsOpen((current) => !current)}
         />

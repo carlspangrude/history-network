@@ -8,9 +8,11 @@ import type {
 interface DetailsPanelProps {
   isOpen: boolean;
   selectedNode: GraphNode | null;
+  selectedRelationshipId: string | null;
   relationships: KnowledgeEdge[];
   graphNodes: GraphNode[];
   onNodeSelect: (node: GraphNode) => void;
+  onRelationshipSelect: (relationshipId: string) => void;
   onSelectionClear: () => void;
   onToggle: () => void;
 }
@@ -54,9 +56,11 @@ function formatRelationship(
 function DetailsPanel({
   isOpen,
   selectedNode,
+  selectedRelationshipId,
   relationships,
   graphNodes,
   onNodeSelect,
+  onRelationshipSelect,
   onSelectionClear,
   onToggle,
 }: DetailsPanelProps) {
@@ -217,7 +221,15 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
               const connectedNode = findNode(connectedNodeId);
   
               return (
-                <article className="relationship-item" key={edge.id}>
+                <article
+                  className={[
+                    "relationship-item",
+                    edge.id === selectedRelationshipId
+                      ? "relationship-item-selected"
+                      : "",
+                  ].join(" ")}
+                  key={edge.id}
+                >
                   {connectedNode ? (
                     <button
                       className="relationship-node-link"
@@ -229,7 +241,17 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
                   ) : (
                     <p>{connectedNodeId}</p>
                   )}
-  
+                  <button
+                    className="relationship-highlight-button"
+                    type="button"
+                    onClick={() => onRelationshipSelect(edge.id)}
+                    aria-pressed={edge.id === selectedRelationshipId}
+                  >
+                    {edge.id === selectedRelationshipId
+                      ? "Remove highlight"
+                      : "Highlight connection"}
+                  </button>
+                  
                   {edge.description && (
                     <p className="relationship-description">
                       {edge.description}
