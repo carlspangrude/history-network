@@ -46,6 +46,11 @@ export interface KnowledgeEdge {
   confidence?: number;
 }
 
+export interface KnowledgeGraphData {
+  nodes: KnowledgeNode[];
+  edges: KnowledgeEdge[];
+}
+
 export interface KnowledgeGraph {
   nodes: KnowledgeNode[];
   edges: KnowledgeEdge[];

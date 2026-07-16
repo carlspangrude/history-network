@@ -145,6 +145,22 @@ function App() {
       )?.name ?? "",
     ].some((name) => name.length > 24));
 
+    const isNodeVisibleWithFilters = (
+      node: GraphNode,
+      nodeTypes: Set<NodeType>,
+      disciplines: Set<string>,
+    ) => {
+      const isTypeVisible = nodeTypes.has(node.type);
+    
+      const matchesDiscipline =
+        node.disciplines == null ||
+        node.disciplines.some((discipline) =>
+          disciplines.has(discipline),
+        );
+    
+      return isTypeVisible && matchesDiscipline;
+    };
+
   // ===========================================================================
   // Event Handlers
   // ===========================================================================
@@ -174,48 +190,112 @@ function App() {
   };
 
   const handleNodeTypeToggle = (nodeType: NodeType) => {
-    const isBeingHidden = visibleNodeTypes.has(nodeType);
+    const nextNodeTypes = new Set(visibleNodeTypes);
   
-    setVisibleNodeTypes((current) => {
-      const next = new Set(current);
+    if (nextNodeTypes.has(nodeType)) {
+      nextNodeTypes.delete(nodeType);
+    } else {
+      nextNodeTypes.add(nodeType);
+    }
   
-      if (next.has(nodeType)) {
-        next.delete(nodeType);
-      } else {
-        next.add(nodeType);
+    setVisibleNodeTypes(nextNodeTypes);
+  
+    const selectedNodeWillRemainVisible =
+      !selectedNode ||
+      isNodeVisibleWithFilters(
+        selectedNode,
+        nextNodeTypes,
+        visibleDisciplines,
+      );
+  
+    const selectedRelationshipWillRemainVisible = (() => {
+      if (!selectedRelationship) {
+        return true;
       }
   
-      return next;
-    });
+      const sourceNode = fullGraphData.nodes.find(
+        (node) => node.id === selectedRelationship.source,
+      );
   
-    if (isBeingHidden && selectedNode?.type === nodeType) {
+      const targetNode = fullGraphData.nodes.find(
+        (node) => node.id === selectedRelationship.target,
+      );
+  
+      return (
+        sourceNode !== undefined &&
+        targetNode !== undefined &&
+        isNodeVisibleWithFilters(
+          sourceNode,
+          nextNodeTypes,
+          visibleDisciplines,
+        ) &&
+        isNodeVisibleWithFilters(
+          targetNode,
+          nextNodeTypes,
+          visibleDisciplines,
+        )
+      );
+    })();
+  
+    if (
+      !selectedNodeWillRemainVisible ||
+      !selectedRelationshipWillRemainVisible
+    ) {
       handleSelectionClear();
     }
   };
 
   const handleDisciplineToggle = (discipline: string) => {
-    const isBeingHidden = visibleDisciplines.has(discipline);
+    const nextDisciplines = new Set(visibleDisciplines);
   
-    setVisibleDisciplines((current) => {
-      const next = new Set(current);
+    if (nextDisciplines.has(discipline)) {
+      nextDisciplines.delete(discipline);
+    } else {
+      nextDisciplines.add(discipline);
+    }
   
-      if (next.has(discipline)) {
-        next.delete(discipline);
-      } else {
-        next.add(discipline);
+    setVisibleDisciplines(nextDisciplines);
+  
+    const selectedNodeWillRemainVisible =
+      !selectedNode ||
+      isNodeVisibleWithFilters(
+        selectedNode,
+        visibleNodeTypes,
+        nextDisciplines,
+      );
+  
+    const selectedRelationshipWillRemainVisible = (() => {
+      if (!selectedRelationship) {
+        return true;
       }
   
-      return next;
-    });
+      const sourceNode = fullGraphData.nodes.find(
+        (node) => node.id === selectedRelationship.source,
+      );
+  
+      const targetNode = fullGraphData.nodes.find(
+        (node) => node.id === selectedRelationship.target,
+      );
+  
+      return (
+        sourceNode !== undefined &&
+        targetNode !== undefined &&
+        isNodeVisibleWithFilters(
+          sourceNode,
+          visibleNodeTypes,
+          nextDisciplines,
+        ) &&
+        isNodeVisibleWithFilters(
+          targetNode,
+          visibleNodeTypes,
+          nextDisciplines,
+        )
+      );
+    })();
   
     if (
-      isBeingHidden &&
-      selectedNode?.disciplines?.includes(discipline) &&
-      selectedNode.disciplines.every(
-        (nodeDiscipline) =>
-          nodeDiscipline === discipline ||
-          !visibleDisciplines.has(nodeDiscipline),
-      )
+      !selectedNodeWillRemainVisible ||
+      !selectedRelationshipWillRemainVisible
     ) {
       handleSelectionClear();
     }
