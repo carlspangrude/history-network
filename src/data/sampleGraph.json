@@ -143,6 +143,109 @@
         "Relativity",
         "Spacetime"
       ]
+    },
+    {
+      "id": "socrates",
+      "name": "Socrates",
+      "type": "person",
+      "importance": 8,
+      "description": "Ancient Greek philosopher associated with a method of questioning that examined ethical concepts, assumptions, and definitions.",
+      "startYear": -470,
+      "endYear": -399,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Ancient Greece",
+        "Ethics",
+        "Socratic Method"
+      ]
+    },
+    {
+      "id": "plato",
+      "name": "Plato",
+      "type": "person",
+      "importance": 10,
+      "description": "Ancient Greek philosopher whose dialogues explored ethics, politics, knowledge, metaphysics, and the nature of philosophical inquiry.",
+      "startYear": -428,
+      "endYear": -348,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Ancient Greece",
+        "Platonism"
+      ]
+    },
+    {
+      "id": "theory-of-forms",
+      "name": "Theory of Forms",
+      "type": "theory",
+      "importance": 8,
+      "description": "A philosophical account according to which intelligible Forms or Ideas provide stable objects of knowledge beyond changing particular things.",
+      "startYear": -380,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Metaphysics",
+        "Epistemology",
+        "Platonism"
+      ]
+    },
+    {
+      "id": "aristotle",
+      "name": "Aristotle",
+      "type": "person",
+      "importance": 10,
+      "description": "Ancient Greek philosopher whose work addressed logic, ethics, politics, biology, metaphysics, rhetoric, and the study of nature.",
+      "startYear": -384,
+      "endYear": -322,
+      "disciplines": [
+        "Philosophy",
+        "Logic",
+        "Biology",
+        "Political Theory"
+      ],
+      "tags": [
+        "Ancient Greece",
+        "Aristotelianism"
+      ]
+    },
+    {
+      "id": "aristotelian-logic",
+      "name": "Aristotelian Logic",
+      "type": "theory",
+      "importance": 8,
+      "description": "A system of reasoning centered on terms, propositions, deductions, and syllogistic argument.",
+      "startYear": -350,
+      "disciplines": [
+        "Logic",
+        "Philosophy"
+      ],
+      "tags": [
+        "Syllogism",
+        "Deduction",
+        "Aristotelianism"
+      ]
+    },
+    {
+      "id": "aristotelian-physics",
+      "name": "Aristotelian Physics",
+      "type": "theory",
+      "importance": 7,
+      "description": "An influential ancient framework for understanding motion, change, causation, matter, and the structure of the natural world.",
+      "startYear": -350,
+      "disciplines": [
+        "Philosophy",
+        "Physics"
+      ],
+      "tags": [
+        "Natural Philosophy",
+        "Motion",
+        "Aristotelianism"
+      ]
     }
   ],
   "edges": [
@@ -204,6 +307,62 @@
       "target": "special-relativity",
       "relationship": "formalized",
       "confidence": 1
+    },
+    {
+      "id": "socrates-plato",
+      "source": "socrates",
+      "target": "plato",
+      "relationship": "influenced",
+      "description": "Plato made Socrates a central figure in many dialogues and developed philosophy through sustained engagement with Socratic questioning.",
+      "confidence": 0.9
+    },
+    {
+      "id": "plato-theory-of-forms",
+      "source": "plato",
+      "target": "theory-of-forms",
+      "relationship": "formalized",
+      "description": "Plato's dialogues develop several related accounts of Forms as intelligible objects of knowledge.",
+      "confidence": 0.9
+    },
+    {
+      "id": "plato-aristotle",
+      "source": "plato",
+      "target": "aristotle",
+      "relationship": "mentored",
+      "description": "Aristotle studied in Plato's philosophical circle for roughly two decades before developing his own system.",
+      "confidence": 0.95
+    },
+    {
+      "id": "aristotle-aristotelian-logic",
+      "source": "aristotle",
+      "target": "aristotelian-logic",
+      "relationship": "formalized",
+      "description": "Aristotle developed the first extensive surviving systematic treatment of deductive and syllogistic reasoning.",
+      "confidence": 1
+    },
+    {
+      "id": "aristotle-aristotelian-physics",
+      "source": "aristotle",
+      "target": "aristotelian-physics",
+      "relationship": "formalized",
+      "description": "Aristotle developed an influential framework for explaining motion, change, causes, and natural processes.",
+      "confidence": 1
+    },
+    {
+      "id": "theory-of-forms-aristotle",
+      "source": "theory-of-forms",
+      "target": "aristotle",
+      "relationship": "influenced",
+      "description": "Aristotle's philosophy developed through sustained engagement with and criticism of Platonic metaphysics.",
+      "confidence": 0.95
+    },
+    {
+      "id": "galileo-aristotelian-physics",
+      "source": "galileo",
+      "target": "aristotelian-physics",
+      "relationship": "criticized",
+      "description": "Galileo challenged important elements of the inherited Aristotelian account of motion through mathematical reasoning, observation, and experiment.",
+      "confidence": 0.95
     }
   ]
 }

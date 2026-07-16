@@ -45,6 +45,12 @@ function formatRelationship(
 
       case "invented":
         return "Invented by";
+        
+      case "mentored":
+        return "Mentored by";
+
+      case "criticized":
+        return "Criticized by";
 
       default:
         return formatted;
