@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { formatHistoricalYearRange } from "../utils/formatHistoricalDate";
 import type {
   GraphNode,
   KnowledgeEdge,
@@ -184,6 +185,13 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
       firstGroup.relationship.localeCompare(secondGroup.relationship),
     );
   }, [filteredRelationships, selectedNode]);
+
+  const selectedNodeYearRange = selectedNode
+  ? formatHistoricalYearRange(
+      selectedNode.startYear,
+      selectedNode.endYear,
+    )
+  : null;
 
   // ===========================================================================
   // Helpers
@@ -412,13 +420,9 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
 
               <h2>{selectedNode.name}</h2>
 
-              {(selectedNode.startYear !== undefined ||
-                selectedNode.endYear !== undefined) && (
+              {selectedNodeYearRange && (
                 <p className="details-years">
-                  {selectedNode.startYear ?? "Unknown"}
-                  {selectedNode.endYear !== undefined
-                    ? `–${selectedNode.endYear}`
-                    : ""}
+                  {selectedNodeYearRange}
                 </p>
               )}
 

@@ -93,6 +93,18 @@ function validateNode(
     errors.push(`${label} "${node.id}" has an invalid endYear.`);
   }
 
+  if (node.startYear === 0) {
+    errors.push(
+      `${label} "${node.id}" cannot use 0 as startYear because the BCE/CE calendar has no year zero.`,
+    );
+  }
+  
+  if (node.endYear === 0) {
+    errors.push(
+      `${label} "${node.id}" cannot use 0 as endYear because the BCE/CE calendar has no year zero.`,
+    );
+  }
+  
   if (
     node.startYear !== undefined &&
     node.endYear !== undefined &&
