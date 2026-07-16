@@ -716,6 +716,82 @@ h2 {
   background: var(--relationship-highlight-background);
 }
 
+.selected-connection {
+  padding: 14px;
+  border: 1px solid var(--relationship-highlight);
+  border-radius: var(--radius-medium);
+  background: var(--relationship-highlight-background);
+}
+
+.selected-connection-arrow {
+  flex: 0 0 auto;
+  color: var(--relationship-highlight);
+  font-size: 1rem;
+}
+
+.selected-connection-clear {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.68rem;
+}
+
+.selected-connection-clear:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.selected-connection-clear:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.selected-connection-confidence {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.68rem;
+}
+
+.selected-connection-description {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+.selected-connection-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selected-connection-heading h3 {
+  margin-bottom: 0;
+}
+
+.selected-connection-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.selected-connection-type {
+  margin-top: 12px;
+  color: var(--relationship-highlight);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+}
+
 /* ==========================================================================
    Tags and Pills
    ========================================================================== */

@@ -8,6 +8,7 @@ import type {
 interface DetailsPanelProps {
   isOpen: boolean;
   selectedNode: GraphNode | null;
+  selectedRelationship: KnowledgeEdge | null;
   selectedRelationshipId: string | null;
   relationships: KnowledgeEdge[];
   graphNodes: GraphNode[];
@@ -56,6 +57,7 @@ function formatRelationship(
 function DetailsPanel({
   isOpen,
   selectedNode,
+  selectedRelationship,
   selectedRelationshipId,
   relationships,
   graphNodes,
@@ -83,6 +85,14 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
     () => new Map(graphNodes.map((node) => [node.id, node])),
     [graphNodes],
   );
+
+  const selectedRelationshipSource = selectedRelationship
+    ? graphNodeById.get(selectedRelationship.source)
+    : undefined;
+
+  const selectedRelationshipTarget = selectedRelationship
+    ? graphNodeById.get(selectedRelationship.target)
+    : undefined;
   
   const filteredRelationships = useMemo(() => {
     const normalizedQuery = relationshipSearchQuery.trim().toLowerCase();
@@ -364,7 +374,81 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
                   </div>
                 </section>
               )}
+              
+              {selectedRelationship && (
+                  <section className="details-section selected-connection">
+                    <div className="selected-connection-heading">
+                      <h3>Selected Connection</h3>
 
+                      <button
+                        className="selected-connection-clear"
+                        type="button"
+                        onClick={() =>
+                          onRelationshipSelect(selectedRelationship.id)
+                        }
+                      >
+                        Clear
+                      </button>
+                    </div>
+
+                    <p className="selected-connection-type">
+                      {formatRelationship(
+                        selectedRelationship.relationship,
+                        "outgoing",
+                      )}
+                    </p>
+
+                    <div className="selected-connection-path">
+                      {selectedRelationshipSource ? (
+                        <button
+                          className="relationship-node-link"
+                          type="button"
+                          onClick={() =>
+                            onNodeSelect(selectedRelationshipSource)
+                          }
+                        >
+                          {selectedRelationshipSource.name}
+                        </button>
+                      ) : (
+                        <span>{selectedRelationship.source}</span>
+                      )}
+
+                      <span
+                        className="selected-connection-arrow"
+                        aria-hidden="true"
+                      >
+                        →
+                      </span>
+
+                      {selectedRelationshipTarget ? (
+                        <button
+                          className="relationship-node-link"
+                          type="button"
+                          onClick={() =>
+                            onNodeSelect(selectedRelationshipTarget)
+                          }
+                        >
+                          {selectedRelationshipTarget.name}
+                        </button>
+                      ) : (
+                        <span>{selectedRelationship.target}</span>
+                      )}
+                    </div>
+
+                    {selectedRelationship.description && (
+                      <p className="selected-connection-description">
+                        {selectedRelationship.description}
+                      </p>
+                    )}
+
+                    {selectedRelationship.confidence !== undefined && (
+                      <p className="selected-connection-confidence">
+                        Confidence:{" "}
+                        {Math.round(selectedRelationship.confidence * 100)}%
+                      </p>
+                    )}
+                  </section>
+                )}
               <section className="details-section">
                 <div className="relationship-section-heading">
                   <h3>Relationships</h3>

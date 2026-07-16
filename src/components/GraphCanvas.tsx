@@ -16,6 +16,7 @@ interface GraphCanvasProps {
   selectedNode: GraphNode | null;
   selectedRelationshipId: string | null;
   onNodeSelect: (node: GraphNode) => void;
+  onRelationshipSelect: (relationshipId: string) => void;
   onSelectionClear: () => void;
 }
 
@@ -28,6 +29,7 @@ function GraphCanvas({
   selectedNode,
   selectedRelationshipId,
   onNodeSelect,
+  onRelationshipSelect,
   onSelectionClear
 }: GraphCanvasProps) {
 
@@ -295,6 +297,10 @@ const [dimensions, setDimensions] = useState({
             linkDirectionalArrowColor={getLinkColor}
             linkDirectionalArrowLength={getLinkArrowLength}
             linkDirectionalArrowRelPos={1}
+            linkHoverPrecision={8}
+            onLinkClick={(link: GraphLink) =>
+              onRelationshipSelect(link.id)
+            }
             backgroundColor="#181818"
             onBackgroundClick={onSelectionClear}
             onNodeClick={(node: GraphNode) => onNodeSelect(node)}

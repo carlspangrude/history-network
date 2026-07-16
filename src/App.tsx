@@ -123,6 +123,16 @@ function App() {
     );
   }, [graphData.nodes, selectedNode]);
 
+  const selectedRelationship = useMemo(
+    () =>
+      selectedRelationshipId
+        ? sampleGraph.edges.find(
+            (edge) => edge.id === selectedRelationshipId,
+          ) ?? null
+        : null,
+    [selectedRelationshipId],
+  );
+
   // ===========================================================================
   // Event Handlers
   // ===========================================================================
@@ -229,12 +239,14 @@ function App() {
           selectedNode={selectedNode}
           selectedRelationshipId={selectedRelationshipId}
           onNodeSelect={handleNodeSelect}
+          onRelationshipSelect={handleRelationshipSelect}
           onSelectionClear={handleSelectionClear}
         />
 
         <DetailsPanel
           isOpen={isDetailsOpen}
           selectedNode={selectedNode}
+          selectedRelationship={selectedRelationship}
           selectedRelationshipId={selectedRelationshipId}
           relationships={selectedRelationships}
           graphNodes={graphData.nodes}
