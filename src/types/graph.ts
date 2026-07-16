@@ -23,7 +23,12 @@ export type RelationshipType =
   | "enabled"
   | "criticized"
   | "refined"
-  | "formalized";
+  | "formalized"
+  | "improved"
+  | "founded"
+  | "belonged_to"
+  | "responded_to"
+  | "popularized";
 
 export interface KnowledgeNode {
   id: string;
