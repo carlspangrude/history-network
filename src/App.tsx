@@ -133,6 +133,18 @@ function App() {
     [selectedRelationshipId],
   );
 
+  const shouldUseWideDetails =
+  (selectedNode?.name.length ?? 0) > 24 ||
+  (selectedRelationship &&
+    [
+      sampleGraph.nodes.find(
+        (node) => node.id === selectedRelationship.source,
+      )?.name ?? "",
+      sampleGraph.nodes.find(
+        (node) => node.id === selectedRelationship.target,
+      )?.name ?? "",
+    ].some((name) => name.length > 24));
+
   // ===========================================================================
   // Event Handlers
   // ===========================================================================
@@ -153,6 +165,12 @@ function App() {
     setSelectedRelationshipId((current) =>
       current === relationshipId ? null : relationshipId,
     );
+  };
+
+  const handleRelationshipOpen = (relationshipId: string) => {
+    setSelectedNode(null);
+    setSelectedRelationshipId(relationshipId);
+    setIsDetailsOpen(true);
   };
 
   const handleNodeTypeToggle = (nodeType: NodeType) => {
@@ -219,9 +237,7 @@ function App() {
           "main",
           isSidebarOpen ? "sidebar-open" : "sidebar-closed",
           isDetailsOpen ? "details-open" : "details-closed",
-          selectedNode && selectedNode.name.length > 24
-            ? "details-wide"
-            : "details-standard",
+          shouldUseWideDetails ? "details-wide" : "details-standard",
         ].join(" ")}
       >
         <Sidebar
@@ -239,7 +255,7 @@ function App() {
           selectedNode={selectedNode}
           selectedRelationshipId={selectedRelationshipId}
           onNodeSelect={handleNodeSelect}
-          onRelationshipSelect={handleRelationshipSelect}
+          onRelationshipOpen={handleRelationshipOpen}
           onSelectionClear={handleSelectionClear}
         />
 

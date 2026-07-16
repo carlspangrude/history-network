@@ -282,6 +282,76 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
     );
   };
 
+  const renderSelectedConnection = () => {
+    if (!selectedRelationship) {
+      return null;
+    }
+  
+    return (
+      <section className="details-section selected-connection">
+        <div className="selected-connection-heading">
+          <h3>Selected Connection</h3>
+  
+          <button
+            className="selected-connection-clear"
+            type="button"
+            onClick={() =>
+              onRelationshipSelect(selectedRelationship.id)
+            }
+          >
+            Clear
+          </button>
+        </div>
+  
+        <div className="selected-connection-path">
+          {selectedRelationshipSource ? (
+            <button
+              className="relationship-node-link"
+              type="button"
+              onClick={() => onNodeSelect(selectedRelationshipSource)}
+            >
+              {selectedRelationshipSource.name}
+            </button>
+          ) : (
+            <span>{selectedRelationship.source}</span>
+          )}
+  
+          <p className="selected-connection-type">
+            {formatRelationship(
+              selectedRelationship.relationship,
+              "outgoing",
+            )}
+          </p>
+  
+          {selectedRelationshipTarget ? (
+            <button
+              className="relationship-node-link"
+              type="button"
+              onClick={() => onNodeSelect(selectedRelationshipTarget)}
+            >
+              {selectedRelationshipTarget.name}
+            </button>
+          ) : (
+            <span>{selectedRelationship.target}</span>
+          )}
+        </div>
+  
+        {selectedRelationship.description && (
+          <p className="selected-connection-description">
+            {selectedRelationship.description}
+          </p>
+        )}
+  
+        {selectedRelationship.confidence !== undefined && (
+          <p className="selected-connection-confidence">
+            Confidence:{" "}
+            {Math.round(selectedRelationship.confidence * 100)}%
+          </p>
+        )}
+      </section>
+    );
+  };
+
   // ===========================================================================
   // Event Handlers
   // ===========================================================================
@@ -375,80 +445,8 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
                 </section>
               )}
               
-              {selectedRelationship && (
-                  <section className="details-section selected-connection">
-                    <div className="selected-connection-heading">
-                      <h3>Selected Connection</h3>
+              {renderSelectedConnection()}
 
-                      <button
-                        className="selected-connection-clear"
-                        type="button"
-                        onClick={() =>
-                          onRelationshipSelect(selectedRelationship.id)
-                        }
-                      >
-                        Clear
-                      </button>
-                    </div>
-
-                    <p className="selected-connection-type">
-                      {formatRelationship(
-                        selectedRelationship.relationship,
-                        "outgoing",
-                      )}
-                    </p>
-
-                    <div className="selected-connection-path">
-                      {selectedRelationshipSource ? (
-                        <button
-                          className="relationship-node-link"
-                          type="button"
-                          onClick={() =>
-                            onNodeSelect(selectedRelationshipSource)
-                          }
-                        >
-                          {selectedRelationshipSource.name}
-                        </button>
-                      ) : (
-                        <span>{selectedRelationship.source}</span>
-                      )}
-
-                      <span
-                        className="selected-connection-arrow"
-                        aria-hidden="true"
-                      >
-                        →
-                      </span>
-
-                      {selectedRelationshipTarget ? (
-                        <button
-                          className="relationship-node-link"
-                          type="button"
-                          onClick={() =>
-                            onNodeSelect(selectedRelationshipTarget)
-                          }
-                        >
-                          {selectedRelationshipTarget.name}
-                        </button>
-                      ) : (
-                        <span>{selectedRelationship.target}</span>
-                      )}
-                    </div>
-
-                    {selectedRelationship.description && (
-                      <p className="selected-connection-description">
-                        {selectedRelationship.description}
-                      </p>
-                    )}
-
-                    {selectedRelationship.confidence !== undefined && (
-                      <p className="selected-connection-confidence">
-                        Confidence:{" "}
-                        {Math.round(selectedRelationship.confidence * 100)}%
-                      </p>
-                    )}
-                  </section>
-                )}
               <section className="details-section">
                 <div className="relationship-section-heading">
                   <h3>Relationships</h3>
@@ -524,6 +522,10 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
                   </p>
                 )}
               </section>
+            </article>
+          ) : selectedRelationship ? (
+            <article className="connection-details">
+              {renderSelectedConnection()}
             </article>
           ) : (
             <div className="empty-details">

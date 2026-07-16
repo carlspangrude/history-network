@@ -723,12 +723,6 @@ h2 {
   background: var(--relationship-highlight-background);
 }
 
-.selected-connection-arrow {
-  flex: 0 0 auto;
-  color: var(--relationship-highlight);
-  font-size: 1rem;
-}
-
 .selected-connection-clear {
   padding: 0;
   border: 0;
@@ -776,20 +770,22 @@ h2 {
 }
 
 .selected-connection-path {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 8px;
-  align-items: center;
-  margin-top: 10px;
+  margin-top: 14px;
 }
 
 .selected-connection-type {
-  margin-top: 12px;
+  padding-left: 10px;
   color: var(--relationship-highlight);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: capitalize;
+}
+
+.connection-details {
+  min-width: 0;
 }
 
 /* ==========================================================================

@@ -16,7 +16,7 @@ interface GraphCanvasProps {
   selectedNode: GraphNode | null;
   selectedRelationshipId: string | null;
   onNodeSelect: (node: GraphNode) => void;
-  onRelationshipSelect: (relationshipId: string) => void;
+  onRelationshipOpen: (relationshipId: string) => void;
   onSelectionClear: () => void;
 }
 
@@ -29,7 +29,7 @@ function GraphCanvas({
   selectedNode,
   selectedRelationshipId,
   onNodeSelect,
-  onRelationshipSelect,
+  onRelationshipOpen,
   onSelectionClear
 }: GraphCanvasProps) {
 
@@ -290,6 +290,30 @@ const [dimensions, setDimensions] = useState({
             nodeColor={getNodeColor}
             nodeVal={getNodeSize}
             nodeRelSize={1}
+            nodeCanvasObjectMode={() => "after"}
+            nodeCanvasObject={(
+              node: GraphNode,
+              context: CanvasRenderingContext2D,
+              globalScale: number,
+            ) => {
+              if (
+                node.id !== selectedNode?.id ||
+                node.x === undefined ||
+                node.y === undefined
+              ) {
+                return;
+              }
+
+              const nodeRadius = Math.sqrt(getNodeSize(node));
+              const ringGap = 3 / globalScale;
+              const ringRadius = nodeRadius + ringGap;
+
+              context.beginPath();
+              context.arc(node.x, node.y, ringRadius, 0, 2 * Math.PI);
+              context.strokeStyle = "#ffe640";
+              context.lineWidth = 3 / globalScale;
+              context.stroke();
+            }}
             linkSource="source"
             linkTarget="target"
             linkColor={getLinkColor}
@@ -299,7 +323,7 @@ const [dimensions, setDimensions] = useState({
             linkDirectionalArrowRelPos={1}
             linkHoverPrecision={8}
             onLinkClick={(link: GraphLink) =>
-              onRelationshipSelect(link.id)
+              onRelationshipOpen(link.id)
             }
             backgroundColor="#181818"
             onBackgroundClick={onSelectionClear}
