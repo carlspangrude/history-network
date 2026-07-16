@@ -346,38 +346,33 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
               <section className="details-section">
                 <div className="relationship-section-heading">
                   <h3>Relationships</h3>
-
-                  {relationshipSearchQuery && (
-                    <button
-                      className="relationship-search-clear"
-                      type="button"
-                      onClick={() => setRelationshipSearchQuery("")}
-                    >
-                      Clear
-                    </button>
-                  )}
                 </div>
 
                 {relationships.length > 0 && (
-                  <div className="relationship-search">
-                    <label
-                      className="relationship-search-label"
-                      htmlFor="relationship-search"
-                    >
-                      Search relationships
-                    </label>
+                  <div className="relationship-search-row">
+                    <div className="relationship-search">
+                      <input
+                        id="relationship-search"
+                        className="relationship-search-input"
+                        type="search"
+                        value={relationshipSearchQuery}
+                        placeholder="Search relationships..."
+                        autoComplete="off"
+                        onChange={(event) =>
+                          setRelationshipSearchQuery(event.target.value)
+                        }
+                      />
+                    </div>
 
-                    <input
-                      id="relationship-search"
-                      className="relationship-search-input"
-                      type="search"
-                      value={relationshipSearchQuery}
-                      placeholder="Search relationships..."
-                      autoComplete="off"
-                      onChange={(event) =>
-                        setRelationshipSearchQuery(event.target.value)
-                      }
-                    />
+                    {relationshipSearchQuery && (
+                      <button
+                        className="relationship-search-clear"
+                        type="button"
+                        onClick={() => setRelationshipSearchQuery("")}
+                      >
+                        Clear
+                      </button>
+                    )}
                   </div>
                 )}
 

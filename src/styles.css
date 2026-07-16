@@ -202,17 +202,6 @@ h2 {
   box-shadow: 0 0 0 2px rgba(143, 188, 255, 0.18);
 }
 
-.search-label {
- position: absolute;
- width: 1px;
- height: 1px;
- padding: 0;
- overflow: hidden;
- clip: rect(0, 0, 0, 0);
- border: 0;
- white-space: nowrap;
-}
-
 .search-result {
   display: flex;
   align-items: center;
@@ -543,11 +532,13 @@ h2 {
   gap: 12px;
 }
 
+.relationship-direction-group + .relationship-direction-group {
+  margin-top: 8px;
+}
+
 .relationship-direction-title {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--border-default);
   color: var(--text-primary);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -654,6 +645,43 @@ h2 {
 
 .relationship-node-link:focus-visible {
   border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.relationship-search {
+  flex: 1;
+}
+
+.relationship-search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.relationship-section-heading {
+  margin-bottom: 16px;
+}
+
+.relationship-search-clear {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--border-search);
+  border-radius: var(--radius-small);
+  background: var(--background-search);
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.relationship-search-clear:hover {
+  border-color: var(--text-link);
+  color: var(--text-link-hover);
+}
+
+.relationship-search-clear:focus-visible {
   outline: 2px solid var(--text-link);
   outline-offset: 3px;
 }
