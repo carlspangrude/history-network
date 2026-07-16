@@ -52,6 +52,9 @@ function formatRelationship(
 
       case "criticized":
         return "Criticized by";
+        
+      case "responded_to":
+        return "Responded to by";
 
       default:
         return formatted;

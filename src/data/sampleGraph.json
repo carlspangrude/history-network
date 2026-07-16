@@ -246,6 +246,356 @@
         "Motion",
         "Aristotelianism"
       ]
+    },
+    {
+      "id": "thomas-aquinas",
+      "name": "Thomas Aquinas",
+      "type": "person",
+      "importance": 8,
+      "description": "Medieval philosopher and theologian who developed a systematic synthesis of Aristotelian philosophy and Christian thought.",
+      "startYear": 1225,
+      "endYear": 1274,
+      "disciplines": [
+        "Philosophy",
+        "Theology",
+        "Political Theory"
+      ],
+      "tags": [
+        "Scholasticism",
+        "Natural Law",
+        "Aristotelianism"
+      ]
+    },
+    {
+      "id": "francis-bacon",
+      "name": "Francis Bacon",
+      "type": "person",
+      "importance": 8,
+      "description": "English philosopher and statesman who promoted systematic observation, experiment, and inductive inquiry as foundations for advancing knowledge.",
+      "startYear": 1561,
+      "endYear": 1626,
+      "disciplines": [
+        "Philosophy",
+        "Scientific Method"
+      ],
+      "tags": [
+        "Empiricism",
+        "Scientific Revolution",
+        "Induction"
+      ]
+    },
+    {
+      "id": "rene-descartes",
+      "name": "René Descartes",
+      "type": "person",
+      "importance": 9,
+      "description": "French philosopher and mathematician who sought secure foundations for knowledge through systematic doubt, reason, and mathematical method.",
+      "startYear": 1596,
+      "endYear": 1650,
+      "disciplines": [
+        "Philosophy",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "Rationalism",
+        "Cartesianism",
+        "Scientific Revolution"
+      ]
+    },
+    {
+      "id": "thomas-hobbes",
+      "name": "Thomas Hobbes",
+      "type": "person",
+      "importance": 8,
+      "description": "English philosopher who developed a materialist account of human nature and an influential theory of political authority grounded in social agreement.",
+      "startYear": 1588,
+      "endYear": 1679,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Social Contract",
+        "Materialism",
+        "Sovereignty"
+      ]
+    },
+    {
+      "id": "john-locke",
+      "name": "John Locke",
+      "type": "person",
+      "importance": 9,
+      "description": "English philosopher whose work on knowledge, natural rights, consent, and limited government strongly shaped empiricism and liberal political thought.",
+      "startYear": 1632,
+      "endYear": 1704,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Empiricism",
+        "Natural Rights",
+        "Liberalism"
+      ]
+    },
+    {
+      "id": "david-hume",
+      "name": "David Hume",
+      "type": "person",
+      "importance": 9,
+      "description": "Scottish philosopher whose empiricism and skepticism examined causation, induction, personal identity, morality, and the limits of human understanding.",
+      "startYear": 1711,
+      "endYear": 1776,
+      "disciplines": [
+        "Philosophy",
+        "Economics"
+      ],
+      "tags": [
+        "Empiricism",
+        "Skepticism",
+        "Scottish Enlightenment"
+      ]
+    },
+    {
+      "id": "jean-jacques-rousseau",
+      "name": "Jean-Jacques Rousseau",
+      "type": "person",
+      "importance": 9,
+      "description": "Genevan philosopher whose work examined freedom, inequality, political legitimacy, education, and the tensions between society and human nature.",
+      "startYear": 1712,
+      "endYear": 1778,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory",
+        "Education"
+      ],
+      "tags": [
+        "Social Contract",
+        "Republicanism",
+        "Enlightenment"
+      ]
+    },
+    {
+      "id": "immanuel-kant",
+      "name": "Immanuel Kant",
+      "type": "person",
+      "importance": 10,
+      "description": "German philosopher who transformed epistemology, metaphysics, ethics, and aesthetics by examining the conditions that make experience and knowledge possible.",
+      "startYear": 1724,
+      "endYear": 1804,
+      "disciplines": [
+        "Philosophy",
+        "Ethics",
+        "Political Theory"
+      ],
+      "tags": [
+        "German Idealism",
+        "Enlightenment",
+        "Transcendental Idealism"
+      ]
+    },
+    {
+      "id": "novum-organum",
+      "name": "Novum Organum",
+      "type": "publication",
+      "importance": 7,
+      "description": "Bacon's 1620 work proposing a reformed method of inquiry centered on systematic observation, induction, and the correction of intellectual error.",
+      "startYear": 1620,
+      "disciplines": [
+        "Philosophy",
+        "Scientific Method"
+      ],
+      "tags": [
+        "Empiricism",
+        "Induction",
+        "Scientific Revolution"
+      ]
+    },
+    {
+      "id": "discourse-on-method",
+      "name": "Discourse on the Method",
+      "type": "publication",
+      "importance": 8,
+      "description": "Descartes' 1637 work presenting a method of disciplined reasoning and introducing major elements of his philosophical and mathematical program.",
+      "startYear": 1637,
+      "disciplines": [
+        "Philosophy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Rationalism",
+        "Methodic Doubt",
+        "Cartesianism"
+      ]
+    },
+    {
+      "id": "leviathan",
+      "name": "Leviathan",
+      "type": "publication",
+      "importance": 8,
+      "description": "Hobbes's 1651 work explaining political authority through a social covenant intended to escape conflict and insecurity.",
+      "startYear": 1651,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Social Contract",
+        "Sovereignty",
+        "State of Nature"
+      ]
+    },
+    {
+      "id": "essay-human-understanding",
+      "name": "An Essay Concerning Human Understanding",
+      "type": "publication",
+      "importance": 8,
+      "description": "Locke's 1689 investigation of the origins, extent, and limits of human knowledge.",
+      "startYear": 1689,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Empiricism",
+        "Epistemology",
+        "Ideas"
+      ]
+    },
+    {
+      "id": "two-treatises",
+      "name": "Two Treatises of Government",
+      "type": "publication",
+      "importance": 8,
+      "description": "Locke's political work defending natural rights, government by consent, and resistance to political authority that violates its trust.",
+      "startYear": 1689,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Natural Rights",
+        "Consent",
+        "Limited Government"
+      ]
+    },
+    {
+      "id": "the-social-contract",
+      "name": "The Social Contract",
+      "type": "publication",
+      "importance": 8,
+      "description": "Rousseau's 1762 work examining legitimate political authority, popular sovereignty, freedom, and the general will.",
+      "startYear": 1762,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Social Contract",
+        "Popular Sovereignty",
+        "General Will"
+      ]
+    },
+    {
+      "id": "critique-pure-reason",
+      "name": "Critique of Pure Reason",
+      "type": "publication",
+      "importance": 9,
+      "description": "Kant's 1781 work investigating the powers and limits of reason and the conditions under which knowledge of experience is possible.",
+      "startYear": 1781,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Epistemology",
+        "Metaphysics",
+        "Transcendental Idealism"
+      ]
+    },
+    {
+      "id": "empiricism",
+      "name": "Empiricism",
+      "type": "theory",
+      "importance": 8,
+      "description": "A broad family of views emphasizing experience and observation as fundamental sources of concepts and knowledge.",
+      "startYear": 1600,
+      "disciplines": [
+        "Philosophy",
+        "Scientific Method"
+      ],
+      "tags": [
+        "Experience",
+        "Observation",
+        "Epistemology"
+      ]
+    },
+    {
+      "id": "rationalism",
+      "name": "Early Modern Rationalism",
+      "type": "theory",
+      "importance": 8,
+      "description": "A broad family of early modern philosophies emphasizing reason and the mind's contribution to knowledge beyond what sensory experience alone can provide.",
+      "startYear": 1637,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Reason",
+        "Epistemology",
+        "Innate Ideas"
+      ]
+    },
+    {
+      "id": "social-contract-theory",
+      "name": "Social Contract Theory",
+      "type": "theory",
+      "importance": 8,
+      "description": "A family of political theories that explain political authority or obligation through an actual, hypothetical, or rational agreement among individuals.",
+      "startYear": 1651,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Political Legitimacy",
+        "Consent",
+        "State of Nature"
+      ]
+    },
+    {
+      "id": "natural-rights",
+      "name": "Natural Rights",
+      "type": "theory",
+      "importance": 8,
+      "description": "The view that persons possess fundamental rights independently of the grants or conventions of particular governments.",
+      "startYear": 1689,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory"
+      ],
+      "tags": [
+        "Liberty",
+        "Property",
+        "Political Legitimacy"
+      ]
+    },
+    {
+      "id": "the-enlightenment",
+      "name": "The Enlightenment",
+      "type": "theory",
+      "importance": 8,
+      "description": "A diverse intellectual movement emphasizing critical reason, inquiry, reform, freedom, and reconsideration of inherited political and religious authority.",
+      "startYear": 1685,
+      "disciplines": [
+        "Philosophy",
+        "Political Theory",
+        "Scientific Method"
+      ],
+      "tags": [
+        "Reason",
+        "Reform",
+        "Modernity"
+      ]
     }
   ],
   "edges": [
@@ -363,6 +713,295 @@
       "relationship": "criticized",
       "description": "Galileo challenged important elements of the inherited Aristotelian account of motion through mathematical reasoning, observation, and experiment.",
       "confidence": 0.95
+    },
+    {
+      "id": "aristotle-aquinas",
+      "source": "aristotle",
+      "target": "thomas-aquinas",
+      "relationship": "influenced",
+      "description": "Aquinas drew extensively on Aristotle while integrating Aristotelian concepts into a Christian philosophical and theological system.",
+      "confidence": 0.98
+    },
+    {
+      "id": "aquinas-natural-rights",
+      "source": "thomas-aquinas",
+      "target": "natural-rights",
+      "relationship": "influenced",
+      "description": "Aquinas's account of natural law contributed to later traditions in which rights and political duties were grounded in principles prior to positive law.",
+      "confidence": 0.78
+    },
+    {
+      "id": "bacon-novum-organum",
+      "source": "francis-bacon",
+      "target": "novum-organum",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "novum-organum-empiricism",
+      "source": "novum-organum",
+      "target": "empiricism",
+      "relationship": "formalized",
+      "description": "The work developed an influential program of systematic observation and inductive inquiry associated with later empiricist approaches.",
+      "confidence": 0.9
+    },
+    {
+      "id": "bacon-locke",
+      "source": "francis-bacon",
+      "target": "john-locke",
+      "relationship": "influenced",
+      "description": "Bacon's emphasis on experience and inquiry helped shape the intellectual setting in which Locke developed his empiricist account of knowledge.",
+      "confidence": 0.82
+    },
+    {
+      "id": "bacon-newton",
+      "source": "francis-bacon",
+      "target": "newton",
+      "relationship": "influenced",
+      "description": "Baconian programs of experimental inquiry formed part of the scientific culture inherited and transformed by Newton.",
+      "confidence": 0.8
+    },
+    {
+      "id": "descartes-discourse",
+      "source": "rene-descartes",
+      "target": "discourse-on-method",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "discourse-rationalism",
+      "source": "discourse-on-method",
+      "target": "rationalism",
+      "relationship": "formalized",
+      "description": "Descartes presented a reason-centered method that became foundational to early modern rationalist philosophy.",
+      "confidence": 0.95
+    },
+    {
+      "id": "descartes-newton",
+      "source": "rene-descartes",
+      "target": "newton",
+      "relationship": "influenced",
+      "description": "Newton developed his work within a scientific context deeply shaped by Cartesian mathematics, mechanics, and natural philosophy, even while rejecting important Cartesian doctrines.",
+      "confidence": 0.86
+    },
+    {
+      "id": "newton-descartes",
+      "source": "newton",
+      "target": "rene-descartes",
+      "relationship": "criticized",
+      "description": "Newton rejected major elements of Cartesian natural philosophy, including aspects of its vortex-based account of celestial motion.",
+      "confidence": 0.92
+    },
+    {
+      "id": "galileo-hobbes",
+      "source": "galileo",
+      "target": "thomas-hobbes",
+      "relationship": "influenced",
+      "description": "Galilean mechanics and the mathematical study of motion contributed to the intellectual environment informing Hobbes's mechanistic philosophy.",
+      "confidence": 0.76
+    },
+    {
+      "id": "hobbes-leviathan",
+      "source": "thomas-hobbes",
+      "target": "leviathan",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "leviathan-social-contract",
+      "source": "leviathan",
+      "target": "social-contract-theory",
+      "relationship": "formalized",
+      "description": "Leviathan presented one of the foundational modern formulations of political authority through covenant and authorization.",
+      "confidence": 0.98
+    },
+    {
+      "id": "hobbes-locke",
+      "source": "thomas-hobbes",
+      "target": "john-locke",
+      "relationship": "influenced",
+      "description": "Locke's political theory developed in a context shaped by Hobbesian problems of authority, consent, natural equality, and the state of nature, while reaching substantially different conclusions.",
+      "confidence": 0.86
+    },
+    {
+      "id": "locke-essay",
+      "source": "john-locke",
+      "target": "essay-human-understanding",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "essay-empiricism",
+      "source": "essay-human-understanding",
+      "target": "empiricism",
+      "relationship": "formalized",
+      "description": "Locke's Essay offered a major account of how ideas and knowledge arise through experience and reflection.",
+      "confidence": 0.98
+    },
+    {
+      "id": "locke-two-treatises",
+      "source": "john-locke",
+      "target": "two-treatises",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "two-treatises-natural-rights",
+      "source": "two-treatises",
+      "target": "natural-rights",
+      "relationship": "formalized",
+      "description": "The work defended rights to life, liberty, and property as constraints on legitimate political authority.",
+      "confidence": 0.98
+    },
+    {
+      "id": "two-treatises-social-contract",
+      "source": "two-treatises",
+      "target": "social-contract-theory",
+      "relationship": "formalized",
+      "description": "Locke grounded legitimate government in consent while preserving rights that political society was instituted to protect.",
+      "confidence": 0.96
+    },
+    {
+      "id": "locke-hume",
+      "source": "john-locke",
+      "target": "david-hume",
+      "relationship": "influenced",
+      "description": "Hume developed his philosophy within the British empiricist tradition shaped substantially by Locke's account of ideas and experience.",
+      "confidence": 0.94
+    },
+    {
+      "id": "empiricism-hume",
+      "source": "empiricism",
+      "target": "david-hume",
+      "relationship": "influenced",
+      "description": "Hume radicalized and critically examined empiricist approaches to knowledge, causation, and human understanding.",
+      "confidence": 0.98
+    },
+    {
+      "id": "hobbes-rousseau",
+      "source": "thomas-hobbes",
+      "target": "jean-jacques-rousseau",
+      "relationship": "influenced",
+      "description": "Rousseau's political philosophy engaged with problems of the state of nature, agreement, sovereignty, and political legitimacy previously developed by Hobbes.",
+      "confidence": 0.85
+    },
+    {
+      "id": "locke-rousseau",
+      "source": "john-locke",
+      "target": "jean-jacques-rousseau",
+      "relationship": "influenced",
+      "description": "Lockean questions concerning consent, freedom, property, and legitimate government formed part of the political tradition Rousseau inherited and transformed.",
+      "confidence": 0.83
+    },
+    {
+      "id": "rousseau-social-contract-publication",
+      "source": "jean-jacques-rousseau",
+      "target": "the-social-contract",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "social-contract-publication-theory",
+      "source": "the-social-contract",
+      "target": "social-contract-theory",
+      "relationship": "formalized",
+      "description": "Rousseau reformulated social-contract theory around popular sovereignty, freedom, and the general will.",
+      "confidence": 0.98
+    },
+    {
+      "id": "hume-kant",
+      "source": "david-hume",
+      "target": "immanuel-kant",
+      "relationship": "influenced",
+      "description": "Kant regarded Hume's challenge concerning causality and metaphysics as a major stimulus for his critical philosophy.",
+      "confidence": 0.98
+    },
+    {
+      "id": "kant-critique",
+      "source": "immanuel-kant",
+      "target": "critique-pure-reason",
+      "relationship": "authored",
+      "confidence": 1
+    },
+    {
+      "id": "critique-rationalism",
+      "source": "critique-pure-reason",
+      "target": "rationalism",
+      "relationship": "responded_to",
+      "description": "Kant criticized traditional rationalist metaphysics while retaining a substantive role for a priori structures in cognition.",
+      "confidence": 0.96
+    },
+    {
+      "id": "critique-empiricism",
+      "source": "critique-pure-reason",
+      "target": "empiricism",
+      "relationship": "responded_to",
+      "description": "Kant accepted that knowledge begins with experience while arguing that experience is structured by cognitive capacities not derived from experience alone.",
+      "confidence": 0.97
+    },
+    {
+      "id": "rationalism-kant",
+      "source": "rationalism",
+      "target": "immanuel-kant",
+      "relationship": "influenced",
+      "description": "Kant inherited central rationalist questions concerning necessity, metaphysics, and a priori knowledge while transforming their proposed solutions.",
+      "confidence": 0.93
+    },
+    {
+      "id": "empiricism-kant",
+      "source": "empiricism",
+      "target": "immanuel-kant",
+      "relationship": "influenced",
+      "description": "Empiricist accounts of experience and Humean skepticism shaped the problems Kant's critical philosophy sought to resolve.",
+      "confidence": 0.96
+    },
+    {
+      "id": "newton-enlightenment",
+      "source": "newton",
+      "target": "the-enlightenment",
+      "relationship": "influenced",
+      "description": "The success and prestige of Newtonian science strongly shaped Enlightenment conceptions of reason, natural order, and systematic inquiry.",
+      "confidence": 0.91
+    },
+    {
+      "id": "locke-enlightenment",
+      "source": "john-locke",
+      "target": "the-enlightenment",
+      "relationship": "influenced",
+      "description": "Locke's epistemology and political philosophy became major resources for Enlightenment debates about reason, rights, toleration, and government.",
+      "confidence": 0.95
+    },
+    {
+      "id": "rousseau-enlightenment",
+      "source": "jean-jacques-rousseau",
+      "target": "the-enlightenment",
+      "relationship": "criticized",
+      "description": "Rousseau participated in Enlightenment debate while criticizing confidence in civilization, intellectual progress, and social refinement.",
+      "confidence": 0.93
+    },
+    {
+      "id": "enlightenment-kant",
+      "source": "the-enlightenment",
+      "target": "immanuel-kant",
+      "relationship": "influenced",
+      "description": "Kant became a central interpreter and defender of Enlightenment ideals of intellectual maturity, freedom, and public reason.",
+      "confidence": 0.96
+    },
+    {
+      "id": "bacon-empiricism",
+      "source": "francis-bacon",
+      "target": "empiricism",
+      "relationship": "influenced",
+      "description": "Bacon's program of observation, experiment, and inductive inquiry became an important foundation for later empiricist approaches to knowledge.",
+      "confidence": 0.9
+    },
+    {
+      "id": "locke-empiricism",
+      "source": "john-locke",
+      "target": "empiricism",
+      "relationship": "influenced",
+      "description": "Locke developed one of the most influential early modern accounts of knowledge as grounded in experience and reflection.",
+      "confidence": 0.98
     }
   ]
 }
