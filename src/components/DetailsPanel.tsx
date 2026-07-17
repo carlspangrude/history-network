@@ -104,6 +104,14 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
     ? graphNodeById.get(selectedRelationship.target)
     : undefined;
   
+  const selectedRelationshipDirectness = selectedRelationship
+    ? formatDirectness(selectedRelationship.directness)
+    : null;
+  
+  const selectedRelationshipEvidence = selectedRelationship
+    ? formatEvidenceType(selectedRelationship.evidenceType)
+    : null;
+
   const filteredRelationships = useMemo(() => {
     const normalizedQuery = relationshipSearchQuery.trim().toLowerCase();
   
@@ -358,6 +366,23 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
             {selectedRelationship.description}
           </p>
         )}
+
+        {(selectedRelationshipDirectness ||
+          selectedRelationshipEvidence) && (
+          <div className="relationship-metadata">
+            {selectedRelationshipDirectness && (
+              <span className="relationship-metadata-badge">
+                {selectedRelationshipDirectness}
+              </span>
+            )}
+
+            {selectedRelationshipEvidence && (
+              <span className="relationship-metadata-badge">
+                {selectedRelationshipEvidence}
+              </span>
+            )}
+          </div>
+        )}
   
         {selectedRelationship.confidence !== undefined && (
           <p className="selected-connection-confidence">
@@ -368,6 +393,38 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
       </section>
     );
   };
+
+  function formatDirectness(
+    directness?: KnowledgeEdge["directness"],
+  ): string | null {
+    switch (directness) {
+      case "direct":
+        return "Direct relationship";
+      case "indirect":
+        return "Indirect relationship";
+      case "summary":
+        return "Summary relationship";
+      default:
+        return null;
+    }
+  }
+  
+  function formatEvidenceType(
+    evidenceType?: KnowledgeEdge["evidenceType"],
+  ): string | null {
+    switch (evidenceType) {
+      case "primary_source":
+        return "Primary source";
+      case "secondary_source":
+        return "Secondary source";
+      case "scholarly_consensus":
+        return "Scholarly consensus";
+      case "editorial_summary":
+        return "Editorial summary";
+      default:
+        return null;
+    }
+  }
 
   // ===========================================================================
   // Event Handlers

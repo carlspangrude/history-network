@@ -716,6 +716,21 @@ h2 {
   background: var(--relationship-highlight-background);
 }
 
+.relationship-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.relationship-metadata-badge {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+}
+
 .selected-connection {
   padding: 14px;
   border: 1px solid var(--relationship-highlight);

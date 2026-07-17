@@ -720,7 +720,9 @@
       "target": "thomas-aquinas",
       "relationship": "influenced",
       "description": "Aquinas drew extensively on Aristotle while integrating Aristotelian concepts into a Christian philosophical and theological system.",
-      "confidence": 0.98
+      "confidence": 0.98,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
     },
     {
       "id": "aquinas-natural-rights",
@@ -728,14 +730,18 @@
       "target": "natural-rights",
       "relationship": "influenced",
       "description": "Aquinas's account of natural law contributed to later traditions in which rights and political duties were grounded in principles prior to positive law.",
-      "confidence": 0.78
+      "confidence": 0.78,
+      "directness": "indirect",
+      "evidenceType": "secondary_source"
     },
     {
       "id": "bacon-novum-organum",
       "source": "francis-bacon",
       "target": "novum-organum",
       "relationship": "authored",
-      "confidence": 1
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
     },
     {
       "id": "novum-organum-empiricism",
@@ -743,7 +749,9 @@
       "target": "empiricism",
       "relationship": "formalized",
       "description": "The work developed an influential program of systematic observation and inductive inquiry associated with later empiricist approaches.",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
     },
     {
       "id": "bacon-locke",
@@ -836,7 +844,9 @@
       "target": "empiricism",
       "relationship": "formalized",
       "description": "Locke's Essay offered a major account of how ideas and knowledge arise through experience and reflection.",
-      "confidence": 0.98
+      "confidence": 0.98,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
     },
     {
       "id": "locke-two-treatises",
@@ -993,7 +1003,9 @@
       "target": "empiricism",
       "relationship": "influenced",
       "description": "Bacon's program of observation, experiment, and inductive inquiry became an important foundation for later empiricist approaches to knowledge.",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "directness": "summary",
+      "evidenceType": "editorial_summary"
     },
     {
       "id": "locke-empiricism",
@@ -1001,7 +1013,9 @@
       "target": "empiricism",
       "relationship": "influenced",
       "description": "Locke developed one of the most influential early modern accounts of knowledge as grounded in experience and reflection.",
-      "confidence": 0.98
+      "confidence": 0.98,
+      "directness": "summary",
+      "evidenceType": "editorial_summary"
     }
   ]
 }

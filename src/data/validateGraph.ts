@@ -1,42 +1,57 @@
 import type {
+  EvidenceType,
   KnowledgeGraphData,
   KnowledgeNode,
   NodeType,
   RelationshipType,
+  RelationshipDirectness,
 } from "../types/graph";
 
 const VALID_NODE_TYPES = new Set<NodeType>([
-  "person",
-  "idea",
-  "discovery",
-  "invention",
-  "publication",
-  "theory",
-  "institution",
-  "event",
-  "place",
   "discipline",
+  "discovery",
+  "event",
+  "idea",
+  "institution",
+  "invention",
+  "person",
+  "place",
+  "publication",
   "technology",
+  "theory",
 ]);
 
 const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
+  "authored",
+  "belonged_to",
+  "collaborated_with",
+  "criticized",
+  "discovered",
+  "enabled",
+  "formalized",
+  "founded",
+  "improved",
   "influenced",
   "inspired",
-  "mentored",
-  "collaborated_with",
-  "authored",
-  "published",
-  "discovered",
   "invented",
-  "enabled",
-  "criticized",
-  "refined",
-  "formalized",
-  "improved",
-  "founded",
-  "belonged_to",
-  "responded_to",
+  "mentored",
   "popularized",
+  "published",
+  "refined",
+  "responded_to",
+]);
+
+const VALID_RELATIONSHIP_DIRECTNESS = new Set<RelationshipDirectness>([
+  "direct",
+  "indirect",
+  "summary",
+]);
+
+const VALID_EVIDENCE_TYPES = new Set<EvidenceType>([
+  "primary_source",
+  "secondary_source",
+  "scholarly_consensus",
+  "editorial_summary",
 ]);
 
 function isNonEmptyString(value: unknown): value is string {
@@ -180,6 +195,24 @@ export function validateKnowledgeGraph(
     if (!VALID_RELATIONSHIP_TYPES.has(edge.relationship)) {
       errors.push(
         `${label} "${edge.id}" has unsupported relationship "${edge.relationship}".`,
+      );
+    }
+
+    if (
+      edge.directness !== undefined &&
+      !VALID_RELATIONSHIP_DIRECTNESS.has(edge.directness)
+    ) {
+      errors.push(
+        `${label} "${edge.id}" has invalid directness "${edge.directness}".`,
+      );
+    }
+    
+    if (
+      edge.evidenceType !== undefined &&
+      !VALID_EVIDENCE_TYPES.has(edge.evidenceType)
+    ) {
+      errors.push(
+        `${label} "${edge.id}" has invalid evidenceType "${edge.evidenceType}".`,
       );
     }
 

@@ -1,35 +1,45 @@
 export type NodeType =
-  | "person"
-  | "idea"
-  | "discovery"
-  | "invention"
-  | "publication"
-  | "theory"
-  | "institution"
-  | "event"
-  | "place"
   | "discipline"
-  | "technology";
+  | "discovery"
+  | "event"
+  | "idea"
+  | "institution"
+  | "invention"
+  | "person"
+  | "place"
+  | "publication"
+  | "technology"
+  | "theory";
 
 export type RelationshipType =
+  | "authored"
+  | "belonged_to"
+  | "collaborated_with"
+  | "criticized"
+  | "discovered"
+  | "enabled"
+  | "formalized"
+  | "founded"
+  | "improved"
   | "influenced"
   | "inspired"
-  | "mentored"
-  | "collaborated_with"
-  | "authored"
-  | "published"
-  | "discovered"
   | "invented"
-  | "enabled"
-  | "criticized"
+  | "mentored"
+  | "popularized"
+  | "published"
   | "refined"
-  | "formalized"
-  | "improved"
-  | "founded"
-  | "belonged_to"
-  | "responded_to"
-  | "popularized";
+  | "responded_to";
 
+export type RelationshipDirectness =
+  | "direct"
+  | "indirect"
+  | "summary";
+
+export type EvidenceType =
+  | "primary_source"
+  | "secondary_source"
+  | "scholarly_consensus"
+  | "editorial_summary";
 export interface KnowledgeNode {
   id: string;
   name: string;
@@ -49,6 +59,8 @@ export interface KnowledgeEdge {
   relationship: RelationshipType;
   description?: string;
   confidence?: number;
+  directness?: RelationshipDirectness;
+  evidenceType?: EvidenceType;
 }
 
 export interface KnowledgeGraphData {
