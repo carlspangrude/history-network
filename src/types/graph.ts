@@ -40,6 +40,11 @@ export type EvidenceType =
   | "secondary_source"
   | "scholarly_consensus"
   | "editorial_summary";
+
+export interface Epigraph {
+  text: string;
+  attribution?: string;
+}
 export interface KnowledgeNode {
   id: string;
   name: string;
@@ -50,6 +55,7 @@ export interface KnowledgeNode {
   importance?: number;
   disciplines?: string[];
   tags?: string[];
+  epigraph?: Epigraph;
 }
 
 export interface KnowledgeEdge {

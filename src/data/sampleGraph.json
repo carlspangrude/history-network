@@ -116,6 +116,9 @@
     {
       "id": "einstein",
       "name": "Albert Einstein",
+      "epigraph": {
+        "text": "Imagination is more important than knowledge."
+      },
       "type": "person",
       "importance": 10,
       "description": "German-born theoretical physicist whose work reshaped modern understandings of space, time, gravity, and light.",

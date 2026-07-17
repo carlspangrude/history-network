@@ -479,6 +479,12 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
               </button>
 
               <h2>{selectedNode.name}</h2>
+              
+              {selectedNode.epigraph?.text && (
+                <p className="details-epigraph">
+                  “{selectedNode.epigraph.text}”
+                </p>
+              )}
 
               {selectedNodeYearRange && (
                 <p className="details-years">

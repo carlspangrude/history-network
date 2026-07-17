@@ -53,6 +53,7 @@
   --text-description: #c2c2c2;
   --text-muted: #a8a8a8;
   --text-subtle: #969696;
+  --text-epigraph: #9a9a9a;
   --text-placeholder: #9f9f9f;
   --text-dim: #888;
   --text-link: #8fbcff;
@@ -483,6 +484,25 @@ h2 {
   margin-top: 8px;
   color: var(--text-subtle);
   font-size: 0.8rem;
+}
+
+.details-epigraph {
+  color: var(--text-epigraph);
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0.4rem 0 0.65rem;
+}
+
+.details-epigraph p {
+  margin: 0;
+}
+
+.details-epigraph cite {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
 }
 
 .empty-details {
