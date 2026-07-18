@@ -101,10 +101,6 @@ h2 {
   height: 100vh;
 }
 
-.app-tabs {
-  border-bottom: 1px solid var(--border-default);
-}
-
 .main {
   display: grid;
   grid-template-columns:
@@ -152,19 +148,66 @@ h2 {
 }
 
 /* ==========================================================================
+   Application Tabs
+   ========================================================================== */
+   
+.app-tabs {
+  align-items: center;
+  background: var(--background-header);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.app-tab {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 0.9rem;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.app-tab:hover {
+  background: var(--background-control-hover);
+  color: var(--text-primary);
+}
+
+.app-tab:focus-visible {
+  outline: 2px solid var(--relationship-highlight);
+  outline-offset: 2px;
+}
+
+.app-tab--active {
+  background: var(--relationship-highlight-background);
+  border-color: var(--relationship-highlight);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 
-   .header {
-    position: relative;
-    z-index: 20;
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    border-bottom: 1px solid var(--border-medium);
-    background: var(--background-header);
+  .header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-medium);
+  background: var(--background-header);
   }
   
   .header h1 {
