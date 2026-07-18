@@ -93,8 +93,16 @@ h2 {
 
 .app {
   display: grid;
-  grid-template-rows: var(--header-height) 1fr var(--timeline-height);
+  grid-template-rows:
+    var(--header-height)
+    auto
+    1fr
+    var(--timeline-height);
   height: 100vh;
+}
+
+.app-tabs {
+  border-bottom: 1px solid var(--border-default);
 }
 
 .main {

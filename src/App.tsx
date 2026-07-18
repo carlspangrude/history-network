@@ -5,12 +5,17 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Timeline from "./components/Timeline";
 import { useKnowledgeGraph } from "./hooks/useKnowledgeGraph";
+import CitationsView from "./components/CitationsView";
+
+type AppView = "explore" | "citations";
 
 function App() {
   // ===========================================================================
   // State
   // ===========================================================================
 
+  const [activeView, setActiveView] =
+    useState<AppView>("explore");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
@@ -60,64 +65,102 @@ function App() {
   // ===========================================================================
   // Render
   // ===========================================================================
-
+  
   return (
     <div className="app">
       <Header
         nodes={graphData.nodes}
         onNodeSelect={handleNodeSelect}
       />
-
-      <main
-        className={[
-          "main",
-          isSidebarOpen ? "sidebar-open" : "sidebar-closed",
-          isDetailsOpen ? "details-open" : "details-closed",
-          shouldUseWideDetails 
-            ? "details-wide" 
-            : "details-standard",
-        ].join(" ")}
-      >
-        <Sidebar
-          availableDisciplines={availableDisciplines}
-          isOpen={isSidebarOpen}
-          visibleDisciplines={visibleDisciplines}
-          visibleNodeTypes={visibleNodeTypes}
-          onDisciplineToggle={handleDisciplineToggle}
-          onNodeTypeToggle={handleNodeTypeToggle}
-          onToggle={() => 
-            setIsSidebarOpen((current) => !current)
+  
+      <nav className="app-tabs" aria-label="Application views">
+        <button
+          className={
+            activeView === "explore"
+              ? "app-tab app-tab--active"
+              : "app-tab"
           }
-        />
-
-        <GraphCanvas
-          graphData={graphData}
-          selectedNode={selectedNode}
-          selectedRelationshipId={selectedRelationshipId}
-          onNodeSelect={handleNodeSelect}
-          onRelationshipOpen={handleRelationshipOpen}
-          onSelectionClear={handleSelectionClear}
-        />
-
-        <DetailsPanel
-          isOpen={isDetailsOpen}
-          selectedNode={selectedNode}
-          selectedRelationship={selectedRelationship}
-          selectedRelationshipId={selectedRelationshipId}
-          relationships={selectedRelationships}
-          graphNodes={graphData.nodes}
-          onNodeSelect={handleNodeSelect}
-          onRelationshipSelect={handleRelationshipSelect}
-          onSelectionClear={handleSelectionClear}
-          onToggle={() => 
-            setIsDetailsOpen((current) => !current)
+          type="button"
+          aria-current={
+            activeView === "explore" ? "page" : undefined
           }
-        />
-      </main>
-
-      <Timeline />
+          onClick={() => setActiveView("explore")}
+        >
+          Explore
+        </button>
+  
+        <button
+          className={
+            activeView === "citations"
+              ? "app-tab app-tab--active"
+              : "app-tab"
+          }
+          type="button"
+          aria-current={
+            activeView === "citations" ? "page" : undefined
+          }
+          onClick={() => setActiveView("citations")}
+        >
+          Citations
+        </button>
+      </nav>
+  
+      {activeView === "explore" ? (
+        <>
+          <main
+            className={[
+              "main",
+              isSidebarOpen ? "sidebar-open" : "sidebar-closed",
+              isDetailsOpen ? "details-open" : "details-closed",
+              shouldUseWideDetails
+                ? "details-wide"
+                : "details-standard",
+            ].join(" ")}
+          >
+            <Sidebar
+              availableDisciplines={availableDisciplines}
+              isOpen={isSidebarOpen}
+              visibleDisciplines={visibleDisciplines}
+              visibleNodeTypes={visibleNodeTypes}
+              onDisciplineToggle={handleDisciplineToggle}
+              onNodeTypeToggle={handleNodeTypeToggle}
+              onToggle={() =>
+                setIsSidebarOpen((current) => !current)
+              }
+            />
+  
+            <GraphCanvas
+              graphData={graphData}
+              selectedNode={selectedNode}
+              selectedRelationshipId={selectedRelationshipId}
+              onNodeSelect={handleNodeSelect}
+              onRelationshipOpen={handleRelationshipOpen}
+              onSelectionClear={handleSelectionClear}
+            />
+  
+            <DetailsPanel
+              isOpen={isDetailsOpen}
+              selectedNode={selectedNode}
+              selectedRelationship={selectedRelationship}
+              selectedRelationshipId={selectedRelationshipId}
+              relationships={selectedRelationships}
+              graphNodes={graphData.nodes}
+              onNodeSelect={handleNodeSelect}
+              onRelationshipSelect={handleRelationshipSelect}
+              onSelectionClear={handleSelectionClear}
+              onToggle={() =>
+                setIsDetailsOpen((current) => !current)
+              }
+            />
+          </main>
+  
+          <Timeline />
+        </>
+      ) : (
+        <CitationsView />
+      )}
     </div>
   );
-}
-
-export default App;
+  }
+  
+  export default App;
