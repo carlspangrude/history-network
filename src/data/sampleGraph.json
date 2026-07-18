@@ -3,6 +3,9 @@
     {
       "id": "galileo",
       "name": "Galileo Galilei",
+      "epigraph": {
+        "text": "Measure what is measurable, and make measurable what is not so."
+      },
       "type": "person",
       "importance": 7,
       "description": "Italian astronomer and physicist whose observations and experiments helped transform early modern science.",
@@ -20,6 +23,9 @@
     {
       "id": "newton",
       "name": "Isaac Newton",
+      "epigraph": {
+        "text": "If I have seen further it is by standing on the shoulders of giants."
+      },
       "type": "person",
       "importance": 10,
       "description": "English mathematician and physicist who developed classical mechanics and made foundational contributions to optics and calculus.",
@@ -150,6 +156,9 @@
     {
       "id": "socrates",
       "name": "Socrates",
+      "epigraph": {
+        "text": "The unexamined life is not worth living."
+      },
       "type": "person",
       "importance": 8,
       "description": "Ancient Greek philosopher associated with a method of questioning that examined ethical concepts, assumptions, and definitions.",
@@ -167,6 +176,9 @@
     {
       "id": "plato",
       "name": "Plato",
+      "epigraph": {
+        "text": "Until philosophers rule as kings... cities will have no rest from evils."
+      },
       "type": "person",
       "importance": 10,
       "description": "Ancient Greek philosopher whose dialogues explored ethics, politics, knowledge, metaphysics, and the nature of philosophical inquiry.",
@@ -200,6 +212,9 @@
     {
       "id": "aristotle",
       "name": "Aristotle",
+      "epigraph": {
+        "text": "All men by nature desire to know."
+      },
       "type": "person",
       "importance": 10,
       "description": "Ancient Greek philosopher whose work addressed logic, ethics, politics, biology, metaphysics, rhetoric, and the study of nature.",
@@ -272,6 +287,9 @@
     {
       "id": "francis-bacon",
       "name": "Francis Bacon",
+      "epigraph": {
+        "text": "Knowledge itself is power."
+      },
       "type": "person",
       "importance": 8,
       "description": "English philosopher and statesman who promoted systematic observation, experiment, and inductive inquiry as foundations for advancing knowledge.",
@@ -290,6 +308,9 @@
     {
       "id": "rene-descartes",
       "name": "René Descartes",
+      "epigraph": {
+        "text": "Cogito, ergo sum."
+      },
       "type": "person",
       "importance": 9,
       "description": "French philosopher and mathematician who sought secure foundations for knowledge through systematic doubt, reason, and mathematical method.",
