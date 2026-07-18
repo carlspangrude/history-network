@@ -105,60 +105,74 @@ function App() {
         </button>
       </nav>
   
-      {activeView === "explore" ? (
-        <>
-          <main
-            className={[
-              "main",
-              isSidebarOpen ? "sidebar-open" : "sidebar-closed",
-              isDetailsOpen ? "details-open" : "details-closed",
-              shouldUseWideDetails
-                ? "details-wide"
-                : "details-standard",
-            ].join(" ")}
-          >
-            <Sidebar
-              availableDisciplines={availableDisciplines}
-              isOpen={isSidebarOpen}
-              visibleDisciplines={visibleDisciplines}
-              visibleNodeTypes={visibleNodeTypes}
-              onDisciplineToggle={handleDisciplineToggle}
-              onNodeTypeToggle={handleNodeTypeToggle}
-              onToggle={() =>
-                setIsSidebarOpen((current) => !current)
-              }
-            />
-  
-            <GraphCanvas
-              graphData={graphData}
-              selectedNode={selectedNode}
-              selectedRelationshipId={selectedRelationshipId}
-              onNodeSelect={handleNodeSelect}
-              onRelationshipOpen={handleRelationshipOpen}
-              onSelectionClear={handleSelectionClear}
-            />
-  
-            <DetailsPanel
-              isOpen={isDetailsOpen}
-              selectedNode={selectedNode}
-              selectedRelationship={selectedRelationship}
-              selectedRelationshipId={selectedRelationshipId}
-              relationships={selectedRelationships}
-              graphNodes={graphData.nodes}
-              onNodeSelect={handleNodeSelect}
-              onRelationshipSelect={handleRelationshipSelect}
-              onSelectionClear={handleSelectionClear}
-              onToggle={() =>
-                setIsDetailsOpen((current) => !current)
-              }
-            />
-          </main>
-  
-          <Timeline />
-        </>
-      ) : (
+      <div
+        className={
+          activeView === "explore"
+            ? "explore-view"
+            : "explore-view explore-view--hidden"
+        }
+        aria-hidden={activeView !== "explore"}
+      >
+        <main
+          className={[
+            "main",
+            isSidebarOpen ? "sidebar-open" : "sidebar-closed",
+            isDetailsOpen ? "details-open" : "details-closed",
+            shouldUseWideDetails
+              ? "details-wide"
+              : "details-standard",
+          ].join(" ")}
+        >
+          <Sidebar
+            availableDisciplines={availableDisciplines}
+            isOpen={isSidebarOpen}
+            visibleDisciplines={visibleDisciplines}
+            visibleNodeTypes={visibleNodeTypes}
+            onDisciplineToggle={handleDisciplineToggle}
+            onNodeTypeToggle={handleNodeTypeToggle}
+            onToggle={() =>
+              setIsSidebarOpen((current) => !current)
+            }
+          />
+
+          <GraphCanvas
+            graphData={graphData}
+            selectedNode={selectedNode}
+            selectedRelationshipId={selectedRelationshipId}
+            onNodeSelect={handleNodeSelect}
+            onRelationshipOpen={handleRelationshipOpen}
+            onSelectionClear={handleSelectionClear}
+          />
+
+          <DetailsPanel
+            isOpen={isDetailsOpen}
+            selectedNode={selectedNode}
+            selectedRelationship={selectedRelationship}
+            selectedRelationshipId={selectedRelationshipId}
+            relationships={selectedRelationships}
+            graphNodes={graphData.nodes}
+            onNodeSelect={handleNodeSelect}
+            onRelationshipSelect={handleRelationshipSelect}
+            onSelectionClear={handleSelectionClear}
+            onToggle={() =>
+              setIsDetailsOpen((current) => !current)
+            }
+          />
+        </main>
+
+        <Timeline />
+      </div>
+
+      <div
+        className={
+          activeView === "citations"
+            ? "citations-view-container"
+            : "citations-view-container citations-view-container--hidden"
+        }
+        aria-hidden={activeView !== "citations"}
+      >
         <CitationsView />
-      )}
+      </div>
     </div>
   );
   }

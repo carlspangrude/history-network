@@ -96,7 +96,7 @@ h2 {
   grid-template-rows:
     var(--header-height)
     auto
-    1fr
+    minmax(0, 1fr)
     var(--timeline-height);
   height: 100vh;
 }
@@ -145,6 +145,30 @@ h2 {
     var(--panel-closed-width)
     minmax(0, 1fr)
     var(--details-open-width);
+}
+
+.explore-view,
+.citations-view-container {
+  grid-column: 1;
+  grid-row: 3 / 5;
+}
+
+.explore-view {
+  display: grid;
+  grid-template-rows: 1fr var(--timeline-height);
+  min-height: 0;
+}
+
+.explore-view--hidden,
+.citations-view-container--hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.citations-view-container {
+  min-height: 0;
+  overflow: auto;
 }
 
 /* ==========================================================================
