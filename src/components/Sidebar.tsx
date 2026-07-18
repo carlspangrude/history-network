@@ -91,7 +91,6 @@ function Sidebar({
 
       {isOpen && (
         <div className="panel-content">
-          <p className="eyebrow">Explore</p>
           <h2>Filters</h2>
 
           {/* ================================================================
@@ -110,7 +109,7 @@ function Sidebar({
                 )
               }
             >
-              <span>Node Type</span>
+              <span>Node Types</span>
 
               <span
                 className="filter-section__chevron"
@@ -177,7 +176,7 @@ function Sidebar({
                 )
               }
             >
-              <span>Discipline</span>
+              <span>Disciplines</span>
 
               <span
                 className="filter-section__chevron"

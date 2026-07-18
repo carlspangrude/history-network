@@ -13,18 +13,6 @@ interface UseKnowledgeGraphOptions {
   onSelectionOpened: () => void;
 }
 
-const INITIAL_NODE_TYPES: NodeType[] = [
-  "person",
-  "publication",
-  "theory",
-];
-
-const INITIAL_DISCIPLINES = Array.from(
-  new Set(
-    sampleGraph.nodes.flatMap((node) => node.disciplines ?? []),
-  ),
-).sort();
-
 function getEndpointId(endpoint: string | GraphNode): string {
   return typeof endpoint === "string" ? endpoint : endpoint.id;
 }
@@ -33,25 +21,6 @@ export function useKnowledgeGraph({
   onSelectionCleared,
   onSelectionOpened,
 }: UseKnowledgeGraphOptions) {
-  // ===========================================================================
-  // State
-  // ===========================================================================
-
-  const [selectedNode, setSelectedNode] =
-    useState<GraphNode | null>(null);
-
-  const [selectedRelationshipId, setSelectedRelationshipId] =
-    useState<string | null>(null);
-
-  const [visibleDisciplines, setVisibleDisciplines] =
-    useState<Set<string>>(
-      () => new Set(INITIAL_DISCIPLINES),
-    );
-
-  const [visibleNodeTypes, setVisibleNodeTypes] =
-    useState<Set<NodeType>>(
-      () => new Set(INITIAL_NODE_TYPES),
-    );
 
   // ===========================================================================
   // Base Graph Data
@@ -69,17 +38,37 @@ export function useKnowledgeGraph({
   // Available Filters
   // ===========================================================================
 
-  const availableDisciplines = useMemo(() => {
-    const disciplines = new Set<string>();
+  const availableDisciplines = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          fullGraphData.nodes.flatMap(
+            (node) => node.disciplines ?? [],
+          ),
+        ),
+      ).sort(),
+    [fullGraphData.nodes],
+  );
 
-    fullGraphData.nodes.forEach((node) => {
-      node.disciplines?.forEach((discipline) => {
-        disciplines.add(discipline);
-      });
-    });
+  // ===========================================================================
+  // State
+  // ===========================================================================
 
-    return Array.from(disciplines).sort();
-  }, [fullGraphData.nodes]);
+  const [selectedNode, setSelectedNode] =
+    useState<GraphNode | null>(null);
+
+  const [selectedRelationshipId, setSelectedRelationshipId] =
+    useState<string | null>(null);
+
+  const [visibleDisciplines, setVisibleDisciplines] =
+    useState<Set<string>>(
+      () => new Set(availableDisciplines),
+    );
+
+  const [visibleNodeTypes, setVisibleNodeTypes] =
+    useState<Set<NodeType>>(
+      () => new Set(FILTERABLE_NODE_TYPES),
+    );
 
   // ===========================================================================
   // Filtered Graph
