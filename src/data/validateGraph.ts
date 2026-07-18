@@ -2,8 +2,10 @@ import type {
   EvidenceType,
   KnowledgeGraphData,
   KnowledgeNode,
+  KnowledgeSource,
   NodeType,
   RelationshipType,
+  SourceType,
   RelationshipDirectness,
 } from "../types/graph";
 
@@ -53,6 +55,13 @@ const VALID_EVIDENCE_TYPES = new Set<EvidenceType>([
   "scholarly_consensus",
   "editorial_summary",
 ]);
+
+const VALID_SOURCE_TYPES: SourceType[] = [
+  "primary",
+  "secondary",
+  "reference",
+  "web",
+];
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
@@ -131,27 +140,124 @@ function validateNode(
   }
 }
 
-export function validateKnowledgeGraph(
-  graph: KnowledgeGraphData,
-): KnowledgeGraphData {
-  const errors: string[] = [];
+function validateSource(
+  source: KnowledgeSource,
+  sourceIndex: number,
+  errors: string[],
+): void {
+  const location = `Source at index ${sourceIndex}`;
 
-  if (!Array.isArray(graph.nodes)) {
-    errors.push('Graph property "nodes" must be an array.');
+  if (!source.id || typeof source.id !== "string") {
+    errors.push(`${location} must have a non-empty string ID.`);
   }
 
-  if (!Array.isArray(graph.edges)) {
-    errors.push('Graph property "edges" must be an array.');
-  }
-
-  if (errors.length > 0) {
-    throw new Error(
-      `Knowledge graph validation failed:\n- ${errors.join("\n- ")}`,
+  if (!source.title || typeof source.title !== "string") {
+    errors.push(
+      `${location} "${source.id}" must have a non-empty title.`,
     );
   }
 
+  if (
+    !source.sourceType ||
+    !VALID_SOURCE_TYPES.includes(source.sourceType)
+  ) {
+    errors.push(
+      `${location} "${source.id}" has invalid sourceType ` +
+        `"${String(source.sourceType)}".`,
+    );
+  }
+
+  if (
+    source.authors !== undefined &&
+    (!Array.isArray(source.authors) ||
+      source.authors.some(
+        (author) =>
+          typeof author !== "string" || author.trim().length === 0,
+      ))
+  ) {
+    errors.push(
+      `${location} "${source.id}" must have an authors array ` +
+        `containing only non-empty strings.`,
+    );
+  }
+
+  if (
+    source.publisher !== undefined &&
+    (typeof source.publisher !== "string" ||
+      source.publisher.trim().length === 0)
+  ) {
+    errors.push(
+      `${location} "${source.id}" has an invalid publisher.`,
+    );
+  }
+
+  if (
+    source.publicationYear !== undefined &&
+    (!Number.isInteger(source.publicationYear) ||
+      source.publicationYear === 0)
+  ) {
+    errors.push(
+      `${location} "${source.id}" must have an integer publicationYear ` +
+        `and may not use historical year zero.`,
+    );
+  }
+
+  if (
+    source.note !== undefined &&
+    (typeof source.note !== "string" ||
+      source.note.trim().length === 0)
+  ) {
+    errors.push(
+      `${location} "${source.id}" has an invalid note.`,
+    );
+  }
+
+  if (source.url !== undefined) {
+    if (!isNonEmptyString(source.url)) {
+      errors.push(
+        `${location} "${source.id}" has an invalid URL.`,
+      );
+    } else {
+      try {
+        const parsedUrl = new URL(source.url);
+  
+        if (
+          parsedUrl.protocol !== "http:" &&
+          parsedUrl.protocol !== "https:"
+        ) {
+          errors.push(
+            `${location} "${source.id}" must use an HTTP or HTTPS URL.`,
+          );
+        }
+      } catch {
+        errors.push(
+          `${location} "${source.id}" must use a valid HTTP or HTTPS URL.`,
+        );
+      }
+    }
+  }
+}
+
+export function validateKnowledgeGraph(
+  graph: KnowledgeGraphData,
+): KnowledgeGraphData {
+
+  if (!Array.isArray(graph.nodes)) {
+    throw new Error('Graph property "nodes" must be an array.');
+  }
+
+  if (!Array.isArray(graph.edges)) {
+    throw new Error('Graph property "edges" must be an array.');
+  }
+
+  if (!Array.isArray(graph.sources)) {
+    throw new Error("Graph data must include a sources array.");
+  }
+
+  const errors: string[] = [];
   const nodeIds = new Set<string>();
   const edgeIds = new Set<string>();
+  const sourceIds = new Set<string>();
 
   graph.nodes.forEach((node, nodeIndex) => {
     validateNode(node, nodeIndex, errors);
@@ -163,19 +269,31 @@ export function validateKnowledgeGraph(
     nodeIds.add(node.id);
   });
 
+  graph.sources.forEach((source, index) => {
+    validateSource(source, index, errors);
+
+    if (sourceIds.has(source.id)) {
+      errors.push(
+        `Duplicate source ID found: "${source.id}".`,
+      );
+    }
+
+    sourceIds.add(source.id);
+  });
+
   graph.edges.forEach((edge, edgeIndex) => {
     const label = `Edge at index ${edgeIndex}`;
-
+  
     if (!isNonEmptyString(edge.id)) {
       errors.push(`${label} must have a non-empty id.`);
     }
-
+  
     if (edgeIds.has(edge.id)) {
       errors.push(`Duplicate edge id "${edge.id}".`);
     }
-
+  
     edgeIds.add(edge.id);
-
+  
     if (!isNonEmptyString(edge.source)) {
       errors.push(`${label} "${edge.id}" must have a source.`);
     } else if (!nodeIds.has(edge.source)) {
@@ -183,7 +301,7 @@ export function validateKnowledgeGraph(
         `${label} "${edge.id}" references missing source node "${edge.source}".`,
       );
     }
-
+  
     if (!isNonEmptyString(edge.target)) {
       errors.push(`${label} "${edge.id}" must have a target.`);
     } else if (!nodeIds.has(edge.target)) {
@@ -191,13 +309,47 @@ export function validateKnowledgeGraph(
         `${label} "${edge.id}" references missing target node "${edge.target}".`,
       );
     }
-
+  
+    if (edge.sourceIds !== undefined) {
+      if (!Array.isArray(edge.sourceIds)) {
+        errors.push(
+          `Edge "${edge.id}" must have a sourceIds array.`,
+        );
+      } else {
+        const edgeSourceIds = new Set<string>();
+  
+        edge.sourceIds.forEach((sourceId) => {
+          if (!isNonEmptyString(sourceId)) {
+            errors.push(
+              `Edge "${edge.id}" contains an invalid source ID.`,
+            );
+  
+            return;
+          }
+  
+          if (edgeSourceIds.has(sourceId)) {
+            errors.push(
+              `Edge "${edge.id}" references source "${sourceId}" more than once.`,
+            );
+          }
+  
+          if (!sourceIds.has(sourceId)) {
+            errors.push(
+              `Edge "${edge.id}" references missing source "${sourceId}".`,
+            );
+          }
+  
+          edgeSourceIds.add(sourceId);
+        });
+      }
+    }
+  
     if (!VALID_RELATIONSHIP_TYPES.has(edge.relationship)) {
       errors.push(
         `${label} "${edge.id}" has unsupported relationship "${edge.relationship}".`,
       );
     }
-
+  
     if (
       edge.directness !== undefined &&
       !VALID_RELATIONSHIP_DIRECTNESS.has(edge.directness)
@@ -206,7 +358,7 @@ export function validateKnowledgeGraph(
         `${label} "${edge.id}" has invalid directness "${edge.directness}".`,
       );
     }
-    
+  
     if (
       edge.evidenceType !== undefined &&
       !VALID_EVIDENCE_TYPES.has(edge.evidenceType)
@@ -215,7 +367,7 @@ export function validateKnowledgeGraph(
         `${label} "${edge.id}" has invalid evidenceType "${edge.evidenceType}".`,
       );
     }
-
+  
     if (
       edge.confidence !== undefined &&
       (!Number.isFinite(edge.confidence) ||

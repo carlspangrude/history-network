@@ -725,7 +725,10 @@
       "description": "Aquinas drew extensively on Aristotle while integrating Aristotelian concepts into a Christian philosophical and theological system.",
       "confidence": 0.98,
       "directness": "direct",
-      "evidenceType": "scholarly_consensus"
+      "evidenceType": "scholarly_consensus",
+      "sourceIds": [
+        "aquinas-aristotle-reference"
+      ]
     },
     {
       "id": "aquinas-natural-rights",
@@ -744,7 +747,10 @@
       "relationship": "authored",
       "confidence": 1,
       "directness": "direct",
-      "evidenceType": "primary_source"
+      "evidenceType": "primary_source",
+      "sourceIds": [
+        "bacon-novum-organum-1620"
+      ]
     },
     {
       "id": "novum-organum-empiricism",
@@ -839,7 +845,12 @@
       "source": "john-locke",
       "target": "essay-human-understanding",
       "relationship": "authored",
-      "confidence": 1
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source",
+      "sourceIds": [
+        "locke-essay-human-understanding-1689"
+      ]
     },
     {
       "id": "essay-empiricism",
@@ -927,7 +938,12 @@
       "target": "immanuel-kant",
       "relationship": "influenced",
       "description": "Kant regarded Hume's challenge concerning causality and metaphysics as a major stimulus for his critical philosophy.",
-      "confidence": 0.98
+      "confidence": 0.98,
+      "directness": "direct",
+      "evidenceType": "primary_source",
+      "sourceIds": [
+        "kant-prolegomena-1783"
+      ]
     },
     {
       "id": "kant-critique",
@@ -1019,6 +1035,45 @@
       "confidence": 0.98,
       "directness": "summary",
       "evidenceType": "editorial_summary"
+    }
+  ],
+  "sources": [
+    {
+      "id": "bacon-novum-organum-1620",
+      "title": "Novum Organum",
+      "authors": [
+        "Francis Bacon"
+      ],
+      "publicationYear": 1620,
+      "sourceType": "primary",
+      "note": "Primary text supporting Bacon's authorship and his program of inductive inquiry."
+    },
+    {
+      "id": "locke-essay-human-understanding-1689",
+      "title": "An Essay Concerning Human Understanding",
+      "authors": [
+        "John Locke"
+      ],
+      "publicationYear": 1689,
+      "sourceType": "primary",
+      "note": "Primary text supporting Locke's authorship and his account of knowledge grounded in experience and reflection."
+    },
+    {
+      "id": "kant-prolegomena-1783",
+      "title": "Prolegomena to Any Future Metaphysics",
+      "authors": [
+        "Immanuel Kant"
+      ],
+      "publicationYear": 1783,
+      "sourceType": "primary",
+      "note": "Kant explicitly discusses the importance of Hume's challenge to his philosophical development."
+    },
+    {
+      "id": "aquinas-aristotle-reference",
+      "title": "Thomas Aquinas",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "sourceType": "reference",
+      "note": "Reference overview of Aquinas's extensive engagement with Aristotelian philosophy."
     }
   ]
 }

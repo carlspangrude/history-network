@@ -41,6 +41,23 @@ export type EvidenceType =
   | "scholarly_consensus"
   | "editorial_summary";
 
+export type SourceType =
+| "primary"
+| "secondary"
+| "reference"
+| "web";
+
+export interface KnowledgeSource {
+  id: string;
+  title: string;
+  authors?: string[];
+  publisher?: string;
+  publicationYear?: number;
+  url?: string;
+  sourceType: SourceType;
+  note?: string;
+}
+
 export interface Epigraph {
   text: string;
   attribution?: string;
@@ -67,11 +84,13 @@ export interface KnowledgeEdge {
   confidence?: number;
   directness?: RelationshipDirectness;
   evidenceType?: EvidenceType;
+  sourceIds?: string[];
 }
 
 export interface KnowledgeGraphData {
   nodes: KnowledgeNode[];
   edges: KnowledgeEdge[];
+  sources: KnowledgeSource[];
 }
 
 export interface KnowledgeGraph {
