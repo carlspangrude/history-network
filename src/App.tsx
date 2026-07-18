@@ -33,8 +33,10 @@ function App() {
     visibleDisciplines,
     visibleNodeTypes,
     handleDisciplineToggle,
+    handleDisciplineSelectAll,
     handleNodeSelect,
     handleNodeTypeToggle,
+    handleNodeTypeSelectAll,
     handleRelationshipOpen,
     handleRelationshipSelect,
     handleSelectionClear,
@@ -129,7 +131,9 @@ function App() {
             visibleDisciplines={visibleDisciplines}
             visibleNodeTypes={visibleNodeTypes}
             onDisciplineToggle={handleDisciplineToggle}
+            onDisciplineSelectAll={handleDisciplineSelectAll}
             onNodeTypeToggle={handleNodeTypeToggle}
+            onNodeTypeSelectAll={handleNodeTypeSelectAll}
             onToggle={() =>
               setIsSidebarOpen((current) => !current)
             }

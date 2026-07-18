@@ -6,6 +6,7 @@ import type {
   KnowledgeEdge,
   NodeType,
 } from "../types/graph";
+import { FILTERABLE_NODE_TYPES } from "../constants/graphVisuals";
 
 interface UseKnowledgeGraphOptions {
   onSelectionCleared: () => void;
@@ -315,6 +316,68 @@ export function useKnowledgeGraph({
     }
   };
 
+  const handleNodeTypeSelectAll = (selected: boolean) => {
+    const nextNodeTypes = selected
+      ? new Set<NodeType>(FILTERABLE_NODE_TYPES)
+      : new Set<NodeType>();
+  
+    setVisibleNodeTypes(nextNodeTypes);
+  
+    const selectedNodeWillRemainVisible =
+      !selectedNode ||
+      isNodeVisibleWithFilters(
+        selectedNode,
+        nextNodeTypes,
+        visibleDisciplines,
+      );
+  
+    const selectedRelationshipWillRemainVisible =
+      !selectedRelationship ||
+      isRelationshipVisibleWithFilters(
+        selectedRelationship,
+        nextNodeTypes,
+        visibleDisciplines,
+      );
+  
+    if (
+      !selectedNodeWillRemainVisible ||
+      !selectedRelationshipWillRemainVisible
+    ) {
+      handleSelectionClear();
+    }
+  };
+  
+  const handleDisciplineSelectAll = (selected: boolean) => {
+    const nextDisciplines = selected
+      ? new Set<string>(availableDisciplines)
+      : new Set<string>();
+  
+    setVisibleDisciplines(nextDisciplines);
+  
+    const selectedNodeWillRemainVisible =
+      !selectedNode ||
+      isNodeVisibleWithFilters(
+        selectedNode,
+        visibleNodeTypes,
+        nextDisciplines,
+      );
+  
+    const selectedRelationshipWillRemainVisible =
+      !selectedRelationship ||
+      isRelationshipVisibleWithFilters(
+        selectedRelationship,
+        visibleNodeTypes,
+        nextDisciplines,
+      );
+  
+    if (
+      !selectedNodeWillRemainVisible ||
+      !selectedRelationshipWillRemainVisible
+    ) {
+      handleSelectionClear();
+    }
+  };
+
   // ===========================================================================
   // Public API
   // ===========================================================================
@@ -329,8 +392,10 @@ export function useKnowledgeGraph({
     visibleDisciplines,
     visibleNodeTypes,
     handleDisciplineToggle,
+    handleDisciplineSelectAll,
     handleNodeSelect,
     handleNodeTypeToggle,
+    handleNodeTypeSelectAll,
     handleRelationshipOpen,
     handleRelationshipSelect,
     handleSelectionClear,

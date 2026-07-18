@@ -27,3 +27,12 @@ export const NODE_TYPE_LABELS: Record<NodeType, string> = {
   discipline: "Discipline",
   technology: "Technology",
 };
+
+export const FILTERABLE_NODE_TYPES: NodeType[] = [
+  "discovery",
+  "institution",
+  "invention",
+  "person",
+  "publication",
+  "theory",
+];
