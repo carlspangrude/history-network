@@ -4,7 +4,11 @@ import ForceGraph2D, {
   type LinkObject,
   type NodeObject,
 } from "react-force-graph-2d";
-import { NODE_TYPE_COLORS } from "../constants/graphVisuals";
+import {
+  MOVEMENT_NODE_OUTLINE_COLOR,
+  NODE_TYPE_COLORS,
+  GRAPH_BACKGROUND_COLOR,
+} from "../constants/graphVisuals";
 import type {
   ForceGraphData,
   GraphLink,
@@ -309,18 +313,43 @@ const [dimensions, setDimensions] = useState({
             
               const nodeRadius = Math.sqrt(getNodeSize(node));
             
-              // Draw movement nodes as hollow circles.
               if (node.type === "movement") {
+                const isSelected = node.id === selectedNode?.id;
+                const renderedColor = getNodeColor(node);
+              
+                const isMuted =
+                  Boolean(selectedNode) &&
+                  !isSelected &&
+                  !connectedNodeIds.has(node.id);
+              
+                const isRelationshipMuted =
+                  Boolean(selectedRelationshipId) &&
+                  !selectedRelationshipNodeIds.has(node.id);
+              
+                const muted = isMuted || isRelationshipMuted;
+              
                 context.beginPath();
                 context.arc(node.x, node.y, nodeRadius, 0, 2 * Math.PI);
-                context.strokeStyle = getNodeColor(node);
+              
+                context.fillStyle = isSelected
+                  ? renderedColor
+                  : muted
+                    ? renderedColor
+                    : GRAPH_BACKGROUND_COLOR;
+              
+                context.fill();
+              
+                context.strokeStyle = muted
+                  ? renderedColor
+                  : MOVEMENT_NODE_OUTLINE_COLOR;
+              
                 context.lineWidth = 2 / globalScale;
                 context.stroke();
               }
-            
-              // Draw the yellow selection ring around the selected node.
+
+              // Draw the selection ring around the selected node.
               if (node.id === selectedNode?.id) {
-                const ringGap = 3 / globalScale;
+                const ringGap = 4 / globalScale;
                 const ringRadius = nodeRadius + ringGap;
             
                 context.beginPath();
