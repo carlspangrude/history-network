@@ -123,7 +123,7 @@
       "id": "einstein",
       "name": "Albert Einstein",
       "epigraph": {
-        "text": "Imagination is more important than knowledge."
+        "text": "As our circle of knowledge expands, so does the circumference of darkness surrounding it."
       },
       "type": "person",
       "importance": 10,
@@ -1076,7 +1076,9 @@
       "type": "person",
       "importance": 10,
       "description": "German theoretical physicist who founded quantum theory by proposing that electromagnetic energy is emitted and absorbed in discrete quantities called quanta. His solution to the black-body radiation problem introduced Planck's constant and marked a decisive break from classical physics, providing the conceptual starting point for quantum mechanics.",
-      "epigraph": "A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die.",
+      "epigraph": {
+        "text": "A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die."
+      },
       "startYear": 1858,
       "endYear": 1947,
       "disciplines": [
@@ -1100,7 +1102,9 @@
       "type": "person",
       "importance": 10,
       "description": "Polish-born French physicist and chemist who pioneered the scientific study of radioactivity and discovered the elements polonium and radium with Pierre Curie. Her research demonstrated that radiation originated within atoms, helping overturn the conception of atoms as indivisible and establishing foundations for nuclear physics, radiochemistry, and radiation medicine.",
-      "epigraph": "Nothing in life is to be feared; it is only to be understood.",
+      "epigraph": {
+        "text": "Nothing in life is to be feared; it is only to be understood."
+      },
       "startYear": 1867,
       "endYear": 1934,
       "disciplines": [
@@ -1126,7 +1130,9 @@
       "type": "person",
       "importance": 10,
       "description": "New Zealand-born British physicist who established the nuclear model of the atom through experimental investigations of radioactivity and alpha-particle scattering. He distinguished major forms of radiation, demonstrated radioactive transmutation, discovered the atomic nucleus, and helped establish nuclear physics as a distinct scientific field.",
-      "epigraph": "We haven't got the money, so we've got to think.",
+      "epigraph": {
+        "text": "We haven't got the money, so we've got to think."
+      },
       "startYear": 1871,
       "endYear": 1937,
       "disciplines": [
@@ -1151,7 +1157,9 @@
       "type": "person",
       "importance": 10,
       "description": "Danish theoretical physicist who developed a quantum model of the atom and became a principal architect of the Copenhagen interpretation of quantum mechanics. His concepts of quantized atomic states, complementarity, and the relationship between measurement and physical description shaped both atomic physics and the philosophical interpretation of quantum theory.",
-      "epigraph": "The opposite of a profound truth may well be another profound truth.",
+      "epigraph": {
+        "text": "The opposite of a profound truth may well be another profound truth."
+      },
       "startYear": 1885,
       "endYear": 1962,
       "disciplines": [
@@ -1177,7 +1185,9 @@
       "type": "person",
       "importance": 10,
       "description": "Austrian theoretical physicist who developed wave mechanics and formulated the Schrödinger equation, which describes how quantum states evolve over time. His work supplied one of the central mathematical foundations of quantum mechanics, while his thought experiments exposed enduring problems concerning measurement, probability, and physical reality.",
-      "epigraph": "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees.",
+      "epigraph": {
+        "text": "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees."
+      },
       "startYear": 1887,
       "endYear": 1961,
       "disciplines": [
@@ -1203,7 +1213,9 @@
       "type": "person",
       "importance": 10,
       "description": "German theoretical physicist who created matrix mechanics, one of the first complete mathematical formulations of quantum mechanics, and formulated the uncertainty principle. His work established fundamental limits on simultaneously determining certain physical properties and helped replace classical descriptions of particles with an explicitly quantum framework.",
-      "epigraph": "What we observe is not nature itself, but nature exposed to our method of questioning.",
+      "epigraph": {
+        "text": "What we observe is not nature itself, but nature exposed to our method of questioning."
+      },
       "startYear": 1901,
       "endYear": 1976,
       "disciplines": [
@@ -1228,7 +1240,9 @@
       "type": "person",
       "importance": 10,
       "description": "English theoretical physicist who united quantum mechanics with special relativity through the Dirac equation and predicted the existence of antimatter. His mathematically elegant formulations helped establish quantum electrodynamics, clarified the quantum behavior of electrons, and profoundly influenced particle physics and quantum field theory.",
-      "epigraph": "The aim of science is to make difficult things understandable in a simpler way.",
+      "epigraph": {
+        "text": "The aim of science is to make difficult things understandable in a simpler way."
+      },
       "startYear": 1902,
       "endYear": 1984,
       "disciplines": [
