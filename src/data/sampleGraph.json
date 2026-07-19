@@ -714,6 +714,17 @@
       "endYear": 1621,
       "disciplines": ["Astronomy", "Mathematics"],
       "tags": ["Scientific Revolution", "Planetary Motion", "Elliptical Orbits", "Kepler's Laws", "Celestial Mechanics", "Heliocentrism"]
+    },
+    {
+      "id": "scientific-revolution",
+      "name": "Scientific Revolution",
+      "type": "movement",
+      "importance": 10,
+      "description": "The Scientific Revolution was an intellectual movement spanning the sixteenth and seventeenth centuries that fundamentally transformed humanity's understanding of the natural world. Through systematic observation, experimentation, and mathematical analysis, thinkers such as Copernicus, Galileo, Kepler, Bacon, and Newton challenged centuries of inherited authority and established modern science as a method for discovering universal laws of nature. Its ideas reshaped astronomy, physics, mathematics, and philosophy, laying the foundation for the Enlightenment and the scientific advances that followed.",
+      "startYear": 1543,
+      "endYear": 1687,
+      "disciplines": ["Astronomy", "Mathematics", "Physics", "Philosophy"],
+      "tags": ["Scientific Method", "Empiricism", "Observation", "Experimentation", "Natural Philosophy", "Heliocentrism"]
     }
   ],
   "edges": [

@@ -5,6 +5,7 @@ export type NodeType =
   | "idea"
   | "institution"
   | "invention"
+  | "movement"
   | "person"
   | "place"
   | "publication"

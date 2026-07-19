@@ -12,6 +12,7 @@ export const NODE_TYPE_COLORS: Record<NodeType, string> = {
   place: "#8bc981",
   discipline: "#c7c7c7",
   technology: "#ffcc66",
+  movement: "#f18484",
 };
 
 export const NODE_TYPE_LABELS: Record<NodeType, string> = {
@@ -26,6 +27,7 @@ export const NODE_TYPE_LABELS: Record<NodeType, string> = {
   place: "Place",
   discipline: "Discipline",
   technology: "Technology",
+  movement: "Movement",
 };
 
 export const FILTERABLE_NODE_TYPES: NodeType[] = [
@@ -35,4 +37,5 @@ export const FILTERABLE_NODE_TYPES: NodeType[] = [
   "person",
   "publication",
   "theory",
+  "movement",
 ];

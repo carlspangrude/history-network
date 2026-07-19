@@ -16,6 +16,7 @@ const VALID_NODE_TYPES = new Set<NodeType>([
   "idea",
   "institution",
   "invention",
+  "movement",
   "person",
   "place",
   "publication",
