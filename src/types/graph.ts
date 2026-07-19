@@ -14,6 +14,7 @@ export type NodeType =
 
 export type RelationshipType =
   | "advanced"
+  | "anticipated"
   | "authored"
   | "belonged_to"
   | "challenged"

@@ -38,20 +38,53 @@ function formatRelationship(
       case "authored":
         return "Authored by";
 
+      case "advanced":
+        return "Advanced by";
+
+      case "anticipated":
+        return "Anticipated by";
+
       case "formalized":
         return "Formalized by";
+
+      case "challenged":
+        return "Challenged by";
+
+      case "enabled":
+        return "Enabled by";
+
+      case "extended":
+        return "Extended by";
 
       case "discovered":
         return "Discovered by";
 
       case "invented":
         return "Invented by";
+
+      case "improved":
+        return "Improved by";
+
+      case "inspired":
+        return "Inspired by";
+
+      case "popularized":
+        return "Popularized by";
+
+      case "published":
+        return "Published by";
         
       case "mentored":
         return "Mentored by";
 
       case "criticized":
         return "Criticized by";
+
+      case "refined":
+        return "Refined by";
+
+      case "synthesized":
+        return "Synthesized by";
         
       case "responded_to":
         return "Responded to by";

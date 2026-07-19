@@ -604,24 +604,6 @@
       ]
     },
     {
-      "id": "the-enlightenment",
-      "name": "The Enlightenment",
-      "type": "theory",
-      "importance": 8,
-      "description": "A diverse intellectual movement emphasizing critical reason, inquiry, reform, freedom, and reconsideration of inherited political and religious authority.",
-      "startYear": 1685,
-      "disciplines": [
-        "Philosophy",
-        "Political Theory",
-        "Scientific Method"
-      ],
-      "tags": [
-        "Reason",
-        "Reform",
-        "Modernity"
-      ]
-    },
-    {
       "id": "copernicus",
       "name": "Nicolaus Copernicus",
       "epigraph": {
@@ -750,14 +732,521 @@
     },
     {
       "id": "enlightenment",
-      "name": "Enlightenment",
+      "name": "The Enlightenment",
       "type": "movement",
       "importance": 9,
       "description": "The Enlightenment was an intellectual movement of the seventeenth and eighteenth centuries that emphasized reason, individual liberty, scientific inquiry, and skepticism of inherited authority as the foundations of human progress. Its philosophers transformed political theory, economics, ethics, and education, inspiring democratic revolutions and shaping many of the principles underlying modern liberal societies.",
       "startYear": 1685,
       "endYear": 1815,
-      "disciplines": ["Ethics", "Economics", "Political Science", "Philosophy"],
+      "disciplines": ["Ethics", "Economics", "Political Theory", "Philosophy", "Scientific Method"],
       "tags": ["Reason", "Liberty", "Natural Rights", "Scientific Method", "Social Contract", "Separation of Powers"]
+    },
+    {
+      "id": "zeno-citium",
+      "name": "Zeno of Citium",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek philosopher who founded Stoicism, a school of philosophy that taught that virtue, reason, and living in accordance with nature are the foundations of a flourishing life. His ideas established one of the most influential philosophical traditions of the ancient world, shaping ethics, political thought, and concepts of resilience from antiquity to the present day.",
+      "startYear": -334,
+      "endYear": -262,
+      "disciplines": ["Ethics", "Philosophy", "Logic", "Political Theory"],
+      "tags": ["Stoicism", "Virtue", "Natural Law", "Reason", "Cosmopolitanism", "Self-Control"]
+    },
+    {
+      "id": "zeno-elea",
+      "name": "Zeno of Elea",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek philosopher renowned for formulating paradoxes that challenged common assumptions about motion, space, time, and plurality. Developed in defense of Parmenides' philosophy, his arguments profoundly influenced the development of logic, mathematics, and the philosophy of infinity, provoking debate that continued from Aristotle to modern physics.",
+      "startYear": -490,
+      "endYear": -430,
+      "disciplines": ["Philosophy", "Logic", "Metaphysics", "Mathematics"],
+      "tags": ["Paradoxes", "Motion", "Infinity", "Plurality", "Eleatic School", "Reductio ad Absurdum", "Presocratic Philosophy"]
+    },
+    {
+      "id": "euclid",
+      "name": "Euclid",
+      "type": "person",
+      "importance": 10,
+      "description": "Greek mathematician whose Elements organized geometry, number theory, and mathematical proof into a systematic deductive framework. His axiomatic method became a foundational model for rigorous reasoning and shaped mathematics and scientific thought for more than two millennia.",
+      "startYear": -325,
+      "endYear": -265,
+      "disciplines": [
+        "Mathematics",
+        "Geometry"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Euclidean Geometry",
+        "Axiomatic Method",
+        "Mathematical Proof",
+        "Number Theory",
+        "Elements",
+        "Alexandria"
+      ]
+    },
+    {
+      "id": "archimedes",
+      "name": "Archimedes",
+      "type": "person",
+      "importance": 10,
+      "description": "Greek mathematician, physicist, and engineer who made foundational discoveries in geometry, hydrostatics, mechanics, and the mathematical treatment of physical problems. By combining rigorous proof with practical investigation, he became one of the most influential scientists of the ancient world.",
+      "startYear": -287,
+      "endYear": -212,
+      "disciplines": [
+        "Mathematics",
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Geometry",
+        "Mechanics",
+        "Hydrostatics",
+        "Buoyancy",
+        "Levers",
+        "Mathematical Physics"
+      ]
+    },
+    {
+      "id": "aristarchus",
+      "name": "Aristarchus of Samos",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek astronomer and mathematician who proposed that the Earth rotates on its axis and travels around the Sun. Although his heliocentric model was not widely accepted in antiquity, it represented one of the earliest known attempts to describe the cosmos with the Sun at its center.",
+      "startYear": -310,
+      "endYear": -230,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Heliocentrism",
+        "Astronomy",
+        "Planetary Motion",
+        "Solar System",
+        "Celestial Measurement",
+        "Samos"
+      ]
+    },
+    {
+      "id": "eratosthenes",
+      "name": "Eratosthenes",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek mathematician, astronomer, and geographer who calculated the circumference of the Earth using geometry and observations of sunlight. As head of the Library of Alexandria, he also advanced cartography, chronology, and the systematic measurement of the known world.",
+      "startYear": -276,
+      "endYear": -194,
+      "disciplines": [
+        "Geography",
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Earth Measurement",
+        "Geography",
+        "Cartography",
+        "Geometry",
+        "Library of Alexandria",
+        "Sieve of Eratosthenes"
+      ]
+    },
+    {
+      "id": "hipparchus",
+      "name": "Hipparchus",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek astronomer and mathematician whose precise observations transformed ancient astronomy. He developed an influential star catalog, discovered the precession of the equinoxes, refined models of celestial motion, and helped establish trigonometric methods for astronomical calculation.",
+      "startYear": -190,
+      "endYear": -120,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Observational Astronomy",
+        "Star Catalog",
+        "Precession",
+        "Trigonometry",
+        "Celestial Motion",
+        "Precision Measurement"
+      ]
+    },
+    {
+      "id": "herophilus",
+      "name": "Herophilus",
+      "type": "person",
+      "importance": 7,
+      "description": "Greek physician and anatomist associated with Alexandria who advanced medicine through systematic anatomical investigation. His studies distinguished nerves from blood vessels, examined the brain and nervous system, and helped establish anatomy as an empirical field of medical inquiry.",
+      "startYear": -335,
+      "endYear": -280,
+      "disciplines": [
+        "Medicine",
+        "Anatomy",
+        "Physiology"
+      ],
+      "tags": [
+        "Hellenistic Science",
+        "Anatomy",
+        "Medicine",
+        "Nervous System",
+        "Brain",
+        "Empirical Observation",
+        "Alexandrian Medicine"
+      ]
+    },
+    {
+      "id": "michael-faraday",
+      "name": "Michael Faraday",
+      "type": "person",
+      "importance": 10,
+      "description": "English physicist and chemist whose experimental investigations transformed the understanding of electricity and magnetism. Through discoveries such as electromagnetic induction, the electric motor, and the field concept, he established the experimental foundations of electromagnetism and modern electrical science, profoundly influencing Maxwell, Einstein, and the development of modern physics.",
+      "startYear": 1791,
+      "endYear": 1867,
+      "disciplines": [
+        "Physics",
+        "Chemistry",
+        "Electromagnetism"
+      ],
+      "tags": [
+        "Electromagnetism",
+        "Electromagnetic Induction",
+        "Electric Motor",
+        "Electric Generator",
+        "Field Theory",
+        "Electrochemistry",
+        "Experimental Physics"
+      ]
+    },
+    {
+      "id": "industrial-revolution",
+      "name": "Industrial Revolution",
+      "type": "movement",
+      "importance": 10,
+      "description": "The Industrial Revolution was a period of rapid technological, economic, and social transformation characterized by mechanized manufacturing, advances in transportation and energy, scientific innovation, and the widespread application of engineering to industry. Beginning in Great Britain, it fundamentally reshaped production, urbanization, communication, and daily life while laying the technological foundations of the modern world.",
+      "startYear": 1760,
+      "endYear": 1914,
+      "disciplines": [
+        "Engineering",
+        "Physics",
+        "Chemistry",
+        "Manufacturing",
+        "Transportation",
+        "Economics"
+      ],
+      "tags": [
+        "Industrialization",
+        "Steam Power",
+        "Mechanization",
+        "Electricity",
+        "Mass Production",
+        "Innovation",
+        "Engineering"
+      ]
+    },
+    {
+      "id": "james-watt",
+      "name": "James Watt",
+      "epigraph": {
+        "text": "I can think of nothing else but this machine."
+      },
+      "type": "person",
+      "importance": 10,
+      "description": "Scottish inventor and mechanical engineer whose improvements to the steam engine dramatically increased its efficiency and practicality. His innovations made steam power economically viable for factories, transportation, and mining, becoming one of the principal technological drivers of the Industrial Revolution.",
+      "startYear": 1736,
+      "endYear": 1819,
+      "disciplines": [
+        "Engineering",
+        "Mechanical Engineering"
+      ],
+      "tags": [
+        "Steam Engine",
+        "Mechanical Engineering",
+        "Industrial Revolution",
+        "Manufacturing",
+        "Innovation"
+      ]
+    },
+    {
+      "id": "charles-darwin",
+      "name": "Charles Darwin",
+      "epigraph": {
+        "text": "From so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved."
+      },
+      "type": "person",
+      "importance": 10,
+      "description": "English naturalist whose theory of evolution by natural selection transformed biology and fundamentally changed humanity's understanding of life, adaptation, and the diversity of species. His work became one of the defining scientific achievements of the nineteenth century.",
+      "startYear": 1809,
+      "endYear": 1882,
+      "disciplines": [
+        "Biology",
+        "Natural History"
+      ],
+      "tags": [
+        "Evolution",
+        "Natural Selection",
+        "Biology",
+        "Origin of Species",
+        "Scientific Revolution"
+      ]
+    },
+    {
+      "id": "thomas-edison",
+      "name": "Thomas Edison",
+      "epigraph": {
+        "text": "Results! Why, man, I have gotten a lot of results. I know several thousand things that won't work."
+      },
+      "type": "person",
+      "importance": 9,
+      "description": "American inventor and entrepreneur who developed practical electric lighting, sound recording, and numerous commercial technologies. Through industrial research laboratories and large-scale innovation, he helped establish the modern model of technological development and commercialization.",
+      "startYear": 1847,
+      "endYear": 1931,
+      "disciplines": [
+        "Engineering",
+        "Electrical Engineering",
+        "Inventing"
+      ],
+      "tags": [
+        "Electric Light",
+        "Phonograph",
+        "Electric Power",
+        "Innovation",
+        "Industrial Research",
+        "Entrepreneurship"
+      ]
+    },
+    {
+      "id": "nikola-tesla",
+      "name": "Nikola Tesla",
+      "epigraph": {
+        "text": "The present is theirs; the future, for which I really worked, is mine."
+      },
+      "type": "person",
+      "importance": 10,
+      "description": "Serbian-American inventor and electrical engineer whose work on alternating current power systems, induction motors, and high-voltage electrical technologies revolutionized the generation and transmission of electricity, helping define the modern electrical age.",
+      "startYear": 1856,
+      "endYear": 1943,
+      "disciplines": [
+        "Electrical Engineering",
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Alternating Current",
+        "Electric Power",
+        "Induction Motor",
+        "Wireless Power",
+        "Innovation",
+        "Electrical Engineering"
+      ]
+    },
+    {
+      "id": "modern-physics",
+      "name": "Modern Physics",
+      "type": "movement",
+      "importance": 10,
+      "description": "Scientific movement that transformed humanity's understanding of matter, energy, space, time, and causality through the development of quantum theory, relativity, atomic physics, and nuclear physics. Modern physics overturned many assumptions of classical mechanics, revealed the probabilistic behavior of matter at microscopic scales, and established new descriptions of gravity, radiation, and the structure of the atom.",
+      "startYear": 1900,
+      "endYear": 1975,
+      "disciplines": [
+        "Physics",
+        "Quantum Mechanics",
+        "Relativity",
+        "Atomic Physics",
+        "Nuclear Physics",
+        "Cosmology"
+      ],
+      "tags": [
+        "Quantum Theory",
+        "Relativity",
+        "Atomic Structure",
+        "Radioactivity",
+        "Wave-Particle Duality",
+        "Uncertainty",
+        "Spacetime",
+        "Nuclear Physics"
+      ]
+    },
+    {
+      "id": "max-planck",
+      "name": "Max Planck",
+      "type": "person",
+      "importance": 10,
+      "description": "German theoretical physicist who founded quantum theory by proposing that electromagnetic energy is emitted and absorbed in discrete quantities called quanta. His solution to the black-body radiation problem introduced Planck's constant and marked a decisive break from classical physics, providing the conceptual starting point for quantum mechanics.",
+      "epigraph": "A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die.",
+      "startYear": 1858,
+      "endYear": 1947,
+      "disciplines": [
+        "Physics",
+        "Theoretical Physics",
+        "Thermodynamics",
+        "Quantum Theory"
+      ],
+      "tags": [
+        "Energy Quanta",
+        "Planck Constant",
+        "Black-Body Radiation",
+        "Quantum Theory",
+        "Thermodynamics",
+        "Statistical Mechanics"
+      ]
+    },
+    {
+      "id": "marie-curie",
+      "name": "Marie Curie",
+      "type": "person",
+      "importance": 10,
+      "description": "Polish-born French physicist and chemist who pioneered the scientific study of radioactivity and discovered the elements polonium and radium with Pierre Curie. Her research demonstrated that radiation originated within atoms, helping overturn the conception of atoms as indivisible and establishing foundations for nuclear physics, radiochemistry, and radiation medicine.",
+      "epigraph": "Nothing in life is to be feared; it is only to be understood.",
+      "startYear": 1867,
+      "endYear": 1934,
+      "disciplines": [
+        "Physics",
+        "Chemistry",
+        "Nuclear Physics",
+        "Radiochemistry",
+        "Medicine"
+      ],
+      "tags": [
+        "Radioactivity",
+        "Radium",
+        "Polonium",
+        "Atomic Structure",
+        "Radiation",
+        "Radiochemistry",
+        "Medical Physics"
+      ]
+    },
+    {
+      "id": "ernest-rutherford",
+      "name": "Ernest Rutherford",
+      "type": "person",
+      "importance": 10,
+      "description": "New Zealand-born British physicist who established the nuclear model of the atom through experimental investigations of radioactivity and alpha-particle scattering. He distinguished major forms of radiation, demonstrated radioactive transmutation, discovered the atomic nucleus, and helped establish nuclear physics as a distinct scientific field.",
+      "epigraph": "We haven't got the money, so we've got to think.",
+      "startYear": 1871,
+      "endYear": 1937,
+      "disciplines": [
+        "Physics",
+        "Experimental Physics",
+        "Atomic Physics",
+        "Nuclear Physics"
+      ],
+      "tags": [
+        "Atomic Nucleus",
+        "Radioactivity",
+        "Alpha Particles",
+        "Gold Foil Experiment",
+        "Nuclear Model",
+        "Transmutation",
+        "Experimental Physics"
+      ]
+    },
+    {
+      "id": "niels-bohr",
+      "name": "Niels Bohr",
+      "type": "person",
+      "importance": 10,
+      "description": "Danish theoretical physicist who developed a quantum model of the atom and became a principal architect of the Copenhagen interpretation of quantum mechanics. His concepts of quantized atomic states, complementarity, and the relationship between measurement and physical description shaped both atomic physics and the philosophical interpretation of quantum theory.",
+      "epigraph": "The opposite of a profound truth may well be another profound truth.",
+      "startYear": 1885,
+      "endYear": 1962,
+      "disciplines": [
+        "Physics",
+        "Theoretical Physics",
+        "Atomic Physics",
+        "Quantum Mechanics",
+        "Philosophy of Science"
+      ],
+      "tags": [
+        "Bohr Model",
+        "Complementarity",
+        "Copenhagen Interpretation",
+        "Atomic Structure",
+        "Quantum Theory",
+        "Correspondence Principle",
+        "Measurement"
+      ]
+    },
+    {
+      "id": "erwin-schrodinger",
+      "name": "Erwin Schrödinger",
+      "type": "person",
+      "importance": 10,
+      "description": "Austrian theoretical physicist who developed wave mechanics and formulated the Schrödinger equation, which describes how quantum states evolve over time. His work supplied one of the central mathematical foundations of quantum mechanics, while his thought experiments exposed enduring problems concerning measurement, probability, and physical reality.",
+      "epigraph": "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees.",
+      "startYear": 1887,
+      "endYear": 1961,
+      "disciplines": [
+        "Physics",
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Statistical Mechanics",
+        "Philosophy of Science"
+      ],
+      "tags": [
+        "Wave Mechanics",
+        "Schrodinger Equation",
+        "Wave Function",
+        "Quantum States",
+        "Schrodinger's Cat",
+        "Measurement Problem",
+        "Quantum Theory"
+      ]
+    },
+    {
+      "id": "werner-heisenberg",
+      "name": "Werner Heisenberg",
+      "type": "person",
+      "importance": 10,
+      "description": "German theoretical physicist who created matrix mechanics, one of the first complete mathematical formulations of quantum mechanics, and formulated the uncertainty principle. His work established fundamental limits on simultaneously determining certain physical properties and helped replace classical descriptions of particles with an explicitly quantum framework.",
+      "epigraph": "What we observe is not nature itself, but nature exposed to our method of questioning.",
+      "startYear": 1901,
+      "endYear": 1976,
+      "disciplines": [
+        "Physics",
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Nuclear Physics",
+        "Philosophy of Science"
+      ],
+      "tags": [
+        "Matrix Mechanics",
+        "Uncertainty Principle",
+        "Quantum Measurement",
+        "Copenhagen Interpretation",
+        "Quantum States",
+        "Theoretical Physics"
+      ]
+    },
+    {
+      "id": "paul-dirac",
+      "name": "Paul Dirac",
+      "type": "person",
+      "importance": 10,
+      "description": "English theoretical physicist who united quantum mechanics with special relativity through the Dirac equation and predicted the existence of antimatter. His mathematically elegant formulations helped establish quantum electrodynamics, clarified the quantum behavior of electrons, and profoundly influenced particle physics and quantum field theory.",
+      "epigraph": "The aim of science is to make difficult things understandable in a simpler way.",
+      "startYear": 1902,
+      "endYear": 1984,
+      "disciplines": [
+        "Physics",
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Particle Physics",
+        "Quantum Field Theory"
+      ],
+      "tags": [
+        "Dirac Equation",
+        "Antimatter",
+        "Positron",
+        "Quantum Electrodynamics",
+        "Relativistic Quantum Mechanics",
+        "Quantum Field Theory",
+        "Mathematical Physics"
+      ]
     }
   ],
   "edges": [
@@ -1146,7 +1635,7 @@
     {
       "id": "newton-enlightenment",
       "source": "newton",
-      "target": "the-enlightenment",
+      "target": "enlightenment",
       "relationship": "influenced",
       "description": "The success and prestige of Newtonian science strongly shaped Enlightenment conceptions of reason, natural order, and systematic inquiry.",
       "confidence": 0.91
@@ -1154,7 +1643,7 @@
     {
       "id": "locke-enlightenment",
       "source": "john-locke",
-      "target": "the-enlightenment",
+      "target": "enlightenment",
       "relationship": "influenced",
       "description": "Locke's epistemology and political philosophy became major resources for Enlightenment debates about reason, rights, toleration, and government.",
       "confidence": 0.95
@@ -1162,14 +1651,14 @@
     {
       "id": "rousseau-enlightenment",
       "source": "jean-jacques-rousseau",
-      "target": "the-enlightenment",
+      "target": "enlightenment",
       "relationship": "criticized",
       "description": "Rousseau participated in Enlightenment debate while criticizing confidence in civilization, intellectual progress, and social refinement.",
       "confidence": 0.93
     },
     {
       "id": "enlightenment-kant",
-      "source": "the-enlightenment",
+      "source": "enlightenment",
       "target": "immanuel-kant",
       "relationship": "influenced",
       "description": "Kant became a central interpreter and defender of Enlightenment ideals of intellectual maturity, freedom, and public reason.",
@@ -1407,6 +1896,429 @@
       "target": "scientific-revolution",
       "relationship": "advanced",
       "description": "Newton unified centuries of astronomical and physical discoveries into a comprehensive mathematical framework, culminating the Scientific Revolution with his laws of motion and universal gravitation.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "socrates-ancient-greek-philosophy",
+      "source": "socrates",
+      "target": "ancient-greek-philosophy",
+      "relationship": "advanced",
+      "description": "Through relentless questioning and dialectical inquiry, Socrates transformed philosophy into a disciplined search for truth, virtue, and self-knowledge, profoundly shaping the development of Ancient Greek Philosophy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "plato-ancient-greek-philosophy",
+      "source": "plato",
+      "target": "ancient-greek-philosophy",
+      "relationship": "advanced",
+      "description": "By developing influential theories of metaphysics, epistemology, and politics while founding the Academy, Plato established a philosophical tradition that became a cornerstone of Ancient Greek Philosophy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "aristotle-ancient-greek-philosophy",
+      "source": "aristotle",
+      "target": "ancient-greek-philosophy",
+      "relationship": "advanced",
+      "description": "Through his systematic investigations of logic, ethics, politics, and the natural world, Aristotle synthesized and expanded Greek philosophy into a comprehensive framework that shaped intellectual thought for centuries.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "hume-enlightenment",
+      "source": "david-hume",
+      "target": "enlightenment",
+      "relationship": "advanced",
+      "description": "By subjecting knowledge, causation, religion, morality, and human nature to skeptical and empirical analysis, Hume advanced the Enlightenment commitment to critical reason and evidence-based inquiry.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "kant-enlightenment",
+      "source": "immanuel-kant",
+      "target": "enlightenment",
+      "relationship": "advanced",
+      "description": "By defending intellectual autonomy and defining enlightenment as humanity's emergence from self-imposed intellectual dependence, Kant articulated and extended the movement's commitment to independent reason.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "hobbes-enlightenment",
+      "source": "thomas-hobbes",
+      "target": "enlightenment",
+      "relationship": "influenced",
+      "description": "By explaining political authority through a secular social contract rather than divine right, Hobbes helped establish foundational questions about human nature, sovereignty, and legitimate government that Enlightenment thinkers later developed and contested.",
+      "confidence": 0.9,
+      "directness": "direct"
+    },
+    {
+      "id": "euclid-hellenistic-science",
+      "source": "euclid",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "By organizing geometry and number theory into an axiomatic system built from definitions, postulates, and proofs, Euclid established a model of rigorous mathematical reasoning that became foundational to Hellenistic Science.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "archimedes-hellenistic-science",
+      "source": "archimedes",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "By applying mathematical proof to mechanics, hydrostatics, geometry, and engineering, Archimedes demonstrated how abstract reasoning could reveal quantitative laws governing the physical world.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "aristarchus-hellenistic-science",
+      "source": "aristarchus",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "By using geometry and astronomical reasoning to estimate celestial distances and propose a heliocentric cosmos, Aristarchus expanded the theoretical ambition of Hellenistic astronomy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "eratosthenes-hellenistic-science",
+      "source": "eratosthenes",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "By combining geometric reasoning with observed differences in sunlight to calculate the Earth's circumference, Eratosthenes demonstrated the power of mathematics to measure the natural world on a planetary scale.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "hipparchus-hellenistic-science",
+      "source": "hipparchus",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "Through precise celestial observations, mathematical models, and systematic star cataloging, Hipparchus strengthened the empirical and quantitative foundations of Hellenistic astronomy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "herophilus-hellenistic-science",
+      "source": "herophilus",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "Through systematic anatomical investigation of the brain, nerves, organs, and circulatory structures, Herophilus advanced an empirical approach to medicine within Hellenistic Science.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "socrates-zeno-citium",
+      "source": "socrates",
+      "target": "zeno-citium",
+      "relationship": "influenced",
+      "description": "Socrates' emphasis on virtue, reason, self-discipline, and the independence of moral character influenced Zeno of Citium's development of Stoic ethics and its ideal of living rationally in accordance with nature.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "zeno-elea-aristotle",
+      "source": "zeno-elea",
+      "target": "aristotle",
+      "relationship": "challenged",
+      "description": "Zeno of Elea's paradoxes challenged Aristotle to explain how motion and change are possible within continuous space and time, prompting his influential analysis of infinity, continuity, and motion in the Physics.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "aristarchus-copernicus",
+      "source": "aristarchus",
+      "target": "copernicus",
+      "relationship": "anticipated",
+      "description": "Aristarchus of Samos anticipated Copernicus by proposing that the Earth rotates and travels around the Sun, establishing an ancient heliocentric precedent for the model Copernicus later developed mathematically.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "archimedes-galileo",
+      "source": "archimedes",
+      "target": "galileo",
+      "relationship": "influenced",
+      "description": "Archimedes' mathematical treatment of mechanics, equilibrium, and physical measurement influenced Galileo's effort to describe motion and natural phenomena through quantitative laws.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "archimedes-newton",
+      "source": "archimedes",
+      "target": "newton",
+      "relationship": "influenced",
+      "description": "Archimedes' integration of geometry with mechanics helped establish the tradition of mathematical physics that Newton later extended into a unified account of motion and gravitation.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "euclid-newton",
+      "source": "euclid",
+      "target": "newton",
+      "relationship": "influenced",
+      "description": "Euclid's axiomatic organization of mathematics provided a model of deductive reasoning that influenced the structure and demonstrative style of Newton's mathematical physics.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "aristotle-herophilus",
+      "source": "aristotle",
+      "target": "herophilus",
+      "relationship": "influenced",
+      "description": "Aristotle's systematic investigations of animals, anatomy, and natural processes helped establish an intellectual foundation that Herophilus extended through direct anatomical observation and dissection.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "hipparchus-copernicus",
+      "source": "hipparchus",
+      "target": "copernicus",
+      "relationship": "influenced",
+      "description": "Hipparchus' quantitative observations and geometrical models of celestial motion formed part of the astronomical tradition that Copernicus inherited and ultimately reorganized around a heliocentric system.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "newton-einstein",
+      "source": "newton",
+      "target": "einstein",
+      "relationship": "extended",
+      "description": "Building upon Newton's mathematical description of motion and gravitation, Einstein developed the theories of special and general relativity, revealing the limits of Newtonian physics at extreme speeds, masses, and gravitational fields.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "maxwell-einstein",
+      "source": "maxwell",
+      "target": "einstein",
+      "relationship": "influenced",
+      "description": "Maxwell's unification of electricity, magnetism, and light into a single theory inspired Einstein's development of special relativity, which resolved inconsistencies between classical mechanics and electromagnetism.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "galileo-einstein",
+      "source": "galileo",
+      "target": "einstein",
+      "relationship": "influenced",
+      "description": "Galileo's principle of relativity and his mathematical approach to motion provided conceptual foundations that Einstein later generalized into the relativistic description of space and time.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "euclid-einstein",
+      "source": "euclid",
+      "target": "einstein",
+      "relationship": "challenged",
+      "description": "Einstein's general theory of relativity replaced Euclid's flat geometry with curved spacetime, demonstrating that the geometry of the universe depends upon the distribution of matter and energy.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "faraday-einstein",
+      "source": "michael-faraday",
+      "target": "einstein",
+      "relationship": "influenced",
+      "description": "Faraday's experimental discoveries of electromagnetic fields laid the conceptual foundation for Maxwell's equations, providing an essential precursor to the physical theories that shaped Einstein's work.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "watt-industrial-revolution",
+      "source": "james-watt",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "By transforming the steam engine into an efficient and practical source of mechanical power, James Watt became one of the principal technological architects of the Industrial Revolution.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "darwin-industrial-revolution",
+      "source": "charles-darwin",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "Through his theory of evolution by natural selection, Charles Darwin exemplified the Industrial Revolution's broader culture of scientific inquiry and transformed nineteenth-century biological science.",
+      "confidence": 0.85,
+      "directness": "direct"
+    },
+    {
+      "id": "edison-industrial-revolution",
+      "source": "thomas-edison",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "By developing practical electrical technologies and pioneering industrial research laboratories, Thomas Edison accelerated the electrification and technological innovation that characterized the later Industrial Revolution.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "tesla-industrial-revolution",
+      "source": "nikola-tesla",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "Through the development of alternating current power systems and electric motors, Nikola Tesla transformed the generation and transmission of electricity, powering the expansion of modern industry during the Industrial Revolution.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "max-planck-modern-physics",
+      "source": "max-planck",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Max Planck initiated quantum theory by proposing that energy is exchanged in discrete quanta, establishing one of the principal foundations of modern physics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "albert-einstein-modern-physics",
+      "source": "einstein",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Albert Einstein transformed modern physics through relativity, mass-energy equivalence, and the quantum explanation of the photoelectric effect.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "marie-curie-modern-physics",
+      "source": "marie-curie",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Marie Curie's investigations of radioactivity revealed transformations occurring within atoms and helped establish the experimental foundations of atomic and nuclear physics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ernest-rutherford-modern-physics",
+      "source": "ernest-rutherford",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Ernest Rutherford established the nuclear model of the atom and helped create nuclear physics through experiments involving radiation, scattering, and atomic transmutation.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "niels-bohr-modern-physics",
+      "source": "niels-bohr",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Niels Bohr applied quantum principles to atomic structure and shaped the conceptual interpretation of quantum mechanics through complementarity and the Copenhagen interpretation.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "erwin-schrodinger-modern-physics",
+      "source": "erwin-schrodinger",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Erwin Schrödinger developed wave mechanics and its governing equation, providing a central mathematical framework for describing quantum systems.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "werner-heisenberg-modern-physics",
+      "source": "werner-heisenberg",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Werner Heisenberg developed matrix mechanics and the uncertainty principle, establishing both a mathematical foundation and an interpretive boundary for quantum physics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "paul-dirac-modern-physics",
+      "source": "paul-dirac",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Paul Dirac reconciled quantum mechanics with special relativity, predicted antimatter, and helped establish the mathematical foundations of quantum field theory.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "max-planck-albert-einstein",
+      "source": "max-planck",
+      "target": "einstein",
+      "relationship": "influenced",
+      "description": "Planck's introduction of discrete energy quanta provided the conceptual foundation for Einstein's explanation of the photoelectric effect using localized light quanta.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "max-planck-niels-bohr",
+      "source": "max-planck",
+      "target": "niels-bohr",
+      "relationship": "influenced",
+      "description": "Planck's quantum hypothesis supplied the principle of quantized energy that Bohr applied to the structure and behavior of atoms.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "marie-curie-ernest-rutherford",
+      "source": "marie-curie",
+      "target": "ernest-rutherford",
+      "relationship": "influenced",
+      "description": "Curie's pioneering investigation of radioactive substances helped establish the experimental field in which Rutherford classified radiation and developed theories of radioactive transformation.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "ernest-rutherford-niels-bohr",
+      "source": "ernest-rutherford",
+      "target": "niels-bohr",
+      "relationship": "influenced",
+      "description": "Rutherford's discovery of the atomic nucleus provided the physical structure that Bohr incorporated into his quantum model of the atom.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "albert-einstein-erwin-schrodinger",
+      "source": "einstein",
+      "target": "erwin-schrodinger",
+      "relationship": "influenced",
+      "description": "Einstein's work on light quanta, wave-particle duality, and quantum statistics contributed to the conceptual background from which Schrödinger developed wave mechanics.",
+      "confidence": 0.9,
+      "directness": "direct"
+    },
+    {
+      "id": "niels-bohr-werner-heisenberg",
+      "source": "niels-bohr",
+      "target": "werner-heisenberg",
+      "relationship": "influenced",
+      "description": "Bohr's atomic theory, correspondence principle, and approach to quantum phenomena strongly shaped Heisenberg's development and interpretation of quantum mechanics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "albert-einstein-niels-bohr",
+      "source": "einstein",
+      "target": "niels-bohr",
+      "relationship": "challenged",
+      "description": "Einstein repeatedly challenged Bohr's probabilistic interpretation of quantum mechanics, prompting debates that clarified questions of measurement, completeness, and physical reality.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "werner-heisenberg-erwin-schrodinger",
+      "source": "werner-heisenberg",
+      "target": "erwin-schrodinger",
+      "relationship": "challenged",
+      "description": "Heisenberg's matrix mechanics and Schrödinger's wave mechanics offered contrasting formulations of quantum theory whose mathematical equivalence concealed significant conceptual disagreements.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "werner-heisenberg-paul-dirac",
+      "source": "werner-heisenberg",
+      "target": "paul-dirac",
+      "relationship": "influenced",
+      "description": "Heisenberg's matrix formulation of quantum mechanics contributed to the theoretical framework that Dirac generalized through transformation theory and relativistic quantum mechanics.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "albert-einstein-paul-dirac",
+      "source": "einstein",
+      "target": "paul-dirac",
+      "relationship": "influenced",
+      "description": "Einstein's special theory of relativity supplied the relativistic framework that Dirac successfully combined with quantum mechanics in his equation for the electron.",
       "confidence": 1,
       "directness": "direct"
     }

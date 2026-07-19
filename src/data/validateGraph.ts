@@ -26,6 +26,7 @@ const VALID_NODE_TYPES = new Set<NodeType>([
 
 const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "advanced",
+  "anticipated",
   "authored",
   "belonged_to",
   "challenged",
