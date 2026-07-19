@@ -620,6 +620,100 @@
         "Reform",
         "Modernity"
       ]
+    },
+    {
+      "id": "copernicus",
+      "name": "Nicolaus Copernicus",
+      "epigraph": {
+        "text": "At rest, however, in the middle of everything is the Sun."
+      },
+      "type": "person",
+      "importance": 7,
+      "description": "Polish astronomer whose heliocentric model placed the Sun, rather than the Earth, at the center of the known planetary system. His work challenged centuries of geocentric tradition inherited from Aristotle and Ptolemy, initiating the Scientific Revolution and fundamentally transforming humanity's understanding of its place in the universe.",
+      "startYear": 1473,
+      "endYear": 1543,
+      "disciplines": ["Astronomy", "Mathematics"],
+      "tags": ["Scientific Revolution", "Heliocentrism", "Renaissance", "Cosmology", "Planetary Motion", "Astronomical Models"]
+    },
+    {
+      "id": "tycho-brahe",
+      "name": "Tycho Brahe",
+      "epigraph": {
+        "text": "Those who study the stars have God for a teacher."
+      },
+      "type": "person",
+      "importance": 7,
+      "description": "Danish astronomer renowned for the most precise astronomical observations of the pre-telescopic era. His measurements of planetary positions provided the empirical foundation that enabled Kepler to discover the laws of planetary motion, marking a pivotal transition from speculative cosmology to data-driven science.",
+      "startYear": 1546,
+      "endYear": 1601,
+      "disciplines": ["Astronomy"],
+      "tags": ["Scientific Revolution", "Observational Astronomy", "Astronomical Instruments", "Precision Measurement", "Planetary Motion", "Data Collection"]
+    },
+    {
+      "id": "kepler",
+      "name": "Johannes Kepler",
+      "epigraph": {
+        "text": "To discover the rational order and harmony... revealed to us in the language of mathematics."
+      },
+      "type": "person",
+      "importance": 7,
+      "description": "German mathematician and astronomer who discovered that planets move in elliptical orbits governed by mathematical laws. Building upon Tycho's observations and Copernicus's heliocentric model, Kepler demonstrated that the heavens obey universal mathematical principles, laying essential groundwork for Isaac Newton's theory of gravitation.",
+      "startYear": 1571,
+      "endYear": 1630,
+      "disciplines": ["Astronomy", "Mathematics", "Physics"],
+      "tags": ["Scientific Revolution", "Heliocentrism", "Planetary Motion", "Kepler's Laws", "Celestial Mechanics", "Mathematical Physics"]
+    },
+    {
+      "id": "laws-of-planetary-motion",
+      "name": "Three Laws of Planetary Motion",
+      "type": "theory",
+      "importance": 8,
+      "description": "Kepler's Three Laws of Planetary Motion describe how planets move around the Sun in elliptical orbits at varying speeds and in mathematically predictable periods. Derived from Tycho's precise observations, these laws replaced centuries of circular-orbit models and became one of the foundational achievements of the Scientific Revolution, later providing the empirical basis for Newton's theory of universal gravitation.",
+      "startYear": 1609,
+      "endYear": 1621,
+      "disciplines": ["Astronomy", "Mathematics", "Physics"],
+      "tags": ["Scientific Revolution", "Planetary Motion", "Celestial Mechanics", "Heliocentrism", "Orbital Mechanics", "Mathematical Laws"]
+    },
+    {
+      "id": "de-revolutionibus",
+      "name": "De revolutionibus orbium coelestium",
+      "type": "publication",
+      "importance": 7,
+      "description": "\"On the Revolutions of the Heavenly Spheres\" is Copernicus's landmark work proposing a heliocentric model of the cosmos. Although it retained some classical assumptions, the work fundamentally challenged the long-standing geocentric worldview and initiated a profound transformation in astronomy and natural philosophy.",
+      "startYear": 1543,
+      "disciplines": ["Astronomy", "Mathematics"],
+      "tags": ["Heliocentrism", "Scientific Revolution", "Cosmology", "Planetary Motion", "Renaissance", "Astronomical Models"]
+    },
+    {
+      "id": "astronomia-nova",
+      "name": "Astronomia Nova",
+      "type": "publication",
+      "importance": 7,
+      "description": "\"New Astronomy\" presented Kepler's first law of planetary motion, demonstrating that planets travel in elliptical rather than circular orbits. Drawing upon Tycho's unprecedented observational data, the work transformed astronomy from a geometric model of the heavens into a mathematical science describing physical reality.",
+      "startYear": 1609,
+      "disciplines": ["Astronomy", "Mathematics", "Physics"],
+      "tags": ["Scientific Revolution", "Planetary Motion", "Elliptical Orbits", "Kepler's Laws", "Celestial Mechanics", "Heliocentrism"]
+    },
+    {
+      "id": "harmonice-mundi",
+      "name": "Harmonice Mundi",
+      "type": "publication",
+      "importance": 7,
+      "description": "\"The Harmony of the World\" explored the mathematical relationships underlying nature, geometry, music, and the cosmos. In this work, Kepler announced his third law of planetary motion, further demonstrating that celestial motion is governed by universal mathematical principles.",
+      "startYear": 1619,
+      "disciplines": ["Astronomy", "Mathematics"],
+      "tags": ["Scientific Revolution", "Planetary Motion", "Kepler's Laws", "Celestial Mechanics", "Mathematical Order", "Harmony"]
+    },
+    {
+      "id": "epitome-copernican-astronomy",
+      "name": "Epitome Astronomiae Copernicanae",
+      "type": "publication",
+      "importance": 7,
+      "description": "\"Epitome of Copernican Astronomy\" describes Kepler's second law of planetary motion and presented the most complete exposition of his heliocentric astronomy. Synthesizing his discoveries into a coherent framework, it became one of the most influential astronomical textbooks of the seventeenth century and helped establish the Copernican system across Europe.",
+      "startYear": 1618,
+      "endYear": 1621,
+      "disciplines": ["Astronomy", "Mathematics"],
+      "tags": ["Scientific Revolution", "Planetary Motion", "Elliptical Orbits", "Kepler's Laws", "Celestial Mechanics", "Heliocentrism"]
     }
   ],
   "edges": [
@@ -1056,6 +1150,167 @@
       "confidence": 0.98,
       "directness": "summary",
       "evidenceType": "editorial_summary"
+    },
+    {
+      "id": "copernicus-de-revolutionibus",
+      "source": "copernicus",
+      "target": "de-revolutionibus",
+      "relationship": "authored",
+      "description": "Copernicus authored De revolutionibus orbium coelestium, presenting the heliocentric model.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "kepler-astronomia-nova",
+      "source": "kepler",
+      "target": "astronomia-nova",
+      "relationship": "authored",
+      "description": "Kepler authored Astronomia Nova, introducing his first law of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "kepler-harmonice-mundi",
+      "source": "kepler",
+      "target": "harmonice-mundi",
+      "relationship": "authored",
+      "description": "Kepler authored Harmonice Mundi, announcing his third law of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "kepler-epitome",
+      "source": "kepler",
+      "target": "epitome-copernican-astronomy",
+      "relationship": "authored",
+      "description": "Kepler authored Epitome Astronomiae Copernicanae, the definitive presentation of Copernican astronomy and describing his second law of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "astronomia-nova-three-laws",
+      "source": "astronomia-nova",
+      "target": "laws-of-planetary-motion",
+      "relationship": "formalized",
+      "description": "Astronomia Nova introduced the first law of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "harmonice-mundi-three-laws",
+      "source": "harmonice-mundi",
+      "target": "laws-of-planetary-motion",
+      "relationship": "formalized",
+      "description": "Harmonice Mundi presented the third law of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "epitome-three-laws",
+      "source": "epitome-copernican-astronomy",
+      "target": "laws-of-planetary-motion",
+      "relationship": "formalized",
+      "description": "The Epitome presented Kepler's second law and synthesized his complete theory of planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "kepler-three-laws",
+      "source": "kepler",
+      "target": "laws-of-planetary-motion",
+      "relationship": "discovered",
+      "description": "Kepler formulated the three mathematical laws describing planetary motion.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "copernicus-kepler",
+      "source": "copernicus",
+      "target": "kepler",
+      "relationship": "influenced",
+      "description": "Kepler adopted and refined Copernicus's heliocentric model through mathematical analysis.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "copernicus-tycho",
+      "source": "copernicus",
+      "target": "tycho-brahe",
+      "relationship": "influenced",
+      "description": "Tycho's observations were motivated in part by testing competing cosmological models, including Copernicus's heliocentric system.",
+      "confidence": 0.7,
+      "directness": "indirect"
+    },
+    {
+      "id": "tycho-kepler",
+      "source": "tycho-brahe",
+      "target": "kepler",
+      "relationship": "enabled",
+      "description": "Tycho's exceptionally precise observations enabled Kepler to discover the laws of planetary motion.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "de-revolutionibus-astronomia-nova",
+      "source": "de-revolutionibus",
+      "target": "astronomia-nova",
+      "relationship": "refined",
+      "description": "Astronomia Nova refined and strengthened the heliocentric model first proposed in De revolutionibus.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "astronomia-nova-harmonice-mundi",
+      "source": "astronomia-nova",
+      "target": "harmonice-mundi",
+      "relationship": "extended",
+      "description": "Harmonice Mundi extended Astronomia Nova by introducing Kepler's third law.",
+      "confidence": 0.98,
+      "directness": "direct"
+    },
+    {
+      "id": "harmonice-mundi-epitome",
+      "source": "harmonice-mundi",
+      "target": "epitome-copernican-astronomy",
+      "relationship": "synthesized",
+      "description": "The Epitome described Kepler's second law and consolidated his earlier astronomical works into a unified presentation of Copernican astronomy.",
+      "confidence": 0.98,
+      "directness": "direct"
+    },
+    {
+      "id": "de-revolutionibus-kepler",
+      "source": "de-revolutionibus",
+      "target": "kepler",
+      "relationship": "influenced",
+      "description": "Copernicus's treatise inspired Kepler's lifelong effort to discover the true mathematical structure of the heliocentric system.",
+      "confidence": 0.9,
+      "directness": "direct"
+    },
+    {
+      "id": "copernicus-aristotle",
+      "source": "copernicus",
+      "target": "aristotle",
+      "relationship": "challenged",
+      "description": "Copernicus's heliocentric model challenged the Aristotelian geocentric cosmology that had dominated European thought for centuries.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "kepler-newton",
+      "source": "kepler",
+      "target": "newton",
+      "relationship": "enabled",
+      "description": "Kepler's mathematical laws of planetary motion provided the empirical foundation from which Newton derived the law of universal gravitation.",
+      "confidence": 1,
+      "directness": "direct"
     }
   ],
   "sources": [

@@ -26,10 +26,12 @@ const VALID_NODE_TYPES = new Set<NodeType>([
 const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "authored",
   "belonged_to",
+  "challenged",
   "collaborated_with",
   "criticized",
   "discovered",
   "enabled",
+  "extended",
   "formalized",
   "founded",
   "improved",
@@ -41,6 +43,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "published",
   "refined",
   "responded_to",
+  "synthesized",
 ]);
 
 const VALID_RELATIONSHIP_DIRECTNESS = new Set<RelationshipDirectness>([

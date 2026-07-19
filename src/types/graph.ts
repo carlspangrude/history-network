@@ -14,10 +14,12 @@ export type NodeType =
 export type RelationshipType =
   | "authored"
   | "belonged_to"
+  | "challenged"
   | "collaborated_with"
   | "criticized"
   | "discovered"
   | "enabled"
+  | "extended"
   | "formalized"
   | "founded"
   | "improved"
@@ -28,7 +30,8 @@ export type RelationshipType =
   | "popularized"
   | "published"
   | "refined"
-  | "responded_to";
+  | "responded_to"
+  | "synthesized";
 
 export type RelationshipDirectness =
   | "direct"
