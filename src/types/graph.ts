@@ -13,6 +13,7 @@ export type NodeType =
   | "theory";
 
 export type RelationshipType =
+  | "advanced"
   | "authored"
   | "belonged_to"
   | "challenged"

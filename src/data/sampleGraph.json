@@ -1322,6 +1322,60 @@
       "description": "Kepler's mathematical laws of planetary motion provided the empirical foundation from which Newton derived the law of universal gravitation.",
       "confidence": 1,
       "directness": "direct"
+    },
+    {
+      "id": "copernicus-scientific-revolution",
+      "source": "copernicus",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "By proposing a heliocentric model of the cosmos, Copernicus challenged centuries of geocentric tradition and initiated the transformation of astronomy that became the Scientific Revolution.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "tycho-scientific-revolution",
+      "source": "tycho-brahe",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "Through the most precise astronomical observations of his era, Tycho Brahe established a new standard of empirical measurement and provided the data that made later breakthroughs possible.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "kepler-scientific-revolution",
+      "source": "kepler",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "By discovering the mathematical laws governing planetary motion, Kepler demonstrated that the heavens obey universal mathematical principles, strengthening the scientific foundation of heliocentrism.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "bacon-scientific-revolution",
+      "source": "francis-bacon",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "Bacon championed systematic observation and experimentation as the foundation of scientific inquiry, helping establish the empirical methodology that defined modern science.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "galileo-scientific-revolution",
+      "source": "galileo",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "Through telescopic discoveries and quantitative experimentation, Galileo provided compelling evidence for heliocentrism and transformed the study of motion into a mathematical science.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "newton-scientific-revolution",
+      "source": "newton",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "Newton unified centuries of astronomical and physical discoveries into a comprehensive mathematical framework, culminating the Scientific Revolution with his laws of motion and universal gravitation.",
+      "confidence": 1,
+      "directness": "direct"
     }
   ],
   "sources": [

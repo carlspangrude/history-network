@@ -204,6 +204,11 @@ const [dimensions, setDimensions] = useState({
       area *= 1.15;
     }
   
+    // Make movement nodes slightly larger.
+    if (node.type === "movement") {
+      area *= 2.;
+    }
+  
     return area;
   };
 
@@ -290,30 +295,41 @@ const [dimensions, setDimensions] = useState({
             nodeColor={getNodeColor}
             nodeVal={getNodeSize}
             nodeRelSize={1}
-            nodeCanvasObjectMode={() => "after"}
+            nodeCanvasObjectMode={(node: GraphNode) =>
+              node.type === "movement" ? "replace" : "after"
+            }
             nodeCanvasObject={(
               node: GraphNode,
               context: CanvasRenderingContext2D,
               globalScale: number,
             ) => {
-              if (
-                node.id !== selectedNode?.id ||
-                node.x === undefined ||
-                node.y === undefined
-              ) {
+              if (node.x === undefined || node.y === undefined) {
                 return;
               }
-
+            
               const nodeRadius = Math.sqrt(getNodeSize(node));
-              const ringGap = 3 / globalScale;
-              const ringRadius = nodeRadius + ringGap;
-
-              context.beginPath();
-              context.arc(node.x, node.y, ringRadius, 0, 2 * Math.PI);
-              context.strokeStyle = "#ffe640";
-              context.lineWidth = 3 / globalScale;
-              context.stroke();
-            }}
+            
+              // Draw movement nodes as hollow circles.
+              if (node.type === "movement") {
+                context.beginPath();
+                context.arc(node.x, node.y, nodeRadius, 0, 2 * Math.PI);
+                context.strokeStyle = getNodeColor(node);
+                context.lineWidth = 2 / globalScale;
+                context.stroke();
+              }
+            
+              // Draw the yellow selection ring around the selected node.
+              if (node.id === selectedNode?.id) {
+                const ringGap = 3 / globalScale;
+                const ringRadius = nodeRadius + ringGap;
+            
+                context.beginPath();
+                context.arc(node.x, node.y, ringRadius, 0, 2 * Math.PI);
+                context.strokeStyle = "#e96500";
+                context.lineWidth = 4 / globalScale;
+                context.stroke();
+              }
+            }}            
             linkSource="source"
             linkTarget="target"
             linkColor={getLinkColor}
