@@ -725,6 +725,39 @@
       "endYear": 1687,
       "disciplines": ["Astronomy", "Mathematics", "Physics", "Philosophy"],
       "tags": ["Scientific Method", "Empiricism", "Observation", "Experimentation", "Natural Philosophy", "Heliocentrism"]
+    },
+    {
+      "id": "ancient-greek-philosophy",
+      "name": "Ancient Greek Philosophy",
+      "type": "movement",
+      "importance": 9,
+      "description": "Ancient Greek Philosophy was an intellectual movement that emerged between the sixth and fourth centuries BCE, seeking to understand the nature of reality, knowledge, ethics, politics, and human existence through reasoned inquiry rather than mythological explanation. The ideas of philosophers such as Socrates, Plato, and Aristotle established enduring traditions of rational thought that profoundly shaped Western philosophy, science, mathematics, and political theory.",
+      "startYear": -600,
+      "endYear": -300,
+      "disciplines": ["Philosophy", "Ethics", "Political Science", "Metaphysics", "Logic"],
+      "tags": ["Reason", "Dialectic", "Virtue", "Logic", "Natural Philosophy", "Classical Greece", "Western Philosophy"]
+    },
+    {
+      "id": "hellenistic-science",
+      "name": "Hellenistic Science",
+      "type": "movement",
+      "importance": 9,
+      "description": "Hellenistic Science was an intellectual movement that flourished following the conquests of Alexander the Great, emphasizing systematic observation, mathematical reasoning, and empirical investigation to understand the natural world. Centered in institutions such as the Library of Alexandria, its scholars made foundational advances in mathematics, astronomy, engineering, geography, and medicine that influenced scientific thought for centuries.",
+      "startYear": -323,
+      "endYear": -31,
+      "disciplines": ["Astronomy", "Mathematics", "Physics", "Engineering", "Geography", "Medicine"],
+      "tags": ["Observation", "Geometry", "Empiricism", "Natural Philosophy", "Scientific Inquiry"]
+    },
+    {
+      "id": "enlightenment",
+      "name": "Enlightenment",
+      "type": "movement",
+      "importance": 9,
+      "description": "The Enlightenment was an intellectual movement of the seventeenth and eighteenth centuries that emphasized reason, individual liberty, scientific inquiry, and skepticism of inherited authority as the foundations of human progress. Its philosophers transformed political theory, economics, ethics, and education, inspiring democratic revolutions and shaping many of the principles underlying modern liberal societies.",
+      "startYear": 1685,
+      "endYear": 1815,
+      "disciplines": ["Ethics", "Economics", "Political Science", "Philosophy"],
+      "tags": ["Reason", "Liberty", "Natural Rights", "Scientific Method", "Social Contract", "Separation of Powers"]
     }
   ],
   "edges": [
