@@ -2,6 +2,7 @@ export type NodeType =
   | "discipline"
   | "event"
   | "idea"
+  | "institution"
   | "movement"
   | "person"
   | "place"
@@ -32,13 +33,15 @@ export type RelationshipType =
   | "invented"
   | "mentored"
   | "popularized"
+  | "preserved"
   | "proposed"
   | "published"
   | "refined"
   | "responded_to"
   | "supported"
   | "synthesized"
-  | "transformed";
+  | "transformed"
+  | "translated";
 
 export type RelationshipDirectness =
   | "direct"

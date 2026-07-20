@@ -23,6 +23,7 @@ const visibleLegendTypes: NodeType[] = [
   "person",
   "publication",
   "theory",
+  "institution",
   "movement",
 ];
 

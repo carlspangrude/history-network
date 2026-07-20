@@ -8,6 +8,7 @@ export const NODE_TYPE_COLORS: Record<NodeType, string> = {
   idea: "#d38cff",
   publication: "#e3b466",
   theory: "#aa89e8",
+  institution: "#67c7d4",
   event: "#f18484",
   place: "#8bc981",
   discipline: "#c7c7c7",
@@ -20,6 +21,7 @@ export const NODE_TYPE_LABELS: Record<NodeType, string> = {
   idea: "Idea",
   publication: "Publication",
   theory: "Theory",
+  institution: "Institution",
   event: "Event",
   place: "Place",
   discipline: "Discipline",
@@ -31,5 +33,6 @@ export const FILTERABLE_NODE_TYPES: NodeType[] = [
   "person",
   "publication",
   "theory",
+  "institution",
   "movement",
 ];

@@ -124,7 +124,7 @@ function App() {
         aria-hidden={activeView !== "explore"}
         style={
           {
-            "--timeline-height": isTimelineOpen ? "240px" : "44px",
+            "--timeline-height": isTimelineOpen ? "275px" : "44px",
           } as React.CSSProperties
         }
       >

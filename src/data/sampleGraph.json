@@ -2202,6 +2202,324 @@
         "Einstein Field Equations",
         "Relativity"
       ]
+    },
+    {
+      "id": "plotinus",
+      "name": "Plotinus",
+      "type": "person",
+      "importance": 8,
+      "description": "Roman-Egyptian philosopher whose systematic development of Plato's ideas founded Neoplatonism, one of the most influential philosophical traditions of late antiquity.",
+      "startYear": 204,
+      "endYear": 270,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Neoplatonism",
+        "The One",
+        "Emanation",
+        "Late Antiquity",
+        "Enneads"
+      ],
+      "epigraph": {
+        "text": "Beauty is the true goal for which we are striving."
+      }
+    },
+    {
+      "id": "neoplatonism",
+      "name": "Neoplatonism",
+      "type": "theory",
+      "importance": 8,
+      "description": "A philosophical system built on Plato's ideas, describing all of reality as emanating from a single transcendent source known as 'the One.' It became the dominant philosophical framework of late antiquity and deeply shaped early Christian theology.",
+      "startYear": 245,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "The One",
+        "Emanation",
+        "Mysticism",
+        "Late Antiquity"
+      ]
+    },
+    {
+      "id": "boethius",
+      "name": "Boethius",
+      "type": "person",
+      "importance": 8,
+      "description": "Roman senator and philosopher whose Latin translations and commentaries on Aristotle's logical works preserved classical learning through the collapse of the Western Roman Empire, earning him the title 'the last of the Romans, first of the Scholastics.' Wrote his most famous work, The Consolation of Philosophy, while imprisoned awaiting execution.",
+      "startYear": 480,
+      "endYear": 524,
+      "disciplines": [
+        "Philosophy",
+        "Literature"
+      ],
+      "tags": [
+        "Consolation of Philosophy",
+        "Logica Vetus",
+        "Late Antiquity",
+        "Translation"
+      ],
+      "epigraph": {
+        "text": "Nothing is miserable unless you think it so."
+      }
+    },
+    {
+      "id": "house-of-wisdom",
+      "name": "House of Wisdom",
+      "type": "institution",
+      "importance": 9,
+      "description": "A major intellectual center in Abbasid Baghdad where scholars translated, preserved, and expanded upon Greek, Persian, and Indian scientific and philosophical works. It became the engine of the Islamic Golden Age and the critical bridge that carried classical knowledge from antiquity into the medieval and early modern world.",
+      "startYear": 800,
+      "endYear": 1258,
+      "disciplines": [
+        "Philosophy",
+        "Mathematics",
+        "Astronomy",
+        "Medicine"
+      ],
+      "tags": [
+        "Baghdad",
+        "Abbasid Caliphate",
+        "Translation Movement",
+        "Bayt al-Hikma"
+      ]
+    },
+    {
+      "id": "islamic-golden-age",
+      "name": "Islamic Golden Age",
+      "type": "movement",
+      "importance": 10,
+      "description": "A period of extraordinary scientific, philosophical, and cultural achievement across the Islamic world, during which scholars preserved classical Greek learning, made foundational advances in mathematics, medicine, astronomy, and optics, and produced works that would later transform European thought.",
+      "startYear": 750,
+      "endYear": 1258,
+      "disciplines": [
+        "Philosophy",
+        "Mathematics",
+        "Astronomy",
+        "Medicine",
+        "Engineering"
+      ],
+      "tags": [
+        "Abbasid Caliphate",
+        "Translation Movement",
+        "Baghdad",
+        "Scientific Inquiry"
+      ]
+    },
+    {
+      "id": "al-khwarizmi",
+      "name": "Al-Khwarizmi",
+      "type": "person",
+      "importance": 10,
+      "description": "Persian mathematician and astronomer at the House of Wisdom whose systematic treatment of equations founded algebra as a discipline and whose name gave rise to the term 'algorithm.' He also played a central role in popularizing the Hindu-Arabic numeral system.",
+      "startYear": 780,
+      "endYear": 850,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy",
+        "Geography"
+      ],
+      "tags": [
+        "Algebra",
+        "Algorithm",
+        "Hindu-Arabic Numerals",
+        "House of Wisdom"
+      ]
+    },
+    {
+      "id": "algebra",
+      "name": "Algebra",
+      "type": "theory",
+      "importance": 9,
+      "description": "A systematic method for solving equations through the manipulation of unknown quantities, first organized as a distinct mathematical discipline by Al-Khwarizmi. It became foundational to all later mathematics and physical science.",
+      "startYear": 820,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Equations",
+        "Al-Jabr",
+        "Mathematical Method"
+      ]
+    },
+    {
+      "id": "ibn-sina",
+      "name": "Ibn Sina (Avicenna)",
+      "type": "person",
+      "importance": 10,
+      "description": "Persian polymath and physician whose systematic synthesis of Aristotelian philosophy, Galenic medicine, and his own clinical observation produced the most influential medical text in history and a body of philosophical work that shaped both Islamic and European scholastic thought.",
+      "startYear": 980,
+      "endYear": 1037,
+      "disciplines": [
+        "Medicine",
+        "Philosophy"
+      ],
+      "tags": [
+        "Canon of Medicine",
+        "Avicennism",
+        "Peripatetic Philosophy"
+      ]
+    },
+    {
+      "id": "canon-of-medicine",
+      "name": "The Canon of Medicine",
+      "type": "publication",
+      "importance": 9,
+      "description": "Ibn Sina's encyclopedic synthesis of Greek, Islamic, and clinical medical knowledge. It served as the standard medical textbook in both the Islamic world and European universities for roughly six centuries.",
+      "startYear": 1025,
+      "disciplines": [
+        "Medicine"
+      ],
+      "tags": [
+        "Medical Encyclopedia",
+        "European Universities",
+        "Clinical Medicine"
+      ]
+    },
+    {
+      "id": "ibn-al-haytham",
+      "name": "Ibn al-Haytham (Alhazen)",
+      "type": "person",
+      "importance": 10,
+      "description": "Arab mathematician and astronomer whose rigorous experimental investigation of light and vision is widely regarded as the earliest fully developed application of the scientific method. His work directly shaped the later optical theories of Kepler and the broader European scientific tradition.",
+      "startYear": 965,
+      "endYear": 1040,
+      "disciplines": [
+        "Physics",
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Optics",
+        "Experimental Method",
+        "Vision",
+        "Book of Optics"
+      ]
+    },
+    {
+      "id": "book-of-optics",
+      "name": "Book of Optics",
+      "type": "publication",
+      "importance": 9,
+      "description": "Ibn al-Haytham's systematic experimental study of light, vision, and reflection, which overturned earlier theories of sight and established observation and controlled experiment as the basis for physical science.",
+      "startYear": 1021,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Optics",
+        "Experimental Method",
+        "Vision"
+      ]
+    },
+    {
+      "id": "scientific-method",
+      "name": "Scientific Method",
+      "type": "theory",
+      "importance": 8,
+      "description": "A systematic approach to inquiry combining observation, hypothesis, controlled experiment, and mathematical analysis, first rigorously demonstrated in Ibn al-Haytham's optical experiments and later central to the European Scientific Revolution.",
+      "startYear": 1021,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Experimentation",
+        "Observation",
+        "Empirical Inquiry"
+      ]
+    },
+    {
+      "id": "ibn-rushd",
+      "name": "Ibn Rushd (Averroes)",
+      "type": "person",
+      "importance": 9,
+      "description": "Andalusian philosopher and jurist whose extensive commentaries on Aristotle became so authoritative in medieval Europe that he was simply known as 'The Commentator.' His work was translated into Latin and directly shaped the philosophy of Thomas Aquinas and the scholastic tradition.",
+      "startYear": 1126,
+      "endYear": 1198,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Averroism",
+        "Aristotelian Commentary",
+        "Al-Andalus",
+        "Incoherence of the Incoherence"
+      ]
+    },
+    {
+      "id": "al-ghazali",
+      "name": "Al-Ghazali",
+      "type": "person",
+      "importance": 8,
+      "description": "Persian theologian and philosopher whose influential critique of Aristotelian philosophy argued that reason alone could not establish many of philosophy's central metaphysical claims, provoking a famous rebuttal from Ibn Rushd and reshaping the relationship between philosophy and theology in the Islamic world.",
+      "startYear": 1058,
+      "endYear": 1111,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Incoherence of the Philosophers",
+        "Theology",
+        "Sufism"
+      ]
+    },
+    {
+      "id": "toledo-school-translators",
+      "name": "Toledo School of Translators",
+      "type": "institution",
+      "importance": 8,
+      "description": "A center of translation activity in Christian Spain where Arabic scientific and philosophical texts, including the commentaries of Ibn Rushd and the works of Ibn Sina, were rendered into Latin. It served as the principal channel through which the achievements of the Islamic Golden Age reached medieval European scholarship.",
+      "startYear": 1085,
+      "endYear": 1284,
+      "disciplines": [
+        "Philosophy",
+        "Literature"
+      ],
+      "tags": [
+        "Toledo",
+        "Translation Movement",
+        "Latin Europe",
+        "Gerard of Cremona"
+      ]
+    },
+    {
+      "id": "augustine",
+      "name": "Augustine of Hippo",
+      "type": "person",
+      "importance": 9,
+      "description": "Roman North African philosopher and theologian whose synthesis of Neoplatonic philosophy and Christian doctrine became the dominant intellectual framework of Western Christianity for nearly a millennium, and whose method of rigorous inquiry into faith and reason directly shaped later scholastic thought.",
+      "startYear": 354,
+      "endYear": 430,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Christian Platonism",
+        "Confessions",
+        "City of God",
+        "Late Antiquity"
+      ],
+      "epigraph": {
+        "text": "Our heart is restless until it rests in you."
+      }
+    },
+    {
+      "id": "scholasticism",
+      "name": "Scholasticism",
+      "type": "movement",
+      "importance": 9,
+      "description": "A method of critical philosophical and theological inquiry, centered on dialectical reasoning and textual commentary, that dominated medieval European universities. It sought to reconcile classical philosophy, especially Aristotle, with Christian doctrine.",
+      "startYear": 1100,
+      "endYear": 1700,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Dialectic",
+        "Medieval Universities",
+        "Aristotelianism"
+      ]
     }
   ],
   "edges": [
@@ -4104,6 +4422,404 @@
       "description": "General relativity demonstrated that Newtonian mechanics is an approximation valid for weak gravitational fields and low velocities, replacing Newton's conception of gravity with curved spacetime.",
       "confidence": 1,
       "directness": "direct"
+    },
+    {
+      "id": "plato-plotinus",
+      "source": "plato",
+      "target": "plotinus",
+      "relationship": "influenced",
+      "description": "Plotinus saw himself as a faithful interpreter of Plato, developing his dialogues into a systematic metaphysics of emanation from a single transcendent source.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "plotinus-neoplatonism",
+      "source": "plotinus",
+      "target": "neoplatonism",
+      "relationship": "developed",
+      "description": "Plotinus's Enneads systematized the metaphysics of emanation from the One, founding Neoplatonism as a coherent philosophical school.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "neoplatonism-augustine",
+      "source": "neoplatonism",
+      "target": "augustine",
+      "relationship": "influenced",
+      "description": "Augustine's early encounter with Neoplatonic philosophy shaped his understanding of God, evil, and the soul, and provided the philosophical vocabulary for his mature Christian theology.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "augustine-thomas-aquinas",
+      "source": "augustine",
+      "target": "thomas-aquinas",
+      "relationship": "influenced",
+      "description": "Aquinas engaged extensively with Augustine's theology, building his own synthesis of faith and reason partly in dialogue with Augustinian thought.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "augustine-scholasticism",
+      "source": "augustine",
+      "target": "scholasticism",
+      "relationship": "influenced",
+      "description": "Augustine's method of rigorous inquiry into questions of faith and reason established a model of theological argument later formalized by the scholastics.",
+      "confidence": 0.9,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "boethius-aristotelian-logic",
+      "source": "boethius",
+      "target": "aristotelian-logic",
+      "relationship": "translated",
+      "description": "Boethius's Latin translations of Aristotle's Categories and On Interpretation were, for centuries, the only works of Aristotelian logic available in Western Europe.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "aristotle-boethius",
+      "source": "aristotle",
+      "target": "boethius",
+      "relationship": "influenced",
+      "description": "Boethius devoted much of his scholarly life to translating and commenting on Aristotle's logical works, preserving them for Latin Europe.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "boethius-scholasticism",
+      "source": "boethius",
+      "target": "scholasticism",
+      "relationship": "influenced",
+      "description": "Boethius's application of Aristotelian logic to theological questions established a method of argument that later scholastics developed into a full intellectual program.",
+      "confidence": 0.88,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-aristotle",
+      "source": "house-of-wisdom",
+      "target": "aristotle",
+      "relationship": "preserved",
+      "description": "Scholars at the House of Wisdom translated Aristotle's works into Arabic and produced extensive commentaries that kept his philosophy alive and actively studied for centuries.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-galen",
+      "source": "house-of-wisdom",
+      "target": "galen",
+      "relationship": "preserved",
+      "description": "Galen's medical writings were extensively translated and studied at the House of Wisdom, keeping his physiological and clinical framework central to medicine for centuries.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-ptolemy",
+      "source": "house-of-wisdom",
+      "target": "ptolemy",
+      "relationship": "preserved",
+      "description": "Ptolemy's Almagest was translated into Arabic at the House of Wisdom, whose scholars preserved and refined it centuries before it reached Latin Europe.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-euclid",
+      "source": "house-of-wisdom",
+      "target": "euclid",
+      "relationship": "preserved",
+      "description": "Euclid's Elements was among the earliest Greek mathematical works translated at the House of Wisdom, ensuring its continued study and transmission.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-islamic-golden-age",
+      "source": "house-of-wisdom",
+      "target": "islamic-golden-age",
+      "relationship": "enabled",
+      "description": "The House of Wisdom's translation and research program provided the institutional foundation for the broader flourishing of scholarship across the Islamic world.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "al-khwarizmi-algebra",
+      "source": "al-khwarizmi",
+      "target": "algebra",
+      "relationship": "developed",
+      "description": "Al-Khwarizmi's systematic treatment of linear and quadratic equations in his treatise on al-jabr founded algebra as a distinct mathematical discipline.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "algebra-scientific-revolution",
+      "source": "algebra",
+      "target": "scientific-revolution",
+      "relationship": "enabled",
+      "description": "Algebraic methods provided essential mathematical tools for the physical theories developed during the Scientific Revolution.",
+      "confidence": 0.88,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "algebra-newtonian-mechanics",
+      "source": "algebra",
+      "target": "newtonian-mechanics",
+      "relationship": "influenced",
+      "description": "Newton's mathematical formulation of motion and gravitation relied on algebraic methods with roots in Al-Khwarizmi's foundational work.",
+      "confidence": 0.8,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "al-khwarizmi-islamic-golden-age",
+      "source": "al-khwarizmi",
+      "target": "islamic-golden-age",
+      "relationship": "advanced",
+      "description": "Al-Khwarizmi's mathematical and astronomical work at the House of Wisdom exemplified and advanced the scholarly achievements of the Islamic Golden Age.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-sina-canon-of-medicine",
+      "source": "ibn-sina",
+      "target": "canon-of-medicine",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "canon-of-medicine-medical-science",
+      "source": "canon-of-medicine",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "The Canon of Medicine's systematic synthesis of clinical and theoretical medicine shaped medical practice and education for roughly six centuries.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "canon-of-medicine-andreas-vesalius",
+      "source": "canon-of-medicine",
+      "target": "andreas-vesalius",
+      "relationship": "influenced",
+      "description": "European medical curricula, including Vesalius's own training, were built around the Canon of Medicine before his direct dissections led him to challenge its anatomical claims.",
+      "confidence": 0.75,
+      "directness": "indirect",
+      "evidenceType": "secondary_source"
+    },
+    {
+      "id": "galen-ibn-sina",
+      "source": "galen",
+      "target": "ibn-sina",
+      "relationship": "influenced",
+      "description": "Ibn Sina's medical framework in the Canon of Medicine drew extensively on Galenic physiology and clinical method.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "aristotle-ibn-sina",
+      "source": "aristotle",
+      "target": "ibn-sina",
+      "relationship": "influenced",
+      "description": "Ibn Sina's philosophical system built on Aristotelian logic and metaphysics, synthesized with Neoplatonic and Islamic theological concerns.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-sina-islamic-golden-age",
+      "source": "ibn-sina",
+      "target": "islamic-golden-age",
+      "relationship": "advanced",
+      "description": "Ibn Sina's medical and philosophical synthesis stands among the defining intellectual achievements of the Islamic Golden Age.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclid-ibn-al-haytham",
+      "source": "euclid",
+      "target": "ibn-al-haytham",
+      "relationship": "influenced",
+      "description": "Ibn al-Haytham's geometric approach to optics drew directly on Euclidean geometry.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ptolemy-ibn-al-haytham",
+      "source": "ptolemy",
+      "target": "ibn-al-haytham",
+      "relationship": "influenced",
+      "description": "Ibn al-Haytham engaged critically with Ptolemy's Optics, testing and ultimately overturning several of its claims through experiment.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-al-haytham-book-of-optics",
+      "source": "ibn-al-haytham",
+      "target": "book-of-optics",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "ibn-al-haytham-scientific-method",
+      "source": "ibn-al-haytham",
+      "target": "scientific-method",
+      "relationship": "developed",
+      "description": "Ibn al-Haytham's rigorous combination of hypothesis, controlled experiment, and mathematical analysis in his optical research is widely cited as the earliest fully developed application of the scientific method.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "scientific-method-scientific-revolution",
+      "source": "scientific-method",
+      "target": "scientific-revolution",
+      "relationship": "influenced",
+      "description": "Ibn al-Haytham's experimental approach prefigured methods that became central to the European Scientific Revolution, though the extent of direct transmission remains debated among historians.",
+      "confidence": 0.65,
+      "directness": "indirect",
+      "evidenceType": "secondary_source"
+    },
+    {
+      "id": "book-of-optics-kepler",
+      "source": "book-of-optics",
+      "target": "kepler",
+      "relationship": "influenced",
+      "description": "Kepler explicitly engaged with Ibn al-Haytham's optical theories, transmitted through Witelo's writings, in developing his own account of vision and light in Astronomiae Pars Optica.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-al-haytham-islamic-golden-age",
+      "source": "ibn-al-haytham",
+      "target": "islamic-golden-age",
+      "relationship": "advanced",
+      "description": "Ibn al-Haytham's experimental optics represents one of the most significant scientific achievements of the Islamic Golden Age.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "al-ghazali-ibn-sina",
+      "source": "al-ghazali",
+      "target": "ibn-sina",
+      "relationship": "challenged",
+      "description": "Al-Ghazali's Incoherence of the Philosophers directly targeted the Aristotelian-Neoplatonic philosophy of Ibn Sina, arguing that key metaphysical claims could not be established by reason alone.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "ibn-rushd-al-ghazali",
+      "source": "ibn-rushd",
+      "target": "al-ghazali",
+      "relationship": "responded_to",
+      "description": "Ibn Rushd's Incoherence of the Incoherence directly rebutted Al-Ghazali's critique of philosophy, defending the compatibility of reason and Aristotelian inquiry with religious faith.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "aristotle-ibn-rushd",
+      "source": "aristotle",
+      "target": "ibn-rushd",
+      "relationship": "influenced",
+      "description": "Ibn Rushd's extensive commentaries sought to recover and clarify what he regarded as the authentic philosophy of Aristotle.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-rushd-thomas-aquinas",
+      "source": "ibn-rushd",
+      "target": "thomas-aquinas",
+      "relationship": "influenced",
+      "description": "Aquinas directly engaged with Ibn Rushd's Aristotle commentaries, referring to him as 'The Commentator,' both drawing on and arguing against his interpretations.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "al-ghazali-islamic-golden-age",
+      "source": "al-ghazali",
+      "target": "islamic-golden-age",
+      "relationship": "advanced",
+      "description": "Al-Ghazali's theological and philosophical writings profoundly shaped intellectual debate throughout the Islamic Golden Age.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ibn-rushd-islamic-golden-age",
+      "source": "ibn-rushd",
+      "target": "islamic-golden-age",
+      "relationship": "advanced",
+      "description": "Ibn Rushd's philosophical and legal scholarship in Al-Andalus represents one of the last great achievements of the Islamic Golden Age.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "islamic-golden-age-renaissance",
+      "source": "islamic-golden-age",
+      "target": "renaissance",
+      "relationship": "influenced",
+      "description": "The scientific, philosophical, and mathematical achievements preserved and advanced during the Islamic Golden Age, transmitted through Latin translation, formed part of the intellectual foundation the Renaissance built upon.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "toledo-ibn-rushd",
+      "source": "toledo-school-translators",
+      "target": "ibn-rushd",
+      "relationship": "translated",
+      "description": "Translators working in Toledo rendered Ibn Rushd's Aristotle commentaries into Latin, making them available to European scholars for the first time.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "toledo-thomas-aquinas",
+      "source": "toledo-school-translators",
+      "target": "thomas-aquinas",
+      "relationship": "enabled",
+      "description": "The Latin translations produced at Toledo gave Aquinas and his contemporaries direct access to Aristotle's works and Ibn Rushd's commentaries on them.",
+      "confidence": 0.9,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "thomas-aquinas-scholasticism",
+      "source": "thomas-aquinas",
+      "target": "scholasticism",
+      "relationship": "synthesized",
+      "description": "Aquinas's systematic integration of Aristotelian philosophy with Christian theology represents the high point of scholastic method.",
+      "confidence": 0.98,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
     }
   ],
   "sources": [

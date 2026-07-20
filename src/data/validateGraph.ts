@@ -12,6 +12,7 @@ import type {
 
 const VALID_NODE_TYPES = new Set<NodeType>([
   "discipline",
+  "institution",
   "movement",
   "person",
   "publication",
@@ -58,6 +59,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "invented",
   "mentored",
   "popularized",
+  "preserved",
   "proposed",
   "published",
   "refined",
@@ -65,6 +67,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "supported",
   "synthesized",
   "transformed",
+  "translated",
 ]);
 
 const VALID_RELATIONSHIP_DIRECTNESS = new Set<RelationshipDirectness>([
