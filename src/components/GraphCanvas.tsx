@@ -267,26 +267,39 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   // by default ForceGraph2D renders them as identical overlapping straight lines.
   const linkCurvature = useMemo(() => {
     const curvatureByLinkId = new Map<string, number>();
-    const groupsByPairKey = new Map<string, string[]>();
+    const groupsByPairKey = new Map<
+      string,
+      { linkId: string; isReversed: boolean }[]
+    >();
 
     graphData.links.forEach((link) => {
       const sourceId = getEndpointId(link.source);
       const targetId = getEndpointId(link.target);
-      const pairKey = [sourceId, targetId].sort().join("|");
+      const [canonicalFirst, canonicalSecond] = [sourceId, targetId].sort();
+      const pairKey = `${canonicalFirst}|${canonicalSecond}`;
+
+      // ForceGraph2D's curvature sign is relative to each link's own
+      // source->target order. Two edges between the same pair stored in
+      // opposite directions (e.g. Newton->Descartes and Descartes->Newton)
+      // can end up curving to the SAME visual side if we only offset by
+      // iteration order — normalize against a canonical direction instead.
+      const isReversed = sourceId !== canonicalFirst;
 
       const group = groupsByPairKey.get(pairKey) ?? [];
-      group.push(link.id);
+      group.push({ linkId: link.id, isReversed });
       groupsByPairKey.set(pairKey, group);
     });
 
-    const spacing = 0.3;
+    const spacing = 0.4;
 
-    groupsByPairKey.forEach((linkIds) => {
-      const count = linkIds.length;
+    groupsByPairKey.forEach((entries) => {
+      const count = entries.length;
 
-      linkIds.forEach((linkId, index) => {
+      entries.forEach(({ linkId, isReversed }, index) => {
         const offsetIndex = index - (count - 1) / 2;
-        curvatureByLinkId.set(linkId, offsetIndex * spacing);
+        const curvature = offsetIndex * spacing;
+
+        curvatureByLinkId.set(linkId, isReversed ? -curvature : curvature);
       });
     });
 
@@ -313,7 +326,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
-    fg.d3Force("link")?.distance(() => 2);
+    fg.d3Force("link")?.distance(() => 8);
   
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions]);
