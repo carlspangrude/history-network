@@ -22,8 +22,10 @@ export type RelationshipType =
   | "complemented"
   | "converged_with"
   | "criticized"
+  | "developed"
   | "discovered"
   | "enabled"
+  | "explained"
   | "extended"
   | "formalized"
   | "founded"
@@ -36,6 +38,7 @@ export type RelationshipType =
   | "published"
   | "refined"
   | "responded_to"
+  | "supported"
   | "synthesized"
   | "transformed";
 

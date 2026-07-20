@@ -1144,8 +1144,140 @@ h2 {
     outline-offset: 3px;
   }
 
+.node-details-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.node-details-actions .clear-selection-button {
+  margin-top: 0;
+}
+
+.find-path-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  text-align: left;
+}
+
+.find-path-button:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.find-path-button:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.pathway-not-found {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-small);
+  background: var(--background-panel-alt);
+  color: var(--text-muted);
+  font-size: 0.76rem;
+}
+
+.pathway-search-hint,
+.pathway-result-hint {
+  margin: 6px 0 16px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.pathway-search-cancel {
+  display: block;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  text-align: left;
+}
+
+.pathway-search-cancel:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pathway-result-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pathway-result-heading h2 {
+  margin: 0;
+}
+
+.pathway-result-heading .clear-selection-button {
+  margin-top: 0;
+  flex: 0 0 auto;
+}
+
+.pathway-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pathway-step {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.pathway-step:last-child {
+  border-bottom: 0;
+}
+
+.pathway-step-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pathway-step-number {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--relationship-highlight);
+  color: var(--background-canvas);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.pathway-step-relationship {
+  margin: 4px 0 0 28px;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  text-transform: capitalize;
+}
+
   .fit-graph-button {
-    padding: 7px 10px;
+  padding: 7px 10px;
     border: 1px solid var(--border-pill);
     border-radius: var(--radius-pill);
     background: rgba(30, 30, 30, 0.82);

@@ -23,6 +23,8 @@ interface GraphCanvasProps {
   onNodeSelect: (node: GraphNode) => void;
   onRelationshipOpen: (relationshipId: string) => void;
   onSelectionClear: () => void;
+  pathwayNodeIds: string[];
+  pathwayLinkIds: string[];
 }
 
 function getEndpointId(endpoint: string | GraphNode): string {
@@ -35,7 +37,9 @@ function GraphCanvas({
   selectedRelationshipId,
   onNodeSelect,
   onRelationshipOpen,
-  onSelectionClear
+  onSelectionClear,
+  pathwayNodeIds,
+  pathwayLinkIds,
 }: GraphCanvasProps) {
 
   // ===========================================================================
@@ -109,6 +113,19 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     return ids;
   }, [graphData.links, selectedRelationshipId]);
 
+  const isPathwayActive = pathwayNodeIds.length > 0;
+
+  const pathwayNodeIndex = useMemo(() => {
+    const map = new Map<string, number>();
+    pathwayNodeIds.forEach((id, index) => map.set(id, index));
+    return map;
+  }, [pathwayNodeIds]);
+
+  const pathwayLinkIdSet = useMemo(
+    () => new Set(pathwayLinkIds),
+    [pathwayLinkIds],
+  );
+
   // ===========================================================================
   // Effects
   // ===========================================================================
@@ -171,6 +188,12 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   // ===========================================================================
 
   const getNodeColor = (node: GraphNode) => {
+    if (isPathwayActive) {
+      return pathwayNodeIndex.has(node.id)
+        ? "#ffb703"
+        : "rgba(110, 110, 110, 0.15)";
+    }
+
     if (selectedRelationshipId) {
       if (selectedRelationshipNodeIds.has(node.id)) {
         return NODE_TYPE_COLORS[node.type];
@@ -199,8 +222,10 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     const isKeyNode = importance >= 8;
   
     let area = isKeyNode ? 110 : 24;
-  
-    if (
+
+    if (isPathwayActive) {
+      area = pathwayNodeIndex.has(node.id) ? area * 1.6 : area * 0.7;
+    } else if (
       selectedRelationshipId &&
       selectedRelationshipNodeIds.has(node.id)
     ) {
@@ -220,6 +245,12 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   };
 
   const getLinkColor = (link: GraphLink) => {
+    if (isPathwayActive) {
+      return pathwayLinkIdSet.has(link.id)
+        ? "rgba(255, 183, 3, 1)"
+        : "rgba(110, 110, 110, 0.06)";
+    }
+
     if (selectedRelationshipId) {
       return link.id === selectedRelationshipId
         ? "rgba(255, 230, 64, 1)"
@@ -242,6 +273,10 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   };
 
   const getLinkWidth = (link: GraphLink) => {
+    if (isPathwayActive) {
+      return pathwayLinkIdSet.has(link.id) ? 4 : 0.5;
+    }
+
     if (selectedRelationshipId) {
       return link.id === selectedRelationshipId ? 5 : 0.5;
     }
@@ -259,6 +294,10 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   };
 
   const getLinkArrowLength = (link: GraphLink) => {
+    if (isPathwayActive) {
+      return pathwayLinkIdSet.has(link.id) ? 10 : 5;
+    }
+
     return link.id === selectedRelationshipId ? 10 : 5;
   };
 
@@ -326,7 +365,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
-    fg.d3Force("link")?.distance(() => 8);
+    fg.d3Force("link")?.distance(() => 15);
   
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions]);
@@ -430,6 +469,29 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
                 context.strokeStyle = "#e96500";
                 context.lineWidth = 4 / globalScale;
                 context.stroke();
+              }
+
+              // Draw a step-number badge on nodes that are part of the
+              // active traced pathway.
+              if (pathwayNodeIndex.has(node.id)) {
+                const stepNumber = (pathwayNodeIndex.get(node.id) as number) + 1;
+                const badgeRadius = 8 / globalScale;
+                const badgeX = node.x + nodeRadius * 0.7;
+                const badgeY = node.y - nodeRadius * 0.7;
+
+                context.beginPath();
+                context.arc(badgeX, badgeY, badgeRadius, 0, 2 * Math.PI);
+                context.fillStyle = "#ffb703";
+                context.fill();
+                context.strokeStyle = "#181818";
+                context.lineWidth = 1.5 / globalScale;
+                context.stroke();
+
+                context.fillStyle = "#181818";
+                context.font = `${9 / globalScale}px sans-serif`;
+                context.textAlign = "center";
+                context.textBaseline = "middle";
+                context.fillText(String(stepNumber), badgeX, badgeY);
               }
             }}            
             linkSource="source"

@@ -5,6 +5,7 @@ import type {
   KnowledgeEdge,
   RelationshipType,
 } from "../types/graph";
+import type { ActivePathway } from "../hooks/useKnowledgeGraph";
 
 interface DetailsPanelProps {
   isOpen: boolean;
@@ -17,6 +18,15 @@ interface DetailsPanelProps {
   onRelationshipSelect: (relationshipId: string) => void;
   onSelectionClear: () => void;
   onToggle: () => void;
+  pathwaySearchSourceId: string | null;
+  activePathway: ActivePathway | null;
+  pathwaySteps: KnowledgeEdge[];
+  pathwayNotFound: boolean;
+  pathwayNotFoundTargetName: string | null;
+  onPathwaySearchStart: () => void;
+  onPathwaySearchCancel: () => void;
+  onPathwayTargetSelect: (node: GraphNode) => void;
+  onPathwayClear: () => void;
 }
 
 interface RelationshipGroup {
@@ -59,6 +69,12 @@ function formatRelationship(
       case "extended":
         return "Extended by";
 
+      case "explained":
+        return "Explained by";
+
+      case "developed":
+        return "Developed by";
+
       case "discovered":
         return "Discovered by";
 
@@ -85,6 +101,9 @@ function formatRelationship(
 
       case "refined":
         return "Refined by";
+
+      case "supported":
+        return "Supported by";
 
       case "synthesized":
         return "Synthesized by";
@@ -114,6 +133,15 @@ function DetailsPanel({
   onRelationshipSelect,
   onSelectionClear,
   onToggle,
+  pathwaySearchSourceId,
+  activePathway,
+  pathwaySteps,
+  pathwayNotFound,
+  pathwayNotFoundTargetName,
+  onPathwaySearchStart,
+  onPathwaySearchCancel,
+  onPathwayTargetSelect,
+  onPathwayClear,
 }: DetailsPanelProps) {
   
   // ===========================================================================
@@ -125,6 +153,8 @@ const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(
 );
 
 const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
+
+const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
   
   // ===========================================================================
   // Derived Data
@@ -242,6 +272,45 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
       selectedNode.endYear,
     )
   : null;
+
+  const pathwaySearchSourceNode = pathwaySearchSourceId
+    ? graphNodeById.get(pathwaySearchSourceId)
+    : undefined;
+
+  const pathwaySearchResults = useMemo(() => {
+    const normalizedQuery = pathwaySearchQuery.trim().toLowerCase();
+
+    if (!normalizedQuery || !pathwaySearchSourceId) {
+      return [];
+    }
+
+    return graphNodes
+      .filter((node) => {
+        if (node.id === pathwaySearchSourceId) {
+          return false;
+        }
+
+        const searchableValues = [
+          node.name,
+          node.type,
+          ...(node.disciplines ?? []),
+          ...(node.tags ?? []),
+        ];
+
+        return searchableValues.some((value) =>
+          value.toLowerCase().includes(normalizedQuery),
+        );
+      })
+      .slice(0, 8);
+  }, [graphNodes, pathwaySearchQuery, pathwaySearchSourceId]);
+
+  const pathwaySourceNode = activePathway
+    ? graphNodeById.get(activePathway.sourceId)
+    : undefined;
+
+  const pathwayTargetNode = activePathway
+    ? graphNodeById.get(activePathway.targetId)
+    : undefined;
 
   // ===========================================================================
   // Helpers
@@ -433,6 +502,144 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
     );
   };
 
+  const renderPathwaySearch = () => {
+    if (!pathwaySearchSourceId) {
+      return null;
+    }
+
+    return (
+      <div className="pathway-search">
+        <p className="eyebrow">Trace pathway</p>
+
+        <h2>
+          Find path from{" "}
+          {pathwaySearchSourceNode ? pathwaySearchSourceNode.name : "…"}
+        </h2>
+
+        <p className="pathway-search-hint">
+          Search for the entity you want to trace a connection to. Only
+          directed relationships (in their stored direction) are followed.
+        </p>
+
+        <div className="search">
+          <label className="search-label" htmlFor="pathway-search">
+            Search for a destination
+          </label>
+
+          <input
+            id="pathway-search"
+            className="search-input"
+            type="search"
+            value={pathwaySearchQuery}
+            placeholder="Search people, theories, publications..."
+            autoComplete="off"
+            autoFocus
+            onChange={(event) => setPathwaySearchQuery(event.target.value)}
+          />
+
+          {pathwaySearchQuery.trim() && (
+            <div className="search-results">
+              {pathwaySearchResults.length > 0 ? (
+                pathwaySearchResults.map((node) => (
+                  <button
+                    className="search-result"
+                    type="button"
+                    key={node.id}
+                    onClick={() => {
+                      onPathwayTargetSelect(node);
+                      setPathwaySearchQuery("");
+                    }}
+                  >
+                    <span className="search-result-name">{node.name}</span>
+                  </button>
+                ))
+              ) : (
+                <p className="search-empty">No matching nodes found.</p>
+              )}
+            </div>
+          )}
+        </div>
+
+        <button
+          className="pathway-search-cancel"
+          type="button"
+          onClick={() => {
+            onPathwaySearchCancel();
+            setPathwaySearchQuery("");
+          }}
+        >
+          Cancel
+        </button>
+      </div>
+    );
+  };
+
+  const renderPathwayResult = () => {
+    if (!activePathway) {
+      return null;
+    }
+
+    return (
+      <div className="pathway-result">
+        <p className="eyebrow">Traced pathway</p>
+
+        <div className="pathway-result-heading">
+          <h2>
+            {pathwaySourceNode?.name ?? activePathway.sourceId} →{" "}
+            {pathwayTargetNode?.name ?? activePathway.targetId}
+          </h2>
+
+          <button
+            className="clear-selection-button"
+            type="button"
+            onClick={onPathwayClear}
+          >
+            Clear pathway
+          </button>
+        </div>
+
+        <p className="pathway-result-hint">
+          {activePathway.nodeIds.length - 1} hop
+          {activePathway.nodeIds.length - 1 === 1 ? "" : "s"}, following
+          directed relationships forward.
+        </p>
+
+        <ol className="pathway-steps">
+          {activePathway.nodeIds.map((nodeId, index) => {
+            const node = findNode(nodeId);
+            const nextEdge = pathwaySteps[index];
+
+            return (
+              <li className="pathway-step" key={nodeId}>
+                <div className="pathway-step-node">
+                  <span className="pathway-step-number">{index + 1}</span>
+
+                  {node ? (
+                    <button
+                      className="relationship-node-link"
+                      type="button"
+                      onClick={() => onNodeSelect(node)}
+                    >
+                      {node.name}
+                    </button>
+                  ) : (
+                    <span>{nodeId}</span>
+                  )}
+                </div>
+
+                {nextEdge && (
+                  <p className="pathway-step-relationship">
+                    {formatRelationship(nextEdge.relationship, "outgoing")}
+                  </p>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    );
+  };
+
   function formatDirectness(
     directness?: KnowledgeEdge["directness"],
   ): string | null {
@@ -501,156 +708,184 @@ const [relationshipSearchQuery, setRelationshipSearchQuery] = useState("");
 
       {isOpen && (
         <div className="panel-content">
-          <p className="eyebrow">Selection</p>
-
-          {selectedNode ? (
-            <article className="node-details">
-              <span className="details-node-type">
-                {selectedNode.type}
-              </span>
-
-              <button
-                className="clear-selection-button"
-                type="button"
-                onClick={onSelectionClear}
-              >
-                Clear selection
-              </button>
-
-              <h2>{selectedNode.name}</h2>
-              
-              {selectedNode.epigraph?.text && (
-                <p className="details-epigraph">
-                  “{selectedNode.epigraph.text}”
-                </p>
-              )}
-
-              {selectedNodeYearRange && (
-                <p className="details-years">
-                  {selectedNodeYearRange}
-                </p>
-              )}
-
-              <p className="details-description">
-                {selectedNode.description}
-              </p>
-
-              {selectedNode.disciplines &&
-                selectedNode.disciplines.length > 0 && (
-                  <section className="details-section">
-                    <h3>Disciplines</h3>
-
-                    <div className="tag-list">
-                      {selectedNode.disciplines.map((discipline) => (
-                        <span key={discipline}>{discipline}</span>
-                      ))}
-                    </div>
-                  </section>
-                )}
-
-              {selectedNode.tags && selectedNode.tags.length > 0 && (
-                <section className="details-section">
-                  <h3>Tags</h3>
-
-                  <div className="tag-list">
-                    {selectedNode.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </section>
-              )}
-              
-              {renderSelectedConnection()}
-
-              <section className="details-section">
-                <div className="relationship-section-heading">
-                  <h3>Relationships</h3>
-                </div>
-
-                {relationships.length > 0 && (
-                  <div className="relationship-search-row">
-                    <div className="relationship-search">
-                      <input
-                        id="relationship-search"
-                        className="relationship-search-input"
-                        type="search"
-                        value={relationshipSearchQuery}
-                        placeholder="Search relationships..."
-                        autoComplete="off"
-                        onChange={(event) =>
-                          setRelationshipSearchQuery(event.target.value)
-                        }
-                      />
-                    </div>
-
-                    {relationshipSearchQuery && (
-                      <button
-                        className="relationship-search-clear"
-                        type="button"
-                        onClick={() => setRelationshipSearchQuery("")}
-                      >
-                        Clear
-                      </button>
-                    )}
-                  </div>
-                )}
-
-                {relationships.length > 0 ? (
-                  filteredRelationships.length > 0 ? (
-                    <div className="relationship-directions">
-                      {incomingRelationshipGroups.length > 0 && (
-                        <section className="relationship-direction-group">
-                          <h4 className="relationship-direction-title">
-                            Incoming
-                          </h4>
-
-                          <div className="relationship-groups">
-                            {incomingRelationshipGroups.map((group) =>
-                              renderRelationshipGroup(group, "incoming"),
-                            )}
-                          </div>
-                        </section>
-                      )}
-
-                      {outgoingRelationshipGroups.length > 0 && (
-                        <section className="relationship-direction-group">
-                          <h4 className="relationship-direction-title">
-                            Outgoing
-                          </h4>
-
-                          <div className="relationship-groups">
-                            {outgoingRelationshipGroups.map((group) =>
-                              renderRelationshipGroup(group, "outgoing"),
-                            )}
-                          </div>
-                        </section>
-                      )}
-                    </div>
-                  ) : (
-                    <p className="empty-relationships">
-                      No relationships match “{relationshipSearchQuery}”.
-                    </p>
-                  )
-                ) : (
-                  <p className="empty-relationships">
-                    No relationships recorded.
-                  </p>
-                )}
-              </section>
-            </article>
-          ) : selectedRelationship ? (
-            <article className="connection-details">
-              {renderSelectedConnection()}
-            </article>
+          {pathwaySearchSourceId ? (
+            renderPathwaySearch()
+          ) : activePathway ? (
+            renderPathwayResult()
           ) : (
-            <div className="empty-details">
-              <h2>Details</h2>
+            <>
+              <p className="eyebrow">Selection</p>
 
-              <p>
-                Select a person, theory, publication, or discovery to explore
-                it.
-              </p>
-            </div>
+              {selectedNode ? (
+                <article className="node-details">
+                  <span className="details-node-type">
+                    {selectedNode.type}
+                  </span>
+
+                  <div className="node-details-actions">
+                    <button
+                      className="clear-selection-button"
+                      type="button"
+                      onClick={onSelectionClear}
+                    >
+                      Clear selection
+                    </button>
+
+                    <button
+                      className="find-path-button"
+                      type="button"
+                      onClick={onPathwaySearchStart}
+                    >
+                      Find path to…
+                    </button>
+                  </div>
+
+                  {pathwayNotFound && (
+                    <p className="pathway-not-found">
+                      No directed path found
+                      {pathwayNotFoundTargetName
+                        ? ` to ${pathwayNotFoundTargetName}`
+                        : ""}
+                      .
+                    </p>
+                  )}
+
+                  <h2>{selectedNode.name}</h2>
+                  
+                  {selectedNode.epigraph?.text && (
+                    <p className="details-epigraph">
+                      “{selectedNode.epigraph.text}”
+                    </p>
+                  )}
+
+                  {selectedNodeYearRange && (
+                    <p className="details-years">
+                      {selectedNodeYearRange}
+                    </p>
+                  )}
+
+                  <p className="details-description">
+                    {selectedNode.description}
+                  </p>
+
+                  {selectedNode.disciplines &&
+                    selectedNode.disciplines.length > 0 && (
+                      <section className="details-section">
+                        <h3>Disciplines</h3>
+
+                        <div className="tag-list">
+                          {selectedNode.disciplines.map((discipline) => (
+                            <span key={discipline}>{discipline}</span>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+
+                  {selectedNode.tags && selectedNode.tags.length > 0 && (
+                    <section className="details-section">
+                      <h3>Tags</h3>
+
+                      <div className="tag-list">
+                        {selectedNode.tags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                  
+                  {renderSelectedConnection()}
+
+                  <section className="details-section">
+                    <div className="relationship-section-heading">
+                      <h3>Relationships</h3>
+                    </div>
+
+                    {relationships.length > 0 && (
+                      <div className="relationship-search-row">
+                        <div className="relationship-search">
+                          <input
+                            id="relationship-search"
+                            className="relationship-search-input"
+                            type="search"
+                            value={relationshipSearchQuery}
+                            placeholder="Search relationships..."
+                            autoComplete="off"
+                            onChange={(event) =>
+                              setRelationshipSearchQuery(event.target.value)
+                            }
+                          />
+                        </div>
+
+                        {relationshipSearchQuery && (
+                          <button
+                            className="relationship-search-clear"
+                            type="button"
+                            onClick={() => setRelationshipSearchQuery("")}
+                          >
+                            Clear
+                          </button>
+                        )}
+                      </div>
+                    )}
+
+                    {relationships.length > 0 ? (
+                      filteredRelationships.length > 0 ? (
+                        <div className="relationship-directions">
+                          {incomingRelationshipGroups.length > 0 && (
+                            <section className="relationship-direction-group">
+                              <h4 className="relationship-direction-title">
+                                Incoming
+                              </h4>
+
+                              <div className="relationship-groups">
+                                {incomingRelationshipGroups.map((group) =>
+                                  renderRelationshipGroup(group, "incoming"),
+                                )}
+                              </div>
+                            </section>
+                          )}
+
+                          {outgoingRelationshipGroups.length > 0 && (
+                            <section className="relationship-direction-group">
+                              <h4 className="relationship-direction-title">
+                                Outgoing
+                              </h4>
+
+                              <div className="relationship-groups">
+                                {outgoingRelationshipGroups.map((group) =>
+                                  renderRelationshipGroup(group, "outgoing"),
+                                )}
+                              </div>
+                            </section>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="empty-relationships">
+                          No relationships match “{relationshipSearchQuery}”.
+                        </p>
+                      )
+                    ) : (
+                      <p className="empty-relationships">
+                        No relationships recorded.
+                      </p>
+                    )}
+                  </section>
+                </article>
+              ) : selectedRelationship ? (
+                <article className="connection-details">
+                  {renderSelectedConnection()}
+                </article>
+              ) : (
+                <div className="empty-details">
+                  <h2>Details</h2>
+
+                  <p>
+                    Select a person, theory, publication, or discovery to
+                    explore it.
+                  </p>
+                </div>
+              )}
+            </>
           )}
         </div>
       )}

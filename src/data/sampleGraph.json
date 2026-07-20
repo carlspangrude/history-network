@@ -647,7 +647,7 @@
     },
     {
       "id": "laws-of-planetary-motion",
-      "name": "Three Laws of Planetary Motion",
+      "name": "Kepler's Laws of Planetary Motion",
       "type": "theory",
       "importance": 8,
       "description": "Kepler's Three Laws of Planetary Motion describe how planets move around the Sun in elliptical orbits at varying speeds and in mathematically predictable periods. Derived from Tycho's precise observations, these laws replaced centuries of circular-orbit models and became one of the foundational achievements of the Scientific Revolution, later providing the empirical basis for Newton's theory of universal gravitation.",
@@ -1958,6 +1958,96 @@
         "Genomics",
         "Nucleotide Sequence"
       ]
+    },
+    {
+      "id": "ptolemaic-system",
+      "name": "Ptolemaic System",
+      "type": "theory",
+      "importance": 9,
+      "description": "An Earth-centered model of the universe developed by Claudius Ptolemy. It explained planetary motion through combinations of deferents and epicycles and dominated Western and Middle Eastern astronomy for over a millennium.",
+      "startYear": -150,
+      "endYear": 1621,
+      "disciplines": [
+        "Astronomy"
+      ],
+      "tags": [
+        "Astronomy",
+        "Cosmology",
+        "Geocentrism",
+        "Planetary Motion",
+        "Epicycles",
+        "Classical Antiquity",
+        "Scientific Model"
+      ]
+    },
+    {
+      "id": "heliocentric-model",
+      "name": "Heliocentric Model",
+      "type": "theory",
+      "importance": 10,
+      "description": "An astronomical model in which Earth and the other planets orbit the Sun. Formulated systematically by Nicolaus Copernicus and later strengthened by the observations of Galileo, the planetary laws of Kepler, and Newtonian mechanics, heliocentrism displaced the long-dominant geocentric framework and transformed humanity's understanding of its place in the cosmos.",
+      "startYear": 1543,
+      "disciplines": [
+        "Astronomy",
+        "Cosmology",
+        "Physics"
+      ],
+      "tags": [
+        "Heliocentrism",
+        "Planetary Motion",
+        "Solar System",
+        "Copernican Revolution",
+        "Scientific Revolution",
+        "Astronomical Model",
+        "Orbital Motion"
+      ]
+    },
+    {
+      "id": "newtonian-mechanics",
+      "name": "Newtonian Mechanics",
+      "type": "theory",
+      "importance": 10,
+      "description": "A mathematical framework describing the motion of objects under the action of forces. Built upon Newton's three laws of motion and the law of universal gravitation, Newtonian mechanics unified terrestrial and celestial motion and became the foundation of classical physics for more than two centuries.",
+      "startYear": 1687,
+      "disciplines": [
+        "Physics",
+        "Mechanics",
+        "Mathematics"
+      ],
+      "tags": [
+        "Classical Mechanics",
+        "Laws of Motion",
+        "Force",
+        "Motion",
+        "Universal Gravitation",
+        "Mathematical Physics",
+        "Scientific Revolution"
+      ]
+    },
+    {
+      "id": "general-relativity",
+      "name": "General Relativity",
+      "epigraph": {
+        "text": "Matter tells spacetime how to curve, and spacetime tells matter how to move."
+      },
+      "type": "theory",
+      "importance": 10,
+      "description": "Einstein's theory describing gravity as the curvature of spacetime caused by mass and energy. General relativity replaced Newton's theory of gravitation as the most fundamental description of gravity, accurately predicting phenomena such as gravitational lensing, black holes, gravitational waves, and the expansion of the universe.",
+      "startYear": 1915,
+      "disciplines": [
+        "Physics",
+        "Relativity",
+        "Cosmology"
+      ],
+      "tags": [
+        "Gravity",
+        "Spacetime",
+        "Curved Spacetime",
+        "Black Holes",
+        "Gravitational Waves",
+        "Cosmology",
+        "Einstein Field Equations"
+      ]
     }
   ],
   "edges": [
@@ -2792,8 +2882,8 @@
     },
     {
       "id": "newton-einstein",
-      "source": "newton",
-      "target": "einstein",
+      "source": "einstein",
+      "target": "newton",
       "relationship": "extended",
       "description": "Building upon Newton's mathematical description of motion and gravitation, Einstein developed the theories of special and general relativity, revealing the limits of Newtonian physics at extreme speeds, masses, and gravitational fields.",
       "confidence": 1,
@@ -3040,33 +3130,6 @@
       "relationship": "influenced",
       "description": "Hipparchus's observations, mathematical methods, and stellar catalog formed the foundation of Ptolemy's astronomical system in the Almagest.",
       "confidence": 1,
-      "directness": "direct"
-    },
-    {
-      "id": "ptolemy-copernicus",
-      "source": "ptolemy",
-      "target": "copernicus",
-      "relationship": "challenged",
-      "description": "Ptolemy's geocentric cosmology became the principal astronomical model that Copernicus challenged by proposing a heliocentric universe.",
-      "confidence": 1,
-      "directness": "direct"
-    },
-    {
-      "id": "ptolemy-kepler",
-      "source": "ptolemy",
-      "target": "kepler",
-      "relationship": "challenged",
-      "description": "Kepler replaced Ptolemy's system of epicycles with elliptical planetary orbits governed by mathematical laws.",
-      "confidence": 0.95,
-      "directness": "direct"
-    },
-    {
-      "id": "ptolemy-galileo",
-      "source": "ptolemy",
-      "target": "galileo",
-      "relationship": "challenged",
-      "description": "Galileo's telescopic observations provided powerful empirical evidence against key assumptions of the Ptolemaic universe.",
-      "confidence": 0.95,
       "directness": "direct"
     },
     {
@@ -3707,6 +3770,186 @@
       "description": "Leonardo's integration of observation, experimentation, anatomy, and engineering foreshadowed later scientific methodology.",
       "confidence": 0.94,
       "directness": "indirect"
+    },
+    {
+      "id": "ptolemy-ptolemaic-system",
+      "source": "ptolemy",
+      "target": "ptolemaic-system",
+      "relationship": "developed",
+      "description": "Ptolemy synthesized centuries of Greek astronomical knowledge into a comprehensive geocentric model that explained planetary motion using deferents and epicycles.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemaic-system-copernicus",
+      "source": "ptolemaic-system",
+      "target": "copernicus",
+      "relationship": "influenced",
+      "description": "Copernicus was trained within the Ptolemaic tradition and sought to address its increasing complexity by proposing a heliocentric alternative.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "copernicus-ptolemaic-system",
+      "source": "copernicus",
+      "target": "ptolemaic-system",
+      "relationship": "challenged",
+      "description": "Copernicus pending",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemaic-system-tycho-brahe",
+      "source": "ptolemaic-system",
+      "target": "tycho-brahe",
+      "relationship": "influenced",
+      "description": "Tycho Brahe inherited the Ptolemaic tradition, but his exceptionally precise astronomical observations exposed discrepancies that later enabled more accurate models of planetary motion.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "laws-of-planetary-motion-ptolemaic-system",
+      "source": "laws-of-planetary-motion",
+      "target": "ptolemaic-system",
+      "relationship": "challenged",
+      "description": "Kepler's laws replaced the Ptolemaic system's circular orbits and epicycles with elliptical planetary orbits governed by precise mathematical relationships, providing a far more accurate description of planetary motion.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "copernicus-heliocentric-model",
+      "source": "copernicus",
+      "target": "heliocentric-model",
+      "relationship": "developed",
+      "description": "Copernicus developed a systematic astronomical model in which Earth rotates on its axis and, together with the other planets, revolves around the Sun.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "de-revolutionibus-heliocentric-model",
+      "source": "de-revolutionibus",
+      "target": "heliocentric-model",
+      "relationship": "formalized",
+      "description": "De revolutionibus presented Copernicus's mathematical case for a Sun-centered cosmos and established heliocentrism as a comprehensive alternative to geocentric astronomy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "heliocentric-model-ptolemaic-system",
+      "source": "heliocentric-model",
+      "target": "ptolemaic-system",
+      "relationship": "challenged",
+      "description": "The heliocentric model challenged the Ptolemaic system by placing Earth among the moving planets and explaining apparent planetary reversals through the relative motions of Earth and the other planets.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "galileo-ptolemaic-system",
+      "source": "galileo",
+      "target": "ptolemaic-system",
+      "relationship": "challenged",
+      "description": "Galileo's telescopic observations, particularly the phases of Venus and the moons of Jupiter, contradicted key assumptions of the Ptolemaic system and undermined its geocentric view of the cosmos.",
+      "confidence": 0.99,
+      "directness": "direct"
+    },
+    {
+      "id": "laws-of-planetary-motion-heliocentric-model",
+      "source": "laws-of-planetary-motion",
+      "target": "heliocentric-model",
+      "relationship": "advanced",
+      "description": "Kepler's laws replaced Copernicus's circular planetary paths with elliptical orbits and gave the heliocentric model a substantially more accurate mathematical account of planetary motion.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "galileo-heliocentric-model",
+      "source": "galileo",
+      "target": "heliocentric-model",
+      "relationship": "supported",
+      "description": "Galileo's telescopic observations, particularly the phases of Venus and the moons orbiting Jupiter, undermined traditional geocentric assumptions and supplied powerful observational support for heliocentrism.",
+      "confidence": 0.99,
+      "directness": "direct"
+    },
+    {
+      "id": "newtonian-mechanics-heliocentric-model",
+      "source": "newtonian-mechanics",
+      "target": "heliocentric-model",
+      "relationship": "explained",
+      "description": "Newtonian mechanics and universal gravitation supplied the physical explanation for heliocentric planetary motion, showing why planets follow the orbital patterns described by Kepler.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "heliocentric-model-scientific-revolution",
+      "source": "heliocentric-model",
+      "target": "scientific-revolution",
+      "relationship": "advanced",
+      "description": "The heliocentric model became a central catalyst of the Scientific Revolution by challenging inherited cosmology and encouraging the use of mathematical prediction, observation, and physical explanation.",
+      "confidence": 0.98,
+      "directness": "direct"
+    },
+    {
+      "id": "newton-newtonian-mechanics",
+      "source": "newton",
+      "target": "newtonian-mechanics",
+      "relationship": "developed",
+      "description": "Newton developed a unified mathematical framework describing motion and forces through his three laws of motion and the law of universal gravitation.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "principia-newtonian-mechanics",
+      "source": "principia",
+      "target": "newtonian-mechanics",
+      "relationship": "formalized",
+      "description": "Principia Mathematica presented the mathematical principles of Newtonian mechanics and demonstrated their application to terrestrial and celestial motion.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "newtonian-mechanics-laws-of-planetary-motion",
+      "source": "newtonian-mechanics",
+      "target": "laws-of-planetary-motion",
+      "relationship": "explained",
+      "description": "Newtonian mechanics showed that Kepler's empirical laws of planetary motion arise naturally from universal gravitation and the laws of motion.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "newtonian-mechanics-maxwell",
+      "source": "newtonian-mechanics",
+      "target": "maxwell",
+      "relationship": "influenced",
+      "description": "Newtonian mechanics provided the mathematical and conceptual foundation upon which Maxwell developed classical electromagnetic theory.",
+      "confidence": 0.98,
+      "directness": "direct"
+    },
+    {
+      "id": "newtonian-mechanics-scientific-revolution",
+      "source": "newtonian-mechanics",
+      "target": "scientific-revolution",
+      "relationship": "transformed",
+      "description": "Newtonian mechanics unified mathematics, astronomy, and physics into a single predictive framework, becoming one of the defining achievements of the Scientific Revolution.",
+      "confidence": 0.97,
+      "directness": "direct"
+    },
+    {
+      "id": "einstein-general-relativity",
+      "source": "einstein",
+      "target": "general-relativity",
+      "relationship": "developed",
+      "description": "Einstein developed a geometric theory of gravitation in which mass and energy curve spacetime, replacing gravity as a force with the dynamics of spacetime itself.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "general-relativity-newtonian-mechanics",
+      "source": "general-relativity",
+      "target": "newtonian-mechanics",
+      "relationship": "challenged",
+      "description": "General relativity demonstrated that Newtonian mechanics is an approximation valid for weak gravitational fields and low velocities, replacing Newton's conception of gravity with curved spacetime.",
+      "confidence": 1,
+      "directness": "direct"
     }
   ],
   "sources": [

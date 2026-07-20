@@ -7,10 +7,18 @@ import type {
   NodeType,
 } from "../types/graph";
 import { FILTERABLE_NODE_TYPES } from "../constants/graphVisuals";
+import { findDirectedPath } from "../utils/pathfinding";
 
 interface UseKnowledgeGraphOptions {
   onSelectionCleared: () => void;
   onSelectionOpened: () => void;
+}
+
+export interface ActivePathway {
+  sourceId: string;
+  targetId: string;
+  nodeIds: string[];
+  linkIds: string[];
 }
 
 function getEndpointId(endpoint: string | GraphNode): string {
@@ -61,15 +69,15 @@ export function useKnowledgeGraph({
       if (node.endYear !== undefined) values.push(node.endYear);
       return values;
     });
-  
+
     let min = years.length === 0 ? 0 : Math.min(...years);
     let max = years.length === 0 ? 1 : Math.max(...years);
-  
+
     if (min === max) {
       min -= 1;
       max += 1;
     }
-  
+
     return [min, max];
   }, [fullGraphData.nodes]);
 
@@ -95,6 +103,19 @@ export function useKnowledgeGraph({
 
   const [yearRange, setYearRange] =
     useState<[number, number]>(yearBounds);
+
+  // Pathway tracing: pathwaySearchSourceId is set while the details panel
+  // is prompting for a target node to trace to; activePathway holds the
+  // computed result once a target has been chosen.
+  const [pathwaySearchSourceId, setPathwaySearchSourceId] =
+    useState<string | null>(null);
+
+  const [activePathway, setActivePathway] =
+    useState<ActivePathway | null>(null);
+
+  const [pathwayNotFound, setPathwayNotFound] = useState(false);
+  const [pathwayNotFoundTargetName, setPathwayNotFoundTargetName] =
+    useState<string | null>(null);
 
   // ===========================================================================
   // Filtered Graph
@@ -186,6 +207,19 @@ export function useKnowledgeGraph({
     [selectedRelationshipId],
   );
 
+  const pathwaySteps = useMemo<KnowledgeEdge[]>(() => {
+    if (!activePathway) {
+      return [];
+    }
+
+    const linkIdSet = new Set(activePathway.linkIds);
+
+    // Preserve path order rather than dataset order.
+    return activePathway.linkIds
+      .map((linkId) => sampleGraph.edges.find((edge) => edge.id === linkId))
+      .filter((edge): edge is KnowledgeEdge => edge !== undefined && linkIdSet.has(edge.id));
+  }, [activePathway]);
+
   // ===========================================================================
   // Visibility Helpers
   // ===========================================================================
@@ -240,12 +274,20 @@ export function useKnowledgeGraph({
   const handleNodeSelect = (node: GraphNode) => {
     setSelectedNode(node);
     setSelectedRelationshipId(null);
+    setPathwaySearchSourceId(null);
+    setActivePathway(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
     onSelectionOpened();
   };
 
   const handleRelationshipOpen = (relationshipId: string) => {
     setSelectedNode(null);
     setSelectedRelationshipId(relationshipId);
+    setPathwaySearchSourceId(null);
+    setActivePathway(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
     onSelectionOpened();
   };
 
@@ -258,6 +300,71 @@ export function useKnowledgeGraph({
   const handleSelectionClear = () => {
     setSelectedNode(null);
     setSelectedRelationshipId(null);
+    setPathwaySearchSourceId(null);
+    setActivePathway(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
+    onSelectionCleared();
+  };
+
+  // ===========================================================================
+  // Pathway Handlers
+  // ===========================================================================
+
+  // Called from the details panel's "Find path to..." button on the
+  // currently selected node — puts the panel into target-search mode.
+  const handlePathwaySearchStart = () => {
+    if (!selectedNode) {
+      return;
+    }
+
+    setPathwaySearchSourceId(selectedNode.id);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
+  };
+
+  const handlePathwaySearchCancel = () => {
+    setPathwaySearchSourceId(null);
+  };
+
+  // Called once a target node has been chosen from the search UI.
+  const handlePathwayTargetSelect = (targetNode: GraphNode) => {
+    if (!pathwaySearchSourceId) {
+      return;
+    }
+
+    const result = findDirectedPath(
+      graphData,
+      pathwaySearchSourceId,
+      targetNode.id,
+    );
+
+    setPathwaySearchSourceId(null);
+
+    if (!result) {
+      setActivePathway(null);
+      setPathwayNotFound(true);
+      setPathwayNotFoundTargetName(targetNode.name);
+      return;
+    }
+
+    setSelectedNode(null);
+    setSelectedRelationshipId(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
+    setActivePathway({
+      sourceId: pathwaySearchSourceId,
+      targetId: targetNode.id,
+      nodeIds: result.nodeIds,
+      linkIds: result.linkIds,
+    });
+    onSelectionOpened();
+  };
+
+  const handlePathwayClear = () => {
+    setActivePathway(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
     onSelectionCleared();
   };
 
@@ -384,6 +491,11 @@ export function useKnowledgeGraph({
     visibleNodeTypes,
     yearBounds,
     yearRange,
+    pathwaySearchSourceId,
+    activePathway,
+    pathwaySteps,
+    pathwayNotFound,
+    pathwayNotFoundTargetName,
     handleDisciplineToggle,
     handleDisciplineSelectAll,
     handleNodeSelect,
@@ -393,5 +505,9 @@ export function useKnowledgeGraph({
     handleRelationshipSelect,
     handleSelectionClear,
     handleYearRangeChange,
+    handlePathwaySearchStart,
+    handlePathwaySearchCancel,
+    handlePathwayTargetSelect,
+    handlePathwayClear,
   };
 }

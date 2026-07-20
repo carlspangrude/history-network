@@ -34,8 +34,10 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "complemented",
   "converged_with",
   "criticized",
+  "developed",
   "discovered",
   "enabled",
+  "explained",
   "extended",
   "formalized",
   "founded",
@@ -48,6 +50,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "published",
   "refined",
   "responded_to",
+  "supported",
   "synthesized",
   "transformed",
 ]);

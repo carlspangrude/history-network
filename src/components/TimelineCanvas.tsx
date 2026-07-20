@@ -24,6 +24,8 @@ interface TimelineCanvasProps {
   isOpen: boolean;
   onToggle: () => void;
   compact?: boolean;
+  pathwayNodeIds: string[];
+  pathwayLinkIds: string[];
 }
 
 // ===========================================================================
@@ -253,6 +255,8 @@ function TimelineCanvas({
   isOpen,
   onToggle,
   compact = false,
+  pathwayNodeIds,
+  pathwayLinkIds,
 }: TimelineCanvasProps) {
 
   const MARGIN = compact ? COMPACT_MARGIN : FULL_MARGIN;
@@ -404,6 +408,19 @@ function TimelineCanvas({
     return ids;
   }, [graphData.links, selectedNode]);
 
+  const isPathwayActive = pathwayNodeIds.length > 0;
+
+  const pathwayNodeIndex = useMemo(() => {
+    const map = new Map<string, number>();
+    pathwayNodeIds.forEach((id, index) => map.set(id, index));
+    return map;
+  }, [pathwayNodeIds]);
+
+  const pathwayLinkIdSet = useMemo(
+    () => new Set(pathwayLinkIds),
+    [pathwayLinkIds],
+  );
+
   const yearTicks = useMemo(() => {
     const start = Math.ceil(chartYearDomain[0] / MINOR_TICK_INTERVAL_YEARS) * MINOR_TICK_INTERVAL_YEARS;
     const ticks: number[] = [];
@@ -420,6 +437,12 @@ function TimelineCanvas({
   // ===========================================================================
 
   const getNodeFill = (node: GraphNode) => {
+    if (isPathwayActive) {
+      return pathwayNodeIndex.has(node.id)
+        ? "#ffb703"
+        : "rgba(110, 110, 110, 0.2)";
+    }
+
     if (selectedRelationshipId) {
       const link = visibleLinks.find((l) => l.id === selectedRelationshipId);
       const isEndpoint =
@@ -443,6 +466,12 @@ function TimelineCanvas({
   };
 
   const getLinkStroke = (link: GraphLink) => {
+    if (isPathwayActive) {
+      return pathwayLinkIdSet.has(link.id)
+        ? "rgba(255, 183, 3, 1)"
+        : "rgba(110, 110, 110, 0.08)";
+    }
+
     if (selectedRelationshipId) {
       return link.id === selectedRelationshipId
         ? "rgba(255, 230, 64, 1)"
@@ -461,6 +490,10 @@ function TimelineCanvas({
   };
 
   const getLinkWidth = (link: GraphLink) => {
+    if (isPathwayActive) {
+      return pathwayLinkIdSet.has(link.id) ? 3 : 0.5;
+    }
+
     if (link.id === selectedRelationshipId) return 3;
     if (!selectedNode) return 1;
 
@@ -641,6 +674,19 @@ function TimelineCanvas({
                           <circle r={SELECTED_NODE_RADIUS + 4} fill="none" stroke="#e96500" strokeWidth={2} />
                         )}
                         <circle r={isSelected ? SELECTED_NODE_RADIUS : NODE_RADIUS} fill={getNodeFill(node)} />
+                        {pathwayNodeIndex.has(node.id) && (
+                          <g transform={`translate(${NODE_RADIUS * 0.9}, ${-NODE_RADIUS * 0.9})`}>
+                            <circle r={7} fill="#ffb703" stroke="#181818" strokeWidth={1.5} />
+                            <text
+                              textAnchor="middle"
+                              dominantBaseline="middle"
+                              fontSize={8}
+                              fill="#181818"
+                            >
+                              {(pathwayNodeIndex.get(node.id) as number) + 1}
+                            </text>
+                          </g>
+                        )}
                         <title>{`${node.name} · ${node.type}`}</title>
                       </g>
                     );
