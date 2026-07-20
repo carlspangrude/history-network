@@ -47,6 +47,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "invented",
   "mentored",
   "popularized",
+  "proposed",
   "published",
   "refined",
   "responded_to",

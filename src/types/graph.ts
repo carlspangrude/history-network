@@ -35,6 +35,7 @@ export type RelationshipType =
   | "invented"
   | "mentored"
   | "popularized"
+  | "proposed"
   | "published"
   | "refined"
   | "responded_to"

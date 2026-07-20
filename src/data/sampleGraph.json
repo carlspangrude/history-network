@@ -2138,16 +2138,16 @@
       "id": "aristotle-aristotelian-logic",
       "source": "aristotle",
       "target": "aristotelian-logic",
-      "relationship": "formalized",
-      "description": "Aristotle developed the first extensive surviving systematic treatment of deductive and syllogistic reasoning.",
+      "relationship": "proposed",
+      "description": "Aristotle proposed the first extensive surviving systematic treatment of deductive and syllogistic reasoning.",
       "confidence": 1
     },
     {
       "id": "aristotle-aristotelian-physics",
       "source": "aristotle",
       "target": "aristotelian-physics",
-      "relationship": "formalized",
-      "description": "Aristotle developed an influential framework for explaining motion, change, causes, and natural processes.",
+      "relationship": "proposed",
+      "description": "Aristotle proposed an influential framework for explaining motion, change, causes, and natural processes.",
       "confidence": 1
     },
     {
@@ -2594,8 +2594,8 @@
     },
     {
       "id": "de-revolutionibus-astronomia-nova",
-      "source": "de-revolutionibus",
-      "target": "astronomia-nova",
+      "source": "astronomia-nova",
+      "target": "de-revolutionibus",
       "relationship": "refined",
       "description": "Astronomia Nova refined and strengthened the heliocentric model first proposed in De revolutionibus.",
       "confidence": 0.95,
@@ -2603,8 +2603,8 @@
     },
     {
       "id": "astronomia-nova-harmonice-mundi",
-      "source": "astronomia-nova",
-      "target": "harmonice-mundi",
+      "source": "harmonice-mundi",
+      "target": "astronomia-nova",
       "relationship": "extended",
       "description": "Harmonice Mundi extended Astronomia Nova by introducing Kepler's third law.",
       "confidence": 0.98,
@@ -2909,8 +2909,8 @@
     },
     {
       "id": "euclid-einstein",
-      "source": "euclid",
-      "target": "einstein",
+      "source": "einstein",
+      "target": "euclid",
       "relationship": "challenged",
       "description": "Einstein's general theory of relativity replaced Euclid's flat geometry with curved spacetime, demonstrating that the geometry of the universe depends upon the distribution of matter and energy.",
       "confidence": 0.95,
@@ -3466,9 +3466,9 @@
       "directness": "indirect"
     },
     {
-      "id": "galen-andreas-vesalius",
-      "source": "galen",
-      "target": "andreas-vesalius",
+      "id": "andreas-vesalius-galen",
+      "source": "andreas-vesalius",
+      "target": "galen",
       "relationship": "challenged",
       "description": "Vesalius tested Galen's anatomical claims through direct human dissection, confirming some observations while correcting numerous errors derived from animal anatomy.",
       "confidence": 1,
@@ -3484,9 +3484,9 @@
       "directness": "indirect"
     },
     {
-      "id": "galen-william-harvey",
-      "source": "galen",
-      "target": "william-harvey",
+      "id": "william-harvey-galen",
+      "source": "william-harvey",
+      "target": "galen",
       "relationship": "challenged",
       "description": "Harvey challenged Galenic physiology by showing that blood circulates continuously rather than being continually produced, consumed, and distributed through separate venous and arterial systems.",
       "confidence": 1,
@@ -3775,7 +3775,7 @@
       "id": "ptolemy-ptolemaic-system",
       "source": "ptolemy",
       "target": "ptolemaic-system",
-      "relationship": "developed",
+      "relationship": "proposed",
       "description": "Ptolemy synthesized centuries of Greek astronomical knowledge into a comprehensive geocentric model that explained planetary motion using deferents and epicycles.",
       "confidence": 1,
       "directness": "direct"
@@ -3820,8 +3820,8 @@
       "id": "copernicus-heliocentric-model",
       "source": "copernicus",
       "target": "heliocentric-model",
-      "relationship": "developed",
-      "description": "Copernicus developed a systematic astronomical model in which Earth rotates on its axis and, together with the other planets, revolves around the Sun.",
+      "relationship": "proposed",
+      "description": "Copernicus proposed a systematic astronomical model in which Earth rotates on its axis and, together with the other planets, revolves around the Sun.",
       "confidence": 1,
       "directness": "direct"
     },
@@ -3892,8 +3892,8 @@
       "id": "newton-newtonian-mechanics",
       "source": "newton",
       "target": "newtonian-mechanics",
-      "relationship": "developed",
-      "description": "Newton developed a unified mathematical framework describing motion and forces through his three laws of motion and the law of universal gravitation.",
+      "relationship": "proposed",
+      "description": "Newton proposed a unified mathematical framework describing motion and forces through his three laws of motion and the law of universal gravitation.",
       "confidence": 1,
       "directness": "direct"
     },
@@ -3937,8 +3937,8 @@
       "id": "einstein-general-relativity",
       "source": "einstein",
       "target": "general-relativity",
-      "relationship": "developed",
-      "description": "Einstein developed a geometric theory of gravitation in which mass and energy curve spacetime, replacing gravity as a force with the dynamics of spacetime itself.",
+      "relationship": "proposed",
+      "description": "Einstein proposed a geometric theory of gravitation in which mass and energy curve spacetime, replacing gravity as a force with the dynamics of spacetime itself.",
       "confidence": 1,
       "directness": "direct"
     },

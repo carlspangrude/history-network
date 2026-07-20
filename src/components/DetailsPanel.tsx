@@ -89,6 +89,9 @@ function formatRelationship(
 
       case "popularized":
         return "Popularized by";
+        
+      case "proposed":
+        return "Proposed by";
 
       case "published":
         return "Published by";
