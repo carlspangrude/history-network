@@ -3794,7 +3794,7 @@
       "source": "copernicus",
       "target": "ptolemaic-system",
       "relationship": "challenged",
-      "description": "Copernicus pending",
+      "description": "Copernicus challenged the Ptolemaic system by placing the Sun at the center of the planetary system, offering a simpler explanation for planetary motion while overturning Earth's privileged position in the cosmos.",
       "confidence": 1,
       "directness": "direct"
     },

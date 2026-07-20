@@ -7,6 +7,7 @@ import type {
 } from "../types/graph";
 import {
   FILTERABLE_NODE_TYPES,
+  MOVEMENT_NODE_OUTLINE_COLOR,
   NODE_TYPE_COLORS,
   NODE_TYPE_LABELS,
 } from "../constants/graphVisuals";
@@ -465,6 +466,43 @@ function TimelineCanvas({
       : "rgba(110, 110, 110, 0.25)";
   };
 
+  // Movement nodes use a background-colored fill (to visually differentiate
+  // them from other node types) so they need a visible outline instead —
+  // mirrors getNodeFill's exact branching so the outline dims/highlights in
+  // sync with everything else rather than staying flat regardless of state.
+  const getNodeStroke = (node: GraphNode) => {
+    if (node.type !== "movement") {
+      return undefined;
+    }
+
+    if (isPathwayActive) {
+      return pathwayNodeIndex.has(node.id)
+        ? MOVEMENT_NODE_OUTLINE_COLOR
+        : "rgba(110, 110, 110, 0.3)";
+    }
+
+    if (selectedRelationshipId) {
+      const link = visibleLinks.find((l) => l.id === selectedRelationshipId);
+      const isEndpoint =
+        link &&
+        (getEndpointId(link.source) === node.id ||
+          getEndpointId(link.target) === node.id);
+      return isEndpoint ? MOVEMENT_NODE_OUTLINE_COLOR : "rgba(110, 110, 110, 0.3)";
+    }
+
+    if (!selectedNode) {
+      return MOVEMENT_NODE_OUTLINE_COLOR;
+    }
+
+    if (node.id === selectedNode.id) {
+      return MOVEMENT_NODE_OUTLINE_COLOR;
+    }
+
+    return connectedNodeIds.has(node.id)
+      ? MOVEMENT_NODE_OUTLINE_COLOR
+      : "rgba(110, 110, 110, 0.3)";
+  };
+
   const getLinkStroke = (link: GraphLink) => {
     if (isPathwayActive) {
       return pathwayLinkIdSet.has(link.id)
@@ -615,7 +653,11 @@ function TimelineCanvas({
                       y={yForType(type)}
                       textAnchor="end"
                       dominantBaseline="middle"
-                      fill={NODE_TYPE_COLORS[type]}
+                      fill={
+                        type === "movement"
+                          ? MOVEMENT_NODE_OUTLINE_COLOR
+                          : NODE_TYPE_COLORS[type]
+                      }
                       fontSize={compact ? 10 : 12}
                     >
                       {NODE_TYPE_LABELS[type]}
@@ -673,7 +715,12 @@ function TimelineCanvas({
                         {isSelected && (
                           <circle r={SELECTED_NODE_RADIUS + 4} fill="none" stroke="#e96500" strokeWidth={2} />
                         )}
-                        <circle r={isSelected ? SELECTED_NODE_RADIUS : NODE_RADIUS} fill={getNodeFill(node)} />
+                        <circle
+                          r={isSelected ? SELECTED_NODE_RADIUS : NODE_RADIUS}
+                          fill={getNodeFill(node)}
+                          stroke={getNodeStroke(node)}
+                          strokeWidth={node.type === "movement" ? 1.5 : 0}
+                        />
                         {pathwayNodeIndex.has(node.id) && (
                           <g transform={`translate(${NODE_RADIUS * 0.9}, ${-NODE_RADIUS * 0.9})`}>
                             <circle r={7} fill="#ffb703" stroke="#181818" strokeWidth={1.5} />
