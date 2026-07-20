@@ -3626,6 +3626,87 @@
       "description": "Molecular biology transformed evolutionary biology by making it possible to compare DNA and protein sequences, reconstruct ancestry, measure genetic variation, and investigate evolution at the molecular level.",
       "confidence": 1,
       "directness": "direct"
+    },
+    {
+      "id": "medical-science-scientific-revolution",
+      "source": "medical-science",
+      "target": "scientific-revolution",
+      "relationship": "converged_with",
+      "description": "The Scientific Revolution transformed medicine by replacing reliance on authority with systematic observation, experimentation, and quantitative investigation.",
+      "confidence": 0.98,
+      "directness": "direct"
+    },
+    {
+      "id": "pasteur-industrial-revolution",
+      "source": "louis-pasteur",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "Pasteur's discoveries dramatically improved food preservation, brewing, sanitation, and industrial microbiology.",
+      "confidence": 0.96,
+      "directness": "direct"
+    },
+    {
+      "id": "enlightenment-evolutionary-biology",
+      "source": "enlightenment",
+      "target": "evolutionary-biology",
+      "relationship": "enabled",
+      "description": "Evolutionary biology emerged from Enlightenment commitments to empirical observation, natural law, and rational inquiry.",
+      "confidence": 0.91,
+      "directness": "indirect"
+    },
+    {
+      "id": "darwin-industrial-revolution",
+      "source": "charles-darwin",
+      "target": "industrial-revolution",
+      "relationship": "complemented",
+      "description": "The Industrial Revolution's advances in transportation, communication, and global exploration supplied specimens and observations that informed Darwin's work.",
+      "confidence": 0.79,
+      "directness": "indirect"
+    },
+    {
+      "id": "newton-watt",
+      "source": "newton",
+      "target": "james-watt",
+      "relationship": "enabled",
+      "description": "Newtonian mechanics provided the theoretical framework that informed generations of engineers during the Industrial Revolution.",
+      "confidence": 0.90,
+      "directness": "indirect"
+    },
+    {
+      "id": "renaissance-scientific-revolution",
+      "source": "renaissance",
+      "target": "scientific-revolution",
+      "relationship": "enabled",
+      "description": "Humanism, renewed classical scholarship, and advances in mathematics and observation prepared the intellectual foundations of the Scientific Revolution.",
+      "confidence": 0.99,
+      "directness": "direct"
+    },
+    {
+      "id": "renaissance-enlightenment",
+      "source": "renaissance",
+      "target": "enlightenment",
+      "relationship": "anticipated",
+      "description": "Renaissance humanism and critical scholarship anticipated Enlightenment commitments to reason, education, and individual inquiry.",
+      "confidence": 0.97,
+      "directness": "indirect"
+    },
+    {
+      "id": "gutenberg-scientific-revolution",
+      "source": "johannes-gutenberg",
+      "target": "scientific-revolution",
+      "relationship": "enabled",
+      "description": "The printing press accelerated the dissemination, replication, and criticism of scientific ideas across Europe.",
+      "confidence": 0.99,
+      "directness": "direct"
+    },
+    {
+      "id": "leonardo-scientific-revolution",
+      "source": "leonardo-da-vinci",
+      "target": "scientific-revolution",
+      "relationship": "anticipated",
+      "description": "Leonardo's integration of observation, experimentation, anatomy, and engineering foreshadowed later scientific methodology.",
+      "confidence": 0.94,
+      "directness": "indirect"
     }
   ],
   "sources": [

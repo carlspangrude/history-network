@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { forceCollide } from "d3-force";
 import ForceGraph2D, {
   type ForceGraphMethods,
   type LinkObject,
@@ -259,6 +260,28 @@ const [dimensions, setDimensions] = useState({
     return link.id === selectedRelationshipId ? 10 : 5;
   };
   
+  // configure collision + link-distance forces
+  useEffect(() => {
+    const fg = graphRef.current;
+  
+    if (!fg) {
+      return;
+    }
+  
+    const getBaseRadius = (node: GraphNode) => {
+      const importance = node.importance ?? 5;
+      const baseArea = importance >= 8 ? 110 : 24;
+      const area = node.type === "movement" ? baseArea * 2 : baseArea;
+      return Math.sqrt(area) + 4;
+    };
+  
+    fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
+    fg.d3Force("link")?.distance(() => 2);
+  
+    fg.d3ReheatSimulation();
+  }, [graphData, dimensions.width, dimensions.height]);
+
+
   // ===========================================================================
   // Render
   // ===========================================================================
