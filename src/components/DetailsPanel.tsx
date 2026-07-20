@@ -50,6 +50,9 @@ function formatRelationship(
       case "challenged":
         return "Challenged by";
 
+      case "complemented":
+        return "Complemented by";
+
       case "enabled":
         return "Enabled by";
 
@@ -88,6 +91,9 @@ function formatRelationship(
         
       case "responded_to":
         return "Responded to by";
+
+      case "transformed":
+        return "Transformed by";
 
       default:
         return formatted;

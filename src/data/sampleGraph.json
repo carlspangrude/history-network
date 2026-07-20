@@ -983,14 +983,17 @@
       "endYear": 1882,
       "disciplines": [
         "Biology",
-        "Natural History"
+        "Natural History",
+        "Geology",
+        "Botany"
       ],
       "tags": [
         "Evolution",
         "Natural Selection",
         "Biology",
         "Origin of Species",
-        "Scientific Revolution"
+        "Scientific Revolution",
+        "Adaptation"
       ]
     },
     {
@@ -1260,6 +1263,700 @@
         "Relativistic Quantum Mechanics",
         "Quantum Field Theory",
         "Mathematical Physics"
+      ]
+    },
+    {
+      "id": "ptolemy",
+      "name": "Claudius Ptolemy",
+      "type": "person",
+      "importance": 9,
+      "description": "Greco-Egyptian mathematician, astronomer, and geographer who synthesized centuries of Greek scientific knowledge into comprehensive works on astronomy, geography, and optics. His geocentric model of the universe dominated astronomical thought for over fourteen centuries, providing both the framework that guided medieval astronomy and the system later overturned during the Scientific Revolution.",
+      "epigraph": {
+        "text": "I know that I am mortal by nature and ephemeral; but when I trace at my pleasure the windings to and fro of the heavenly bodies, my feet no longer touch the earth."
+      },
+      "startYear": 100,
+      "endYear": 170,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Geography"
+      ],
+      "tags": [
+        "Geocentric Model",
+        "Almagest",
+        "Geography",
+        "Astronomy",
+        "Mathematics",
+        "Planetary Motion",
+        "Star Catalog"
+      ]
+    },
+    {
+      "id": "renaissance",
+      "name": "The Renaissance",
+      "type": "movement",
+      "importance": 10,
+      "description": "European cultural and intellectual movement characterized by the revival and reinterpretation of classical Greek and Roman learning, the growth of humanism, innovations in visual representation and architecture, and expanding inquiry into politics, nature, language, and the human condition. Emerging first in the Italian city-states and later spreading across Europe, the Renaissance reshaped art, scholarship, education, technology, and political thought while helping establish foundations for the Scientific Revolution and the modern world.",
+      "startYear": 1300,
+      "endYear": 1600,
+      "disciplines": [
+        "Art",
+        "Architecture",
+        "Literature",
+        "Philosophy",
+        "Political Theory",
+        "Engineering",
+        "History",
+        "Philology"
+      ],
+      "tags": [
+        "Humanism",
+        "Classical Revival",
+        "Individualism",
+        "Perspective",
+        "Naturalism",
+        "Printing",
+        "Civic Humanism",
+        "Patronage",
+        "Antiquity"
+      ]
+    },
+    {
+      "id": "petrarch",
+      "name": "Petrarch",
+      "type": "person",
+      "importance": 9,
+      "description": "Italian poet, scholar, and humanist who promoted the recovery and study of classical Latin literature while developing a deeply introspective form of poetry. Often regarded as a foundational figure of Renaissance humanism, he encouraged scholars to engage directly with ancient texts and helped redirect European intellectual culture toward classical learning, individual experience, and historical self-awareness.",
+      "epigraph": {
+        "text": "I am like one who, separated from his own people, travels by night with a small and flickering light."
+      },
+      "startYear": 1304,
+      "endYear": 1374,
+      "disciplines": [
+        "Literature",
+        "Poetry",
+        "History",
+        "Philology"
+      ],
+      "tags": [
+        "Humanism",
+        "Classical Revival",
+        "Canzoniere",
+        "Latin Literature",
+        "Individualism",
+        "Textual Scholarship",
+        "Antiquity"
+      ]
+    },
+    {
+  "id": "filippo-brunelleschi",
+  "name": "Filippo Brunelleschi",
+  "type": "person",
+  "importance": 9,
+  "description": "Italian architect, engineer, and designer who helped establish Renaissance architecture through the revival of classical forms, mathematical proportion, and innovative structural engineering. His construction of the dome of Florence Cathedral demonstrated new methods of architectural planning and became an enduring symbol of Renaissance ingenuity, while his experiments with linear perspective transformed European visual representation.",
+  "epigraph": {
+    "text": "Do not share your inventions with many; share them only with the few who understand and love the sciences."
+  },
+  "startYear": 1377,
+  "endYear": 1446,
+  "disciplines": [
+    "Architecture",
+    "Engineering",
+    "Mathematics",
+    "Visual Art"
+  ],
+  "tags": [
+    "Florence Cathedral",
+    "Dome",
+    "Linear Perspective",
+    "Classical Architecture",
+    "Structural Engineering",
+    "Mathematical Proportion",
+    "Florence"
+  ]
+    },
+    {
+      "id": "johannes-gutenberg",
+      "name": "Johannes Gutenberg",
+      "type": "person",
+      "importance": 10,
+      "description": "German inventor and printer who introduced a practical European system of mechanical movable-type printing. By combining reusable metal type, oil-based ink, and press technology, he greatly increased the speed and scale at which texts could be reproduced, enabling classical scholarship, humanist literature, religious debate, and scientific knowledge to circulate across Europe.",
+      "epigraph": {
+        "text": "Religious truth is captive in a small number of manuscript books, but the printing press shall set it free."
+      },
+      "startYear": 1400,
+      "endYear": 1468,
+      "disciplines": [
+        "Engineering",
+        "Manufacturing"
+      ],
+      "tags": [
+        "Printing Press",
+        "Movable Type",
+        "Gutenberg Bible",
+        "Mass Communication",
+        "Books",
+        "Literacy",
+        "Knowledge Dissemination"
+      ]
+    },
+    {
+      "id": "leonardo-da-vinci",
+      "name": "Leonardo da Vinci",
+      "type": "person",
+      "importance": 10,
+      "description": "Italian artist, engineer, anatomist, and natural philosopher whose work embodied the Renaissance integration of art, observation, science, and invention. Through paintings such as the Mona Lisa and The Last Supper, extensive anatomical studies, investigations of natural phenomena, and designs for mechanical devices, he demonstrated how disciplined observation and visual reasoning could reveal underlying structures in both nature and technology.",
+      "epigraph": {
+        "text": "Those sciences are vain and full of errors which are not born of experience, mother of all certainty."
+      },
+      "startYear": 1452,
+      "endYear": 1519,
+      "disciplines": [
+        "Visual Art",
+        "Engineering",
+        "Anatomy",
+        "Natural Philosophy",
+        "Architecture"
+      ],
+      "tags": [
+        "Mona Lisa",
+        "The Last Supper",
+        "Anatomy",
+        "Observation",
+        "Invention",
+        "Engineering",
+        "Naturalism",
+        "Renaissance Polymath"
+      ]
+    },
+    {
+      "id": "michelangelo",
+      "name": "Michelangelo Buonarroti",
+      "type": "person",
+      "importance": 10,
+      "description": "Italian sculptor, painter, architect, and poet whose monumental works united anatomical precision, emotional intensity, and idealized human form. Through sculptures such as David and the Pietà, the ceiling of the Sistine Chapel, and his architectural work on Saint Peter's Basilica, he helped define the artistic ambitions of the High Renaissance and profoundly influenced subsequent European art.",
+      "epigraph": {
+        "text": "The true work of art is but a shadow of the divine perfection."
+      },
+      "startYear": 1475,
+      "endYear": 1564,
+      "disciplines": [
+        "Visual Art",
+        "Architecture",
+        "Poetry"
+      ],
+      "tags": [
+        "David",
+        "Pieta",
+        "Sistine Chapel",
+        "Human Anatomy",
+        "High Renaissance",
+        "Idealized Form",
+        "Monumental Art"
+      ]
+    },
+    {
+      "id": "raphael",
+      "name": "Raphael",
+      "type": "person",
+      "importance": 9,
+      "description": "Italian painter, architect, and designer whose balanced compositions, harmonious figures, and synthesis of classical and Christian imagery became defining expressions of the High Renaissance. Drawing upon the innovations of Leonardo da Vinci and Michelangelo, he developed an influential visual language exemplified by the School of Athens and his Madonna paintings.",
+      "epigraph": {
+        "text": "In order to paint one beautiful woman, I would have to see several beautiful women, provided that you were with me to choose the best."
+      },
+      "startYear": 1483,
+      "endYear": 1520,
+      "disciplines": [
+        "Visual Art",
+        "Architecture",
+        "Design"
+      ],
+      "tags": [
+        "School of Athens",
+        "High Renaissance",
+        "Classical Harmony",
+        "Perspective",
+        "Madonna",
+        "Vatican",
+        "Humanism"
+      ]
+    },
+    {
+      "id": "machiavelli",
+      "name": "Niccolò Machiavelli",
+      "type": "person",
+      "importance": 10,
+      "description": "Italian political philosopher, diplomat, historian, and humanist who analyzed political power through historical experience and practical observation rather than idealized moral principles alone. In The Prince and Discourses on Livy, he examined statecraft, conflict, civic virtue, republican government, and the preservation of political institutions, helping establish a distinctively modern tradition of political analysis.",
+      "epigraph": {
+        "text": "It is much safer to be feared than loved, if one must dispense with one of the two."
+      },
+      "startYear": 1469,
+      "endYear": 1527,
+      "disciplines": [
+        "Political Philosophy",
+        "Political Theory",
+        "History",
+        "Diplomacy",
+        "Literature"
+      ],
+      "tags": [
+        "The Prince",
+        "Discourses on Livy",
+        "Republicanism",
+        "Civic Humanism",
+        "Statecraft",
+        "Political Realism",
+        "Power",
+        "Florence"
+      ]
+    },
+    {
+      "id": "erasmus",
+      "name": "Desiderius Erasmus",
+      "type": "person",
+      "importance": 9,
+      "description": "Dutch humanist, theologian, philologist, and educator who became the leading intellectual representative of Northern Renaissance humanism. He combined classical scholarship with Christian reform, promoted education and individual moral improvement, produced an influential critical edition of the Greek New Testament, and used the expanding European print culture to circulate scholarship, satire, and arguments for moderation and peace.",
+      "epigraph": {
+        "text": "The chief hope of a nation lies in the proper education of its youth."
+      },
+      "startYear": 1469,
+      "endYear": 1536,
+      "disciplines": [
+        "Humanism",
+        "Theology",
+        "Philology",
+        "Education",
+        "Philosophy"
+      ],
+      "tags": [
+        "Christian Humanism",
+        "Greek New Testament",
+        "In Praise of Folly",
+        "Education",
+        "Textual Criticism",
+        "Free Will",
+        "Peace",
+        "Northern Renaissance"
+      ]
+    },
+    {
+      "id": "medical-science",
+      "name": "Medical Science",
+      "type": "movement",
+      "importance": 10,
+      "description": "Intellectual and practical tradition devoted to understanding the human body, explaining disease, preventing illness, and developing effective treatments through observation, anatomy, experimentation, clinical practice, and biological science. Emerging from ancient naturalistic medicine, medical science was transformed by anatomical investigation, the discovery of circulation, germ theory, antisepsis, vaccination, pharmacology, genetics, and molecular biology.",
+      "startYear": -450,
+      "endYear": 2026,
+      "disciplines": [
+        "Medicine",
+        "Anatomy",
+        "Physiology",
+        "Pathology",
+        "Epidemiology",
+        "Microbiology",
+        "Surgery",
+        "Public Health"
+      ],
+      "tags": [
+        "Disease",
+        "Diagnosis",
+        "Treatment",
+        "Clinical Observation",
+        "Anatomy",
+        "Physiology",
+        "Germ Theory",
+        "Vaccination",
+        "Antisepsis",
+        "Public Health"
+      ]
+    },
+    {
+      "id": "evolutionary-biology",
+      "name": "Evolutionary Biology",
+      "type": "movement",
+      "importance": 10,
+      "description": "Scientific movement explaining the diversity, adaptation, common ancestry, and historical transformation of living organisms through natural processes. Developed from earlier work in classification, geology, biogeography, and heredity, evolutionary biology was reshaped by natural selection and later unified with Mendelian genetics, population genetics, paleontology, systematics, ecology, and molecular biology through the modern evolutionary synthesis.",
+      "startYear": 1800,
+      "endYear": 2026,
+      "disciplines": [
+        "Biology",
+        "Evolution",
+        "Genetics",
+        "Population Genetics",
+        "Natural History",
+        "Ecology",
+        "Biogeography",
+        "Systematics"
+      ],
+      "tags": [
+        "Natural Selection",
+        "Common Descent",
+        "Adaptation",
+        "Speciation",
+        "Heredity",
+        "Population Genetics",
+        "Modern Synthesis",
+        "Variation",
+        "Biogeography",
+        "Evolution"
+      ]
+    },
+    {
+      "id": "molecular-biology",
+      "name": "Molecular Biology",
+      "type": "movement",
+      "importance": 10,
+      "description": "Twentieth-century scientific movement explaining biological inheritance, cellular activity, and the reproduction of living systems through the structures and interactions of molecules. By identifying DNA as hereditary material, determining its structure, explaining genetic information transfer, decoding protein synthesis, and developing sequencing technologies, molecular biology transformed genetics, medicine, biotechnology, and evolutionary science.",
+      "startYear": 1930,
+      "endYear": 2026,
+      "disciplines": [
+        "Molecular Biology",
+        "Genetics",
+        "Biochemistry",
+        "Cell Biology",
+        "Structural Biology",
+        "Genomics",
+        "Biotechnology"
+      ],
+      "tags": [
+        "DNA",
+        "RNA",
+        "Genes",
+        "Proteins",
+        "Genetic Code",
+        "Double Helix",
+        "Gene Expression",
+        "Protein Synthesis",
+        "DNA Sequencing",
+        "Genomics"
+      ]
+    },
+    {
+      "id": "hippocrates",
+      "name": "Hippocrates",
+      "type": "person",
+      "importance": 10,
+      "description": "Greek physician traditionally associated with establishing medicine as a systematic field grounded in natural explanations, clinical observation, prognosis, and professional ethics. The Hippocratic medical tradition rejected purely supernatural accounts of disease and encouraged physicians to examine symptoms, environment, diet, and the progression of illness.",
+      "startYear": -460,
+      "endYear": -370,
+      "disciplines": [
+        "Medicine",
+        "Clinical Observation",
+        "Medical Ethics",
+        "Pathology"
+      ],
+      "tags": [
+        "Hippocratic Corpus",
+        "Hippocratic Oath",
+        "Diagnosis",
+        "Prognosis",
+        "Naturalistic Medicine",
+        "Medical Ethics"
+      ]
+    },
+    {
+      "id": "galen",
+      "name": "Galen",
+      "type": "person",
+      "importance": 10,
+      "description": "Greek physician, anatomist, and philosopher in the Roman Empire whose extensive writings synthesized Hippocratic medicine with anatomical investigation and philosophical theories of bodily function. His accounts of anatomy, physiology, disease, and treatment dominated medical education in Europe and the Islamic world for more than a millennium.",
+      "startYear": 129,
+      "endYear": 216,
+      "disciplines": [
+        "Medicine",
+        "Anatomy",
+        "Physiology",
+        "Pharmacology",
+        "Philosophy"
+      ],
+      "tags": [
+        "Galenic Medicine",
+        "Humoral Theory",
+        "Anatomy",
+        "Physiology",
+        "Animal Dissection",
+        "Medical Synthesis"
+      ]
+    },
+    {
+      "id": "andreas-vesalius",
+      "name": "Andreas Vesalius",
+      "type": "person",
+      "importance": 10,
+      "description": "Flemish anatomist and physician who transformed the study of the human body through direct dissection and detailed anatomical illustration. His work On the Fabric of the Human Body corrected numerous inherited anatomical errors and challenged physicians to privilege observed human anatomy over unquestioned textual authority.",
+      "startYear": 1514,
+      "endYear": 1564,
+      "disciplines": [
+        "Anatomy",
+        "Medicine",
+        "Surgery"
+      ],
+      "tags": [
+        "Human Dissection",
+        "De Humani Corporis Fabrica",
+        "Anatomical Illustration",
+        "Empirical Anatomy",
+        "Galenic Medicine",
+        "Renaissance Medicine"
+      ]
+    },
+    {
+      "id": "william-harvey",
+      "name": "William Harvey",
+      "type": "person",
+      "importance": 10,
+      "description": "English physician and anatomist who demonstrated that the heart pumps blood continuously through a closed circulatory system. Through anatomical observation, vivisection, comparative study, and quantitative reasoning, he replaced older accounts of blood production and movement with a mechanical explanation of systemic circulation.",
+      "startYear": 1578,
+      "endYear": 1657,
+      "disciplines": [
+        "Medicine",
+        "Anatomy",
+        "Physiology",
+        "Embryology"
+      ],
+      "tags": [
+        "Blood Circulation",
+        "Heart",
+        "Experimental Physiology",
+        "De Motu Cordis",
+        "Quantitative Medicine",
+        "Scientific Revolution"
+      ]
+    },
+    {
+      "id": "louis-pasteur",
+      "name": "Louis Pasteur",
+      "type": "person",
+      "importance": 10,
+      "description": "French chemist and microbiologist who demonstrated the role of microorganisms in fermentation and disease, challenged spontaneous generation, and helped establish germ theory. His work supported pasteurization, laboratory microbiology, vaccination, and a new understanding of infectious disease as a biological process caused by specific living agents.",
+      "startYear": 1822,
+      "endYear": 1895,
+      "disciplines": [
+        "Microbiology",
+        "Chemistry",
+        "Medicine",
+        "Immunology"
+      ],
+      "tags": [
+        "Germ Theory",
+        "Pasteurization",
+        "Vaccination",
+        "Fermentation",
+        "Microorganisms",
+        "Rabies",
+        "Spontaneous Generation"
+      ]
+    },
+    {
+      "id": "alfred-russel-wallace",
+      "name": "Alfred Russel Wallace",
+      "type": "person",
+      "importance": 9,
+      "description": "British naturalist, explorer, and biogeographer who independently developed a theory of evolution through natural selection. His studies of species distribution in the Amazon and Malay Archipelago helped establish biogeography, while his correspondence with Darwin prompted the joint presentation of their theories in 1858.",
+      "startYear": 1823,
+      "endYear": 1913,
+      "disciplines": [
+        "Evolutionary Biology",
+        "Biogeography",
+        "Natural History",
+        "Zoology"
+      ],
+      "tags": [
+        "Natural Selection",
+        "Wallace Line",
+        "Biogeography",
+        "Malay Archipelago",
+        "Species Distribution",
+        "Common Descent"
+      ]
+    },
+    {
+      "id": "gregor-mendel",
+      "name": "Gregor Mendel",
+      "type": "person",
+      "importance": 10,
+      "description": "Moravian naturalist, Augustinian friar, and experimental biologist who identified mathematical patterns governing the inheritance of traits through controlled breeding experiments with pea plants. His concepts of discrete hereditary factors, segregation, and independent assortment became foundational to genetics and later enabled the genetic reformulation of evolutionary theory.",
+      "startYear": 1822,
+      "endYear": 1884,
+      "disciplines": [
+        "Genetics",
+        "Biology",
+        "Botany",
+        "Mathematics"
+      ],
+      "tags": [
+        "Mendelian Inheritance",
+        "Heredity",
+        "Pea Experiments",
+        "Segregation",
+        "Independent Assortment",
+        "Genes",
+        "Experimental Biology"
+      ]
+    },
+    {
+      "id": "ronald-fisher",
+      "name": "Ronald Fisher",
+      "type": "person",
+      "importance": 10,
+      "description": "British statistician, geneticist, and evolutionary biologist who demonstrated mathematically how Mendelian inheritance and Darwinian natural selection could operate together. His work helped establish population genetics, quantitative genetics, modern statistical inference, and the theoretical foundations of the modern evolutionary synthesis.",
+      "startYear": 1890,
+      "endYear": 1962,
+      "disciplines": [
+        "Population Genetics",
+        "Evolutionary Biology",
+        "Statistics",
+        "Quantitative Genetics"
+      ],
+      "tags": [
+        "Modern Synthesis",
+        "Population Genetics",
+        "Natural Selection",
+        "Statistical Inference",
+        "Quantitative Traits",
+        "Fisherian Selection",
+        "Genetic Variance"
+      ]
+    },
+    {
+      "id": "theodosius-dobzhansky",
+      "name": "Theodosius Dobzhansky",
+      "type": "person",
+      "importance": 10,
+      "description": "Ukrainian-born American geneticist and evolutionary biologist who connected laboratory genetics with the study of natural populations. His research on fruit-fly variation and his synthesis of genetics with natural selection helped establish the modern evolutionary synthesis and demonstrated that evolution could be studied through changing gene frequencies in populations.",
+      "startYear": 1900,
+      "endYear": 1975,
+      "disciplines": [
+        "Evolutionary Biology",
+        "Genetics",
+        "Population Genetics",
+        "Zoology"
+      ],
+      "tags": [
+        "Modern Synthesis",
+        "Drosophila",
+        "Genetics and the Origin of Species",
+        "Population Variation",
+        "Speciation",
+        "Gene Frequencies",
+        "Natural Selection"
+      ]
+    },
+    {
+      "id": "oswald-avery",
+      "name": "Oswald Avery",
+      "type": "person",
+      "importance": 10,
+      "description": "Canadian-born American physician and bacteriologist whose experiments with Colin MacLeod and Maclyn McCarty demonstrated that DNA could transmit hereditary traits between bacteria. Their identification of DNA as the transforming principle provided decisive evidence that nucleic acid, rather than protein, carries genetic information.",
+      "startYear": 1877,
+      "endYear": 1955,
+      "disciplines": [
+        "Molecular Biology",
+        "Genetics",
+        "Bacteriology",
+        "Medicine"
+      ],
+      "tags": [
+        "DNA",
+        "Transforming Principle",
+        "Avery-MacLeod-McCarty Experiment",
+        "Heredity",
+        "Pneumococcus",
+        "Genetic Material"
+      ]
+    },
+    {
+      "id": "rosalind-franklin",
+      "name": "Rosalind Franklin",
+      "type": "person",
+      "importance": 10,
+      "description": "British chemist and X-ray crystallographer whose precise diffraction studies revealed essential structural properties of DNA, including its helical organization and dimensions. Her experimental work provided critical evidence used in constructing the double-helix model, and she later made important contributions to understanding the molecular structures of viruses.",
+      "startYear": 1920,
+      "endYear": 1958,
+      "disciplines": [
+        "Molecular Biology",
+        "Chemistry",
+        "Structural Biology",
+        "Virology"
+      ],
+      "tags": [
+        "DNA",
+        "Photo 51",
+        "X-ray Diffraction",
+        "X-ray Crytallography",
+        "Double Helix",
+        "Structural Biology",
+        "Viruses",
+        "Coal Structure"
+      ]
+    },
+    {
+      "id": "francis-crick",
+      "name": "Francis Crick",
+      "type": "person",
+      "importance": 10,
+      "description": "British molecular biologist, biophysicist, and neuroscientist who helped determine the double-helical structure of DNA and explain how molecular structure permits genetic information to be copied. He later contributed to the concepts of information transfer from DNA through RNA to protein and helped clarify the nature of the genetic code.",
+      "startYear": 1916,
+      "endYear": 2004,
+      "disciplines": [
+        "Molecular Biology",
+        "Genetics",
+        "Biophysics",
+        "Neuroscience"
+      ],
+      "tags": [
+        "DNA",
+        "Double Helix",
+        "Central Dogma",
+        "Genetic Code",
+        "Molecular Structure",
+        "Information Transfer"
+      ]
+    },
+    {
+      "id": "marshall-nirenberg",
+      "name": "Marshall Nirenberg",
+      "type": "person",
+      "importance": 9,
+      "description": "American biochemist and geneticist who helped decipher the genetic code linking nucleotide sequences in RNA to amino acids in proteins. Beginning with experiments using synthetic RNA, he and his collaborators identified codon assignments and helped explain how cells translate genetic information into protein structure.",
+      "startYear": 1927,
+      "endYear": 2010,
+      "disciplines": [
+        "Molecular Biology",
+        "Biochemistry",
+        "Genetics",
+        "Neurobiology"
+      ],
+      "tags": [
+        "Genetic Code",
+        "Codons",
+        "RNA",
+        "Protein Synthesis",
+        "Translation",
+        "Poly-U Experiment"
+      ]
+    },
+    {
+      "id": "frederick-sanger",
+      "name": "Frederick Sanger",
+      "type": "person",
+      "importance": 10,
+      "description": "British biochemist who developed methods for determining the sequences of proteins and nucleic acids. After establishing the amino-acid sequence of insulin, he created an influential DNA sequencing method that enabled researchers to read genetic information directly and helped establish modern genomics.",
+      "startYear": 1918,
+      "endYear": 2013,
+      "disciplines": [
+        "Molecular Biology",
+        "Biochemistry",
+        "Genetics",
+        "Genomics"
+      ],
+      "tags": [
+        "DNA Sequencing",
+        "Sanger Sequencing",
+        "Protein Sequencing",
+        "Insulin",
+        "Genomics",
+        "Nucleotide Sequence"
       ]
     }
   ],
@@ -2148,15 +2845,6 @@
       "directness": "direct"
     },
     {
-      "id": "darwin-industrial-revolution",
-      "source": "charles-darwin",
-      "target": "industrial-revolution",
-      "relationship": "advanced",
-      "description": "Through his theory of evolution by natural selection, Charles Darwin exemplified the Industrial Revolution's broader culture of scientific inquiry and transformed nineteenth-century biological science.",
-      "confidence": 0.85,
-      "directness": "direct"
-    },
-    {
       "id": "edison-industrial-revolution",
       "source": "thomas-edison",
       "target": "industrial-revolution",
@@ -2333,6 +3021,609 @@
       "target": "paul-dirac",
       "relationship": "influenced",
       "description": "Einstein's special theory of relativity supplied the relativistic framework that Dirac successfully combined with quantum mechanics in his equation for the electron.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemy-hellenistic-science",
+      "source": "ptolemy",
+      "target": "hellenistic-science",
+      "relationship": "advanced",
+      "description": "Ptolemy synthesized centuries of Greek mathematics and astronomy into the Almagest, producing the definitive statement of Hellenistic scientific astronomy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "hipparchus-ptolemy",
+      "source": "hipparchus",
+      "target": "ptolemy",
+      "relationship": "influenced",
+      "description": "Hipparchus's observations, mathematical methods, and stellar catalog formed the foundation of Ptolemy's astronomical system in the Almagest.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemy-copernicus",
+      "source": "ptolemy",
+      "target": "copernicus",
+      "relationship": "challenged",
+      "description": "Ptolemy's geocentric cosmology became the principal astronomical model that Copernicus challenged by proposing a heliocentric universe.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemy-kepler",
+      "source": "ptolemy",
+      "target": "kepler",
+      "relationship": "challenged",
+      "description": "Kepler replaced Ptolemy's system of epicycles with elliptical planetary orbits governed by mathematical laws.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "ptolemy-galileo",
+      "source": "ptolemy",
+      "target": "galileo",
+      "relationship": "challenged",
+      "description": "Galileo's telescopic observations provided powerful empirical evidence against key assumptions of the Ptolemaic universe.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "aristotle-ptolemy",
+      "source": "aristotle",
+      "target": "ptolemy",
+      "relationship": "influenced",
+      "description": "Aristotle's cosmology and conception of a geocentric universe provided the philosophical framework that Ptolemy refined into a predictive mathematical system.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "ptolemy-scientific-revolution",
+      "source": "ptolemy",
+      "target": "scientific-revolution",
+      "relationship": "enabled",
+      "description": "Ptolemy's comprehensive mathematical astronomy provided the framework that generations of astronomers refined, tested, and ultimately replaced during the Scientific Revolution.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "petrarch-renaissance",
+      "source": "petrarch",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Petrarch helped initiate Renaissance humanism by recovering classical texts, promoting the study of antiquity, and connecting classical learning with individual reflection and literary expression.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "brunelleschi-renaissance",
+      "source": "filippo-brunelleschi",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Brunelleschi advanced Renaissance architecture and visual culture through classical proportion, structural innovation, and the development of mathematical linear perspective.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "gutenberg-renaissance",
+      "source": "johannes-gutenberg",
+      "target": "renaissance",
+      "relationship": "enabled",
+      "description": "Gutenberg's mechanical printing system enabled Renaissance texts, classical works, artistic ideas, and humanist scholarship to circulate throughout Europe at unprecedented speed and scale.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "leonardo-da-vinci-renaissance",
+      "source": "leonardo-da-vinci",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Leonardo advanced the Renaissance integration of art and natural inquiry through observational drawing, anatomical study, engineering design, and innovative approaches to painting.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "michelangelo-renaissance",
+      "source": "michelangelo",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Michelangelo advanced Renaissance art through monumental sculpture, painting, and architecture that combined classical ideals of the human form with intense psychological and spiritual expression.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "raphael-renaissance",
+      "source": "raphael",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Raphael advanced the High Renaissance by synthesizing classical harmony, mathematical perspective, naturalistic figures, and the artistic innovations of Leonardo and Michelangelo.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "machiavelli-renaissance",
+      "source": "machiavelli",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Machiavelli advanced Renaissance political thought by applying humanist historical study and direct political experience to questions of power, republican government, civic virtue, and statecraft.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "erasmus-renaissance",
+      "source": "erasmus",
+      "target": "renaissance",
+      "relationship": "advanced",
+      "description": "Erasmus advanced Northern Renaissance humanism through classical scholarship, textual criticism, educational reform, Christian moral philosophy, and the strategic use of print.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "petrarch-erasmus",
+      "source": "petrarch",
+      "target": "erasmus",
+      "relationship": "influenced",
+      "description": "Petrarch's recovery of classical literature and emphasis on humanist scholarship helped establish the intellectual tradition that Erasmus later extended through Christian humanism and philology.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "petrarch-machiavelli",
+      "source": "petrarch",
+      "target": "machiavelli",
+      "relationship": "influenced",
+      "description": "The humanist tradition initiated by Petrarch shaped the classical education and historical orientation that informed Machiavelli's political writings.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "brunelleschi-leonardo-da-vinci",
+      "source": "filippo-brunelleschi",
+      "target": "leonardo-da-vinci",
+      "relationship": "influenced",
+      "description": "Brunelleschi's architectural engineering and development of linear perspective helped establish the mathematical and visual culture within which Leonardo developed his art and technical investigations.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "brunelleschi-michelangelo",
+      "source": "filippo-brunelleschi",
+      "target": "michelangelo",
+      "relationship": "influenced",
+      "description": "Brunelleschi's revival of monumental classical architecture and his engineering of the Florence Cathedral dome influenced the architectural tradition later extended by Michelangelo.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "gutenberg-erasmus",
+      "source": "johannes-gutenberg",
+      "target": "erasmus",
+      "relationship": "enabled",
+      "description": "Gutenberg's printing technology enabled Erasmus to circulate humanist scholarship, educational writings, satire, and his Greek New Testament to a large international readership.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "gutenberg-machiavelli",
+      "source": "johannes-gutenberg",
+      "target": "machiavelli",
+      "relationship": "enabled",
+      "description": "The European print culture enabled by Gutenberg allowed Machiavelli's political writings to circulate far beyond Florence and exert a lasting influence on political thought.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "leonardo-da-vinci-michelangelo",
+      "source": "leonardo-da-vinci",
+      "target": "michelangelo",
+      "relationship": "challenged",
+      "description": "Leonardo and Michelangelo developed their art amid intense rivalry in Florence, with their competing approaches to anatomy, movement, composition, and monumental form challenging each artist to expand his ambitions.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "leonardo-da-vinci-raphael",
+      "source": "leonardo-da-vinci",
+      "target": "raphael",
+      "relationship": "influenced",
+      "description": "Leonardo's compositional arrangements, atmospheric effects, expressive figures, and investigations of human form strongly influenced Raphael's artistic development in Florence.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "michelangelo-raphael",
+      "source": "michelangelo",
+      "target": "raphael",
+      "relationship": "influenced",
+      "description": "Michelangelo's monumental figures, anatomical power, and expressive movement influenced Raphael as he developed the compositions of the Vatican rooms.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "petrarch-gutenberg",
+      "source": "petrarch",
+      "target": "johannes-gutenberg",
+      "relationship": "anticipated",
+      "description": "Petrarch's pursuit, copying, and circulation of classical manuscripts anticipated the wider recovery and distribution of ancient texts later made possible by mechanical printing.",
+      "confidence": 0.75,
+      "directness": "indirect"
+    },
+    {
+      "id": "erasmus-machiavelli",
+      "source": "erasmus",
+      "target": "machiavelli",
+      "relationship": "challenged",
+      "description": "Erasmus's Christian humanism, pacifism, and emphasis on moral education offered a contrasting Renaissance response to political life from Machiavelli's more pragmatic analysis of power and conflict.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "hippocrates-medical-science",
+      "source": "hippocrates",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Hippocrates and the medical tradition associated with him advanced naturalistic medicine through systematic clinical observation, prognosis, and professional ethical principles.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "galen-medical-science",
+      "source": "galen",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Galen advanced medical science by synthesizing anatomy, physiology, pharmacology, Hippocratic medicine, and philosophy into an influential explanatory system.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "andreas-vesalius-medical-science",
+      "source": "andreas-vesalius",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Vesalius advanced medical science by grounding human anatomy in direct dissection and observation rather than reliance on inherited textual authority.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "william-harvey-medical-science",
+      "source": "william-harvey",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Harvey advanced medical science by experimentally demonstrating systemic blood circulation and the pumping function of the heart.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "louis-pasteur-medical-science",
+      "source": "louis-pasteur",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Pasteur advanced medical science by establishing the importance of microorganisms in biological processes and infectious disease and by developing laboratory approaches to vaccination.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "charles-darwin-evolutionary-biology",
+      "source": "charles-darwin",
+      "target": "evolutionary-biology",
+      "relationship": "founded",
+      "description": "Darwin established natural selection and common descent as the central explanatory principles of evolutionary biology.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "alfred-russel-wallace-evolutionary-biology",
+      "source": "alfred-russel-wallace",
+      "target": "evolutionary-biology",
+      "relationship": "founded",
+      "description": "Wallace independently developed the theory of evolution through natural selection and established biogeography as a major source of evolutionary evidence.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "gregor-mendel-evolutionary-biology",
+      "source": "gregor-mendel",
+      "target": "evolutionary-biology",
+      "relationship": "enabled",
+      "description": "Mendel's discovery of discrete inheritance mechanisms enabled evolutionary theory to develop a rigorous genetic explanation of variation and heredity.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "ronald-fisher-evolutionary-biology",
+      "source": "ronald-fisher",
+      "target": "evolutionary-biology",
+      "relationship": "advanced",
+      "description": "Fisher advanced evolutionary biology by mathematically integrating Mendelian genetics with natural selection and helping establish population genetics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "theodosius-dobzhansky-evolutionary-biology",
+      "source": "theodosius-dobzhansky",
+      "target": "evolutionary-biology",
+      "relationship": "advanced",
+      "description": "Dobzhansky advanced evolutionary biology by connecting experimental genetics, natural populations, speciation, and natural selection within the modern synthesis.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "oswald-avery-molecular-biology",
+      "source": "oswald-avery",
+      "target": "molecular-biology",
+      "relationship": "advanced",
+      "description": "Avery advanced molecular biology by providing powerful experimental evidence that DNA carries hereditary information.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "rosalind-franklin-molecular-biology",
+      "source": "rosalind-franklin",
+      "target": "molecular-biology",
+      "relationship": "advanced",
+      "description": "Franklin advanced molecular biology through rigorous X-ray diffraction studies that revealed critical structural properties of DNA and viruses.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "francis-crick-molecular-biology",
+      "source": "francis-crick",
+      "target": "molecular-biology",
+      "relationship": "advanced",
+      "description": "Crick advanced molecular biology through the DNA double-helix model and influential explanations of genetic information transfer and coding.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "marshall-nirenberg-molecular-biology",
+      "source": "marshall-nirenberg",
+      "target": "molecular-biology",
+      "relationship": "advanced",
+      "description": "Nirenberg advanced molecular biology by helping decipher how nucleotide codons specify amino acids during protein synthesis.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "frederick-sanger-molecular-biology",
+      "source": "frederick-sanger",
+      "target": "molecular-biology",
+      "relationship": "advanced",
+      "description": "Sanger advanced molecular biology by creating methods for reading protein and DNA sequences and thereby enabling modern genomics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "hippocrates-galen",
+      "source": "hippocrates",
+      "target": "galen",
+      "relationship": "influenced",
+      "description": "Galen adopted, interpreted, and systematized the Hippocratic tradition, particularly its naturalistic approach to disease and humoral framework.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "galen-andreas-vesalius",
+      "source": "galen",
+      "target": "andreas-vesalius",
+      "relationship": "challenged",
+      "description": "Vesalius tested Galen's anatomical claims through direct human dissection, confirming some observations while correcting numerous errors derived from animal anatomy.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "andreas-vesalius-william-harvey",
+      "source": "andreas-vesalius",
+      "target": "william-harvey",
+      "relationship": "enabled",
+      "description": "Vesalius's observational reform of anatomy established the empirical anatomical foundation upon which Harvey investigated the heart and circulatory system.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "galen-william-harvey",
+      "source": "galen",
+      "target": "william-harvey",
+      "relationship": "challenged",
+      "description": "Harvey challenged Galenic physiology by showing that blood circulates continuously rather than being continually produced, consumed, and distributed through separate venous and arterial systems.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "william-harvey-louis-pasteur",
+      "source": "william-harvey",
+      "target": "louis-pasteur",
+      "relationship": "enabled",
+      "description": "Harvey's experimental and mechanical approach to bodily function helped establish the broader physiological tradition within which later laboratory medicine and microbiology developed.",
+      "confidence": 0.8,
+      "directness": "indirect"
+    },
+    {
+      "id": "charles-darwin-alfred-russel-wallace",
+      "source": "charles-darwin",
+      "target": "alfred-russel-wallace",
+      "relationship": "converged_with",
+      "description": "Darwin and Wallace independently developed theories of evolution through natural selection, which were presented jointly to the Linnean Society in 1858.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "gregor-mendel-charles-darwin",
+      "source": "gregor-mendel",
+      "target": "charles-darwin",
+      "relationship": "complemented",
+      "description": "Mendel's particulate account of inheritance later supplied the hereditary mechanism missing from Darwin's original theory, although Darwin did not meaningfully incorporate Mendel's work.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "charles-darwin-ronald-fisher",
+      "source": "charles-darwin",
+      "target": "ronald-fisher",
+      "relationship": "influenced",
+      "description": "Darwin's theory of natural selection provided one of the two principal intellectual foundations Fisher integrated within population genetics.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "gregor-mendel-ronald-fisher",
+      "source": "gregor-mendel",
+      "target": "ronald-fisher",
+      "relationship": "influenced",
+      "description": "Mendelian inheritance provided the genetic framework Fisher used to explain how natural selection acts on hereditary variation in populations.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "ronald-fisher-theodosius-dobzhansky",
+      "source": "ronald-fisher",
+      "target": "theodosius-dobzhansky",
+      "relationship": "influenced",
+      "description": "Fisher's population-genetic theory helped provide the mathematical foundation for Dobzhansky's synthesis of genetics, natural variation, and evolution.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "charles-darwin-theodosius-dobzhansky",
+      "source": "charles-darwin",
+      "target": "theodosius-dobzhansky",
+      "relationship": "influenced",
+      "description": "Darwin's concepts of natural selection, variation, and common descent formed the evolutionary framework Dobzhansky reformulated using modern genetics.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "gregor-mendel-theodosius-dobzhansky",
+      "source": "gregor-mendel",
+      "target": "theodosius-dobzhansky",
+      "relationship": "enabled",
+      "description": "Mendelian inheritance enabled Dobzhansky to interpret evolution as changes in hereditary variation and gene frequencies within natural populations.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "gregor-mendel-oswald-avery",
+      "source": "gregor-mendel",
+      "target": "oswald-avery",
+      "relationship": "enabled",
+      "description": "Mendel's demonstration that inheritance involves discrete hereditary factors established the problem that Avery's work helped resolve at the molecular level by identifying DNA as genetic material.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "oswald-avery-rosalind-franklin",
+      "source": "oswald-avery",
+      "target": "rosalind-franklin",
+      "relationship": "enabled",
+      "description": "Avery's evidence that DNA carries hereditary information increased the biological importance of determining DNA's physical structure, the problem to which Franklin contributed crucial evidence.",
+      "confidence": 0.9,
+      "directness": "indirect"
+    },
+    {
+      "id": "oswald-avery-francis-crick",
+      "source": "oswald-avery",
+      "target": "francis-crick",
+      "relationship": "influenced",
+      "description": "Avery's identification of DNA as hereditary material helped frame the scientific importance of the structural problem pursued by Crick and other molecular biologists.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "rosalind-franklin-francis-crick",
+      "source": "rosalind-franklin",
+      "target": "francis-crick",
+      "relationship": "enabled",
+      "description": "Franklin's X-ray diffraction measurements and structural analysis supplied critical constraints used by Crick and Watson in constructing the DNA double-helix model.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "francis-crick-marshall-nirenberg",
+      "source": "francis-crick",
+      "target": "marshall-nirenberg",
+      "relationship": "influenced",
+      "description": "Crick's theoretical work on genetic information, adaptor molecules, and coding helped define the problem of how nucleotide sequences specify amino-acid sequences that Nirenberg investigated experimentally.",
+      "confidence": 0.95,
+      "directness": "direct"
+    },
+    {
+      "id": "francis-crick-frederick-sanger",
+      "source": "francis-crick",
+      "target": "frederick-sanger",
+      "relationship": "influenced",
+      "description": "The molecular understanding of genes and information transfer associated with Crick helped establish the scientific context in which direct determination of nucleic-acid sequences became increasingly important.",
+      "confidence": 0.8,
+      "directness": "indirect"
+    },
+    {
+      "id": "marshall-nirenberg-frederick-sanger",
+      "source": "marshall-nirenberg",
+      "target": "frederick-sanger",
+      "relationship": "complemented",
+      "description": "Nirenberg helped explain how nucleotide sequences encode proteins, while Sanger developed methods capable of determining those nucleotide and protein sequences directly.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "louis-pasteur-oswald-avery",
+      "source": "louis-pasteur",
+      "target": "oswald-avery",
+      "relationship": "enabled",
+      "description": "Pasteur's establishment of microorganisms as experimentally tractable biological agents helped create the bacteriological tradition within which Avery investigated pneumococcal heredity.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "charles-darwin-gregor-mendel",
+      "source": "charles-darwin",
+      "target": "gregor-mendel",
+      "relationship": "converged_with",
+      "description": "Darwin explained evolutionary change through selection among inherited variations, while Mendel independently identified regular patterns governing inheritance; their ideas were later integrated despite little direct exchange between them.",
+      "confidence": 0.95,
+      "directness": "indirect"
+    },
+    {
+      "id": "gregor-mendel-molecular-biology",
+      "source": "gregor-mendel",
+      "target": "molecular-biology",
+      "relationship": "enabled",
+      "description": "Mendel's discovery of discrete hereditary factors defined the conceptual units that molecular biology later identified with genes encoded in DNA.",
+      "confidence": 1,
+      "directness": "indirect"
+    },
+    {
+      "id": "oswald-avery-medical-science",
+      "source": "oswald-avery",
+      "target": "medical-science",
+      "relationship": "advanced",
+      "description": "Avery advanced medical science through research on bacterial disease and immunity while revealing the molecular basis of hereditary transformation.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "theodosius-dobzhansky-molecular-biology",
+      "source": "theodosius-dobzhansky",
+      "target": "molecular-biology",
+      "relationship": "influenced",
+      "description": "Dobzhansky's population-genetic synthesis helped frame genes as both molecular entities and evolving units whose variation shapes natural populations.",
+      "confidence": 0.85,
+      "directness": "indirect"
+    },
+    {
+      "id": "molecular-biology-medical-science",
+      "source": "molecular-biology",
+      "target": "medical-science",
+      "relationship": "transformed",
+      "description": "Molecular biology transformed medical science by explaining disease, inheritance, infection, immunity, and treatment through genes, proteins, cellular pathways, and molecular interactions.",
+      "confidence": 1,
+      "directness": "direct"
+    },
+    {
+      "id": "molecular-biology-evolutionary-biology",
+      "source": "molecular-biology",
+      "target": "evolutionary-biology",
+      "relationship": "transformed",
+      "description": "Molecular biology transformed evolutionary biology by making it possible to compare DNA and protein sequences, reconstruct ancestry, measure genetic variation, and investigate evolution at the molecular level.",
       "confidence": 1,
       "directness": "direct"
     }

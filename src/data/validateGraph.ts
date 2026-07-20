@@ -31,6 +31,8 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "belonged_to",
   "challenged",
   "collaborated_with",
+  "complemented",
+  "converged_with",
   "criticized",
   "discovered",
   "enabled",
@@ -47,6 +49,7 @@ const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
   "refined",
   "responded_to",
   "synthesized",
+  "transformed",
 ]);
 
 const VALID_RELATIONSHIP_DIRECTNESS = new Set<RelationshipDirectness>([

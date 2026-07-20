@@ -19,6 +19,8 @@ export type RelationshipType =
   | "belonged_to"
   | "challenged"
   | "collaborated_with"
+  | "complemented"
+  | "converged_with"
   | "criticized"
   | "discovered"
   | "enabled"
@@ -34,7 +36,8 @@ export type RelationshipType =
   | "published"
   | "refined"
   | "responded_to"
-  | "synthesized";
+  | "synthesized"
+  | "transformed";
 
 export type RelationshipDirectness =
   | "direct"
