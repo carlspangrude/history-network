@@ -17,6 +17,10 @@ function getEndpointId(endpoint: string | GraphNode): string {
   return typeof endpoint === "string" ? endpoint : endpoint.id;
 }
 
+function getNodeYear(node: GraphNode): number | undefined {
+  return node.startYear ?? node.endYear;
+}
+
 export function useKnowledgeGraph({
   onSelectionCleared,
   onSelectionOpened,
@@ -50,6 +54,25 @@ export function useKnowledgeGraph({
     [fullGraphData.nodes],
   );
 
+  const yearBounds = useMemo<[number, number]>(() => {
+    const years = fullGraphData.nodes.flatMap((node) => {
+      const values: number[] = [];
+      if (node.startYear !== undefined) values.push(node.startYear);
+      if (node.endYear !== undefined) values.push(node.endYear);
+      return values;
+    });
+  
+    let min = years.length === 0 ? 0 : Math.min(...years);
+    let max = years.length === 0 ? 1 : Math.max(...years);
+  
+    if (min === max) {
+      min -= 1;
+      max += 1;
+    }
+  
+    return [min, max];
+  }, [fullGraphData.nodes]);
+
   // ===========================================================================
   // State
   // ===========================================================================
@@ -70,6 +93,9 @@ export function useKnowledgeGraph({
       () => new Set(FILTERABLE_NODE_TYPES),
     );
 
+  const [yearRange, setYearRange] =
+    useState<[number, number]>(yearBounds);
+
   // ===========================================================================
   // Filtered Graph
   // ===========================================================================
@@ -85,7 +111,12 @@ export function useKnowledgeGraph({
             visibleDisciplines.has(discipline),
           );
 
-        return isTypeVisible && matchesVisibleDiscipline;
+        const year = getNodeYear(node);
+        const matchesYearRange =
+          year === undefined ||
+          (year >= yearRange[0] && year <= yearRange[1]);
+
+        return isTypeVisible && matchesVisibleDiscipline && matchesYearRange;
       })
       .map((node) => node.id)
       .sort();
@@ -93,6 +124,7 @@ export function useKnowledgeGraph({
     fullGraphData.nodes,
     visibleDisciplines,
     visibleNodeTypes,
+    yearRange,
   ]);
 
   const visibleNodeKey = visibleNodeIds.join("|");
@@ -162,6 +194,7 @@ export function useKnowledgeGraph({
     node: GraphNode,
     nodeTypes: Set<NodeType>,
     disciplines: Set<string>,
+    range: [number, number],
   ) => {
     const isTypeVisible = nodeTypes.has(node.type);
 
@@ -171,13 +204,18 @@ export function useKnowledgeGraph({
         disciplines.has(discipline),
       );
 
-    return isTypeVisible && matchesDiscipline;
+    const year = getNodeYear(node);
+    const matchesYearRange =
+      year === undefined || (year >= range[0] && year <= range[1]);
+
+    return isTypeVisible && matchesDiscipline && matchesYearRange;
   };
 
   const isRelationshipVisibleWithFilters = (
     relationship: KnowledgeEdge,
     nodeTypes: Set<NodeType>,
     disciplines: Set<string>,
+    range: [number, number],
   ) => {
     const sourceNode = fullGraphData.nodes.find(
       (node) => node.id === relationship.source,
@@ -190,16 +228,8 @@ export function useKnowledgeGraph({
     return (
       sourceNode !== undefined &&
       targetNode !== undefined &&
-      isNodeVisibleWithFilters(
-        sourceNode,
-        nodeTypes,
-        disciplines,
-      ) &&
-      isNodeVisibleWithFilters(
-        targetNode,
-        nodeTypes,
-        disciplines,
-      )
+      isNodeVisibleWithFilters(sourceNode, nodeTypes, disciplines, range) &&
+      isNodeVisibleWithFilters(targetNode, nodeTypes, disciplines, range)
     );
   };
 
@@ -248,24 +278,13 @@ export function useKnowledgeGraph({
 
     const selectedNodeWillRemainVisible =
       !selectedNode ||
-      isNodeVisibleWithFilters(
-        selectedNode,
-        nextNodeTypes,
-        visibleDisciplines,
-      );
+      isNodeVisibleWithFilters(selectedNode, nextNodeTypes, visibleDisciplines, yearRange);
 
     const selectedRelationshipWillRemainVisible =
       !selectedRelationship ||
-      isRelationshipVisibleWithFilters(
-        selectedRelationship,
-        nextNodeTypes,
-        visibleDisciplines,
-      );
+      isRelationshipVisibleWithFilters(selectedRelationship, nextNodeTypes, visibleDisciplines, yearRange);
 
-    if (
-      !selectedNodeWillRemainVisible ||
-      !selectedRelationshipWillRemainVisible
-    ) {
+    if (!selectedNodeWillRemainVisible || !selectedRelationshipWillRemainVisible) {
       handleSelectionClear();
     }
   };
@@ -283,24 +302,13 @@ export function useKnowledgeGraph({
 
     const selectedNodeWillRemainVisible =
       !selectedNode ||
-      isNodeVisibleWithFilters(
-        selectedNode,
-        visibleNodeTypes,
-        nextDisciplines,
-      );
+      isNodeVisibleWithFilters(selectedNode, visibleNodeTypes, nextDisciplines, yearRange);
 
     const selectedRelationshipWillRemainVisible =
       !selectedRelationship ||
-      isRelationshipVisibleWithFilters(
-        selectedRelationship,
-        visibleNodeTypes,
-        nextDisciplines,
-      );
+      isRelationshipVisibleWithFilters(selectedRelationship, visibleNodeTypes, nextDisciplines, yearRange);
 
-    if (
-      !selectedNodeWillRemainVisible ||
-      !selectedRelationshipWillRemainVisible
-    ) {
+    if (!selectedNodeWillRemainVisible || !selectedRelationshipWillRemainVisible) {
       handleSelectionClear();
     }
   };
@@ -309,60 +317,54 @@ export function useKnowledgeGraph({
     const nextNodeTypes = selected
       ? new Set<NodeType>(FILTERABLE_NODE_TYPES)
       : new Set<NodeType>();
-  
+
     setVisibleNodeTypes(nextNodeTypes);
-  
+
     const selectedNodeWillRemainVisible =
       !selectedNode ||
-      isNodeVisibleWithFilters(
-        selectedNode,
-        nextNodeTypes,
-        visibleDisciplines,
-      );
-  
+      isNodeVisibleWithFilters(selectedNode, nextNodeTypes, visibleDisciplines, yearRange);
+
     const selectedRelationshipWillRemainVisible =
       !selectedRelationship ||
-      isRelationshipVisibleWithFilters(
-        selectedRelationship,
-        nextNodeTypes,
-        visibleDisciplines,
-      );
-  
-    if (
-      !selectedNodeWillRemainVisible ||
-      !selectedRelationshipWillRemainVisible
-    ) {
+      isRelationshipVisibleWithFilters(selectedRelationship, nextNodeTypes, visibleDisciplines, yearRange);
+
+    if (!selectedNodeWillRemainVisible || !selectedRelationshipWillRemainVisible) {
       handleSelectionClear();
     }
   };
-  
+
   const handleDisciplineSelectAll = (selected: boolean) => {
     const nextDisciplines = selected
       ? new Set<string>(availableDisciplines)
       : new Set<string>();
-  
+
     setVisibleDisciplines(nextDisciplines);
-  
+
     const selectedNodeWillRemainVisible =
       !selectedNode ||
-      isNodeVisibleWithFilters(
-        selectedNode,
-        visibleNodeTypes,
-        nextDisciplines,
-      );
-  
+      isNodeVisibleWithFilters(selectedNode, visibleNodeTypes, nextDisciplines, yearRange);
+
     const selectedRelationshipWillRemainVisible =
       !selectedRelationship ||
-      isRelationshipVisibleWithFilters(
-        selectedRelationship,
-        visibleNodeTypes,
-        nextDisciplines,
-      );
-  
-    if (
-      !selectedNodeWillRemainVisible ||
-      !selectedRelationshipWillRemainVisible
-    ) {
+      isRelationshipVisibleWithFilters(selectedRelationship, visibleNodeTypes, nextDisciplines, yearRange);
+
+    if (!selectedNodeWillRemainVisible || !selectedRelationshipWillRemainVisible) {
+      handleSelectionClear();
+    }
+  };
+
+  const handleYearRangeChange = (nextRange: [number, number]) => {
+    setYearRange(nextRange);
+
+    const selectedNodeWillRemainVisible =
+      !selectedNode ||
+      isNodeVisibleWithFilters(selectedNode, visibleNodeTypes, visibleDisciplines, nextRange);
+
+    const selectedRelationshipWillRemainVisible =
+      !selectedRelationship ||
+      isRelationshipVisibleWithFilters(selectedRelationship, visibleNodeTypes, visibleDisciplines, nextRange);
+
+    if (!selectedNodeWillRemainVisible || !selectedRelationshipWillRemainVisible) {
       handleSelectionClear();
     }
   };
@@ -380,6 +382,8 @@ export function useKnowledgeGraph({
     selectedRelationships,
     visibleDisciplines,
     visibleNodeTypes,
+    yearBounds,
+    yearRange,
     handleDisciplineToggle,
     handleDisciplineSelectAll,
     handleNodeSelect,
@@ -388,5 +392,6 @@ export function useKnowledgeGraph({
     handleRelationshipOpen,
     handleRelationshipSelect,
     handleSelectionClear,
+    handleYearRangeChange,
   };
 }

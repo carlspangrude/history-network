@@ -57,6 +57,8 @@ const [dimensions, setDimensions] = useState({
   height: 0,
 });
 
+const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
+
   // ===========================================================================
   // Derived Data
   // ===========================================================================
@@ -276,10 +278,10 @@ const [dimensions, setDimensions] = useState({
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
-    fg.d3Force("link")?.distance(() => 2);
+    fg.d3Force("link")?.distance(() => 6);
   
     fg.d3ReheatSimulation();
-  }, [graphData, dimensions.width, dimensions.height]);
+  }, [graphData, hasDimensions]);
 
 
   // ===========================================================================
