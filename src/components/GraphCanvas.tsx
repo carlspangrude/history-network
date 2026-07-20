@@ -7,6 +7,7 @@ import ForceGraph2D, {
 } from "react-force-graph-2d";
 import {
   MOVEMENT_NODE_OUTLINE_COLOR,
+  THEORY_NODE_OUTLINE_COLOR,
   NODE_TYPE_COLORS,
   GRAPH_BACKGROUND_COLOR,
 } from "../constants/graphVisuals";
@@ -29,6 +30,63 @@ interface GraphCanvasProps {
 
 function getEndpointId(endpoint: string | GraphNode): string {
   return typeof endpoint === "string" ? endpoint : endpoint.id;
+}
+
+// ===========================================================================
+// Shape path helpers (pure — build a canvas path for each node symbol)
+// ===========================================================================
+
+function tracePortraitRect(
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  radius: number,
+) {
+  const width = radius * 1.5;
+  const height = radius * 2.1;
+  context.beginPath();
+  context.rect(x - width / 2, y - height / 2, width, height);
+}
+
+// A simple house silhouette: flat bottom, vertical walls, peaked roof.
+function traceHousePentagon(
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  radius: number,
+) {
+  const halfWidth = radius * 1.05;
+  const bottomY = radius * 1.1;
+  const eaveY = radius * 0.1;
+  const peakY = -radius * 1.3;
+
+  context.beginPath();
+  context.moveTo(x - halfWidth, y + bottomY);
+  context.lineTo(x + halfWidth, y + bottomY);
+  context.lineTo(x + halfWidth, y + eaveY);
+  context.lineTo(x, y + peakY);
+  context.lineTo(x - halfWidth, y + eaveY);
+  context.closePath();
+}
+
+function traceHexagon(
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  radius: number,
+) {
+  context.beginPath();
+  for (let i = 0; i < 6; i++) {
+    const angle = (Math.PI / 3) * i - Math.PI / 2;
+    const pointX = x + radius * Math.cos(angle);
+    const pointY = y + radius * Math.sin(angle);
+    if (i === 0) {
+      context.moveTo(pointX, pointY);
+    } else {
+      context.lineTo(pointX, pointY);
+    }
+  }
+  context.closePath();
 }
 
 function GraphCanvas({
@@ -217,6 +275,51 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     return "rgba(110, 110, 110, 0.22)";
   };
 
+  // Whether a node should currently read as de-emphasized, under whichever
+  // highlight system (pathway / selected relationship / selected node) is
+  // active. Shared by the hollow-shape fill/outline helpers below so
+  // movement and theory nodes dim in sync with everything else.
+  const isNodeDimmed = (node: GraphNode) => {
+    if (isPathwayActive) {
+      return !pathwayNodeIndex.has(node.id);
+    }
+
+    if (selectedRelationshipId) {
+      return !selectedRelationshipNodeIds.has(node.id);
+    }
+
+    if (selectedNode) {
+      return node.id !== selectedNode.id && !connectedNodeIds.has(node.id);
+    }
+
+    return false;
+  };
+
+  // Fill for "hollow" shapes (movement's circle, theory's hexagon): reads
+  // as background/transparent by default, white when it's the selected
+  // node itself, the pathway highlight color when active, or dimmed gray
+  // otherwise — mirrors getNodeColor's branching but with a background
+  // default instead of the type's solid color.
+  const getHollowShapeFill = (node: GraphNode) => {
+    if (isNodeDimmed(node)) {
+      return "rgba(110, 110, 110, 0.2)";
+    }
+
+    if (isPathwayActive) {
+      return "#ffb703";
+    }
+
+    if (node.id === selectedNode?.id) {
+      return "#ffffff";
+    }
+
+    return GRAPH_BACKGROUND_COLOR;
+  };
+
+  const getHollowShapeStroke = (node: GraphNode, activeColor: string) => {
+    return isNodeDimmed(node) ? "rgba(110, 110, 110, 0.3)" : activeColor;
+  };
+
   const getNodeSize = (node: GraphNode) => {
     const importance = node.importance ?? 5;
     const isKeyNode = importance >= 8;
@@ -365,7 +468,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
-    fg.d3Force("link")?.distance(() => 15);
+    fg.d3Force("link")?.distance(() => 8);
   
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions]);
@@ -412,7 +515,12 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
             nodeVal={getNodeSize}
             nodeRelSize={1}
             nodeCanvasObjectMode={(node: GraphNode) =>
-              node.type === "movement" ? "replace" : "after"
+              node.type === "movement" ||
+              node.type === "publication" ||
+              node.type === "institution" ||
+              node.type === "theory"
+                ? "replace"
+                : "after"
             }
             nodeCanvasObject={(
               node: GraphNode,
@@ -426,35 +534,38 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
               const nodeRadius = Math.sqrt(getNodeSize(node));
             
               if (node.type === "movement") {
-                const isSelected = node.id === selectedNode?.id;
-                const renderedColor = getNodeColor(node);
-              
-                const isMuted =
-                  Boolean(selectedNode) &&
-                  !isSelected &&
-                  !connectedNodeIds.has(node.id);
-              
-                const isRelationshipMuted =
-                  Boolean(selectedRelationshipId) &&
-                  !selectedRelationshipNodeIds.has(node.id);
-              
-                const muted = isMuted || isRelationshipMuted;
-              
                 context.beginPath();
                 context.arc(node.x, node.y, nodeRadius, 0, 2 * Math.PI);
-              
-                context.fillStyle = isSelected
-                  ? renderedColor
-                  : muted
-                    ? renderedColor
-                    : GRAPH_BACKGROUND_COLOR;
-              
+                context.fillStyle = getHollowShapeFill(node);
                 context.fill();
-              
-                context.strokeStyle = muted
-                  ? renderedColor
-                  : MOVEMENT_NODE_OUTLINE_COLOR;
-              
+                context.strokeStyle = getHollowShapeStroke(
+                  node,
+                  MOVEMENT_NODE_OUTLINE_COLOR,
+                );
+                context.lineWidth = 2 / globalScale;
+                context.stroke();
+              } else if (node.type === "publication") {
+                tracePortraitRect(context, node.x, node.y, nodeRadius);
+                context.fillStyle = getNodeColor(node);
+                context.fill();
+                context.strokeStyle = GRAPH_BACKGROUND_COLOR;
+                context.lineWidth = 1 / globalScale;
+                context.stroke();
+              } else if (node.type === "institution") {
+                traceHousePentagon(context, node.x, node.y, nodeRadius);
+                context.fillStyle = getNodeColor(node);
+                context.fill();
+                context.strokeStyle = GRAPH_BACKGROUND_COLOR;
+                context.lineWidth = 1 / globalScale;
+                context.stroke();
+              } else if (node.type === "theory") {
+                traceHexagon(context, node.x, node.y, nodeRadius);
+                context.fillStyle = getHollowShapeFill(node);
+                context.fill();
+                context.strokeStyle = getHollowShapeStroke(
+                  node,
+                  THEORY_NODE_OUTLINE_COLOR,
+                );
                 context.lineWidth = 2 / globalScale;
                 context.stroke();
               }

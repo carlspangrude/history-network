@@ -7,9 +7,11 @@ import type {
 } from "../types/graph";
 import {
   FILTERABLE_NODE_TYPES,
+  GRAPH_BACKGROUND_COLOR,
   MOVEMENT_NODE_OUTLINE_COLOR,
   NODE_TYPE_COLORS,
   NODE_TYPE_LABELS,
+  THEORY_NODE_OUTLINE_COLOR,
 } from "../constants/graphVisuals";
 
 interface TimelineCanvasProps {
@@ -52,6 +54,44 @@ function getEndpointId(endpoint: string | GraphNode): string {
 
 function getNodeYear(node: GraphNode): number | undefined {
   return node.startYear ?? node.endYear;
+}
+
+// ===========================================================================
+// Shape helpers (pure — compute SVG attrs/points for each node symbol,
+// relative to an already-translated origin)
+// ===========================================================================
+
+function getPortraitRectAttrs(radius: number) {
+  const width = radius * 1.5;
+  const height = radius * 2.1;
+  return { x: -width / 2, y: -height / 2, width, height };
+}
+
+// A simple house silhouette: flat bottom, vertical walls, peaked roof.
+function getHousePentagonPoints(radius: number): string {
+  const halfWidth = radius * 1.05;
+  const bottomY = radius * 1.1;
+  const eaveY = radius * 0.1;
+  const peakY = -radius * 1.3;
+
+  return [
+    `${-halfWidth},${bottomY}`,
+    `${halfWidth},${bottomY}`,
+    `${halfWidth},${eaveY}`,
+    `0,${peakY}`,
+    `${-halfWidth},${eaveY}`,
+  ].join(" ");
+}
+
+function getHexagonPoints(radius: number): string {
+  const points: string[] = [];
+
+  for (let i = 0; i < 6; i++) {
+    const angle = (Math.PI / 3) * i - Math.PI / 2;
+    points.push(`${radius * Math.cos(angle)},${radius * Math.sin(angle)}`);
+  }
+
+  return points.join(" ");
 }
 
 function yearToPercent(year: number, bounds: [number, number]): number {
@@ -466,19 +506,12 @@ function TimelineCanvas({
       : "rgba(110, 110, 110, 0.25)";
   };
 
-  // Movement nodes use a background-colored fill (to visually differentiate
-  // them from other node types) so they need a visible outline instead —
-  // mirrors getNodeFill's exact branching so the outline dims/highlights in
-  // sync with everything else rather than staying flat regardless of state.
-  const getNodeStroke = (node: GraphNode) => {
-    if (node.type !== "movement") {
-      return undefined;
-    }
-
+  // Whether a node should currently read as de-emphasized, under whichever
+  // highlight system (pathway / selected relationship / selected node) is
+  // active. Shared by the hollow-shape fill/outline helpers below.
+  const isNodeDimmed = (node: GraphNode) => {
     if (isPathwayActive) {
-      return pathwayNodeIndex.has(node.id)
-        ? MOVEMENT_NODE_OUTLINE_COLOR
-        : "rgba(110, 110, 110, 0.3)";
+      return !pathwayNodeIndex.has(node.id);
     }
 
     if (selectedRelationshipId) {
@@ -487,20 +520,39 @@ function TimelineCanvas({
         link &&
         (getEndpointId(link.source) === node.id ||
           getEndpointId(link.target) === node.id);
-      return isEndpoint ? MOVEMENT_NODE_OUTLINE_COLOR : "rgba(110, 110, 110, 0.3)";
+      return !isEndpoint;
     }
 
-    if (!selectedNode) {
-      return MOVEMENT_NODE_OUTLINE_COLOR;
+    if (selectedNode) {
+      return node.id !== selectedNode.id && !connectedNodeIds.has(node.id);
     }
 
-    if (node.id === selectedNode.id) {
-      return MOVEMENT_NODE_OUTLINE_COLOR;
+    return false;
+  };
+
+  // Fill for "hollow" shapes (movement's circle, theory's hexagon): reads
+  // as background/transparent by default, white when it's the selected
+  // node itself, the pathway highlight color when active, or dimmed gray
+  // otherwise — mirrors getNodeFill's branching but with a background
+  // default instead of the type's solid color.
+  const getHollowShapeFill = (node: GraphNode) => {
+    if (isNodeDimmed(node)) {
+      return "rgba(110, 110, 110, 0.2)";
     }
 
-    return connectedNodeIds.has(node.id)
-      ? MOVEMENT_NODE_OUTLINE_COLOR
-      : "rgba(110, 110, 110, 0.3)";
+    if (isPathwayActive) {
+      return "#ffb703";
+    }
+
+    if (node.id === selectedNode?.id) {
+      return "#ffffff";
+    }
+
+    return GRAPH_BACKGROUND_COLOR;
+  };
+
+  const getShapeOutlineColor = (node: GraphNode, activeColor: string) => {
+    return isNodeDimmed(node) ? "rgba(110, 110, 110, 0.3)" : activeColor;
   };
 
   const getLinkStroke = (link: GraphLink) => {
@@ -715,12 +767,59 @@ function TimelineCanvas({
                         {isSelected && (
                           <circle r={SELECTED_NODE_RADIUS + 4} fill="none" stroke="#e96500" strokeWidth={2} />
                         )}
-                        <circle
-                          r={isSelected ? SELECTED_NODE_RADIUS : NODE_RADIUS}
-                          fill={getNodeFill(node)}
-                          stroke={getNodeStroke(node)}
-                          strokeWidth={node.type === "movement" ? 1.5 : 0}
-                        />
+                        {(() => {
+                          const radius = isSelected ? SELECTED_NODE_RADIUS : NODE_RADIUS;
+
+                          if (node.type === "movement") {
+                            return (
+                              <circle
+                                r={radius}
+                                fill={getHollowShapeFill(node)}
+                                stroke={getShapeOutlineColor(node, MOVEMENT_NODE_OUTLINE_COLOR)}
+                                strokeWidth={1.5}
+                              />
+                            );
+                          }
+
+                          if (node.type === "publication") {
+                            const rect = getPortraitRectAttrs(radius);
+                            return (
+                              <rect
+                                x={rect.x}
+                                y={rect.y}
+                                width={rect.width}
+                                height={rect.height}
+                                fill={getNodeFill(node)}
+                                stroke={GRAPH_BACKGROUND_COLOR}
+                                strokeWidth={0.75}
+                              />
+                            );
+                          }
+
+                          if (node.type === "institution") {
+                            return (
+                              <polygon
+                                points={getHousePentagonPoints(radius)}
+                                fill={getNodeFill(node)}
+                                stroke={GRAPH_BACKGROUND_COLOR}
+                                strokeWidth={0.75}
+                              />
+                            );
+                          }
+
+                          if (node.type === "theory") {
+                            return (
+                              <polygon
+                                points={getHexagonPoints(radius)}
+                                fill={getHollowShapeFill(node)}
+                                stroke={getShapeOutlineColor(node, THEORY_NODE_OUTLINE_COLOR)}
+                                strokeWidth={1.5}
+                              />
+                            );
+                          }
+
+                          return <circle r={radius} fill={getNodeFill(node)} />;
+                        })()}
                         {pathwayNodeIndex.has(node.id) && (
                           <g transform={`translate(${NODE_RADIUS * 0.9}, ${-NODE_RADIUS * 0.9})`}>
                             <circle r={7} fill="#ffb703" stroke="#181818" strokeWidth={1.5} />

@@ -1,13 +1,14 @@
 import type { NodeType } from "../types/graph";
 
 export const MOVEMENT_NODE_OUTLINE_COLOR = "#fef501";
+export const THEORY_NODE_OUTLINE_COLOR = "#a8422c";
 export const GRAPH_BACKGROUND_COLOR = "#181818";
 
 export const NODE_TYPE_COLORS: Record<NodeType, string> = {
   person: "#6ea8fe",
   idea: "#d38cff",
   publication: "#e3b466",
-  theory: "#aa89e8",
+  theory: "#a8422c",
   institution: "#67c7d4",
   event: "#f18484",
   place: "#8bc981",
