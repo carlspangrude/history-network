@@ -20,12 +20,10 @@ interface SidebarProps {
 }
 
 const visibleLegendTypes: NodeType[] = [
-  "discovery",
-  "institution",
-  "invention",
   "person",
   "publication",
   "theory",
+  "movement",
 ];
 
 function Sidebar({

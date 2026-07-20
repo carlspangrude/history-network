@@ -1,10 +1,7 @@
 export type NodeType =
   | "discipline"
-  | "discovery"
   | "event"
   | "idea"
-  | "institution"
-  | "invention"
   | "movement"
   | "person"
   | "place"
@@ -60,6 +57,25 @@ export type SourceType =
 | "reference"
 | "web";
 
+// Controlled, high-level vocabulary for filtering/browsing. Finer-grained
+// specializations (e.g. "Structural Biology", "Political Theory") belong in
+// a node's `tags` instead, which is free-form by design.
+export type Discipline =
+  | "Astronomy"
+  | "Biology"
+  | "Chemistry"
+  | "Economics"
+  | "Education"
+  | "Engineering"
+  | "Geography"
+  | "History"
+  | "Literature"
+  | "Mathematics"
+  | "Medicine"
+  | "Philosophy"
+  | "Physics"
+  | "Visual Art";
+
 export interface KnowledgeSource {
   id: string;
   title: string;
@@ -83,7 +99,7 @@ export interface KnowledgeNode {
   startYear?: number;
   endYear?: number;
   importance?: number;
-  disciplines?: string[];
+  disciplines?: Discipline[];
   tags?: string[];
   epigraph?: Epigraph;
 }

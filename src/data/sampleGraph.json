@@ -185,12 +185,12 @@
       "startYear": -428,
       "endYear": -348,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Ancient Greece",
-        "Platonism"
+        "Platonism",
+        "Political Theory"
       ]
     },
     {
@@ -222,13 +222,13 @@
       "endYear": -322,
       "disciplines": [
         "Philosophy",
-        "Logic",
-        "Biology",
-        "Political Theory"
+        "Biology"
       ],
       "tags": [
         "Ancient Greece",
-        "Aristotelianism"
+        "Aristotelianism",
+        "Logic",
+        "Political Theory"
       ]
     },
     {
@@ -239,13 +239,13 @@
       "description": "A system of reasoning centered on terms, propositions, deductions, and syllogistic argument.",
       "startYear": -350,
       "disciplines": [
-        "Logic",
         "Philosophy"
       ],
       "tags": [
         "Syllogism",
         "Deduction",
-        "Aristotelianism"
+        "Aristotelianism",
+        "Logic"
       ]
     },
     {
@@ -274,14 +274,14 @@
       "startYear": 1225,
       "endYear": 1274,
       "disciplines": [
-        "Philosophy",
-        "Theology",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Scholasticism",
         "Natural Law",
-        "Aristotelianism"
+        "Aristotelianism",
+        "Theology",
+        "Political Theory"
       ]
     },
     {
@@ -296,13 +296,13 @@
       "startYear": 1561,
       "endYear": 1626,
       "disciplines": [
-        "Philosophy",
-        "Scientific Method"
+        "Philosophy"
       ],
       "tags": [
         "Empiricism",
         "Scientific Revolution",
-        "Induction"
+        "Induction",
+        "Scientific Method"
       ]
     },
     {
@@ -336,13 +336,13 @@
       "startYear": 1588,
       "endYear": 1679,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Social Contract",
         "Materialism",
-        "Sovereignty"
+        "Sovereignty",
+        "Political Theory"
       ]
     },
     {
@@ -354,13 +354,13 @@
       "startYear": 1632,
       "endYear": 1704,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Empiricism",
         "Natural Rights",
-        "Liberalism"
+        "Liberalism",
+        "Political Theory"
       ]
     },
     {
@@ -391,13 +391,13 @@
       "endYear": 1778,
       "disciplines": [
         "Philosophy",
-        "Political Theory",
         "Education"
       ],
       "tags": [
         "Social Contract",
         "Republicanism",
-        "Enlightenment"
+        "Enlightenment",
+        "Political Theory"
       ]
     },
     {
@@ -409,14 +409,14 @@
       "startYear": 1724,
       "endYear": 1804,
       "disciplines": [
-        "Philosophy",
-        "Ethics",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "German Idealism",
         "Enlightenment",
-        "Transcendental Idealism"
+        "Transcendental Idealism",
+        "Ethics",
+        "Political Theory"
       ]
     },
     {
@@ -427,13 +427,13 @@
       "description": "Bacon's 1620 work proposing a reformed method of inquiry centered on systematic observation, induction, and the correction of intellectual error.",
       "startYear": 1620,
       "disciplines": [
-        "Philosophy",
-        "Scientific Method"
+        "Philosophy"
       ],
       "tags": [
         "Empiricism",
         "Induction",
-        "Scientific Revolution"
+        "Scientific Revolution",
+        "Scientific Method"
       ]
     },
     {
@@ -461,13 +461,13 @@
       "description": "Hobbes's 1651 work explaining political authority through a social covenant intended to escape conflict and insecurity.",
       "startYear": 1651,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Social Contract",
         "Sovereignty",
-        "State of Nature"
+        "State of Nature",
+        "Political Theory"
       ]
     },
     {
@@ -494,13 +494,13 @@
       "description": "Locke's political work defending natural rights, government by consent, and resistance to political authority that violates its trust.",
       "startYear": 1689,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Natural Rights",
         "Consent",
-        "Limited Government"
+        "Limited Government",
+        "Political Theory"
       ]
     },
     {
@@ -511,13 +511,13 @@
       "description": "Rousseau's 1762 work examining legitimate political authority, popular sovereignty, freedom, and the general will.",
       "startYear": 1762,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Social Contract",
         "Popular Sovereignty",
-        "General Will"
+        "General Will",
+        "Political Theory"
       ]
     },
     {
@@ -544,13 +544,13 @@
       "description": "A broad family of views emphasizing experience and observation as fundamental sources of concepts and knowledge.",
       "startYear": 1600,
       "disciplines": [
-        "Philosophy",
-        "Scientific Method"
+        "Philosophy"
       ],
       "tags": [
         "Experience",
         "Observation",
-        "Epistemology"
+        "Epistemology",
+        "Scientific Method"
       ]
     },
     {
@@ -577,13 +577,13 @@
       "description": "A family of political theories that explain political authority or obligation through an actual, hypothetical, or rational agreement among individuals.",
       "startYear": 1651,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Political Legitimacy",
         "Consent",
-        "State of Nature"
+        "State of Nature",
+        "Political Theory"
       ]
     },
     {
@@ -594,13 +594,13 @@
       "description": "The view that persons possess fundamental rights independently of the grants or conventions of particular governments.",
       "startYear": 1689,
       "disciplines": [
-        "Philosophy",
-        "Political Theory"
+        "Philosophy"
       ],
       "tags": [
         "Liberty",
         "Property",
-        "Political Legitimacy"
+        "Political Legitimacy",
+        "Political Theory"
       ]
     },
     {
@@ -614,8 +614,18 @@
       "description": "Polish astronomer whose heliocentric model placed the Sun, rather than the Earth, at the center of the known planetary system. His work challenged centuries of geocentric tradition inherited from Aristotle and Ptolemy, initiating the Scientific Revolution and fundamentally transforming humanity's understanding of its place in the universe.",
       "startYear": 1473,
       "endYear": 1543,
-      "disciplines": ["Astronomy", "Mathematics"],
-      "tags": ["Scientific Revolution", "Heliocentrism", "Renaissance", "Cosmology", "Planetary Motion", "Astronomical Models"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Heliocentrism",
+        "Renaissance",
+        "Cosmology",
+        "Planetary Motion",
+        "Astronomical Models"
+      ]
     },
     {
       "id": "tycho-brahe",
@@ -628,8 +638,17 @@
       "description": "Danish astronomer renowned for the most precise astronomical observations of the pre-telescopic era. His measurements of planetary positions provided the empirical foundation that enabled Kepler to discover the laws of planetary motion, marking a pivotal transition from speculative cosmology to data-driven science.",
       "startYear": 1546,
       "endYear": 1601,
-      "disciplines": ["Astronomy"],
-      "tags": ["Scientific Revolution", "Observational Astronomy", "Astronomical Instruments", "Precision Measurement", "Planetary Motion", "Data Collection"]
+      "disciplines": [
+        "Astronomy"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Observational Astronomy",
+        "Astronomical Instruments",
+        "Precision Measurement",
+        "Planetary Motion",
+        "Data Collection"
+      ]
     },
     {
       "id": "kepler",
@@ -642,8 +661,19 @@
       "description": "German mathematician and astronomer who discovered that planets move in elliptical orbits governed by mathematical laws. Building upon Tycho's observations and Copernicus's heliocentric model, Kepler demonstrated that the heavens obey universal mathematical principles, laying essential groundwork for Isaac Newton's theory of gravitation.",
       "startYear": 1571,
       "endYear": 1630,
-      "disciplines": ["Astronomy", "Mathematics", "Physics"],
-      "tags": ["Scientific Revolution", "Heliocentrism", "Planetary Motion", "Kepler's Laws", "Celestial Mechanics", "Mathematical Physics"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Heliocentrism",
+        "Planetary Motion",
+        "Kepler's Laws",
+        "Celestial Mechanics",
+        "Mathematical Physics"
+      ]
     },
     {
       "id": "laws-of-planetary-motion",
@@ -653,8 +683,19 @@
       "description": "Kepler's Three Laws of Planetary Motion describe how planets move around the Sun in elliptical orbits at varying speeds and in mathematically predictable periods. Derived from Tycho's precise observations, these laws replaced centuries of circular-orbit models and became one of the foundational achievements of the Scientific Revolution, later providing the empirical basis for Newton's theory of universal gravitation.",
       "startYear": 1609,
       "endYear": 1621,
-      "disciplines": ["Astronomy", "Mathematics", "Physics"],
-      "tags": ["Scientific Revolution", "Planetary Motion", "Celestial Mechanics", "Heliocentrism", "Orbital Mechanics", "Mathematical Laws"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Planetary Motion",
+        "Celestial Mechanics",
+        "Heliocentrism",
+        "Orbital Mechanics",
+        "Mathematical Laws"
+      ]
     },
     {
       "id": "de-revolutionibus",
@@ -663,8 +704,18 @@
       "importance": 7,
       "description": "\"On the Revolutions of the Heavenly Spheres\" is Copernicus's landmark work proposing a heliocentric model of the cosmos. Although it retained some classical assumptions, the work fundamentally challenged the long-standing geocentric worldview and initiated a profound transformation in astronomy and natural philosophy.",
       "startYear": 1543,
-      "disciplines": ["Astronomy", "Mathematics"],
-      "tags": ["Heliocentrism", "Scientific Revolution", "Cosmology", "Planetary Motion", "Renaissance", "Astronomical Models"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Heliocentrism",
+        "Scientific Revolution",
+        "Cosmology",
+        "Planetary Motion",
+        "Renaissance",
+        "Astronomical Models"
+      ]
     },
     {
       "id": "astronomia-nova",
@@ -673,8 +724,19 @@
       "importance": 7,
       "description": "\"New Astronomy\" presented Kepler's first law of planetary motion, demonstrating that planets travel in elliptical rather than circular orbits. Drawing upon Tycho's unprecedented observational data, the work transformed astronomy from a geometric model of the heavens into a mathematical science describing physical reality.",
       "startYear": 1609,
-      "disciplines": ["Astronomy", "Mathematics", "Physics"],
-      "tags": ["Scientific Revolution", "Planetary Motion", "Elliptical Orbits", "Kepler's Laws", "Celestial Mechanics", "Heliocentrism"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Planetary Motion",
+        "Elliptical Orbits",
+        "Kepler's Laws",
+        "Celestial Mechanics",
+        "Heliocentrism"
+      ]
     },
     {
       "id": "harmonice-mundi",
@@ -683,8 +745,18 @@
       "importance": 7,
       "description": "\"The Harmony of the World\" explored the mathematical relationships underlying nature, geometry, music, and the cosmos. In this work, Kepler announced his third law of planetary motion, further demonstrating that celestial motion is governed by universal mathematical principles.",
       "startYear": 1619,
-      "disciplines": ["Astronomy", "Mathematics"],
-      "tags": ["Scientific Revolution", "Planetary Motion", "Kepler's Laws", "Celestial Mechanics", "Mathematical Order", "Harmony"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Planetary Motion",
+        "Kepler's Laws",
+        "Celestial Mechanics",
+        "Mathematical Order",
+        "Harmony"
+      ]
     },
     {
       "id": "epitome-copernican-astronomy",
@@ -694,8 +766,18 @@
       "description": "\"Epitome of Copernican Astronomy\" describes Kepler's second law of planetary motion and presented the most complete exposition of his heliocentric astronomy. Synthesizing his discoveries into a coherent framework, it became one of the most influential astronomical textbooks of the seventeenth century and helped establish the Copernican system across Europe.",
       "startYear": 1618,
       "endYear": 1621,
-      "disciplines": ["Astronomy", "Mathematics"],
-      "tags": ["Scientific Revolution", "Planetary Motion", "Elliptical Orbits", "Kepler's Laws", "Celestial Mechanics", "Heliocentrism"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Scientific Revolution",
+        "Planetary Motion",
+        "Elliptical Orbits",
+        "Kepler's Laws",
+        "Celestial Mechanics",
+        "Heliocentrism"
+      ]
     },
     {
       "id": "scientific-revolution",
@@ -705,8 +787,20 @@
       "description": "The Scientific Revolution was an intellectual movement spanning the sixteenth and seventeenth centuries that fundamentally transformed humanity's understanding of the natural world. Through systematic observation, experimentation, and mathematical analysis, thinkers such as Copernicus, Galileo, Kepler, Bacon, and Newton challenged centuries of inherited authority and established modern science as a method for discovering universal laws of nature. Its ideas reshaped astronomy, physics, mathematics, and philosophy, laying the foundation for the Enlightenment and the scientific advances that followed.",
       "startYear": 1543,
       "endYear": 1687,
-      "disciplines": ["Astronomy", "Mathematics", "Physics", "Philosophy"],
-      "tags": ["Scientific Method", "Empiricism", "Observation", "Experimentation", "Natural Philosophy", "Heliocentrism"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Physics",
+        "Philosophy"
+      ],
+      "tags": [
+        "Scientific Method",
+        "Empiricism",
+        "Observation",
+        "Experimentation",
+        "Natural Philosophy",
+        "Heliocentrism"
+      ]
     },
     {
       "id": "ancient-greek-philosophy",
@@ -716,8 +810,21 @@
       "description": "Ancient Greek Philosophy was an intellectual movement that emerged between the sixth and fourth centuries BCE, seeking to understand the nature of reality, knowledge, ethics, politics, and human existence through reasoned inquiry rather than mythological explanation. The ideas of philosophers such as Socrates, Plato, and Aristotle established enduring traditions of rational thought that profoundly shaped Western philosophy, science, mathematics, and political theory.",
       "startYear": -600,
       "endYear": -300,
-      "disciplines": ["Philosophy", "Ethics", "Political Science", "Metaphysics", "Logic"],
-      "tags": ["Reason", "Dialectic", "Virtue", "Logic", "Natural Philosophy", "Classical Greece", "Western Philosophy"]
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Reason",
+        "Dialectic",
+        "Virtue",
+        "Logic",
+        "Natural Philosophy",
+        "Classical Greece",
+        "Western Philosophy",
+        "Ethics",
+        "Political Science",
+        "Metaphysics"
+      ]
     },
     {
       "id": "hellenistic-science",
@@ -727,8 +834,21 @@
       "description": "Hellenistic Science was an intellectual movement that flourished following the conquests of Alexander the Great, emphasizing systematic observation, mathematical reasoning, and empirical investigation to understand the natural world. Centered in institutions such as the Library of Alexandria, its scholars made foundational advances in mathematics, astronomy, engineering, geography, and medicine that influenced scientific thought for centuries.",
       "startYear": -323,
       "endYear": -31,
-      "disciplines": ["Astronomy", "Mathematics", "Physics", "Engineering", "Geography", "Medicine"],
-      "tags": ["Observation", "Geometry", "Empiricism", "Natural Philosophy", "Scientific Inquiry"]
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Physics",
+        "Engineering",
+        "Geography",
+        "Medicine"
+      ],
+      "tags": [
+        "Observation",
+        "Geometry",
+        "Empiricism",
+        "Natural Philosophy",
+        "Scientific Inquiry"
+      ]
     },
     {
       "id": "enlightenment",
@@ -738,8 +858,20 @@
       "description": "The Enlightenment was an intellectual movement of the seventeenth and eighteenth centuries that emphasized reason, individual liberty, scientific inquiry, and skepticism of inherited authority as the foundations of human progress. Its philosophers transformed political theory, economics, ethics, and education, inspiring democratic revolutions and shaping many of the principles underlying modern liberal societies.",
       "startYear": 1685,
       "endYear": 1815,
-      "disciplines": ["Ethics", "Economics", "Political Theory", "Philosophy", "Scientific Method"],
-      "tags": ["Reason", "Liberty", "Natural Rights", "Scientific Method", "Social Contract", "Separation of Powers"]
+      "disciplines": [
+        "Philosophy",
+        "Economics"
+      ],
+      "tags": [
+        "Reason",
+        "Liberty",
+        "Natural Rights",
+        "Scientific Method",
+        "Social Contract",
+        "Separation of Powers",
+        "Ethics",
+        "Political Theory"
+      ]
     },
     {
       "id": "zeno-citium",
@@ -749,8 +881,20 @@
       "description": "Greek philosopher who founded Stoicism, a school of philosophy that taught that virtue, reason, and living in accordance with nature are the foundations of a flourishing life. His ideas established one of the most influential philosophical traditions of the ancient world, shaping ethics, political thought, and concepts of resilience from antiquity to the present day.",
       "startYear": -334,
       "endYear": -262,
-      "disciplines": ["Ethics", "Philosophy", "Logic", "Political Theory"],
-      "tags": ["Stoicism", "Virtue", "Natural Law", "Reason", "Cosmopolitanism", "Self-Control"]
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Stoicism",
+        "Virtue",
+        "Natural Law",
+        "Reason",
+        "Cosmopolitanism",
+        "Self-Control",
+        "Ethics",
+        "Logic",
+        "Political Theory"
+      ]
     },
     {
       "id": "zeno-elea",
@@ -760,8 +904,21 @@
       "description": "Greek philosopher renowned for formulating paradoxes that challenged common assumptions about motion, space, time, and plurality. Developed in defense of Parmenides' philosophy, his arguments profoundly influenced the development of logic, mathematics, and the philosophy of infinity, provoking debate that continued from Aristotle to modern physics.",
       "startYear": -490,
       "endYear": -430,
-      "disciplines": ["Philosophy", "Logic", "Metaphysics", "Mathematics"],
-      "tags": ["Paradoxes", "Motion", "Infinity", "Plurality", "Eleatic School", "Reductio ad Absurdum", "Presocratic Philosophy"]
+      "disciplines": [
+        "Philosophy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Paradoxes",
+        "Motion",
+        "Infinity",
+        "Plurality",
+        "Eleatic School",
+        "Reductio ad Absurdum",
+        "Presocratic Philosophy",
+        "Logic",
+        "Metaphysics"
+      ]
     },
     {
       "id": "euclid",
@@ -772,8 +929,7 @@
       "startYear": -325,
       "endYear": -265,
       "disciplines": [
-        "Mathematics",
-        "Geometry"
+        "Mathematics"
       ],
       "tags": [
         "Hellenistic Science",
@@ -782,7 +938,8 @@
         "Mathematical Proof",
         "Number Theory",
         "Elements",
-        "Alexandria"
+        "Alexandria",
+        "Geometry"
       ]
     },
     {
@@ -884,9 +1041,7 @@
       "startYear": -335,
       "endYear": -280,
       "disciplines": [
-        "Medicine",
-        "Anatomy",
-        "Physiology"
+        "Medicine"
       ],
       "tags": [
         "Hellenistic Science",
@@ -895,7 +1050,8 @@
         "Nervous System",
         "Brain",
         "Empirical Observation",
-        "Alexandrian Medicine"
+        "Alexandrian Medicine",
+        "Physiology"
       ]
     },
     {
@@ -908,8 +1064,7 @@
       "endYear": 1867,
       "disciplines": [
         "Physics",
-        "Chemistry",
-        "Electromagnetism"
+        "Chemistry"
       ],
       "tags": [
         "Electromagnetism",
@@ -933,8 +1088,6 @@
         "Engineering",
         "Physics",
         "Chemistry",
-        "Manufacturing",
-        "Transportation",
         "Economics"
       ],
       "tags": [
@@ -944,7 +1097,9 @@
         "Electricity",
         "Mass Production",
         "Innovation",
-        "Engineering"
+        "Engineering",
+        "Manufacturing",
+        "Transportation"
       ]
     },
     {
@@ -959,8 +1114,7 @@
       "startYear": 1736,
       "endYear": 1819,
       "disciplines": [
-        "Engineering",
-        "Mechanical Engineering"
+        "Engineering"
       ],
       "tags": [
         "Steam Engine",
@@ -983,9 +1137,7 @@
       "endYear": 1882,
       "disciplines": [
         "Biology",
-        "Natural History",
-        "Geology",
-        "Botany"
+        "Geography"
       ],
       "tags": [
         "Evolution",
@@ -993,7 +1145,10 @@
         "Biology",
         "Origin of Species",
         "Scientific Revolution",
-        "Adaptation"
+        "Adaptation",
+        "Natural History",
+        "Geology",
+        "Botany"
       ]
     },
     {
@@ -1008,9 +1163,7 @@
       "startYear": 1847,
       "endYear": 1931,
       "disciplines": [
-        "Engineering",
-        "Electrical Engineering",
-        "Inventing"
+        "Engineering"
       ],
       "tags": [
         "Electric Light",
@@ -1018,7 +1171,9 @@
         "Electric Power",
         "Innovation",
         "Industrial Research",
-        "Entrepreneurship"
+        "Entrepreneurship",
+        "Electrical Engineering",
+        "Inventing"
       ]
     },
     {
@@ -1033,9 +1188,8 @@
       "startYear": 1856,
       "endYear": 1943,
       "disciplines": [
-        "Electrical Engineering",
-        "Physics",
-        "Engineering"
+        "Engineering",
+        "Physics"
       ],
       "tags": [
         "Alternating Current",
@@ -1055,12 +1209,7 @@
       "startYear": 1900,
       "endYear": 1975,
       "disciplines": [
-        "Physics",
-        "Quantum Mechanics",
-        "Relativity",
-        "Atomic Physics",
-        "Nuclear Physics",
-        "Cosmology"
+        "Physics"
       ],
       "tags": [
         "Quantum Theory",
@@ -1070,7 +1219,10 @@
         "Wave-Particle Duality",
         "Uncertainty",
         "Spacetime",
-        "Nuclear Physics"
+        "Nuclear Physics",
+        "Quantum Mechanics",
+        "Atomic Physics",
+        "Cosmology"
       ]
     },
     {
@@ -1085,10 +1237,7 @@
       "startYear": 1858,
       "endYear": 1947,
       "disciplines": [
-        "Physics",
-        "Theoretical Physics",
-        "Thermodynamics",
-        "Quantum Theory"
+        "Physics"
       ],
       "tags": [
         "Energy Quanta",
@@ -1096,7 +1245,8 @@
         "Black-Body Radiation",
         "Quantum Theory",
         "Thermodynamics",
-        "Statistical Mechanics"
+        "Statistical Mechanics",
+        "Theoretical Physics"
       ]
     },
     {
@@ -1113,8 +1263,6 @@
       "disciplines": [
         "Physics",
         "Chemistry",
-        "Nuclear Physics",
-        "Radiochemistry",
         "Medicine"
       ],
       "tags": [
@@ -1124,7 +1272,8 @@
         "Atomic Structure",
         "Radiation",
         "Radiochemistry",
-        "Medical Physics"
+        "Medical Physics",
+        "Nuclear Physics"
       ]
     },
     {
@@ -1139,10 +1288,7 @@
       "startYear": 1871,
       "endYear": 1937,
       "disciplines": [
-        "Physics",
-        "Experimental Physics",
-        "Atomic Physics",
-        "Nuclear Physics"
+        "Physics"
       ],
       "tags": [
         "Atomic Nucleus",
@@ -1151,7 +1297,9 @@
         "Gold Foil Experiment",
         "Nuclear Model",
         "Transmutation",
-        "Experimental Physics"
+        "Experimental Physics",
+        "Atomic Physics",
+        "Nuclear Physics"
       ]
     },
     {
@@ -1167,10 +1315,7 @@
       "endYear": 1962,
       "disciplines": [
         "Physics",
-        "Theoretical Physics",
-        "Atomic Physics",
-        "Quantum Mechanics",
-        "Philosophy of Science"
+        "Philosophy"
       ],
       "tags": [
         "Bohr Model",
@@ -1179,7 +1324,11 @@
         "Atomic Structure",
         "Quantum Theory",
         "Correspondence Principle",
-        "Measurement"
+        "Measurement",
+        "Theoretical Physics",
+        "Atomic Physics",
+        "Quantum Mechanics",
+        "Philosophy of Science"
       ]
     },
     {
@@ -1195,10 +1344,7 @@
       "endYear": 1961,
       "disciplines": [
         "Physics",
-        "Theoretical Physics",
-        "Quantum Mechanics",
-        "Statistical Mechanics",
-        "Philosophy of Science"
+        "Philosophy"
       ],
       "tags": [
         "Wave Mechanics",
@@ -1207,7 +1353,11 @@
         "Quantum States",
         "Schrodinger's Cat",
         "Measurement Problem",
-        "Quantum Theory"
+        "Quantum Theory",
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Statistical Mechanics",
+        "Philosophy of Science"
       ]
     },
     {
@@ -1223,10 +1373,7 @@
       "endYear": 1976,
       "disciplines": [
         "Physics",
-        "Theoretical Physics",
-        "Quantum Mechanics",
-        "Nuclear Physics",
-        "Philosophy of Science"
+        "Philosophy"
       ],
       "tags": [
         "Matrix Mechanics",
@@ -1234,7 +1381,10 @@
         "Quantum Measurement",
         "Copenhagen Interpretation",
         "Quantum States",
-        "Theoretical Physics"
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Nuclear Physics",
+        "Philosophy of Science"
       ]
     },
     {
@@ -1249,11 +1399,7 @@
       "startYear": 1902,
       "endYear": 1984,
       "disciplines": [
-        "Physics",
-        "Theoretical Physics",
-        "Quantum Mechanics",
-        "Particle Physics",
-        "Quantum Field Theory"
+        "Physics"
       ],
       "tags": [
         "Dirac Equation",
@@ -1262,7 +1408,10 @@
         "Quantum Electrodynamics",
         "Relativistic Quantum Mechanics",
         "Quantum Field Theory",
-        "Mathematical Physics"
+        "Mathematical Physics",
+        "Theoretical Physics",
+        "Quantum Mechanics",
+        "Particle Physics"
       ]
     },
     {
@@ -1300,14 +1449,11 @@
       "startYear": 1300,
       "endYear": 1600,
       "disciplines": [
-        "Art",
-        "Architecture",
+        "Visual Art",
         "Literature",
         "Philosophy",
-        "Political Theory",
         "Engineering",
-        "History",
-        "Philology"
+        "History"
       ],
       "tags": [
         "Humanism",
@@ -1318,7 +1464,11 @@
         "Printing",
         "Civic Humanism",
         "Patronage",
-        "Antiquity"
+        "Antiquity",
+        "Art",
+        "Architecture",
+        "Political Theory",
+        "Philology"
       ]
     },
     {
@@ -1334,9 +1484,7 @@
       "endYear": 1374,
       "disciplines": [
         "Literature",
-        "Poetry",
-        "History",
-        "Philology"
+        "History"
       ],
       "tags": [
         "Humanism",
@@ -1345,35 +1493,37 @@
         "Latin Literature",
         "Individualism",
         "Textual Scholarship",
-        "Antiquity"
+        "Antiquity",
+        "Poetry",
+        "Philology"
       ]
     },
     {
-  "id": "filippo-brunelleschi",
-  "name": "Filippo Brunelleschi",
-  "type": "person",
-  "importance": 9,
-  "description": "Italian architect, engineer, and designer who helped establish Renaissance architecture through the revival of classical forms, mathematical proportion, and innovative structural engineering. His construction of the dome of Florence Cathedral demonstrated new methods of architectural planning and became an enduring symbol of Renaissance ingenuity, while his experiments with linear perspective transformed European visual representation.",
-  "epigraph": {
-    "text": "Do not share your inventions with many; share them only with the few who understand and love the sciences."
-  },
-  "startYear": 1377,
-  "endYear": 1446,
-  "disciplines": [
-    "Architecture",
-    "Engineering",
-    "Mathematics",
-    "Visual Art"
-  ],
-  "tags": [
-    "Florence Cathedral",
-    "Dome",
-    "Linear Perspective",
-    "Classical Architecture",
-    "Structural Engineering",
-    "Mathematical Proportion",
-    "Florence"
-  ]
+      "id": "filippo-brunelleschi",
+      "name": "Filippo Brunelleschi",
+      "type": "person",
+      "importance": 9,
+      "description": "Italian architect, engineer, and designer who helped establish Renaissance architecture through the revival of classical forms, mathematical proportion, and innovative structural engineering. His construction of the dome of Florence Cathedral demonstrated new methods of architectural planning and became an enduring symbol of Renaissance ingenuity, while his experiments with linear perspective transformed European visual representation.",
+      "epigraph": {
+        "text": "Do not share your inventions with many; share them only with the few who understand and love the sciences."
+      },
+      "startYear": 1377,
+      "endYear": 1446,
+      "disciplines": [
+        "Visual Art",
+        "Engineering",
+        "Mathematics"
+      ],
+      "tags": [
+        "Florence Cathedral",
+        "Dome",
+        "Linear Perspective",
+        "Classical Architecture",
+        "Structural Engineering",
+        "Mathematical Proportion",
+        "Florence",
+        "Architecture"
+      ]
     },
     {
       "id": "johannes-gutenberg",
@@ -1387,8 +1537,7 @@
       "startYear": 1400,
       "endYear": 1468,
       "disciplines": [
-        "Engineering",
-        "Manufacturing"
+        "Engineering"
       ],
       "tags": [
         "Printing Press",
@@ -1397,7 +1546,8 @@
         "Mass Communication",
         "Books",
         "Literacy",
-        "Knowledge Dissemination"
+        "Knowledge Dissemination",
+        "Manufacturing"
       ]
     },
     {
@@ -1414,9 +1564,8 @@
       "disciplines": [
         "Visual Art",
         "Engineering",
-        "Anatomy",
-        "Natural Philosophy",
-        "Architecture"
+        "Medicine",
+        "Physics"
       ],
       "tags": [
         "Mona Lisa",
@@ -1426,7 +1575,9 @@
         "Invention",
         "Engineering",
         "Naturalism",
-        "Renaissance Polymath"
+        "Renaissance Polymath",
+        "Natural Philosophy",
+        "Architecture"
       ]
     },
     {
@@ -1442,8 +1593,7 @@
       "endYear": 1564,
       "disciplines": [
         "Visual Art",
-        "Architecture",
-        "Poetry"
+        "Literature"
       ],
       "tags": [
         "David",
@@ -1452,7 +1602,9 @@
         "Human Anatomy",
         "High Renaissance",
         "Idealized Form",
-        "Monumental Art"
+        "Monumental Art",
+        "Architecture",
+        "Poetry"
       ]
     },
     {
@@ -1467,9 +1619,7 @@
       "startYear": 1483,
       "endYear": 1520,
       "disciplines": [
-        "Visual Art",
-        "Architecture",
-        "Design"
+        "Visual Art"
       ],
       "tags": [
         "School of Athens",
@@ -1478,7 +1628,9 @@
         "Perspective",
         "Madonna",
         "Vatican",
-        "Humanism"
+        "Humanism",
+        "Architecture",
+        "Design"
       ]
     },
     {
@@ -1493,10 +1645,9 @@
       "startYear": 1469,
       "endYear": 1527,
       "disciplines": [
-        "Political Philosophy",
-        "Political Theory",
+        "Philosophy",
         "History",
-        "Diplomacy",
+        "Education",
         "Literature"
       ],
       "tags": [
@@ -1507,7 +1658,10 @@
         "Statecraft",
         "Political Realism",
         "Power",
-        "Florence"
+        "Florence",
+        "Political Philosophy",
+        "Political Theory",
+        "Diplomacy"
       ]
     },
     {
@@ -1522,11 +1676,9 @@
       "startYear": 1469,
       "endYear": 1536,
       "disciplines": [
-        "Humanism",
-        "Theology",
-        "Philology",
-        "Education",
-        "Philosophy"
+        "Philosophy",
+        "Literature",
+        "Education"
       ],
       "tags": [
         "Christian Humanism",
@@ -1536,7 +1688,10 @@
         "Textual Criticism",
         "Free Will",
         "Peace",
-        "Northern Renaissance"
+        "Northern Renaissance",
+        "Humanism",
+        "Theology",
+        "Philology"
       ]
     },
     {
@@ -1548,14 +1703,7 @@
       "startYear": -450,
       "endYear": 2026,
       "disciplines": [
-        "Medicine",
-        "Anatomy",
-        "Physiology",
-        "Pathology",
-        "Epidemiology",
-        "Microbiology",
-        "Surgery",
-        "Public Health"
+        "Medicine"
       ],
       "tags": [
         "Disease",
@@ -1567,7 +1715,11 @@
         "Germ Theory",
         "Vaccination",
         "Antisepsis",
-        "Public Health"
+        "Public Health",
+        "Pathology",
+        "Epidemiology",
+        "Microbiology",
+        "Surgery"
       ]
     },
     {
@@ -1579,14 +1731,7 @@
       "startYear": 1800,
       "endYear": 2026,
       "disciplines": [
-        "Biology",
-        "Evolution",
-        "Genetics",
-        "Population Genetics",
-        "Natural History",
-        "Ecology",
-        "Biogeography",
-        "Systematics"
+        "Biology"
       ],
       "tags": [
         "Natural Selection",
@@ -1598,7 +1743,11 @@
         "Modern Synthesis",
         "Variation",
         "Biogeography",
-        "Evolution"
+        "Evolution",
+        "Genetics",
+        "Natural History",
+        "Ecology",
+        "Systematics"
       ]
     },
     {
@@ -1610,13 +1759,7 @@
       "startYear": 1930,
       "endYear": 2026,
       "disciplines": [
-        "Molecular Biology",
-        "Genetics",
-        "Biochemistry",
-        "Cell Biology",
-        "Structural Biology",
-        "Genomics",
-        "Biotechnology"
+        "Biology"
       ],
       "tags": [
         "DNA",
@@ -1628,7 +1771,13 @@
         "Gene Expression",
         "Protein Synthesis",
         "DNA Sequencing",
-        "Genomics"
+        "Genomics",
+        "Molecular Biology",
+        "Genetics",
+        "Biochemistry",
+        "Cell Biology",
+        "Structural Biology",
+        "Biotechnology"
       ]
     },
     {
@@ -1640,10 +1789,7 @@
       "startYear": -460,
       "endYear": -370,
       "disciplines": [
-        "Medicine",
-        "Clinical Observation",
-        "Medical Ethics",
-        "Pathology"
+        "Medicine"
       ],
       "tags": [
         "Hippocratic Corpus",
@@ -1651,7 +1797,9 @@
         "Diagnosis",
         "Prognosis",
         "Naturalistic Medicine",
-        "Medical Ethics"
+        "Medical Ethics",
+        "Clinical Observation",
+        "Pathology"
       ]
     },
     {
@@ -1664,9 +1812,6 @@
       "endYear": 216,
       "disciplines": [
         "Medicine",
-        "Anatomy",
-        "Physiology",
-        "Pharmacology",
         "Philosophy"
       ],
       "tags": [
@@ -1675,7 +1820,8 @@
         "Anatomy",
         "Physiology",
         "Animal Dissection",
-        "Medical Synthesis"
+        "Medical Synthesis",
+        "Pharmacology"
       ]
     },
     {
@@ -1687,9 +1833,7 @@
       "startYear": 1514,
       "endYear": 1564,
       "disciplines": [
-        "Anatomy",
-        "Medicine",
-        "Surgery"
+        "Medicine"
       ],
       "tags": [
         "Human Dissection",
@@ -1697,7 +1841,9 @@
         "Anatomical Illustration",
         "Empirical Anatomy",
         "Galenic Medicine",
-        "Renaissance Medicine"
+        "Renaissance Medicine",
+        "Anatomy",
+        "Surgery"
       ]
     },
     {
@@ -1709,10 +1855,7 @@
       "startYear": 1578,
       "endYear": 1657,
       "disciplines": [
-        "Medicine",
-        "Anatomy",
-        "Physiology",
-        "Embryology"
+        "Medicine"
       ],
       "tags": [
         "Blood Circulation",
@@ -1720,7 +1863,10 @@
         "Experimental Physiology",
         "De Motu Cordis",
         "Quantitative Medicine",
-        "Scientific Revolution"
+        "Scientific Revolution",
+        "Anatomy",
+        "Physiology",
+        "Embryology"
       ]
     },
     {
@@ -1732,10 +1878,8 @@
       "startYear": 1822,
       "endYear": 1895,
       "disciplines": [
-        "Microbiology",
-        "Chemistry",
         "Medicine",
-        "Immunology"
+        "Chemistry"
       ],
       "tags": [
         "Germ Theory",
@@ -1744,7 +1888,9 @@
         "Fermentation",
         "Microorganisms",
         "Rabies",
-        "Spontaneous Generation"
+        "Spontaneous Generation",
+        "Microbiology",
+        "Immunology"
       ]
     },
     {
@@ -1756,10 +1902,7 @@
       "startYear": 1823,
       "endYear": 1913,
       "disciplines": [
-        "Evolutionary Biology",
-        "Biogeography",
-        "Natural History",
-        "Zoology"
+        "Biology"
       ],
       "tags": [
         "Natural Selection",
@@ -1767,7 +1910,10 @@
         "Biogeography",
         "Malay Archipelago",
         "Species Distribution",
-        "Common Descent"
+        "Common Descent",
+        "Evolutionary Biology",
+        "Natural History",
+        "Zoology"
       ]
     },
     {
@@ -1779,9 +1925,7 @@
       "startYear": 1822,
       "endYear": 1884,
       "disciplines": [
-        "Genetics",
         "Biology",
-        "Botany",
         "Mathematics"
       ],
       "tags": [
@@ -1791,7 +1935,9 @@
         "Segregation",
         "Independent Assortment",
         "Genes",
-        "Experimental Biology"
+        "Experimental Biology",
+        "Genetics",
+        "Botany"
       ]
     },
     {
@@ -1803,10 +1949,8 @@
       "startYear": 1890,
       "endYear": 1962,
       "disciplines": [
-        "Population Genetics",
-        "Evolutionary Biology",
-        "Statistics",
-        "Quantitative Genetics"
+        "Biology",
+        "Mathematics"
       ],
       "tags": [
         "Modern Synthesis",
@@ -1815,7 +1959,10 @@
         "Statistical Inference",
         "Quantitative Traits",
         "Fisherian Selection",
-        "Genetic Variance"
+        "Genetic Variance",
+        "Evolutionary Biology",
+        "Statistics",
+        "Quantitative Genetics"
       ]
     },
     {
@@ -1827,10 +1974,7 @@
       "startYear": 1900,
       "endYear": 1975,
       "disciplines": [
-        "Evolutionary Biology",
-        "Genetics",
-        "Population Genetics",
-        "Zoology"
+        "Biology"
       ],
       "tags": [
         "Modern Synthesis",
@@ -1839,7 +1983,11 @@
         "Population Variation",
         "Speciation",
         "Gene Frequencies",
-        "Natural Selection"
+        "Natural Selection",
+        "Evolutionary Biology",
+        "Genetics",
+        "Population Genetics",
+        "Zoology"
       ]
     },
     {
@@ -1851,9 +1999,7 @@
       "startYear": 1877,
       "endYear": 1955,
       "disciplines": [
-        "Molecular Biology",
-        "Genetics",
-        "Bacteriology",
+        "Biology",
         "Medicine"
       ],
       "tags": [
@@ -1862,7 +2008,10 @@
         "Avery-MacLeod-McCarty Experiment",
         "Heredity",
         "Pneumococcus",
-        "Genetic Material"
+        "Genetic Material",
+        "Molecular Biology",
+        "Genetics",
+        "Bacteriology"
       ]
     },
     {
@@ -1874,10 +2023,9 @@
       "startYear": 1920,
       "endYear": 1958,
       "disciplines": [
-        "Molecular Biology",
+        "Biology",
         "Chemistry",
-        "Structural Biology",
-        "Virology"
+        "Medicine"
       ],
       "tags": [
         "DNA",
@@ -1887,7 +2035,9 @@
         "Double Helix",
         "Structural Biology",
         "Viruses",
-        "Coal Structure"
+        "Coal Structure",
+        "Molecular Biology",
+        "Virology"
       ]
     },
     {
@@ -1899,10 +2049,9 @@
       "startYear": 1916,
       "endYear": 2004,
       "disciplines": [
-        "Molecular Biology",
-        "Genetics",
-        "Biophysics",
-        "Neuroscience"
+        "Biology",
+        "Physics",
+        "Medicine"
       ],
       "tags": [
         "DNA",
@@ -1910,7 +2059,11 @@
         "Central Dogma",
         "Genetic Code",
         "Molecular Structure",
-        "Information Transfer"
+        "Information Transfer",
+        "Molecular Biology",
+        "Genetics",
+        "Biophysics",
+        "Neuroscience"
       ]
     },
     {
@@ -1922,10 +2075,8 @@
       "startYear": 1927,
       "endYear": 2010,
       "disciplines": [
-        "Molecular Biology",
-        "Biochemistry",
-        "Genetics",
-        "Neurobiology"
+        "Biology",
+        "Medicine"
       ],
       "tags": [
         "Genetic Code",
@@ -1933,7 +2084,11 @@
         "RNA",
         "Protein Synthesis",
         "Translation",
-        "Poly-U Experiment"
+        "Poly-U Experiment",
+        "Molecular Biology",
+        "Biochemistry",
+        "Genetics",
+        "Neurobiology"
       ]
     },
     {
@@ -1945,10 +2100,7 @@
       "startYear": 1918,
       "endYear": 2013,
       "disciplines": [
-        "Molecular Biology",
-        "Biochemistry",
-        "Genetics",
-        "Genomics"
+        "Biology"
       ],
       "tags": [
         "DNA Sequencing",
@@ -1956,7 +2108,10 @@
         "Protein Sequencing",
         "Insulin",
         "Genomics",
-        "Nucleotide Sequence"
+        "Nucleotide Sequence",
+        "Molecular Biology",
+        "Biochemistry",
+        "Genetics"
       ]
     },
     {
@@ -1989,7 +2144,6 @@
       "startYear": 1543,
       "disciplines": [
         "Astronomy",
-        "Cosmology",
         "Physics"
       ],
       "tags": [
@@ -1999,7 +2153,8 @@
         "Copernican Revolution",
         "Scientific Revolution",
         "Astronomical Model",
-        "Orbital Motion"
+        "Orbital Motion",
+        "Cosmology"
       ]
     },
     {
@@ -2011,7 +2166,6 @@
       "startYear": 1687,
       "disciplines": [
         "Physics",
-        "Mechanics",
         "Mathematics"
       ],
       "tags": [
@@ -2021,7 +2175,8 @@
         "Motion",
         "Universal Gravitation",
         "Mathematical Physics",
-        "Scientific Revolution"
+        "Scientific Revolution",
+        "Mechanics"
       ]
     },
     {
@@ -2035,9 +2190,7 @@
       "description": "Einstein's theory describing gravity as the curvature of spacetime caused by mass and energy. General relativity replaced Newton's theory of gravitation as the most fundamental description of gravity, accurately predicting phenomena such as gravitational lensing, black holes, gravitational waves, and the expansion of the universe.",
       "startYear": 1915,
       "disciplines": [
-        "Physics",
-        "Relativity",
-        "Cosmology"
+        "Physics"
       ],
       "tags": [
         "Gravity",
@@ -2046,7 +2199,8 @@
         "Black Holes",
         "Gravitational Waves",
         "Cosmology",
-        "Einstein Field Equations"
+        "Einstein Field Equations",
+        "Relativity"
       ]
     }
   ],
@@ -3732,7 +3886,7 @@
       "target": "james-watt",
       "relationship": "enabled",
       "description": "Newtonian mechanics provided the theoretical framework that informed generations of engineers during the Industrial Revolution.",
-      "confidence": 0.90,
+      "confidence": 0.9,
       "directness": "indirect"
     },
     {
