@@ -261,6 +261,41 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
   const getLinkArrowLength = (link: GraphLink) => {
     return link.id === selectedRelationshipId ? 10 : 5;
   };
+
+  // Curve parallel edges (multiple relationships between the same node pair)
+  // apart from one another so each is individually visible and clickable —
+  // by default ForceGraph2D renders them as identical overlapping straight lines.
+  const linkCurvature = useMemo(() => {
+    const curvatureByLinkId = new Map<string, number>();
+    const groupsByPairKey = new Map<string, string[]>();
+
+    graphData.links.forEach((link) => {
+      const sourceId = getEndpointId(link.source);
+      const targetId = getEndpointId(link.target);
+      const pairKey = [sourceId, targetId].sort().join("|");
+
+      const group = groupsByPairKey.get(pairKey) ?? [];
+      group.push(link.id);
+      groupsByPairKey.set(pairKey, group);
+    });
+
+    const spacing = 0.3;
+
+    groupsByPairKey.forEach((linkIds) => {
+      const count = linkIds.length;
+
+      linkIds.forEach((linkId, index) => {
+        const offsetIndex = index - (count - 1) / 2;
+        curvatureByLinkId.set(linkId, offsetIndex * spacing);
+      });
+    });
+
+    return curvatureByLinkId;
+  }, [graphData.links]);
+
+  const getLinkCurvature = (link: GraphLink) => {
+    return linkCurvature.get(link.id) ?? 0;
+  };
   
   // configure collision + link-distance forces
   useEffect(() => {
@@ -278,7 +313,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
-    fg.d3Force("link")?.distance(() => 6);
+    fg.d3Force("link")?.distance(() => 2);
   
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions]);
@@ -386,6 +421,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
             }}            
             linkSource="source"
             linkTarget="target"
+            linkCurvature={getLinkCurvature}
             linkColor={getLinkColor}
             linkWidth={getLinkWidth}
             linkDirectionalArrowColor={getLinkColor}

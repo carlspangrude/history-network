@@ -78,7 +78,7 @@ function App() {
       <div
         className={activeView === "explore" ? "explore-view" : "explore-view explore-view--hidden"}
         aria-hidden={activeView !== "explore"}
-        style={{ "--timeline-height": isTimelineOpen ? "220px" : "44px" } as React.CSSProperties}
+        style={{ "--timeline-height": isTimelineOpen ? "240px" : "44px" } as React.CSSProperties}
       >
         <main
           className={[

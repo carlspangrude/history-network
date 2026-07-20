@@ -174,8 +174,9 @@ h2 {
 }
 
 .timeline-strip {
+  position: relative;
   min-height: 0;
-  padding: 8px 20px 12px;
+  padding: 4px 44px 6px 4px;
   border-top: 1px solid var(--border-medium);
   background: var(--background-header);
   overflow: hidden;
@@ -207,23 +208,28 @@ h2 {
 
 .timeline-header h2 {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
 }
 
-.panel-collapse-toggle {
-  padding: 5px 10px;
-  border: 1px solid var(--border-pill);
-  border-radius: var(--radius-pill);
-  background: rgba(30, 30, 30, 0.82);
-  color: var(--text-secondary);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.68rem;
+.timeline-toggle {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 24px;
+  font-size: 1.2rem;
+}
+
+.timeline-toggle-icon {
+  display: inline-block;
+  transition: transform var(--transition-panel);
 }
 
 .panel-collapse-toggle:hover {
-  border-color: var(--text-link);
-  color: var(--text-primary);
+  background: var(--background-control-hover);
 }
 
 .panel-collapse-toggle:focus-visible {
@@ -1152,6 +1158,16 @@ h2 {
   .fit-graph-button:hover {
     border-color: var(--text-link);
     color: var(--text-primary);
+  }
+
+  .fit-graph-button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .fit-graph-button:disabled:hover {
+    border-color: var(--border-pill);
+    color: var(--text-secondary);
   }
   
   .fit-graph-button:focus-visible {
