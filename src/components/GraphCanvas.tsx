@@ -89,6 +89,70 @@ function traceHexagon(
   context.closePath();
 }
 
+// ===========================================================================
+// Explode-view tween (bypasses d3-force entirely — see the effect below)
+// ===========================================================================
+
+const EXPLODE_DURATION_MS = 350;
+const COLLAPSE_DURATION_MS = 300;
+const EXPLODE_BASE_RADIUS = 25;
+const EXPLODE_RADIUS_PER_NODE = 5;
+const EXPLODE_MAX_RADIUS = 120;
+
+interface NodeTweenEntry {
+  node: GraphNode;
+  fromX: number;
+  fromY: number;
+  toX: number;
+  toY: number;
+}
+
+// Animates a set of nodes' x/y (and fx/fy, to pin them mid-transition)
+// directly via requestAnimationFrame. This never touches d3Force or
+// d3ReheatSimulation, so nothing else in the graph reheats. Returns a
+// cancel function so an interrupted transition can be stopped cleanly.
+function animateNodePositions(
+  entries: NodeTweenEntry[],
+  durationMs: number,
+  onComplete: () => void,
+): () => void {
+  const startTime = performance.now();
+  let frameId = 0;
+  let cancelled = false;
+
+  const step = (now: number) => {
+    if (cancelled) {
+      return;
+    }
+
+    const elapsed = now - startTime;
+    const t = Math.min(elapsed / durationMs, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+
+    entries.forEach(({ node, fromX, fromY, toX, toY }) => {
+      const x = fromX + (toX - fromX) * eased;
+      const y = fromY + (toY - fromY) * eased;
+      node.x = x;
+      node.y = y;
+      node.fx = x;
+      node.fy = y;
+    });
+
+    if (t < 1) {
+      frameId = requestAnimationFrame(step);
+    } else {
+      onComplete();
+    }
+  };
+
+  frameId = requestAnimationFrame(step);
+
+  return () => {
+    cancelled = true;
+    cancelAnimationFrame(frameId);
+  };
+}
+
 function GraphCanvas({
   graphData,
   selectedNode,
@@ -120,6 +184,18 @@ const [dimensions, setDimensions] = useState({
 });
 
 const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
+
+// Whether an explode/collapse tween is currently animating. Only true for
+// the ~300ms transition itself — toggles autoPauseRedraw so the canvas
+// repaints every frame during the tween without needing to touch the
+// physics simulation at all.
+const [isExploding, setIsExploding] = useState(false);
+
+// Snapshots each primary node's pre-explosion position, keyed by node id,
+// so deselecting can restore them exactly rather than approximately.
+const explodeSnapshotRef = useRef<
+  Map<string, { x: number; y: number; fx?: number; fy?: number }>
+>(new Map());
 
   // ===========================================================================
   // Derived Data
@@ -183,6 +259,112 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
     () => new Set(pathwayLinkIds),
     [pathwayLinkIds],
   );
+
+  // ===========================================================================
+  // Explode View
+  // ===========================================================================
+
+  // Scoped narrowly to plain node selection — skipped for relationship
+  // selection or an active pathway, since "primary nodes around a center"
+  // doesn't have a clear meaning in those modes.
+  useEffect(() => {
+    if (
+      !selectedNode ||
+      selectedNode.x === undefined ||
+      selectedNode.y === undefined ||
+      selectedRelationshipId ||
+      isPathwayActive
+    ) {
+      return;
+    }
+
+    const centerX = selectedNode.x;
+    const centerY = selectedNode.y;
+    const snapshotMap = explodeSnapshotRef.current;
+
+    const primaryNodes = graphData.nodes.filter(
+      (node) => node.id !== selectedNode.id && connectedNodeIds.has(node.id),
+    );
+
+    if (primaryNodes.length === 0) {
+      return;
+    }
+
+    primaryNodes.forEach((node) => {
+      if (!snapshotMap.has(node.id)) {
+        snapshotMap.set(node.id, {
+          x: node.x ?? centerX,
+          y: node.y ?? centerY,
+          fx: node.fx,
+          fy: node.fy,
+        });
+      }
+    });
+
+    const radius = Math.min(
+      EXPLODE_MAX_RADIUS,
+      EXPLODE_BASE_RADIUS + primaryNodes.length * EXPLODE_RADIUS_PER_NODE,
+    );
+
+    const explodeEntries: NodeTweenEntry[] = primaryNodes.map((node, index) => {
+      const angle = (2 * Math.PI * index) / primaryNodes.length;
+      return {
+        node,
+        fromX: node.x ?? centerX,
+        fromY: node.y ?? centerY,
+        toX: centerX + radius * Math.cos(angle),
+        toY: centerY + radius * Math.sin(angle),
+      };
+    });
+
+    let cancelExplode: (() => void) | null = null;
+
+    const startExplodeFrame = window.requestAnimationFrame(() => {
+      setIsExploding(true);
+      cancelExplode = animateNodePositions(
+        explodeEntries,
+        EXPLODE_DURATION_MS,
+        () => setIsExploding(false),
+      );
+    });
+
+    return () => {
+      window.cancelAnimationFrame(startExplodeFrame);
+      cancelExplode?.();
+
+      const collapseEntries: NodeTweenEntry[] = primaryNodes
+        .map((node) => {
+          const snapshot = snapshotMap.get(node.id);
+          if (!snapshot) {
+            return null;
+          }
+
+          return {
+            node,
+            fromX: node.x ?? snapshot.x,
+            fromY: node.y ?? snapshot.y,
+            toX: snapshot.x,
+            toY: snapshot.y,
+          };
+        })
+        .filter((entry): entry is NodeTweenEntry => entry !== null);
+
+      window.requestAnimationFrame(() => {
+        setIsExploding(true);
+
+        animateNodePositions(collapseEntries, COLLAPSE_DURATION_MS, () => {
+          collapseEntries.forEach(({ node }) => {
+            const snapshot = snapshotMap.get(node.id);
+            node.fx = snapshot?.fx;
+            node.fy = snapshot?.fy;
+            snapshotMap.delete(node.id);
+          });
+          setIsExploding(false);
+        });
+      });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedNode]);
 
   // ===========================================================================
   // Effects
@@ -618,6 +800,7 @@ const hasDimensions = dimensions.width > 0 && dimensions.height > 0;
               onRelationshipOpen(link.id)
             }
             backgroundColor="#181818"
+            autoPauseRedraw={!isExploding}
             onBackgroundClick={onSelectionClear}
             onNodeClick={(node: GraphNode) => onNodeSelect(node)}
           />

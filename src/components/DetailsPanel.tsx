@@ -120,6 +120,9 @@ function formatRelationship(
       case "transformed":
         return "Transformed by";
 
+      case "translated":
+        return "Translated by";
+
       default:
         return formatted;
     }
@@ -734,7 +737,7 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                       type="button"
                       onClick={onSelectionClear}
                     >
-                      Clear selection
+                      Clear
                     </button>
 
                     <button
@@ -742,7 +745,7 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                       type="button"
                       onClick={onPathwaySearchStart}
                     >
-                      Find path to…
+                      Find a path
                     </button>
                   </div>
 

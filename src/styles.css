@@ -43,6 +43,7 @@
   --radius-pill: 999px;
   --relationship-highlight: #ffe640;
   --relationship-highlight-background: rgba(255, 230, 64, 0.1);
+  --text-on-highlight: #3a3a3a;
 
   --sidebar-open-width: 220px;
 
@@ -1031,28 +1032,6 @@ h2 {
   background: var(--relationship-highlight-background);
 }
 
-.selected-connection-clear {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-link);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.68rem;
-}
-
-.selected-connection-clear:hover {
-  color: var(--text-link-hover);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.selected-connection-clear:focus-visible {
-  border-radius: 3px;
-  outline: 2px solid var(--text-link);
-  outline-offset: 3px;
-}
-
 .selected-connection-confidence {
   margin-top: 10px;
   color: var(--text-dim);
@@ -1119,63 +1098,11 @@ h2 {
    Buttons and Controls
    ========================================================================== */
 
-   .clear-selection-button {
-    display: block;
-    margin-top: 14px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: var(--text-link);
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.72rem;
-    text-align: left;
-  }
-  
-  .clear-selection-button:hover {
-    color: var(--text-link-hover);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-  
-  .clear-selection-button:focus-visible {
-    border-radius: 3px;
-    outline: 2px solid var(--text-link);
-    outline-offset: 3px;
-  }
-
 .node-details-actions {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-top: 14px;
-}
-
-.node-details-actions .clear-selection-button {
-  margin-top: 0;
-}
-
-.find-path-button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-link);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.72rem;
-  text-align: left;
-}
-
-.find-path-button:hover {
-  color: var(--text-link-hover);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.find-path-button:focus-visible {
-  border-radius: 3px;
-  outline: 2px solid var(--text-link);
-  outline-offset: 3px;
 }
 
 .pathway-not-found {
@@ -1227,7 +1154,6 @@ h2 {
 }
 
 .pathway-result-heading .clear-selection-button {
-  margin-top: 0;
   flex: 0 0 auto;
 }
 
@@ -1276,36 +1202,54 @@ h2 {
   text-transform: capitalize;
 }
 
-  .fit-graph-button {
-  padding: 7px 10px;
-    border: 1px solid var(--border-pill);
-    border-radius: var(--radius-pill);
-    background: rgba(30, 30, 30, 0.82);
-    color: var(--text-secondary);
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.72rem;
-  }
-  
-  .fit-graph-button:hover {
-    border-color: var(--text-link);
-    color: var(--text-primary);
-  }
+/* ==========================================================================
+   Action buttons — visually distinct from informational pills (stat
+   badges, tags, dated-entry counts): a yellow outline matching the
+   selected-connection card's border, filling solid yellow with grey text
+   on hover so these read as clickable without needing to hover first.
+   ========================================================================== */
 
-  .fit-graph-button:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
+.fit-graph-button,
+.selected-connection-clear,
+.clear-selection-button,
+.find-path-button {
+  padding: 7px 12px;
+  border: 1px solid var(--relationship-highlight);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  text-align: left;
+  transition: background-color 150ms ease, color 150ms ease;
+}
 
-  .fit-graph-button:disabled:hover {
-    border-color: var(--border-pill);
-    color: var(--text-secondary);
-  }
-  
-  .fit-graph-button:focus-visible {
-    outline: 2px solid var(--text-link);
-    outline-offset: 3px;
-  }
+.fit-graph-button:hover,
+.selected-connection-clear:hover,
+.clear-selection-button:hover,
+.find-path-button:hover {
+  background: var(--relationship-highlight);
+  color: var(--text-on-highlight);
+}
+
+.fit-graph-button:focus-visible,
+.selected-connection-clear:focus-visible,
+.clear-selection-button:focus-visible,
+.find-path-button:focus-visible {
+  outline: 2px solid var(--relationship-highlight);
+  outline-offset: 3px;
+}
+
+.fit-graph-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fit-graph-button:disabled:hover {
+  background: transparent;
+  color: var(--text-secondary);
+}
 
 .panel-toggle {
   position: absolute;
