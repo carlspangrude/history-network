@@ -1,4 +1,5 @@
 import type {
+  Discipline,
   EvidenceType,
   KnowledgeGraphData,
   KnowledgeNode,
@@ -11,17 +12,27 @@ import type {
 
 const VALID_NODE_TYPES = new Set<NodeType>([
   "discipline",
-  "discovery",
-  "event",
-  "idea",
-  "institution",
-  "invention",
   "movement",
   "person",
-  "place",
   "publication",
-  "technology",
   "theory",
+]);
+
+const VALID_DISCIPLINES = new Set<Discipline>([
+  "Astronomy",
+  "Biology",
+  "Chemistry",
+  "Economics",
+  "Education",
+  "Engineering",
+  "Geography",
+  "History",
+  "Literature",
+  "Mathematics",
+  "Medicine",
+  "Philosophy",
+  "Physics",
+  "Visual Art",
 ]);
 
 const VALID_RELATIONSHIP_TYPES = new Set<RelationshipType>([
@@ -103,6 +114,40 @@ function validateNode(
     errors.push(
       `${label} "${node.id}" has unsupported type "${node.type}".`,
     );
+  }
+
+  if (node.disciplines !== undefined) {
+    if (!Array.isArray(node.disciplines)) {
+      errors.push(
+        `${label} "${node.id}" must have a disciplines array.`,
+      );
+    } else {
+      const seenDisciplines = new Set<string>();
+
+      node.disciplines.forEach((discipline) => {
+        if (!isNonEmptyString(discipline)) {
+          errors.push(
+            `${label} "${node.id}" contains an invalid discipline entry.`,
+          );
+
+          return;
+        }
+
+        if (!VALID_DISCIPLINES.has(discipline as Discipline)) {
+          errors.push(
+            `${label} "${node.id}" has unsupported discipline "${discipline}".`,
+          );
+        }
+
+        if (seenDisciplines.has(discipline)) {
+          errors.push(
+            `${label} "${node.id}" lists discipline "${discipline}" more than once.`,
+          );
+        }
+
+        seenDisciplines.add(discipline);
+      });
+    }
   }
 
   if (
