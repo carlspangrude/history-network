@@ -305,10 +305,7 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
   }, [filteredRelationships, selectedNode]);
 
   const selectedNodeYearRange = selectedNode
-  ? formatHistoricalYearRange(
-      selectedNode.startYear,
-      selectedNode.endYear,
-    )
+  ? formatHistoricalYearRange(selectedNode)
   : null;
 
   const pathwaySearchSourceNode = pathwaySearchSourceId

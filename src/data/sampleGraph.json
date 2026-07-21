@@ -207,7 +207,8 @@
         "Metaphysics",
         "Epistemology",
         "Platonism"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "aristotle",
@@ -246,7 +247,8 @@
         "Deduction",
         "Aristotelianism",
         "Logic"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "aristotelian-physics",
@@ -263,7 +265,8 @@
         "Natural Philosophy",
         "Motion",
         "Aristotelianism"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "thomas-aquinas",
@@ -824,7 +827,9 @@
         "Ethics",
         "Political Science",
         "Metaphysics"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "hellenistic-science",
@@ -871,7 +876,9 @@
         "Separation of Powers",
         "Ethics",
         "Political Theory"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "zeno-citium",
@@ -918,7 +925,9 @@
         "Presocratic Philosophy",
         "Logic",
         "Metaphysics"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "euclid",
@@ -940,7 +949,9 @@
         "Elements",
         "Alexandria",
         "Geometry"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "archimedes",
@@ -1100,7 +1111,8 @@
         "Engineering",
         "Manufacturing",
         "Transportation"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "james-watt",
@@ -1438,7 +1450,9 @@
         "Mathematics",
         "Planetary Motion",
         "Star Catalog"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "renaissance",
@@ -1469,7 +1483,8 @@
         "Architecture",
         "Political Theory",
         "Philology"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "petrarch",
@@ -1701,7 +1716,6 @@
       "importance": 10,
       "description": "Intellectual and practical tradition devoted to understanding the human body, explaining disease, preventing illness, and developing effective treatments through observation, anatomy, experimentation, clinical practice, and biological science. Emerging from ancient naturalistic medicine, medical science was transformed by anatomical investigation, the discovery of circulation, germ theory, antisepsis, vaccination, pharmacology, genetics, and molecular biology.",
       "startYear": -450,
-      "endYear": 2026,
       "disciplines": [
         "Medicine"
       ],
@@ -1720,7 +1734,9 @@
         "Epidemiology",
         "Microbiology",
         "Surgery"
-      ]
+      ],
+      "startYearApprox": true,
+      "isOngoing": true
     },
     {
       "id": "evolutionary-biology",
@@ -1729,7 +1745,6 @@
       "importance": 10,
       "description": "Scientific movement explaining the diversity, adaptation, common ancestry, and historical transformation of living organisms through natural processes. Developed from earlier work in classification, geology, biogeography, and heredity, evolutionary biology was reshaped by natural selection and later unified with Mendelian genetics, population genetics, paleontology, systematics, ecology, and molecular biology through the modern evolutionary synthesis.",
       "startYear": 1800,
-      "endYear": 2026,
       "disciplines": [
         "Biology"
       ],
@@ -1748,7 +1763,9 @@
         "Natural History",
         "Ecology",
         "Systematics"
-      ]
+      ],
+      "startYearApprox": true,
+      "isOngoing": true
     },
     {
       "id": "molecular-biology",
@@ -1757,7 +1774,6 @@
       "importance": 10,
       "description": "Twentieth-century scientific movement explaining biological inheritance, cellular activity, and the reproduction of living systems through the structures and interactions of molecules. By identifying DNA as hereditary material, determining its structure, explaining genetic information transfer, decoding protein synthesis, and developing sequencing technologies, molecular biology transformed genetics, medicine, biotechnology, and evolutionary science.",
       "startYear": 1930,
-      "endYear": 2026,
       "disciplines": [
         "Biology"
       ],
@@ -1778,7 +1794,9 @@
         "Cell Biology",
         "Structural Biology",
         "Biotechnology"
-      ]
+      ],
+      "startYearApprox": true,
+      "isOngoing": true
     },
     {
       "id": "hippocrates",
@@ -1800,7 +1818,9 @@
         "Medical Ethics",
         "Clinical Observation",
         "Pathology"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "galen",
@@ -2283,7 +2303,8 @@
         "Abbasid Caliphate",
         "Translation Movement",
         "Bayt al-Hikma"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "islamic-golden-age",
@@ -2305,7 +2326,8 @@
         "Translation Movement",
         "Baghdad",
         "Scientific Inquiry"
-      ]
+      ],
+      "startYearApprox": true
     },
     {
       "id": "al-khwarizmi",
@@ -2519,7 +2541,9 @@
         "Dialectic",
         "Medieval Universities",
         "Aristotelianism"
-      ]
+      ],
+      "startYearApprox": true,
+      "endYearApprox": true
     },
     {
       "id": "elements",
@@ -2543,7 +2567,19 @@
         "Number Theory",
         "Deductive Reasoning",
         "Foundational Text"
-      ]
+      ],
+      "startYearApprox": true
+    },
+    {
+      "id": "euclidean-geometry",
+      "name": "Euclidean Geometry",
+      "type": "theory",
+      "importance": 9,
+      "description": "A system of geometry built from definitions, postulates, and logical proof, organized by Euclid into a coherent axiomatic framework. It became the standard model of geometric reasoning and rigorous mathematical demonstration for over two thousand years.",
+      "startYear": -300,
+      "startYearApprox": true,
+      "disciplines": ["Mathematics"],
+      "tags": ["Axiomatic Method", "Postulates", "Geometric Proof", "Deductive Reasoning"]
     }
   ],
   "edges": [
@@ -2603,7 +2639,7 @@
       "id": "einstein-special-relativity",
       "source": "einstein",
       "target": "special-relativity",
-      "relationship": "formalized",
+      "relationship": "proposed",
       "confidence": 1
     },
     {
@@ -2618,7 +2654,7 @@
       "id": "plato-theory-of-forms",
       "source": "plato",
       "target": "theory-of-forms",
-      "relationship": "formalized",
+      "relationship": "proposed",
       "description": "Plato's dialogues develop several related accounts of Forms as intelligible objects of knowledge.",
       "confidence": 0.9
     },
@@ -3134,13 +3170,33 @@
       "directness": "indirect"
     },
     {
-      "id": "kepler-newton",
-      "source": "kepler",
+      "id": "laws-of-planetary-motion-universal-gravitation",
+      "source": "laws-of-planetary-motion",
+      "target": "universal-gravitation",
+      "relationship": "enabled",
+      "description": "Newton showed that an inverse-square gravitational force law mathematically produces exactly the elliptical orbits and periodic relationships described by Kepler's three laws, making them the specific empirical target his theory needed to reproduce.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "newton-universal-gravitation",
+      "source": "newton",
+      "target": "universal-gravitation",
+      "relationship": "proposed",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "laws-of-planetary-motion-newton",
+      "source": "laws-of-planetary-motion",
       "target": "newton",
       "relationship": "enabled",
       "description": "Kepler's mathematical laws of planetary motion provided the empirical foundation from which Newton derived the law of universal gravitation.",
       "confidence": 1,
-      "directness": "direct"
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
     },
     {
       "id": "copernicus-scientific-revolution",
@@ -3347,15 +3403,6 @@
       "relationship": "influenced",
       "description": "Archimedes' integration of geometry with mechanics helped establish the tradition of mathematical physics that Newton later extended into a unified account of motion and gravitation.",
       "confidence": 0.85,
-      "directness": "indirect"
-    },
-    {
-      "id": "euclid-newton",
-      "source": "euclid",
-      "target": "newton",
-      "relationship": "influenced",
-      "description": "Euclid's axiomatic organization of mathematics provided a model of deductive reasoning that influenced the structure and demonstrative style of Newton's mathematical physics.",
-      "confidence": 0.9,
       "directness": "indirect"
     },
     {
@@ -4558,11 +4605,11 @@
       "evidenceType": "scholarly_consensus"
     },
     {
-      "id": "house-of-wisdom-euclid",
+      "id": "house-of-wisdom-elements",
       "source": "house-of-wisdom",
-      "target": "euclid",
+      "target": "elements",
       "relationship": "preserved",
-      "description": "Euclid's Elements was among the earliest Greek mathematical works translated at the House of Wisdom, ensuring its continued study and transmission.",
+      "description": "Elements was among the earliest Greek mathematical works translated at the House of Wisdom, ensuring its continued study and transmission.",
       "confidence": 0.93,
       "directness": "direct",
       "evidenceType": "scholarly_consensus"
@@ -4842,6 +4889,105 @@
       "relationship": "synthesized",
       "description": "Aquinas's systematic integration of Aristotelian philosophy with Christian theology represents the high point of scholastic method.",
       "confidence": 0.98,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclid-elements",
+      "source": "euclid",
+      "target": "elements",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "elements-euclidean-geometry",
+      "source": "elements",
+      "target": "euclidean-geometry",
+      "relationship": "formalized",
+      "description": "Elements organized existing geometric knowledge into a systematic deductive framework built from definitions, postulates, and proofs.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "elements-ptolemy",
+      "source": "elements",
+      "target": "ptolemy",
+      "relationship": "influenced",
+      "description": "Ptolemy's astronomical methods in the Almagest relied extensively on Euclidean geometric techniques, particularly for modeling spherical and planetary motion.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclidean-geometry-ptolemaic-system",
+      "source": "euclidean-geometry",
+      "target": "ptolemaic-system",
+      "relationship": "enabled",
+      "description": "Euclidean geometric methods provided the mathematical tools Ptolemy used to construct deferents, epicycles, and other geometric devices modeling planetary motion.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "elements-newton",
+      "source": "elements",
+      "target": "newton",
+      "relationship": "influenced",
+      "description": "Newton deliberately modeled the demonstrative structure of the Principia on Euclidean geometric proof, favoring synthetic geometric arguments over the algebraic calculus he had also developed.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclidean-geometry-newtonian-mechanics",
+      "source": "euclidean-geometry",
+      "target": "newtonian-mechanics",
+      "relationship": "enabled",
+      "description": "Euclidean geometric methods enabled the synthetic geometric proofs through which Newton originally demonstrated the laws of motion and universal gravitation.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "elements-al-khwarizmi",
+      "source": "elements",
+      "target": "al-khwarizmi",
+      "relationship": "influenced",
+      "description": "Al-Khwarizmi engaged with Euclidean geometric methods, using geometric proof to justify some of his algebraic solutions alongside his systematic treatment of equations.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclidean-geometry-algebra",
+      "source": "euclidean-geometry",
+      "target": "algebra",
+      "relationship": "influenced",
+      "description": "Euclidean geometric proof techniques informed some of the justificatory methods used in early algebra, though algebra also drew independently on Babylonian and Indian mathematical traditions.",
+      "confidence": 0.75,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "elements-rene-descartes",
+      "source": "elements",
+      "target": "rene-descartes",
+      "relationship": "influenced",
+      "description": "Descartes was trained extensively in Euclidean geometry, which provided both the problems and the deductive standard his own geometric method sought to reformulate.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclidean-geometry-discourse-on-method",
+      "source": "euclidean-geometry",
+      "target": "discourse-on-method",
+      "relationship": "enabled",
+      "description": "The geometric appendix to the Discourse reformulated classical Euclidean problems using algebraic coordinates, directly building on and transforming Euclidean geometric foundations.",
+      "confidence": 0.88,
       "directness": "direct",
       "evidenceType": "scholarly_consensus"
     }

@@ -13,6 +13,7 @@ import {
   NODE_TYPE_LABELS,
   THEORY_NODE_OUTLINE_COLOR,
 } from "../constants/graphVisuals";
+import { getEffectiveEndYear } from "../utils/getEffectiveEndYear";
 
 interface TimelineCanvasProps {
   graphData: ForceGraphData;
@@ -54,7 +55,7 @@ function getEndpointId(endpoint: string | GraphNode): string {
 }
 
 function getNodeYear(node: GraphNode): number | undefined {
-  return node.startYear ?? node.endYear;
+  return node.startYear ?? getEffectiveEndYear(node);
 }
 
 // ===========================================================================
@@ -357,25 +358,26 @@ function TimelineCanvas({
     const years = datedNodes.flatMap((node) => {
       const values: number[] = [];
       if (node.startYear !== undefined) values.push(node.startYear);
-      if (node.endYear !== undefined) values.push(node.endYear);
+      const effectiveEnd = getEffectiveEndYear(node);
+      if (effectiveEnd !== undefined) values.push(effectiveEnd);
       return values;
     });
-
+  
     if (years.length === 0) {
       return yearBounds;
     }
-
+  
     let min = Math.min(...years);
     let max = Math.max(...years);
-
+  
     const span = max - min;
-
+  
     if (span < MIN_CHART_DOMAIN_SPAN) {
       const center = (min + max) / 2;
       min = center - MIN_CHART_DOMAIN_SPAN / 2;
       max = center + MIN_CHART_DOMAIN_SPAN / 2;
     }
-
+  
     return [min, max];
   }, [datedNodes, yearBounds]);
 

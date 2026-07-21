@@ -100,7 +100,10 @@ export interface KnowledgeNode {
   type: NodeType;
   description: string;
   startYear?: number;
+  startYearApprox?: boolean;
   endYear?: number;
+  endYearApprox?: boolean;
+  isOngoing?: boolean;
   importance?: number;
   disciplines?: Discipline[];
   tags?: string[];
