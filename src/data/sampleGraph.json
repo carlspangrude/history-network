@@ -2520,6 +2520,30 @@
         "Medieval Universities",
         "Aristotelianism"
       ]
+    },
+    {
+      "id": "elements",
+      "name": "Elements",
+      "epigraph": {
+        "text": "There is no royal road to geometry."
+      },
+      "type": "publication",
+      "importance": 10,
+      "description": "A thirteen-book mathematical treatise by Euclid that systematically organized the principles of geometry, number theory, and mathematical proof into an axiomatic framework. As one of the most influential works in the history of mathematics, Elements shaped mathematical education and deductive reasoning for more than two thousand years.",
+      "startYear": -300,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Geometry",
+        "Logic",
+        "Axiomatic Method",
+        "Mathematical Proof",
+        "Euclidean Geometry",
+        "Number Theory",
+        "Deductive Reasoning",
+        "Foundational Text"
+      ]
     }
   ],
   "edges": [

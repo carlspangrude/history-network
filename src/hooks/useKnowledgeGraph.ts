@@ -117,6 +117,16 @@ export function useKnowledgeGraph({
   const [pathwayNotFoundTargetName, setPathwayNotFoundTargetName] =
     useState<string | null>(null);
 
+  // Tracks which movement nodes are currently anchored (dragged and pinned
+  // in place). This is the single source of truth for both GraphCanvas
+  // (which performs the actual fx/fy mutation and reheat) and DetailsPanel
+  // (which shows/hides the release button) — plain object mutation alone
+  // isn't visible to React, so this Set is what makes anchoring state
+  // properly reactive across both components.
+  const [anchoredNodeIds, setAnchoredNodeIds] = useState<Set<string>>(
+    new Set(),
+  );
+
   // ===========================================================================
   // Filtered Graph
   // ===========================================================================
@@ -369,6 +379,48 @@ export function useKnowledgeGraph({
   };
 
   // ===========================================================================
+  // Node Anchoring
+  // ===========================================================================
+
+  // Called by GraphCanvas once it has actually pinned a movement node's
+  // fx/fy after a genuine drag.
+  const handleNodeAnchored = (nodeId: string) => {
+    setAnchoredNodeIds((current) => {
+      if (current.has(nodeId)) {
+        return current;
+      }
+
+      const next = new Set(current);
+      next.add(nodeId);
+      return next;
+    });
+  };
+
+  // Called by DetailsPanel's "Release anchor" button. This only updates
+  // the tracked set — GraphCanvas is what actually clears fx/fy and
+  // reheats the simulation, reacting to the node disappearing from this
+  // set, since it's the component that owns the physics simulation.
+  const handleNodeUnanchor = (nodeId: string) => {
+    setAnchoredNodeIds((current) => {
+      if (!current.has(nodeId)) {
+        return current;
+      }
+
+      const next = new Set(current);
+      next.delete(nodeId);
+      return next;
+    });
+  };
+
+  // Releasing everything at once is just "the set becomes empty" —
+  // GraphCanvas's release effect already diffs against the previous set
+  // and releases every id that disappeared, so this needs no separate
+  // handling there.
+  const handleUnanchorAll = () => {
+    setAnchoredNodeIds((current) => (current.size === 0 ? current : new Set()));
+  };
+
+  // ===========================================================================
   // Filter Handlers
   // ===========================================================================
 
@@ -496,6 +548,7 @@ export function useKnowledgeGraph({
     pathwaySteps,
     pathwayNotFound,
     pathwayNotFoundTargetName,
+    anchoredNodeIds,
     handleDisciplineToggle,
     handleDisciplineSelectAll,
     handleNodeSelect,
@@ -509,5 +562,8 @@ export function useKnowledgeGraph({
     handlePathwaySearchCancel,
     handlePathwayTargetSelect,
     handlePathwayClear,
+    handleNodeAnchored,
+    handleNodeUnanchor,
+    handleUnanchorAll,
   };
 }

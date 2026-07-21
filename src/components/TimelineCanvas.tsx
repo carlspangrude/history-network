@@ -29,6 +29,7 @@ interface TimelineCanvasProps {
   compact?: boolean;
   pathwayNodeIds: string[];
   pathwayLinkIds: string[];
+  anchoredNodeIds: Set<string>;
 }
 
 // ===========================================================================
@@ -298,6 +299,7 @@ function TimelineCanvas({
   compact = false,
   pathwayNodeIds,
   pathwayLinkIds,
+  anchoredNodeIds,
 }: TimelineCanvasProps) {
 
   const MARGIN = compact ? COMPACT_MARGIN : FULL_MARGIN;
@@ -546,6 +548,10 @@ function TimelineCanvas({
 
     if (node.id === selectedNode?.id) {
       return "#ffffff";
+    }
+
+    if (node.type === "movement" && anchoredNodeIds.has(node.id)) {
+      return MOVEMENT_NODE_OUTLINE_COLOR;
     }
 
     return GRAPH_BACKGROUND_COLOR;

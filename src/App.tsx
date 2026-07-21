@@ -39,6 +39,7 @@ function App() {
     pathwaySteps,
     pathwayNotFound,
     pathwayNotFoundTargetName,
+    anchoredNodeIds,
     handleDisciplineToggle,
     handleDisciplineSelectAll,
     handleNodeSelect,
@@ -52,6 +53,9 @@ function App() {
     handlePathwaySearchCancel,
     handlePathwayTargetSelect,
     handlePathwayClear,
+    handleNodeAnchored,
+    handleNodeUnanchor,
+    handleUnanchorAll,
   } = useKnowledgeGraph({
     onSelectionCleared: () => setIsDetailsOpen(false),
     onSelectionOpened: () => setIsDetailsOpen(true),
@@ -61,8 +65,20 @@ function App() {
   // Layout
   // ===========================================================================
 
+  // A long node-type badge (e.g. "institution", "movement", "publication")
+  // crowds the top row enough to wrap the Find a path button onto two
+  // lines, even when the node's own title is short — so it needs to
+  // trigger the wide layout independently of name length.
+  const isSelectedNodeTypeWide = (selectedNode?.type.length ?? 0) > 7;
+
+  // The pathway search and result views need extra width to avoid
+  // horizontal overflow (long node names in search results / path steps).
+  const isPathwayModeActive = Boolean(pathwaySearchSourceId) || Boolean(activePathway);
+
   const shouldUseWideDetails =
     (selectedNode?.name.length ?? 0) > 24 ||
+    isSelectedNodeTypeWide ||
+    isPathwayModeActive ||
     [
       selectedRelationship
         ? graphData.nodes.find(
@@ -157,6 +173,9 @@ function App() {
             onSelectionClear={handleSelectionClear}
             pathwayNodeIds={pathwayNodeIds}
             pathwayLinkIds={pathwayLinkIds}
+            anchoredNodeIds={anchoredNodeIds}
+            onNodeAnchored={handleNodeAnchored}
+            onUnanchorAll={handleUnanchorAll}
           />
 
           <DetailsPanel
@@ -179,6 +198,8 @@ function App() {
             onPathwaySearchCancel={handlePathwaySearchCancel}
             onPathwayTargetSelect={handlePathwayTargetSelect}
             onPathwayClear={handlePathwayClear}
+            anchoredNodeIds={anchoredNodeIds}
+            onNodeUnanchor={handleNodeUnanchor}
           />
         </main>
 
@@ -198,6 +219,7 @@ function App() {
             onYearRangeChange={handleYearRangeChange}
             pathwayNodeIds={pathwayNodeIds}
             pathwayLinkIds={pathwayLinkIds}
+            anchoredNodeIds={anchoredNodeIds}
           />
         </div>
       </div>

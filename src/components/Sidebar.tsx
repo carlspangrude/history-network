@@ -2,8 +2,11 @@ import { useState } from "react";
 
 import {
   FILTERABLE_NODE_TYPES,
+  GRAPH_BACKGROUND_COLOR,
+  MOVEMENT_NODE_OUTLINE_COLOR,
   NODE_TYPE_COLORS,
   NODE_TYPE_LABELS,
+  THEORY_NODE_OUTLINE_COLOR,
 } from "../constants/graphVisuals";
 import type { NodeType } from "../types/graph";
 
@@ -26,6 +29,67 @@ const visibleLegendTypes: NodeType[] = [
   "institution",
   "movement",
 ];
+
+interface LegendSwatchProps {
+  type: NodeType;
+}
+
+// Mirrors the exact shape/fill treatment used for each node type in
+// GraphCanvas and TimelineCanvas, so the legend actually shows what you'll
+// see on the graph instead of a generic colored dot for every type.
+function LegendSwatch({ type }: LegendSwatchProps) {
+  const color = NODE_TYPE_COLORS[type];
+
+  if (type === "movement") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <circle
+          cx="8"
+          cy="8"
+          r="6"
+          fill={GRAPH_BACKGROUND_COLOR}
+          stroke={MOVEMENT_NODE_OUTLINE_COLOR}
+          strokeWidth="1.5"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "theory") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <polygon
+          points="8,2 13.2,5 13.2,11 8,14 2.8,11 2.8,5"
+          fill={GRAPH_BACKGROUND_COLOR}
+          stroke={THEORY_NODE_OUTLINE_COLOR}
+          strokeWidth="1.5"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "publication") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <rect x="4" y="2" width="8" height="12" fill={color} />
+      </svg>
+    );
+  }
+
+  if (type === "institution") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <polygon points="2,13 14,13 14,7 8,2 2,7" fill={color} />
+      </svg>
+    );
+  }
+
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+      <circle cx="8" cy="8" r="6" fill={color} />
+    </svg>
+  );
+}
 
 function Sidebar({
   availableDisciplines,
@@ -113,8 +177,13 @@ function Sidebar({
               <span
                 className="filter-section__chevron"
                 aria-hidden="true"
+                style={{
+                  transform: areNodeTypesExpanded
+                    ? "rotate(90deg)"
+                    : "rotate(0deg)",
+                }}
               >
-                {areNodeTypesExpanded ? "▾" : "▸"}
+                ›
               </span>
             </button>
 
@@ -180,8 +249,13 @@ function Sidebar({
               <span
                 className="filter-section__chevron"
                 aria-hidden="true"
+                style={{
+                  transform: areDisciplinesExpanded
+                    ? "rotate(90deg)"
+                    : "rotate(0deg)",
+                }}
               >
-                {areDisciplinesExpanded ? "▾" : "▸"}
+                ›
               </span>
             </button>
 
@@ -241,13 +315,7 @@ function Sidebar({
                   className="legend-item"
                   key={type}
                 >
-                  <span
-                    className="legend-swatch"
-                    style={{
-                      backgroundColor:
-                        NODE_TYPE_COLORS[type],
-                    }}
-                  />
+                  <LegendSwatch type={type} />
 
                   <span>
                     {NODE_TYPE_LABELS[type]}

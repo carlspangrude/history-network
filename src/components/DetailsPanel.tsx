@@ -27,11 +27,38 @@ interface DetailsPanelProps {
   onPathwaySearchCancel: () => void;
   onPathwayTargetSelect: (node: GraphNode) => void;
   onPathwayClear: () => void;
+  anchoredNodeIds: Set<string>;
+  onNodeUnanchor: (nodeId: string) => void;
 }
 
 interface RelationshipGroup {
   relationship: RelationshipType;
   edges: KnowledgeEdge[];
+}
+
+// Two nodes joined by a line, in the same orange used to highlight a
+// traced pathway elsewhere in the app — a small visual cue that "Find a
+// path" starts that same kind of trace.
+function ConnectedPathIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <circle cx="3.5" cy="12.5" r="2.1" fill="#ffb703" />
+      <circle cx="12.5" cy="3.5" r="2.1" fill="#ffb703" />
+      <path
+        d="M5.2 10.8L10.8 5.2"
+        stroke="#ffb703"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
 }
 
 function formatRelationship(
@@ -151,6 +178,8 @@ function DetailsPanel({
   onPathwaySearchCancel,
   onPathwayTargetSelect,
   onPathwayClear,
+  anchoredNodeIds,
+  onNodeUnanchor,
 }: DetailsPanelProps) {
   
   // ===========================================================================
@@ -577,7 +606,7 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
             setPathwaySearchQuery("");
           }}
         >
-          Cancel
+          Back
         </button>
       </div>
     );
@@ -699,6 +728,14 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
     });
   };
 
+  const handleUnanchorNode = () => {
+    if (!selectedNode) {
+      return;
+    }
+
+    onNodeUnanchor(selectedNode.id);
+  };
+
   // ===========================================================================
   // Render
   // ===========================================================================
@@ -727,9 +764,20 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
 
               {selectedNode ? (
                 <article className="node-details">
-                  <span className="details-node-type">
-                    {selectedNode.type}
-                  </span>
+                  <div className="node-details-header">
+                    <span className="details-node-type">
+                      {selectedNode.type}
+                    </span>
+
+                    <button
+                      className="find-path-button"
+                      type="button"
+                      onClick={onPathwaySearchStart}
+                    >
+                      Find a path
+                      <ConnectedPathIcon />
+                    </button>
+                  </div>
 
                   <div className="node-details-actions">
                     <button
@@ -740,13 +788,16 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                       Clear
                     </button>
 
-                    <button
-                      className="find-path-button"
-                      type="button"
-                      onClick={onPathwaySearchStart}
-                    >
-                      Find a path
-                    </button>
+                    {selectedNode.type === "movement" &&
+                      anchoredNodeIds.has(selectedNode.id) && (
+                        <button
+                          className="unanchor-button"
+                          type="button"
+                          onClick={handleUnanchorNode}
+                        >
+                          Release anchor
+                        </button>
+                      )}
                   </div>
 
                   {pathwayNotFound && (

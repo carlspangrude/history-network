@@ -212,7 +212,7 @@ h2 {
   font-size: 1.3rem;
 }
 
-.timeline-toggle {
+.panel-toggle.timeline-toggle {
   position: absolute;
   top: 6px;
   right: 8px;
@@ -523,12 +523,8 @@ h2 {
   gap: 10px;
 }
 
-.legend-swatch {
-  width: 10px;
-  height: 10px;
+.legend-item svg {
   flex: 0 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
 }
 
 .sidebar {
@@ -581,8 +577,10 @@ h2 {
 }
 
 .filter-section__chevron {
+  display: inline-block;
   color: var(--text-muted);
   font-size: 0.85rem;
+  transition: transform 150ms ease;
 }
 
 .filter-section__content {
@@ -730,6 +728,13 @@ h2 {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.node-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .details.panel-open .panel-content {
@@ -1123,23 +1128,24 @@ h2 {
   line-height: 1.4;
 }
 
+/* .search is shared with the Header's search box, sized for a wide top
+   navbar (min(440px, 48vw)) — far too wide for the details panel, which
+   was causing horizontal overflow here. Constrain it to the panel's
+   actual available width instead. */
+.pathway-search .search {
+  width: 100%;
+}
+
+/* .search-input is also shared with the Header's search box — scope a
+   smaller size here so the placeholder text fits without truncating,
+   without shrinking the Header's own search text. */
+.pathway-search .search-input {
+  font-size: 0.72rem;
+}
+
 .pathway-search-cancel {
   display: block;
   margin-top: 16px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text-link);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.72rem;
-  text-align: left;
-}
-
-.pathway-search-cancel:hover {
-  color: var(--text-link-hover);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .pathway-result-heading {
@@ -1212,7 +1218,10 @@ h2 {
 .fit-graph-button,
 .selected-connection-clear,
 .clear-selection-button,
-.find-path-button {
+.find-path-button,
+.unanchor-button,
+.clear-all-anchors-button,
+.pathway-search-cancel {
   padding: 7px 12px;
   border: 1px solid var(--relationship-highlight);
   border-radius: var(--radius-pill);
@@ -1228,7 +1237,10 @@ h2 {
 .fit-graph-button:hover,
 .selected-connection-clear:hover,
 .clear-selection-button:hover,
-.find-path-button:hover {
+.find-path-button:hover,
+.unanchor-button:hover,
+.clear-all-anchors-button:hover,
+.pathway-search-cancel:hover {
   background: var(--relationship-highlight);
   color: var(--text-on-highlight);
 }
@@ -1236,7 +1248,10 @@ h2 {
 .fit-graph-button:focus-visible,
 .selected-connection-clear:focus-visible,
 .clear-selection-button:focus-visible,
-.find-path-button:focus-visible {
+.find-path-button:focus-visible,
+.unanchor-button:focus-visible,
+.clear-all-anchors-button:focus-visible,
+.pathway-search-cancel:focus-visible {
   outline: 2px solid var(--relationship-highlight);
   outline-offset: 3px;
 }
@@ -1249,6 +1264,21 @@ h2 {
 .fit-graph-button:disabled:hover {
   background: transparent;
   color: var(--text-secondary);
+}
+
+.find-path-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 10px;
+}
+
+.find-path-button:hover svg circle {
+  fill: var(--text-on-highlight);
+}
+
+.find-path-button:hover svg path {
+  stroke: var(--text-on-highlight);
 }
 
 .panel-toggle {

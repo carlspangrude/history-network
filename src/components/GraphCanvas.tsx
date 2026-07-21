@@ -26,6 +26,9 @@ interface GraphCanvasProps {
   onSelectionClear: () => void;
   pathwayNodeIds: string[];
   pathwayLinkIds: string[];
+  anchoredNodeIds: Set<string>;
+  onNodeAnchored: (nodeId: string) => void;
+  onUnanchorAll: () => void;
 }
 
 function getEndpointId(endpoint: string | GraphNode): string {
@@ -162,6 +165,9 @@ function GraphCanvas({
   onSelectionClear,
   pathwayNodeIds,
   pathwayLinkIds,
+  anchoredNodeIds,
+  onNodeAnchored,
+  onUnanchorAll,
 }: GraphCanvasProps) {
 
   // ===========================================================================
@@ -196,6 +202,14 @@ const [isExploding, setIsExploding] = useState(false);
 const explodeSnapshotRef = useRef<
   Map<string, { x: number; y: number; fx?: number; fy?: number }>
 >(new Map());
+
+// Tracks the previous anchoredNodeIds value so the release effect can
+// diff and detect exactly which node(s) were just removed (released).
+const previousAnchoredNodeIdsRef = useRef<Set<string>>(new Set());
+
+// Whether the "N anchors" stat is currently being hovered while it's
+// acting as a button — swaps its label to "Clear all".
+const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
 
   // ===========================================================================
   // Derived Data
@@ -367,6 +381,42 @@ const explodeSnapshotRef = useRef<
   }, [selectedNode]);
 
   // ===========================================================================
+  // Node Anchor Release
+  // ===========================================================================
+
+  // anchoredNodeIds is the shared source of truth (owned by
+  // useKnowledgeGraph) for which movement nodes are anchored. DetailsPanel
+  // only ever removes an id from this set to request a release — this
+  // effect is what actually performs the physics-level release (clearing
+  // fx/fy) and a deliberate reheat, since GraphCanvas is the component
+  // that owns the simulation. Diffs against the previous set so this only
+  // fires for ids that were just removed, not on every unrelated update.
+  useEffect(() => {
+    const previouslyAnchoredIds = previousAnchoredNodeIdsRef.current;
+    let didReleaseAny = false;
+
+    previouslyAnchoredIds.forEach((nodeId) => {
+      if (anchoredNodeIds.has(nodeId)) {
+        return;
+      }
+
+      const node = graphData.nodes.find((n) => n.id === nodeId);
+
+      if (node) {
+        node.fx = undefined;
+        node.fy = undefined;
+        didReleaseAny = true;
+      }
+    });
+
+    previousAnchoredNodeIdsRef.current = anchoredNodeIds;
+
+    if (didReleaseAny) {
+      graphRef.current?.d3ReheatSimulation();
+    }
+  }, [anchoredNodeIds, graphData.nodes]);
+
+  // ===========================================================================
   // Effects
   // ===========================================================================
 
@@ -493,6 +543,10 @@ const explodeSnapshotRef = useRef<
 
     if (node.id === selectedNode?.id) {
       return "#ffffff";
+    }
+
+    if (node.type === "movement" && anchoredNodeIds.has(node.id)) {
+      return MOVEMENT_NODE_OUTLINE_COLOR;
     }
 
     return GRAPH_BACKGROUND_COLOR;
@@ -680,6 +734,29 @@ const explodeSnapshotRef = useRef<
           <div className="graph-stats">
             <span>{graphData.nodes.length} nodes</span>
             <span>{graphData.links.length} relationships</span>
+            {(() => {
+              const visibleAnchoredCount = graphData.nodes.filter((node) =>
+                anchoredNodeIds.has(node.id),
+              ).length;
+
+              if (visibleAnchoredCount === 0) {
+                return <span>0 anchors</span>;
+              }
+
+              return (
+                <button
+                  className="clear-all-anchors-button"
+                  type="button"
+                  onClick={onUnanchorAll}
+                  onMouseEnter={() => setIsAnchorsButtonHovered(true)}
+                  onMouseLeave={() => setIsAnchorsButtonHovered(false)}
+                >
+                  {isAnchorsButtonHovered
+                    ? "Clear all"
+                    : `${visibleAnchoredCount} anchors`}
+                </button>
+              );
+            })()}
           </div>
         </div>
       </div>
@@ -803,6 +880,37 @@ const explodeSnapshotRef = useRef<
             autoPauseRedraw={!isExploding}
             onBackgroundClick={onSelectionClear}
             onNodeClick={(node: GraphNode) => onNodeSelect(node)}
+            onNodeDragEnd={(
+              node: GraphNode,
+              translate: { x: number; y: number },
+            ) => {
+              if (node.type !== "movement") {
+                return;
+              }
+
+              // Even a "click" on a node almost always registers a tiny bit
+              // of pointer movement, which still fires this handler. Only
+              // treat it as a genuine drag — and re-anchor — above the same
+              // 5px tolerance the library itself uses to distinguish a
+              // click from a drag. Below that, do nothing: this was
+              // click-adjacent jitter, not an intentional move.
+              const DRAG_TOLERANCE_PX = 5;
+              const moveDistance = Math.hypot(translate.x, translate.y);
+
+              if (moveDistance <= DRAG_TOLERANCE_PX) {
+                return;
+              }
+
+              // The library releases fx/fy back to unpinned on drag end for
+              // any node that wasn't already pinned before the drag
+              // started. For movement nodes specifically, override that
+              // and anchor them at the dropped position instead —
+              // everything else keeps the default float-free-after-drag
+              // behavior.
+              node.fx = node.x;
+              node.fy = node.y;
+              onNodeAnchored(node.id);
+            }}
           />
         )}
       </div>
