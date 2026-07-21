@@ -363,6 +363,48 @@ h2 {
   }
 
 /* ==========================================================================
+   Random Node Selector
+   ========================================================================== */
+
+.header-search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* <- adjust this to control search-to-icon spacing directly */
+}
+
+.random-node-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.random-node-die-face {
+  fill: transparent;
+  stroke: var(--relationship-highlight);
+  stroke-width: 1;
+  transition: fill 150ms ease;
+}
+
+.random-node-die-lines {
+  stroke: var(--relationship-highlight);
+  stroke-width: 1;
+  transition: stroke 150ms ease;
+}
+
+.random-node-button:hover .random-node-die-face {
+  fill: var(--relationship-highlight);
+}
+
+.random-node-button:hover .random-node-die-lines {
+  stroke: #181818;
+}
+
+/* ==========================================================================
    Search
    ========================================================================== */
 
@@ -656,12 +698,13 @@ h2 {
 
 .graph-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.graph-stats span {
+.graph-stats span,
+.graph-stats-inline {
   padding: 7px 10px;
   border: 1px solid var(--border-pill);
   border-radius: var(--radius-pill);
@@ -695,6 +738,13 @@ h2 {
 
 .graph-toolbar h2 {
   font-size: 1.15rem;
+}
+
+.graph-toolbar-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .graph-toolbar-actions {
@@ -1241,6 +1291,11 @@ h2 {
 .unanchor-button:hover,
 .clear-all-anchors-button:hover,
 .pathway-search-cancel:hover {
+  background: var(--relationship-highlight);
+  color: var(--text-on-highlight);
+}
+
+.fit-graph-button--active {
   background: var(--relationship-highlight);
   color: var(--text-on-highlight);
 }

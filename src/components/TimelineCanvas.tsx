@@ -354,15 +354,19 @@ function TimelineCanvas({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
-  // Timeline playback ("watch history unfold"). playbackStepRef tracks the
-  // current step index independent of React state, so the interval
-  // callback always reads the latest value without needing to be recreated
-  // on every tick. The step index is mapped to a year via sortedNodeYears
-  // (see below) rather than a fixed year-per-tick increment, so playback
-  // spends real time proportional to node density rather than calendar time.
+  // Timeline playback ("watch history unfold"). playbackNodeIndexRef tracks
+  // the current position within sortedNodeYears (not a fixed year-per-tick
+  // increment), so playback spends real time proportional to node density
+  // rather than calendar time. playbackLowerBoundRef tracks the lower
+  // bound held for the current session. Both are re-synced from the
+  // CURRENT yearRange prop every time Play is pressed (see
+  // handlePlaybackToggle) rather than trusted as-is across a pause — that
+  // sync is what makes resuming correctly respect any manual slider drag
+  // made while paused, instead of silently reverting to a stale position.
   const [isPlaying, setIsPlaying] = useState(false);
   const playbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const playbackStepRef = useRef(0);
+  const playbackNodeIndexRef = useRef(0);
+  const playbackLowerBoundRef = useRef(yearBounds[0]);
 
   useEffect(() => {
     return () => {
@@ -433,7 +437,17 @@ function TimelineCanvas({
   // yearBounds (the full, fixed dataset extent) is left untouched here and
   // continues to define the slider's own draggable range separately.
   const chartYearDomain = useMemo<[number, number]>(() => {
-    const years = datedNodes.flatMap((node) => {
+    // While actively playing, compute the domain from the stable,
+    // year-unfiltered node population instead of the currently-visible
+    // datedNodes — otherwise the domain briefly collapses to whatever's
+    // within the animation's current (near-zero-width, at the start)
+    // yearRange, and the axis has to "catch up" over the first frame or
+    // two. The moment playback isn't active — paused, finished, or a
+    // manual slider drag — this reverts to the existing auto-fit behavior
+    // exactly as before.
+    const sourceNodes = isPlaying ? nodesIgnoringYearFilter : datedNodes;
+
+    const years = sourceNodes.flatMap((node) => {
       const values: number[] = [];
       if (node.startYear !== undefined) values.push(node.startYear);
       const effectiveEnd = getEffectiveEndYear(node);
@@ -457,12 +471,14 @@ function TimelineCanvas({
     }
 
     return [min, max];
-  }, [datedNodes, yearBounds]);
+  }, [isPlaying, datedNodes, nodesIgnoringYearFilter, yearBounds]);
 
   const lanes = useMemo(() => {
-    const typesPresent = new Set(datedNodes.map((node) => node.type));
+    const typesPresent = new Set(
+      nodesIgnoringYearFilter.map((node) => node.type),
+    );
     return FILTERABLE_NODE_TYPES.filter((type) => typesPresent.has(type));
-  }, [datedNodes]);
+  }, [nodesIgnoringYearFilter]);
 
   const laneIndex = useMemo(() => {
     const map = new Map<NodeType, number>();
@@ -700,26 +716,30 @@ function TimelineCanvas({
 
   const handleResetYearRange = () => {
     stopPlayback();
-    playbackStepRef.current = 0;
     onYearRangeChange(yearBounds);
   };
 
   // Any manual drag on the slider should interrupt an active playback,
   // otherwise the interval's next tick would immediately fight the user's
-  // own change. Also resets the internal step position — a manual drag
-  // invalidates "resume from where playback left off" the same way Reset
-  // filter does.
+  // own change. No need to reset any internal playback position here —
+  // handlePlaybackToggle always re-syncs from the current yearRange prop
+  // when Play is next pressed, so whatever the user just dragged to is
+  // exactly what gets picked up.
   const handleManualYearRangeChange = (range: [number, number]) => {
     if (isPlaying) {
       stopPlayback();
-      playbackStepRef.current = 0;
     }
     onYearRangeChange(range);
   };
 
-  // Play/Pause/Resume, matching standard video-player expectations: pausing
-  // freezes in place; pressing play again resumes from there; reaching the
-  // end (or pressing play when already at the end) restarts from the start.
+  // Play/Pause/Resume. Pausing freezes in place. Pressing play again
+  // re-syncs from whatever's CURRENTLY displayed — not a remembered
+  // pre-pause position — so: resuming with no changes continues exactly
+  // where it was; resuming after dragging the right handle continues from
+  // the new position; resuming after dragging the left handle forward
+  // keeps that new left position in place while the right handle keeps
+  // advancing from where it was. Reaching the end (or pressing play when
+  // already at the end) restarts from the start.
   const handlePlaybackToggle = () => {
     if (isPlaying) {
       stopPlayback();
@@ -730,18 +750,39 @@ function TimelineCanvas({
       return;
     }
 
-    if (playbackStepRef.current >= PLAYBACK_STEP_COUNT) {
-      playbackStepRef.current = 0;
+    let resumeIndex = sortedNodeYears.findIndex(
+      (year) => year > yearRange[1],
+    );
+    if (resumeIndex === -1) {
+      resumeIndex = sortedNodeYears.length;
+    }
+
+    let lowerBound = yearRange[0];
+
+    // Nothing left to play forward to — restart fresh from the beginning.
+    if (resumeIndex >= sortedNodeYears.length) {
+      resumeIndex = 0;
+      lowerBound = yearBounds[0];
       onYearRangeChange([yearBounds[0], yearBounds[0]]);
     }
 
+    playbackNodeIndexRef.current = resumeIndex;
+    playbackLowerBoundRef.current = lowerBound;
+
     setIsPlaying(true);
 
-    playbackIntervalRef.current = setInterval(() => {
-      playbackStepRef.current += 1;
+    // Node-density-weighted timing: advance by a fixed fraction of the
+    // total node population each tick, not a fixed year amount.
+    const indexIncrement = Math.max(
+      1,
+      sortedNodeYears.length / PLAYBACK_STEP_COUNT,
+    );
 
-      if (playbackStepRef.current >= PLAYBACK_STEP_COUNT) {
-        onYearRangeChange([yearBounds[0], yearBounds[1]]);
+    playbackIntervalRef.current = setInterval(() => {
+      playbackNodeIndexRef.current += indexIncrement;
+
+      if (playbackNodeIndexRef.current >= sortedNodeYears.length) {
+        onYearRangeChange([playbackLowerBoundRef.current, yearBounds[1]]);
         if (playbackIntervalRef.current !== null) {
           clearInterval(playbackIntervalRef.current);
           playbackIntervalRef.current = null;
@@ -750,16 +791,10 @@ function TimelineCanvas({
         return;
       }
 
-      // Map step progress to a position by NODE INDEX, not by year — this
-      // is what makes dense eras consume proportionally more real time.
-      const progress = playbackStepRef.current / PLAYBACK_STEP_COUNT;
-      const nodeIndex = Math.min(
-        Math.floor(progress * sortedNodeYears.length),
-        sortedNodeYears.length - 1,
-      );
-      const currentYear = sortedNodeYears[nodeIndex];
+      const currentYear =
+        sortedNodeYears[Math.floor(playbackNodeIndexRef.current)];
 
-      onYearRangeChange([yearBounds[0], currentYear]);
+      onYearRangeChange([playbackLowerBoundRef.current, currentYear]);
     }, PLAYBACK_STEP_MS);
   };
 
@@ -817,7 +852,7 @@ function TimelineCanvas({
               onClick={handleResetYearRange}
               disabled={isYearRangeAtFullExtent}
             >
-              Reset filter
+              Reset
             </button>
 
             <div className="graph-stats">

@@ -102,7 +102,11 @@ function App() {
 
   return (
     <div className="app">
-      <Header nodes={graphData.nodes} onNodeSelect={handleNodeSelect} />
+      <Header
+        nodes={graphData.nodes}
+        selectedNode={selectedNode}
+        onNodeSelect={handleNodeSelect}
+      />
 
       <nav className="app-tabs" aria-label="Application views">
         <button

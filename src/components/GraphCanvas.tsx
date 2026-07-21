@@ -225,6 +225,12 @@ const previousAnchoredNodeIdsRef = useRef<Set<string>>(new Set());
 // acting as a button — swaps its label to "Clear all".
 const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
 
+// Controls how strongly nodes push apart in the collision force — see the
+// collision-force effect below. Clusters (tight) is the default view.
+const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
+  "clusters",
+);
+
   // ===========================================================================
   // Derived Data
   // ===========================================================================
@@ -709,19 +715,21 @@ const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
     if (!fg) {
       return;
     }
-  
+
+    const collisionPadding = graphViewMode === "connections" ? 60 : 5;
+
     const getBaseRadius = (node: GraphNode) => {
       const importance = node.importance ?? 5;
       const baseArea = importance >= 8 ? 110 : 24;
       const area = node.type === "movement" ? baseArea * 2 : baseArea;
-      return Math.sqrt(area) + 4;
+      return Math.sqrt(area) + collisionPadding;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
     fg.d3Force("link")?.distance(() => 8);
   
     fg.d3ReheatSimulation();
-  }, [graphData, hasDimensions]);
+  }, [graphData, hasDimensions, graphViewMode]);
 
 
   // ===========================================================================
@@ -731,9 +739,13 @@ const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
   return (
     <section className="canvas">
       <div className="graph-toolbar">
-        <div>
-          <p className="eyebrow">Prototype dataset</p>
+        <div className="graph-toolbar-title">
           <h2>Knowledge Graph</h2>
+
+          <div className="graph-stats">
+            <span>{graphData.nodes.length} nodes</span>
+            <span>{graphData.links.length} relationships</span>
+          </div>
         </div>
 
         <div className="graph-toolbar-actions">
@@ -745,33 +757,53 @@ const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
             Fit graph
           </button>
 
-          <div className="graph-stats">
-            <span>{graphData.nodes.length} nodes</span>
-            <span>{graphData.links.length} relationships</span>
-            {(() => {
-              const visibleAnchoredCount = graphData.nodes.filter((node) =>
-                anchoredNodeIds.has(node.id),
-              ).length;
+          {(() => {
+            const visibleAnchoredCount = graphData.nodes.filter((node) =>
+              anchoredNodeIds.has(node.id),
+            ).length;
 
-              if (visibleAnchoredCount === 0) {
-                return <span>0 anchors</span>;
-              }
+            if (visibleAnchoredCount === 0) {
+              return <span className="graph-stats-inline">0 anchors</span>;
+            }
 
-              return (
-                <button
-                  className="clear-all-anchors-button"
-                  type="button"
-                  onClick={onUnanchorAll}
-                  onMouseEnter={() => setIsAnchorsButtonHovered(true)}
-                  onMouseLeave={() => setIsAnchorsButtonHovered(false)}
-                >
-                  {isAnchorsButtonHovered
-                    ? "Clear all"
-                    : `${visibleAnchoredCount} anchors`}
-                </button>
-              );
-            })()}
-          </div>
+            return (
+              <button
+                className="clear-all-anchors-button"
+                type="button"
+                onClick={onUnanchorAll}
+                onMouseEnter={() => setIsAnchorsButtonHovered(true)}
+                onMouseLeave={() => setIsAnchorsButtonHovered(false)}
+              >
+                {isAnchorsButtonHovered
+                  ? "Clear all"
+                  : `${visibleAnchoredCount} anchors`}
+              </button>
+            );
+          })()}
+
+          <button
+            className={
+              graphViewMode === "connections"
+                ? "fit-graph-button fit-graph-button--active"
+                : "fit-graph-button"
+            }
+            type="button"
+            onClick={() => setGraphViewMode("connections")}
+          >
+            Connections
+          </button>
+
+          <button
+            className={
+              graphViewMode === "clusters"
+                ? "fit-graph-button fit-graph-button--active"
+                : "fit-graph-button"
+            }
+            type="button"
+            onClick={() => setGraphViewMode("clusters")}
+          >
+            Clusters
+          </button>
         </div>
       </div>
 

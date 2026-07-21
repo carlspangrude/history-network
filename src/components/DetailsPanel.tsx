@@ -552,8 +552,8 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
         </h2>
 
         <p className="pathway-search-hint">
-          Search for the entity you want to trace a connection to. Only
-          directed relationships (in their stored direction) are followed.
+          Search for the node you want to trace a connection to. Paths only
+          follow connections in the direction they point.
         </p>
 
         <div className="search">
