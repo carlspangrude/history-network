@@ -16,6 +16,7 @@ const VALID_NODE_TYPES = new Set<NodeType>([
   "movement",
   "person",
   "publication",
+  "technology",
   "theory",
 ]);
 
@@ -23,6 +24,7 @@ const VALID_DISCIPLINES = new Set<Discipline>([
   "Astronomy",
   "Biology",
   "Chemistry",
+  "Computer Science",
   "Economics",
   "Education",
   "Engineering",

@@ -25,6 +25,11 @@ interface TimelineCanvasProps {
   yearBounds: [number, number];
   yearRange: [number, number];
   onYearRangeChange: (range: [number, number]) => void;
+  // Type/discipline-filtered nodes with NO year filter applied — used only
+  // to drive playback's density-weighted timing. graphData itself is
+  // year-filtered and must not be used for this, since playback animates
+  // yearRange and would otherwise create a feedback loop.
+  nodesIgnoringYearFilter: GraphNode[];
   isOpen: boolean;
   onToggle: () => void;
   compact?: boolean;
@@ -44,9 +49,17 @@ const AXIS_RESERVED_HEIGHT = AXIS_GAP + AXIS_LABEL_OFFSET + AXIS_LABEL_BUFFER;
 
 const FULL_MARGIN = { top: 16, right: 32, bottom: AXIS_RESERVED_HEIGHT, left: 140 };
 const COMPACT_MARGIN = { top: 8, right: 20, bottom: AXIS_RESERVED_HEIGHT, left: 100 };
-const MAX_LANE_HEIGHT_FULL = 64;
-const MAX_LANE_HEIGHT_COMPACT = 32;
+const MAX_LANE_HEIGHT_FULL = 44;
+const MAX_LANE_HEIGHT_COMPACT = 24;
 const MINOR_TICK_INTERVAL_YEARS = 200;
+
+// Full playback covers the whole dataset in this real-world duration,
+// advancing in discrete throttled steps rather than every animation frame —
+// year-by-year granularity isn't perceptible anyway, and fewer discrete
+// yearRange changes means fewer downstream graphData recomputations.
+const PLAYBACK_DURATION_MS = 12000;
+const PLAYBACK_STEP_MS = 200;
+const PLAYBACK_STEP_COUNT = PLAYBACK_DURATION_MS / PLAYBACK_STEP_MS;
 const MIN_YEAR_RANGE = 10;
 const MIN_CHART_DOMAIN_SPAN = 200;
 
@@ -94,6 +107,10 @@ function getHexagonPoints(radius: number): string {
   }
 
   return points.join(" ");
+}
+
+function getDiamondPoints(radius: number): string {
+  return `0,${-radius} ${radius},0 0,${radius} ${-radius},0`;
 }
 
 function yearToPercent(year: number, bounds: [number, number]): number {
@@ -274,8 +291,8 @@ function TimelineRangeSlider({
       </div>
 
       <div className="timeline-range-labels" style={{ marginLeft, marginRight }}>
-        <span>{liveRange[0]}</span>
-        <span>{liveRange[1]}</span>
+        <span>{Math.round(liveRange[0])}</span>
+        <span>{Math.round(liveRange[1])}</span>
       </div>
     </div>
   );
@@ -284,6 +301,27 @@ function TimelineRangeSlider({
 // ===========================================================================
 // Timeline canvas
 // ===========================================================================
+
+// Plain SVG shapes instead of Unicode glyphs — "⏸" in particular renders as
+// a colored emoji-style icon on many platforms/fonts, inconsistent with the
+// plain triangle "▶" typically renders as. currentColor makes both inherit
+// whatever the button's current text color is, including on hover.
+function PlayIcon() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+      <polygon points="1,0.5 9,5 1,9.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+      <rect x="1" y="0.5" width="3" height="9" fill="currentColor" />
+      <rect x="6" y="0.5" width="3" height="9" fill="currentColor" />
+    </svg>
+  );
+}
 
 function TimelineCanvas({
   graphData,
@@ -295,6 +333,7 @@ function TimelineCanvas({
   yearBounds,
   yearRange,
   onYearRangeChange,
+  nodesIgnoringYearFilter,
   isOpen,
   onToggle,
   compact = false,
@@ -314,6 +353,24 @@ function TimelineCanvas({
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
+
+  // Timeline playback ("watch history unfold"). playbackStepRef tracks the
+  // current step index independent of React state, so the interval
+  // callback always reads the latest value without needing to be recreated
+  // on every tick. The step index is mapped to a year via sortedNodeYears
+  // (see below) rather than a fixed year-per-tick increment, so playback
+  // spends real time proportional to node density rather than calendar time.
+  const [isPlaying, setIsPlaying] = useState(false);
+  const playbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const playbackStepRef = useRef(0);
+
+  useEffect(() => {
+    return () => {
+      if (playbackIntervalRef.current !== null) {
+        clearInterval(playbackIntervalRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -350,6 +407,27 @@ function TimelineCanvas({
 
   const undatedCount = graphData.nodes.length - datedNodes.length;
 
+  // Every dated node's year (type/discipline-filtered, but NOT year-
+  // filtered), sorted ascending, with duplicates kept — playback steps
+  // through this array by index rather than through raw calendar years, so
+  // a stretch with many nodes at similar years naturally consumes more of
+  // the fixed step budget than a sparse stretch, without any manual density
+  // calculation. Deliberately built from nodesIgnoringYearFilter rather
+  // than datedNodes/graphData: those are already year-filtered, and since
+  // playback itself animates yearRange, using them here would make this
+  // array grow mid-animation and the resulting index targets unstable.
+  const sortedNodeYears = useMemo(() => {
+    const years: number[] = [];
+    for (const node of nodesIgnoringYearFilter) {
+      const year = getNodeYear(node);
+      if (year !== undefined) {
+        years.push(year);
+      }
+    }
+    years.sort((a, b) => a - b);
+    return years;
+  }, [nodesIgnoringYearFilter]);
+
   // Auto-fit the chart's plotted domain to whatever data is currently
   // visible (after type/discipline/year filters) — similar to "Fit graph".
   // yearBounds (the full, fixed dataset extent) is left untouched here and
@@ -362,22 +440,22 @@ function TimelineCanvas({
       if (effectiveEnd !== undefined) values.push(effectiveEnd);
       return values;
     });
-  
+
     if (years.length === 0) {
       return yearBounds;
     }
-  
+
     let min = Math.min(...years);
     let max = Math.max(...years);
-  
+
     const span = max - min;
-  
+
     if (span < MIN_CHART_DOMAIN_SPAN) {
       const center = (min + max) / 2;
       min = center - MIN_CHART_DOMAIN_SPAN / 2;
       max = center + MIN_CHART_DOMAIN_SPAN / 2;
     }
-  
+
     return [min, max];
   }, [datedNodes, yearBounds]);
 
@@ -612,8 +690,77 @@ function TimelineCanvas({
   const isYearRangeAtFullExtent =
     yearRange[0] === yearBounds[0] && yearRange[1] === yearBounds[1];
 
+  const stopPlayback = () => {
+    if (playbackIntervalRef.current !== null) {
+      clearInterval(playbackIntervalRef.current);
+      playbackIntervalRef.current = null;
+    }
+    setIsPlaying(false);
+  };
+
   const handleResetYearRange = () => {
+    stopPlayback();
+    playbackStepRef.current = 0;
     onYearRangeChange(yearBounds);
+  };
+
+  // Any manual drag on the slider should interrupt an active playback,
+  // otherwise the interval's next tick would immediately fight the user's
+  // own change. Also resets the internal step position — a manual drag
+  // invalidates "resume from where playback left off" the same way Reset
+  // filter does.
+  const handleManualYearRangeChange = (range: [number, number]) => {
+    if (isPlaying) {
+      stopPlayback();
+      playbackStepRef.current = 0;
+    }
+    onYearRangeChange(range);
+  };
+
+  // Play/Pause/Resume, matching standard video-player expectations: pausing
+  // freezes in place; pressing play again resumes from there; reaching the
+  // end (or pressing play when already at the end) restarts from the start.
+  const handlePlaybackToggle = () => {
+    if (isPlaying) {
+      stopPlayback();
+      return;
+    }
+
+    if (sortedNodeYears.length === 0) {
+      return;
+    }
+
+    if (playbackStepRef.current >= PLAYBACK_STEP_COUNT) {
+      playbackStepRef.current = 0;
+      onYearRangeChange([yearBounds[0], yearBounds[0]]);
+    }
+
+    setIsPlaying(true);
+
+    playbackIntervalRef.current = setInterval(() => {
+      playbackStepRef.current += 1;
+
+      if (playbackStepRef.current >= PLAYBACK_STEP_COUNT) {
+        onYearRangeChange([yearBounds[0], yearBounds[1]]);
+        if (playbackIntervalRef.current !== null) {
+          clearInterval(playbackIntervalRef.current);
+          playbackIntervalRef.current = null;
+        }
+        setIsPlaying(false);
+        return;
+      }
+
+      // Map step progress to a position by NODE INDEX, not by year — this
+      // is what makes dense eras consume proportionally more real time.
+      const progress = playbackStepRef.current / PLAYBACK_STEP_COUNT;
+      const nodeIndex = Math.min(
+        Math.floor(progress * sortedNodeYears.length),
+        sortedNodeYears.length - 1,
+      );
+      const currentYear = sortedNodeYears[nodeIndex];
+
+      onYearRangeChange([yearBounds[0], currentYear]);
+    }, PLAYBACK_STEP_MS);
   };
 
   // ===========================================================================
@@ -649,6 +796,24 @@ function TimelineCanvas({
             <button
               className="fit-graph-button"
               type="button"
+              onClick={handlePlaybackToggle}
+              disabled={sortedNodeYears.length === 0}
+            >
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+              >
+                {isPlaying ? <PauseIcon /> : <PlayIcon />}
+                {isPlaying ? "Pause" : "Play"}
+              </span>
+            </button>
+
+            <button
+              className="fit-graph-button"
+              type="button"
               onClick={handleResetYearRange}
               disabled={isYearRangeAtFullExtent}
             >
@@ -667,7 +832,7 @@ function TimelineCanvas({
             <TimelineRangeSlider
               bounds={yearBounds}
               range={yearRange}
-              onChange={onYearRangeChange}
+              onChange={handleManualYearRangeChange}
               marginLeft={MARGIN.left}
               marginRight={MARGIN.right}
             />
@@ -822,6 +987,17 @@ function TimelineCanvas({
                                 fill={getHollowShapeFill(node)}
                                 stroke={getShapeOutlineColor(node, THEORY_NODE_OUTLINE_COLOR)}
                                 strokeWidth={1.5}
+                              />
+                            );
+                          }
+
+                          if (node.type === "technology") {
+                            return (
+                              <polygon
+                                points={getDiamondPoints(radius)}
+                                fill={getNodeFill(node)}
+                                stroke={GRAPH_BACKGROUND_COLOR}
+                                strokeWidth={0.75}
                               />
                             );
                           }

@@ -67,6 +67,7 @@ export type Discipline =
   | "Astronomy"
   | "Biology"
   | "Chemistry"
+  | "Computer Science"
   | "Economics"
   | "Education"
   | "Engineering"

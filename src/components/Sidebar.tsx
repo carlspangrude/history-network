@@ -28,6 +28,7 @@ const visibleLegendTypes: NodeType[] = [
   "theory",
   "institution",
   "movement",
+  "technology",
 ];
 
 interface LegendSwatchProps {
@@ -80,6 +81,14 @@ function LegendSwatch({ type }: LegendSwatchProps) {
     return (
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
         <polygon points="2,13 14,13 14,7 8,2 2,7" fill={color} />
+      </svg>
+    );
+  }
+
+  if (type === "technology") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <polygon points="8,1.5 14.5,8 8,14.5 1.5,8" fill={color} />
       </svg>
     );
   }

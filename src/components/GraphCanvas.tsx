@@ -92,6 +92,20 @@ function traceHexagon(
   context.closePath();
 }
 
+function traceDiamond(
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  radius: number,
+) {
+  context.beginPath();
+  context.moveTo(x, y - radius);
+  context.lineTo(x + radius, y);
+  context.lineTo(x, y + radius);
+  context.lineTo(x - radius, y);
+  context.closePath();
+}
+
 // ===========================================================================
 // Explode-view tween (bypasses d3-force entirely — see the effect below)
 // ===========================================================================
@@ -777,7 +791,8 @@ const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
               node.type === "movement" ||
               node.type === "publication" ||
               node.type === "institution" ||
-              node.type === "theory"
+              node.type === "theory" ||
+              node.type === "technology"
                 ? "replace"
                 : "after"
             }
@@ -826,6 +841,13 @@ const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
                   THEORY_NODE_OUTLINE_COLOR,
                 );
                 context.lineWidth = 2 / globalScale;
+                context.stroke();
+              } else if (node.type === "technology") {
+                traceDiamond(context, node.x, node.y, nodeRadius);
+                context.fillStyle = getNodeColor(node);
+                context.fill();
+                context.strokeStyle = GRAPH_BACKGROUND_COLOR;
+                context.lineWidth = 1 / globalScale;
                 context.stroke();
               }
 

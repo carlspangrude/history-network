@@ -2571,6 +2571,114 @@
       "startYearApprox": true
     },
     {
+      "id": "aryabhata",
+      "name": "Aryabhata",
+      "type": "person",
+      "importance": 9,
+      "description": "Indian mathematician and astronomer whose Aryabhatiya introduced an early positional numeral system, an accurate approximation of pi, and systematic trigonometric methods, while proposing that Earth rotates on its axis to explain the apparent motion of the stars.",
+      "startYear": 476,
+      "endYear": 550,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Aryabhatiya",
+        "Place-Value System",
+        "Trigonometry",
+        "Earth's Rotation",
+        "Gupta Era"
+      ]
+    },
+    {
+      "id": "aryabhatiya",
+      "name": "Aryabhatiya",
+      "type": "publication",
+      "importance": 8,
+      "description": "Aryabhata's foundational treatise on mathematics and astronomy, composed in verse, presenting an early positional decimal numeral system, methods for arithmetic and algebra, trigonometric sine tables, and an astronomical model in which Earth rotates on its axis.",
+      "startYear": 499,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Place-Value System",
+        "Trigonometry",
+        "Sine Tables",
+        "Gupta Era"
+      ]
+    },
+    {
+      "id": "hindu-arabic-numeral-system",
+      "name": "Hindu-Arabic Numeral System",
+      "type": "theory",
+      "importance": 10,
+      "description": "A positional decimal numeral system using ten digits, including zero as both placeholder and true numerical value, that enabled far more efficient arithmetic than earlier numeral systems. Developed over centuries in India and later transmitted through the Islamic world into Europe, it became the standard numeral system used throughout the modern world.",
+      "startYear": 628,
+      "startYearApprox": true,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Place-Value System",
+        "Zero",
+        "Decimal System",
+        "Positional Notation"
+      ]
+    },
+    {
+      "id": "brahmagupta",
+      "name": "Brahmagupta",
+      "type": "person",
+      "importance": 9,
+      "description": "Indian mathematician and astronomer whose Brahmasphutasiddhanta gave the first known systematic rules for arithmetic with zero and negative numbers, alongside methods for solving quadratic equations and significant contributions to astronomy.",
+      "startYear": 598,
+      "endYear": 668,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Brahmasphutasiddhanta",
+        "Zero",
+        "Negative Numbers",
+        "Quadratic Equations"
+      ]
+    },
+    {
+      "id": "brahmasphutasiddhanta",
+      "name": "Brahmasphutasiddhanta",
+      "type": "publication",
+      "importance": 8,
+      "description": "\"The Correctly Established Doctrine of Brahma\" is Brahmagupta's major astronomical and mathematical treatise, notable for providing the first known formal arithmetic rules for zero and negative numbers alongside methods for solving quadratic equations and extensive astronomical calculations.",
+      "startYear": 628,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Zero",
+        "Negative Numbers",
+        "Quadratic Equations"
+      ]
+    },
+    {
+      "id": "zero-and-negative-numbers",
+      "name": "Zero and Negative Numbers",
+      "type": "theory",
+      "importance": 9,
+      "description": "A formal system of arithmetic rules governing zero and negative quantities as legitimate numbers in their own right, rather than mere placeholders or absences, first systematically presented by Brahmagupta. This framework resolved a major conceptual barrier in mathematics and became foundational to algebra.",
+      "startYear": 628,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Zero",
+        "Negative Numbers",
+        "Arithmetic Rules"
+      ]
+    },
+    {
       "id": "euclidean-geometry",
       "name": "Euclidean Geometry",
       "type": "theory",
@@ -2578,8 +2686,417 @@
       "description": "A system of geometry built from definitions, postulates, and logical proof, organized by Euclid into a coherent axiomatic framework. It became the standard model of geometric reasoning and rigorous mathematical demonstration for over two thousand years.",
       "startYear": -300,
       "startYearApprox": true,
-      "disciplines": ["Mathematics"],
-      "tags": ["Axiomatic Method", "Postulates", "Geometric Proof", "Deductive Reasoning"]
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Axiomatic Method",
+        "Postulates",
+        "Geometric Proof",
+        "Deductive Reasoning"
+      ]
+    },
+    {
+      "id": "zhang-heng",
+      "name": "Zhang Heng",
+      "type": "person",
+      "importance": 9,
+      "description": "Han dynasty polymath — astronomer, mathematician, engineer, and geographer — who invented the first seismoscope capable of detecting the direction of distant earthquakes and built an early water-powered armillary sphere for astronomical observation. He also produced an influential star catalog and calculated an accurate approximation of pi.",
+      "startYear": 78,
+      "endYear": 139,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Engineering"
+      ],
+      "tags": [
+        "Seismoscope",
+        "Armillary Sphere",
+        "Han Dynasty",
+        "Star Catalog"
+      ]
+    },
+    {
+      "id": "shen-kuo",
+      "name": "Shen Kuo",
+      "type": "person",
+      "importance": 9,
+      "description": "Song dynasty polymath — scientist, mathematician, astronomer, and engineer — whose Dream Pool Essays recorded the first known description of magnetic declination, documented the earliest known use of a magnetized needle for navigation, and preserved the account of Bi Sheng's invention of movable type printing. His wide-ranging observations spanned geology, meteorology, optics, and engineering.",
+      "startYear": 1031,
+      "endYear": 1095,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Engineering",
+        "Geography"
+      ],
+      "tags": [
+        "Dream Pool Essays",
+        "Magnetic Declination",
+        "Song Dynasty",
+        "Polymath"
+      ]
+    },
+    {
+      "id": "bi-sheng",
+      "name": "Bi Sheng",
+      "type": "person",
+      "importance": 7,
+      "description": "Song dynasty artisan credited with inventing movable type printing using individually carved ceramic characters, allowing texts to be composed and reprinted far more flexibly than fixed woodblock printing. His work survives only through Shen Kuo's written account, as no examples of his original type or writings are known to remain.",
+      "startYear": 990,
+      "endYear": 1051,
+      "disciplines": [
+        "Engineering"
+      ],
+      "tags": [
+        "Movable Type",
+        "Printing",
+        "Song Dynasty",
+        "Ceramic Type"
+      ]
+    },
+    {
+      "id": "cai-lun",
+      "name": "Cai Lun",
+      "type": "person",
+      "importance": 8,
+      "description": "Han dynasty court official traditionally credited with refining and systematizing papermaking into a practical, reproducible process using tree bark, hemp, rags, and fishing nets. Although rudimentary paper existed before him, his process made paper cheap and widespread enough to transform writing and record-keeping across East Asia and, eventually, the world.",
+      "startYear": 50,
+      "startYearApprox": true,
+      "endYear": 121,
+      "disciplines": [
+        "Engineering"
+      ],
+      "tags": [
+        "Papermaking",
+        "Han Dynasty",
+        "Manufacturing"
+      ]
+    },
+    {
+      "id": "papermaking",
+      "name": "Papermaking",
+      "type": "technology",
+      "importance": 9,
+      "description": "A process for manufacturing paper from plant fibers, refined into practical, reproducible form in Han dynasty China. It gradually spread westward along trade routes, reaching the Islamic world by the late eighth century and Europe by the twelfth, fundamentally transforming the scale and cost of written communication everywhere it arrived.",
+      "startYear": 105,
+      "disciplines": [
+        "Engineering"
+      ],
+      "tags": [
+        "Manufacturing",
+        "Writing Materials"
+      ]
+    },
+    {
+      "id": "movable-type-printing",
+      "name": "Movable Type Printing",
+      "type": "technology",
+      "importance": 8,
+      "description": "A printing method using individually cast or carved characters that can be rearranged and reused for different texts, in contrast to fixed woodblock printing. First developed in Song dynasty China using ceramic type, it predates the independent development of movable metal type in Europe by roughly four centuries.",
+      "startYear": 1040,
+      "startYearApprox": true,
+      "disciplines": [
+        "Engineering",
+        "Literature"
+      ],
+      "tags": [
+        "Printing",
+        "Ceramic Type",
+        "Reproducible Text"
+      ]
+    },
+    {
+      "id": "compass",
+      "name": "Compass (Magnetic)",
+      "type": "technology",
+      "importance": 8,
+      "description": "A navigational instrument using a magnetized needle to indicate direction, developed gradually in China from earlier lodestone-based divination tools. Shen Kuo's Dream Pool Essays contains the earliest known clear written description of a magnetized needle used for direction-finding, including the phenomenon of magnetic declination.",
+      "startYear": 1088,
+      "startYearApprox": true,
+      "disciplines": [
+        "Engineering",
+        "Geography"
+      ],
+      "tags": [
+        "Navigation",
+        "Magnetism",
+        "Direction-Finding"
+      ]
+    },
+    {
+      "id": "dream-pool-essays",
+      "name": "Dream Pool Essays",
+      "type": "publication",
+      "importance": 8,
+      "description": "Shen Kuo's wide-ranging collection of essays covering astronomy, mathematics, geology, meteorology, optics, and engineering, notable for containing the first known description of magnetic declination and the only surviving account of Bi Sheng's invention of movable type printing.",
+      "startYear": 1088,
+      "disciplines": [
+        "Astronomy",
+        "Mathematics",
+        "Engineering",
+        "Geography"
+      ],
+      "tags": [
+        "Magnetic Declination",
+        "Movable Type",
+        "Song Dynasty",
+        "Natural Observation"
+      ]
+    },
+    {
+      "id": "magnetic-declination",
+      "name": "Magnetic Declination",
+      "type": "theory",
+      "importance": 7,
+      "description": "The phenomenon in which a compass needle points toward magnetic north rather than true geographic north, with the angular difference varying by location. Its first known written description appears in Shen Kuo's Dream Pool Essays, marking a foundational observation in the history of geomagnetism.",
+      "startYear": 1088,
+      "disciplines": [
+        "Geography",
+        "Astronomy"
+      ],
+      "tags": [
+        "Geomagnetism",
+        "Navigation",
+        "True North"
+      ]
+    },
+    {
+      "id": "charles-babbage",
+      "name": "Charles Babbage",
+      "type": "person",
+      "importance": 9,
+      "description": "English mathematician and mechanical engineer who designed the Difference Engine and the Analytical Engine, a general-purpose mechanical computer capable of following instructions to perform any calculation. Though never completed in his lifetime, the Analytical Engine's design anticipated core concepts of programmable computing over a century before electronic computers existed.",
+      "startYear": 1791,
+      "endYear": 1871,
+      "disciplines": [
+        "Mathematics",
+        "Engineering"
+      ],
+      "tags": [
+        "Analytical Engine",
+        "Difference Engine",
+        "Mechanical Computing",
+        "Victorian Era"
+      ]
+    },
+    {
+      "id": "ada-lovelace",
+      "name": "Ada Lovelace",
+      "type": "person",
+      "importance": 9,
+      "description": "English mathematician who wrote extensive notes on Babbage's Analytical Engine, including what is widely recognized as the first published algorithm intended for execution by a machine. She was among the first to recognize that such a machine could manipulate symbols and patterns generally, not merely calculate numbers.",
+      "startYear": 1815,
+      "endYear": 1852,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "Analytical Engine",
+        "First Algorithm",
+        "Symbolic Computation",
+        "Victorian Era"
+      ]
+    },
+    {
+      "id": "analytical-engine",
+      "name": "Analytical Engine",
+      "type": "technology",
+      "importance": 9,
+      "description": "Charles Babbage's design for a mechanical, general-purpose computer, using punched cards for instructions and capable of following a sequence of operations rather than performing only a single fixed calculation. Never completed in his lifetime, its design nonetheless anticipated the stored-program concept central to later computing.",
+      "startYear": 1837,
+      "startYearApprox": true,
+      "disciplines": [
+        "Mathematics",
+        "Engineering"
+      ],
+      "tags": [
+        "Mechanical Computing",
+        "Punched Cards",
+        "Programmable Machine"
+      ]
+    },
+    {
+      "id": "notes-on-the-analytical-engine",
+      "name": "Notes on the Analytical Engine",
+      "type": "publication",
+      "importance": 8,
+      "description": "Ada Lovelace's extensive annotations on Babbage's Analytical Engine, including a detailed method for calculating Bernoulli numbers now widely recognized as the first algorithm published for execution by a machine, along with a broader argument that such machines could process symbols of any kind, not only numbers.",
+      "startYear": 1843,
+      "disciplines": [
+        "Mathematics"
+      ],
+      "tags": [
+        "First Algorithm",
+        "Symbolic Computation",
+        "Analytical Engine"
+      ]
+    },
+    {
+      "id": "alan-turing",
+      "name": "Alan Turing",
+      "type": "person",
+      "importance": 10,
+      "description": "English mathematician and logician who formalized the concept of computation itself through the theoretical construct now called the Turing machine, laid foundational groundwork for artificial intelligence, and led the codebreaking effort that deciphered the German Enigma cipher during the Second World War.",
+      "startYear": 1912,
+      "endYear": 1954,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Turing Machine",
+        "Computability",
+        "Enigma",
+        "Artificial Intelligence",
+        "Bletchley Park"
+      ]
+    },
+    {
+      "id": "on-computable-numbers",
+      "name": "On Computable Numbers",
+      "type": "publication",
+      "importance": 9,
+      "description": "Alan Turing's 1936 paper introducing the theoretical Turing machine as a formal model of computation, and using it to prove fundamental limits on what any mechanical procedure can compute.",
+      "startYear": 1936,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Turing Machine",
+        "Computability",
+        "Decidability"
+      ]
+    },
+    {
+      "id": "turing-machine",
+      "name": "Turing Machine (Computability Theory)",
+      "type": "theory",
+      "importance": 10,
+      "description": "A formal mathematical model of computation consisting of a simple machine manipulating symbols on an infinite tape according to a fixed set of rules, capable of simulating any algorithmic process. It defined the theoretical limits of what can be computed and became the foundational model underlying all of theoretical computer science.",
+      "startYear": 1936,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Computability",
+        "Algorithm",
+        "Formal Systems"
+      ]
+    },
+    {
+      "id": "claude-shannon",
+      "name": "Claude Shannon",
+      "type": "person",
+      "importance": 10,
+      "description": "American mathematician and electrical engineer who founded information theory, providing a mathematical framework for quantifying, transmitting, and compressing information. He also demonstrated that electrical switching circuits could implement Boolean logic, a foundational insight for digital circuit design.",
+      "startYear": 1916,
+      "endYear": 2001,
+      "disciplines": [
+        "Mathematics",
+        "Engineering",
+        "Computer Science"
+      ],
+      "tags": [
+        "Information Theory",
+        "Boolean Logic",
+        "Digital Circuits",
+        "Bell Labs"
+      ]
+    },
+    {
+      "id": "a-mathematical-theory-of-communication",
+      "name": "A Mathematical Theory of Communication",
+      "type": "publication",
+      "importance": 9,
+      "description": "Claude Shannon's 1948 paper founding information theory, introducing the bit as a fundamental unit of information and establishing mathematical limits on data compression and reliable transmission over noisy channels.",
+      "startYear": 1948,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Information Theory",
+        "The Bit",
+        "Data Transmission"
+      ]
+    },
+    {
+      "id": "information-theory",
+      "name": "Information Theory",
+      "type": "theory",
+      "importance": 10,
+      "description": "A mathematical framework for quantifying information, measuring the capacity of communication channels, and determining the limits of data compression and reliable transmission in the presence of noise. It became foundational to digital communication, computing, and data storage.",
+      "startYear": 1948,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "The Bit",
+        "Data Compression",
+        "Channel Capacity"
+      ]
+    },
+    {
+      "id": "john-von-neumann",
+      "name": "John von Neumann",
+      "type": "person",
+      "importance": 10,
+      "description": "Hungarian-American mathematician and polymath who proposed the stored-program computer architecture underlying nearly all modern computers, rigorously formalized the mathematical foundations of quantum mechanics using Hilbert space theory, and made major contributions to game theory and the Manhattan Project.",
+      "startYear": 1903,
+      "endYear": 1957,
+      "disciplines": [
+        "Mathematics",
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Von Neumann Architecture",
+        "Stored-Program Computer",
+        "Quantum Mechanics",
+        "Game Theory"
+      ]
+    },
+    {
+      "id": "von-neumann-architecture",
+      "name": "Von Neumann Architecture",
+      "type": "theory",
+      "importance": 9,
+      "description": "A computer architecture in which program instructions and data are stored together in the same memory, allowing a machine to be reprogrammed for any task without physical reconfiguration. It became the basic organizing design underlying nearly all general-purpose computers.",
+      "startYear": 1945,
+      "disciplines": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "Stored-Program Computer",
+        "Computer Architecture",
+        "Memory"
+      ]
+    },
+    {
+      "id": "information-age",
+      "name": "Information Age",
+      "type": "movement",
+      "importance": 10,
+      "description": "An ongoing period of rapid transformation driven by the ability to create, store, process, and transmit information electronically at massive scale. Built on the theoretical foundations of computability and information theory and the practical architecture of the stored-program computer, it has reshaped communication, science, industry, and daily life on a scale comparable to the Industrial Revolution.",
+      "startYear": 1940,
+      "startYearApprox": true,
+      "isOngoing": true,
+      "disciplines": [
+        "Computer Science",
+        "Mathematics",
+        "Engineering"
+      ],
+      "tags": [
+        "Digital Revolution",
+        "Computing",
+        "Information Theory",
+        "Telecommunications"
+      ]
     }
   ],
   "edges": [
@@ -2639,7 +3156,7 @@
       "id": "einstein-special-relativity",
       "source": "einstein",
       "target": "special-relativity",
-      "relationship": "proposed",
+      "relationship": "formalized",
       "confidence": 1
     },
     {
@@ -2654,7 +3171,7 @@
       "id": "plato-theory-of-forms",
       "source": "plato",
       "target": "theory-of-forms",
-      "relationship": "proposed",
+      "relationship": "formalized",
       "description": "Plato's dialogues develop several related accounts of Forms as intelligible objects of knowledge.",
       "confidence": 0.9
     },
@@ -3168,35 +3685,6 @@
       "description": "Copernicus's heliocentric model challenged the Aristotelian geocentric cosmology that had dominated European thought for centuries.",
       "confidence": 1,
       "directness": "indirect"
-    },
-    {
-      "id": "laws-of-planetary-motion-universal-gravitation",
-      "source": "laws-of-planetary-motion",
-      "target": "universal-gravitation",
-      "relationship": "enabled",
-      "description": "Newton showed that an inverse-square gravitational force law mathematically produces exactly the elliptical orbits and periodic relationships described by Kepler's three laws, making them the specific empirical target his theory needed to reproduce.",
-      "confidence": 0.97,
-      "directness": "direct",
-      "evidenceType": "scholarly_consensus"
-    },
-    {
-      "id": "newton-universal-gravitation",
-      "source": "newton",
-      "target": "universal-gravitation",
-      "relationship": "proposed",
-      "confidence": 1,
-      "directness": "direct",
-      "evidenceType": "primary_source"
-    },
-    {
-      "id": "laws-of-planetary-motion-newton",
-      "source": "laws-of-planetary-motion",
-      "target": "newton",
-      "relationship": "enabled",
-      "description": "Kepler's mathematical laws of planetary motion provided the empirical foundation from which Newton derived the law of universal gravitation.",
-      "confidence": 1,
-      "directness": "direct",
-      "evidenceType": "scholarly_consensus"
     },
     {
       "id": "copernicus-scientific-revolution",
@@ -4605,16 +5093,6 @@
       "evidenceType": "scholarly_consensus"
     },
     {
-      "id": "house-of-wisdom-elements",
-      "source": "house-of-wisdom",
-      "target": "elements",
-      "relationship": "preserved",
-      "description": "Elements was among the earliest Greek mathematical works translated at the House of Wisdom, ensuring its continued study and transmission.",
-      "confidence": 0.93,
-      "directness": "direct",
-      "evidenceType": "scholarly_consensus"
-    },
-    {
       "id": "house-of-wisdom-islamic-golden-age",
       "source": "house-of-wisdom",
       "target": "islamic-golden-age",
@@ -4893,6 +5371,102 @@
       "evidenceType": "scholarly_consensus"
     },
     {
+      "id": "aryabhata-aryabhatiya",
+      "source": "aryabhata",
+      "target": "aryabhatiya",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "aryabhatiya-hindu-arabic-numeral-system",
+      "source": "aryabhatiya",
+      "target": "hindu-arabic-numeral-system",
+      "relationship": "formalized",
+      "description": "The Aryabhatiya presented an early systematic positional numeral system, giving the first known rigorous mathematical treatment of place-value notation in India.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "brahmagupta-brahmasphutasiddhanta",
+      "source": "brahmagupta",
+      "target": "brahmasphutasiddhanta",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "brahmasphutasiddhanta-zero-and-negative-numbers",
+      "source": "brahmasphutasiddhanta",
+      "target": "zero-and-negative-numbers",
+      "relationship": "formalized",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "brahmasphutasiddhanta-hindu-arabic-numeral-system",
+      "source": "brahmasphutasiddhanta",
+      "target": "hindu-arabic-numeral-system",
+      "relationship": "extended",
+      "description": "Brahmagupta completed the positional numeral system's core logic by giving zero formal treatment as a number, extending the place-value framework Aryabhata had begun.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "aryabhata-brahmagupta",
+      "source": "aryabhata",
+      "target": "brahmagupta",
+      "relationship": "influenced",
+      "description": "Brahmagupta directly engaged with, refined, and in places corrected Aryabhata's astronomical models, working within the mathematical tradition Aryabhata helped establish.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "zero-and-negative-numbers-algebra",
+      "source": "zero-and-negative-numbers",
+      "target": "algebra",
+      "relationship": "influenced",
+      "description": "Formal rules for zero and negative quantities gave algebra the conceptual tools to handle negative solutions and coefficients, though algebra's development also drew on separate Babylonian and Greek roots.",
+      "confidence": 0.7,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-brahmasphutasiddhanta",
+      "source": "house-of-wisdom",
+      "target": "brahmasphutasiddhanta",
+      "relationship": "preserved",
+      "description": "Brahmagupta's treatise was translated into Arabic as the Sindhind under Caliph al-Mansur and studied extensively at the House of Wisdom, forming a key channel through which Indian mathematics reached the Islamic world.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "hindu-arabic-numeral-system-al-khwarizmi",
+      "source": "hindu-arabic-numeral-system",
+      "target": "al-khwarizmi",
+      "relationship": "influenced",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "al-khwarizmi-hindu-arabic-numeral-system",
+      "source": "al-khwarizmi",
+      "target": "hindu-arabic-numeral-system",
+      "relationship": "popularized",
+      "description": "Al-Khwarizmi's mathematical writings played a central role in transmitting and popularizing the Hindu-Arabic numeral system across the Islamic world and, eventually, Europe.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
       "id": "euclid-elements",
       "source": "euclid",
       "target": "elements",
@@ -4989,6 +5563,320 @@
       "description": "The geometric appendix to the Discourse reformulated classical Euclidean problems using algebraic coordinates, directly building on and transforming Euclidean geometric foundations.",
       "confidence": 0.88,
       "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "house-of-wisdom-elements",
+      "source": "house-of-wisdom",
+      "target": "elements",
+      "relationship": "preserved",
+      "description": "Elements was among the earliest Greek mathematical works translated at the House of Wisdom, ensuring its continued study and transmission.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "laws-of-planetary-motion-newton",
+      "source": "laws-of-planetary-motion",
+      "target": "newton",
+      "relationship": "enabled",
+      "description": "Kepler's mathematical laws of planetary motion provided the empirical foundation from which Newton derived the law of universal gravitation.",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "laws-of-planetary-motion-universal-gravitation",
+      "source": "laws-of-planetary-motion",
+      "target": "universal-gravitation",
+      "relationship": "enabled",
+      "description": "Newton showed that an inverse-square gravitational force law mathematically produces exactly the elliptical orbits and periodic relationships described by Kepler's three laws, making them the specific empirical target his theory needed to reproduce.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "newton-universal-gravitation",
+      "source": "newton",
+      "target": "universal-gravitation",
+      "relationship": "proposed",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "cai-lun-papermaking",
+      "source": "cai-lun",
+      "target": "papermaking",
+      "relationship": "developed",
+      "description": "Cai Lun refined earlier rudimentary paper-making techniques into a practical, reproducible process using widely available materials, making paper cheap enough for broad everyday use.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "shen-kuo-dream-pool-essays",
+      "source": "shen-kuo",
+      "target": "dream-pool-essays",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "bi-sheng-movable-type-printing",
+      "source": "bi-sheng",
+      "target": "movable-type-printing",
+      "relationship": "invented",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dream-pool-essays-movable-type-printing",
+      "source": "dream-pool-essays",
+      "target": "movable-type-printing",
+      "relationship": "preserved",
+      "description": "Shen Kuo's account is the only surviving record of Bi Sheng's invention; without it, the technology's origin would be entirely unknown.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "shen-kuo-magnetic-declination",
+      "source": "shen-kuo",
+      "target": "magnetic-declination",
+      "relationship": "discovered",
+      "description": "Shen Kuo observed and recorded that a magnetized needle points slightly away from true geographic north, the first known documented observation of magnetic declination.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dream-pool-essays-magnetic-declination",
+      "source": "dream-pool-essays",
+      "target": "magnetic-declination",
+      "relationship": "formalized",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "dream-pool-essays-compass",
+      "source": "dream-pool-essays",
+      "target": "compass",
+      "relationship": "formalized",
+      "description": "Shen Kuo gave the earliest known clear written description of a magnetized needle used for direction-finding, converting an existing but undocumented practical technique into recorded knowledge.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "papermaking-house-of-wisdom",
+      "source": "papermaking",
+      "target": "house-of-wisdom",
+      "relationship": "enabled",
+      "description": "Papermaking technology reached Baghdad in the late eighth century, reportedly following the transmission of Chinese papermaking knowledge after the Battle of Talas, and directly enabled the manuscript production and translation activity central to the House of Wisdom.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "movable-type-printing-gutenberg",
+      "source": "movable-type-printing",
+      "target": "johannes-gutenberg",
+      "relationship": "anticipated",
+      "description": "Chinese movable type printing predates Gutenberg's independent development of movable metal type by roughly four centuries; the extent of any direct knowledge transfer between the two remains debated among historians.",
+      "confidence": 0.6,
+      "directness": "indirect",
+      "evidenceType": "secondary_source"
+    },
+    {
+      "id": "zhang-heng-ptolemy",
+      "source": "zhang-heng",
+      "target": "ptolemy",
+      "relationship": "converged_with",
+      "description": "Zhang Heng and Ptolemy worked in roughly the same era on comparable problems in observational and instrumental astronomy within entirely separate traditions, with no evidence of contact or mutual influence.",
+      "confidence": 0.8,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "babbage-analytical-engine",
+      "source": "charles-babbage",
+      "target": "analytical-engine",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "ada-lovelace-babbage",
+      "source": "ada-lovelace",
+      "target": "charles-babbage",
+      "relationship": "collaborated_with",
+      "description": "Lovelace worked closely with Babbage over several years, translating and extensively annotating an Italian description of the Analytical Engine with her own original analysis.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ada-lovelace-notes",
+      "source": "ada-lovelace",
+      "target": "notes-on-the-analytical-engine",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "notes-analytical-engine-2",
+      "source": "notes-on-the-analytical-engine",
+      "target": "analytical-engine",
+      "relationship": "extended",
+      "description": "Lovelace's notes went beyond describing the Engine's operation, arguing it could manipulate symbols of any kind and providing a detailed worked algorithm for it to execute.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "notes-turing-machine",
+      "source": "notes-on-the-analytical-engine",
+      "target": "turing-machine",
+      "relationship": "anticipated",
+      "description": "Lovelace's insight that a computing machine could process symbols and patterns generally, not just numbers, anticipated the general theory of computation Turing formalized nearly a century later.",
+      "confidence": 0.75,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "babbage-industrial-revolution",
+      "source": "charles-babbage",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "description": "Babbage's mechanical computing designs pushed the precision manufacturing and engineering techniques of the era and reflected the broader Industrial Revolution drive toward mechanizing complex human tasks.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "turing-on-computable-numbers",
+      "source": "alan-turing",
+      "target": "on-computable-numbers",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "turing-turing-machine",
+      "source": "alan-turing",
+      "target": "turing-machine",
+      "relationship": "proposed",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "on-computable-numbers-turing-machine",
+      "source": "on-computable-numbers",
+      "target": "turing-machine",
+      "relationship": "formalized",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "shannon-a-mathematical-theory",
+      "source": "claude-shannon",
+      "target": "a-mathematical-theory-of-communication",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "shannon-information-theory",
+      "source": "claude-shannon",
+      "target": "information-theory",
+      "relationship": "proposed",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "a-mathematical-theory-information-theory",
+      "source": "a-mathematical-theory-of-communication",
+      "target": "information-theory",
+      "relationship": "formalized",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "von-neumann-architecture-proposed",
+      "source": "john-von-neumann",
+      "target": "von-neumann-architecture",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "von-neumann-modern-physics",
+      "source": "john-von-neumann",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "description": "Von Neumann rigorously formalized the mathematical foundations of quantum mechanics using Hilbert space theory, giving the theory a precise axiomatic structure.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "turing-turing-machine-founded-info-age",
+      "source": "alan-turing",
+      "target": "information-age",
+      "relationship": "founded",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "shannon-founded-info-age",
+      "source": "claude-shannon",
+      "target": "information-age",
+      "relationship": "founded",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "von-neumann-advanced-info-age",
+      "source": "john-von-neumann",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "babbage-anticipated-info-age",
+      "source": "charles-babbage",
+      "target": "information-age",
+      "relationship": "anticipated",
+      "description": "Babbage and Lovelace's conceptual work on programmable computation anticipated the Information Age by roughly a century, though their designs had no direct technological lineage to twentieth-century electronic computing.",
+      "confidence": 0.7,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "info-age-molecular-biology",
+      "source": "information-age",
+      "target": "molecular-biology",
+      "relationship": "enabled",
+      "description": "Computational power and data storage enabled by the Information Age became essential to DNA sequencing, genomics, and the large-scale data analysis central to modern molecular biology.",
+      "confidence": 0.85,
+      "directness": "indirect",
       "evidenceType": "scholarly_consensus"
     }
   ],

@@ -131,6 +131,27 @@ export function useKnowledgeGraph({
   // Filtered Graph
   // ===========================================================================
 
+  // Deliberately excludes yearRange — this is the type/discipline-filtered
+  // node set as it would look with every year visible. TimelineCanvas's
+  // playback feature needs this specifically: since playback itself
+  // animates yearRange, using the (year-filtered) graphData to drive that
+  // same animation creates a feedback loop where the population keeps
+  // growing mid-animation. Everything else should keep using graphData/
+  // visibleNodeIds below, which correctly include the year filter.
+  const nodesIgnoringYearFilter = useMemo(() => {
+    return fullGraphData.nodes.filter((node) => {
+      const isTypeVisible = visibleNodeTypes.has(node.type);
+
+      const matchesVisibleDiscipline =
+        node.disciplines == null ||
+        node.disciplines.some((discipline) =>
+          visibleDisciplines.has(discipline),
+        );
+
+      return isTypeVisible && matchesVisibleDiscipline;
+    });
+  }, [fullGraphData.nodes, visibleNodeTypes, visibleDisciplines]);
+
   const visibleNodeIds = useMemo(() => {
     return fullGraphData.nodes
       .filter((node) => {
@@ -542,6 +563,7 @@ export function useKnowledgeGraph({
     visibleDisciplines,
     visibleNodeTypes,
     yearBounds,
+    nodesIgnoringYearFilter,
     yearRange,
     pathwaySearchSourceId,
     activePathway,

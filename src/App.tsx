@@ -33,6 +33,7 @@ function App() {
     visibleDisciplines,
     visibleNodeTypes,
     yearBounds,
+    nodesIgnoringYearFilter,
     yearRange,
     pathwaySearchSourceId,
     activePathway,
@@ -217,6 +218,7 @@ function App() {
             yearBounds={yearBounds}
             yearRange={yearRange}
             onYearRangeChange={handleYearRangeChange}
+            nodesIgnoringYearFilter={nodesIgnoringYearFilter}
             pathwayNodeIds={pathwayNodeIds}
             pathwayLinkIds={pathwayLinkIds}
             anchoredNodeIds={anchoredNodeIds}

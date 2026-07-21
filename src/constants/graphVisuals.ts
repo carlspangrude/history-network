@@ -13,7 +13,7 @@ export const NODE_TYPE_COLORS: Record<NodeType, string> = {
   event: "#f18484",
   place: "#8bc981",
   discipline: "#c7c7c7",
-  technology: "#ffcc66",
+  technology: "#c9a0f5",
   movement: "#181818",
 };
 
@@ -36,4 +36,5 @@ export const FILTERABLE_NODE_TYPES: NodeType[] = [
   "theory",
   "institution",
   "movement",
+  "technology",
 ];
