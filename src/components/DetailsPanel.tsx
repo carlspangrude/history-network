@@ -556,6 +556,16 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
           follow connections in the direction they point.
         </p>
 
+        {pathwayNotFound && (
+          <p className="pathway-not-found">
+            No directed path found
+            {pathwayNotFoundTargetName
+              ? ` to ${pathwayNotFoundTargetName}`
+              : ""}
+            . Try a different destination.
+          </p>
+        )}
+
         <div className="search">
           <label className="search-label" htmlFor="pathway-search">
             Search for a destination
@@ -796,16 +806,6 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                         </button>
                       )}
                   </div>
-
-                  {pathwayNotFound && (
-                    <p className="pathway-not-found">
-                      No directed path found
-                      {pathwayNotFoundTargetName
-                        ? ` to ${pathwayNotFoundTargetName}`
-                        : ""}
-                      .
-                    </p>
-                  )}
 
                   <h2>{selectedNode.name}</h2>
                   

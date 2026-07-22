@@ -174,6 +174,169 @@ h2 {
   overflow: auto;
 }
 
+/* ==========================================================================
+   Stories
+   ========================================================================== */
+
+.stories-view-container {
+  grid-column: 1;
+  grid-row: 3 / 5;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stories-list {
+  height: 100%;
+  overflow-y: auto;
+  padding: 32px;
+}
+
+.stories-list-header {
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.stories-list-intro {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-medium);
+  background: var(--background-panel-alt);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.story-card:hover {
+  border-color: var(--relationship-highlight);
+  background: rgba(255, 230, 64, 0.08);
+}
+
+.story-card h3 {
+  font-size: 1rem;
+}
+
+.story-card p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.story-card-meta {
+  margin-top: auto;
+  padding: 4px 10px;
+  border: 1px solid var(--border-pill);
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+}
+
+.story-viewer {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.story-viewer-graph {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+}
+
+.story-viewer-narrative {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-left: 1px solid var(--border-medium);
+  background: var(--background-panel);
+  overflow-y: auto;
+}
+
+.story-viewer-narrative > * {
+  flex-shrink: 0;
+}
+
+.story-viewer-narrative h2 {
+  font-size: 1.1rem;
+}
+
+.story-viewer-narrative h3 {
+  font-size: 1.3rem;
+  color: var(--relationship-highlight);
+}
+
+.story-step-counter {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.story-step-narrative {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.story-narrative-link-wrap {
+  white-space: nowrap;
+}
+
+.story-narrative-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-link);
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.story-narrative-link:hover {
+  color: var(--text-link-hover);
+  text-decoration-color: currentColor;
+}
+
+.story-narrative-link:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.story-viewer-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
 .timeline-strip {
   position: relative;
   min-height: 0;

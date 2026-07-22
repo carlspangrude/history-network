@@ -6,8 +6,9 @@ import Sidebar from "./components/Sidebar";
 import TimelineCanvas from "./components/TimelineCanvas";
 import { useKnowledgeGraph } from "./hooks/useKnowledgeGraph";
 import CitationsView from "./components/CitationsView";
+import StoriesView from "./components/StoriesView";
 
-type AppView = "explore" | "citations";
+type AppView = "explore" | "stories" | "citations";
 
 function App() {
   // ===========================================================================
@@ -15,6 +16,21 @@ function App() {
   // ===========================================================================
 
   const [activeView, setActiveView] = useState<AppView>("explore");
+  // Lifted here (rather than living inside StoriesView/GraphCanvas) since
+  // StoriesView unmounts/remounts every time you leave and return to the
+  // Stories tab — App.tsx is the one component that persists across all
+  // tab navigation, so this is the only place this can actually be
+  // "remembered" the way Explore's own view mode already is (Explore's
+  // GraphCanvas never unmounts, so its internal state persists on its own).
+  const [storiesGraphViewMode, setStoriesGraphViewMode] = useState<
+    "clusters" | "connections"
+  >("connections");
+  // Also lifted here for the same reason as storiesGraphViewMode — without
+  // this, clicking a narrative link (which switches to Explore) or just
+  // manually switching tabs would lose your place in the story every time,
+  // since StoriesView fully unmounts when the tab isn't active.
+  const [activeStoryId, setActiveStoryId] = useState<string | null>(null);
+  const [storyStepIndex, setStoryStepIndex] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isTimelineOpen, setIsTimelineOpen] = useState(true);
@@ -34,6 +50,7 @@ function App() {
     visibleNodeTypes,
     yearBounds,
     nodesIgnoringYearFilter,
+    fullGraphData,
     yearRange,
     pathwaySearchSourceId,
     activePathway,
@@ -96,6 +113,19 @@ function App() {
   const pathwayNodeIds = activePathway?.nodeIds ?? [];
   const pathwayLinkIds = activePathway?.linkIds ?? [];
 
+  // Implements narrative link navigation ([[nodeId|Label]] in a story's
+  // text): select the node so Explore opens with it showing, then switch
+  // to Explore. Looks up against fullGraphData (unfiltered) since a
+  // narrative link should work regardless of whatever sidebar filters are
+  // currently active in Explore.
+  const handleStoryNavigateToNode = (nodeId: string) => {
+    const node = fullGraphData.nodes.find((candidate) => candidate.id === nodeId);
+    if (node) {
+      handleNodeSelect(node);
+    }
+    setActiveView("explore");
+  };
+
   // ===========================================================================
   // Render
   // ===========================================================================
@@ -120,6 +150,19 @@ function App() {
           onClick={() => setActiveView("explore")}
         >
           Explore
+        </button>
+
+        <button
+          className={
+            activeView === "stories"
+              ? "app-tab app-tab--active"
+              : "app-tab"
+          }
+          type="button"
+          aria-current={activeView === "stories" ? "page" : undefined}
+          onClick={() => setActiveView("stories")}
+        >
+          Stories
         </button>
 
         <button
@@ -229,6 +272,21 @@ function App() {
           />
         </div>
       </div>
+
+      {activeView === "stories" && (
+        <div className="stories-view-container">
+          <StoriesView
+            fullGraphData={fullGraphData}
+            graphViewMode={storiesGraphViewMode}
+            onGraphViewModeChange={setStoriesGraphViewMode}
+            activeStoryId={activeStoryId}
+            onActiveStoryIdChange={setActiveStoryId}
+            stepIndex={storyStepIndex}
+            onStepIndexChange={setStoryStepIndex}
+            onNavigateToNode={handleStoryNavigateToNode}
+          />
+        </div>
+      )}
 
       <div
         className={

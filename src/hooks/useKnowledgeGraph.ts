@@ -356,6 +356,8 @@ export function useKnowledgeGraph({
 
   const handlePathwaySearchCancel = () => {
     setPathwaySearchSourceId(null);
+    setPathwayNotFound(false);
+    setPathwayNotFoundTargetName(null);
   };
 
   // Called once a target node has been chosen from the search UI.
@@ -370,8 +372,6 @@ export function useKnowledgeGraph({
       targetNode.id,
     );
 
-    setPathwaySearchSourceId(null);
-
     if (!result) {
       setActivePathway(null);
       setPathwayNotFound(true);
@@ -379,6 +379,7 @@ export function useKnowledgeGraph({
       return;
     }
 
+    setPathwaySearchSourceId(null);
     setSelectedNode(null);
     setSelectedRelationshipId(null);
     setPathwayNotFound(false);
@@ -564,6 +565,7 @@ export function useKnowledgeGraph({
     visibleNodeTypes,
     yearBounds,
     nodesIgnoringYearFilter,
+    fullGraphData,
     yearRange,
     pathwaySearchSourceId,
     activePathway,

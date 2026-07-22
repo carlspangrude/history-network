@@ -29,6 +29,28 @@ interface GraphCanvasProps {
   anchoredNodeIds: Set<string>;
   onNodeAnchored: (nodeId: string) => void;
   onUnanchorAll: () => void;
+  // Defaults to "clusters" (Explore's existing behavior) when omitted.
+  // Only used to seed the UNCONTROLLED internal state — ignored if
+  // viewMode (below) is provided.
+  defaultViewMode?: "clusters" | "connections";
+  // If provided, view mode becomes fully controlled by the parent instead
+  // of GraphCanvas's own internal state. Needed by Stories: its GraphCanvas
+  // instance unmounts/remounts each time you leave and return to the tab,
+  // so its view mode has to be lifted to a parent that doesn't unmount
+  // (App.tsx) in order to actually be remembered across visits.
+  viewMode?: "clusters" | "connections";
+  onViewModeChange?: (mode: "clusters" | "connections") => void;
+  // When true: skips the camera-centering-on-selection effect, skips the
+  // orange selection ring, renders the pathway badge for the selected node
+  // green and larger instead, and fits to the full graph extent once on
+  // mount. Used by Stories, where clicking through steps shouldn't yank
+  // the camera around — the badge itself carries the "current step"
+  // emphasis instead. Defaults to false (Explore's existing behavior).
+  suppressSelectionFocus?: boolean;
+  // Disables node dragging (and therefore movement-node anchoring) while
+  // keeping hover tooltips and zoom/pan intact. Used by Stories, which
+  // doesn't want its graph to be otherwise interactive.
+  disableNodeDrag?: boolean;
 }
 
 function getEndpointId(endpoint: string | GraphNode): string {
@@ -182,6 +204,11 @@ function GraphCanvas({
   anchoredNodeIds,
   onNodeAnchored,
   onUnanchorAll,
+  defaultViewMode = "clusters",
+  viewMode,
+  onViewModeChange,
+  suppressSelectionFocus = false,
+  disableNodeDrag = false,
 }: GraphCanvasProps) {
 
   // ===========================================================================
@@ -226,10 +253,24 @@ const previousAnchoredNodeIdsRef = useRef<Set<string>>(new Set());
 const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
 
 // Controls how strongly nodes push apart in the collision force — see the
-// collision-force effect below. Clusters (tight) is the default view.
-const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
-  "clusters",
-);
+// collision-force effect below. Optionally-controlled: when the parent
+// provides viewMode (Stories, lifted to App.tsx so it survives this
+// component unmounting/remounting), that value wins; otherwise falls back
+// to internal state seeded from defaultViewMode (Explore's usage, which
+// never unmounts so internal state already persists correctly on its own).
+const [internalViewMode, setInternalViewMode] = useState<
+  "clusters" | "connections"
+>(defaultViewMode);
+
+const graphViewMode = viewMode ?? internalViewMode;
+
+const handleViewModeChange = (mode: "clusters" | "connections") => {
+  if (onViewModeChange) {
+    onViewModeChange(mode);
+  } else {
+    setInternalViewMode(mode);
+  }
+};
 
   // ===========================================================================
   // Derived Data
@@ -468,6 +509,7 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
   // center on selected node
   useEffect(() => {
     if (
+      suppressSelectionFocus ||
       !selectedNode ||
       selectedNode.x === undefined ||
       selectedNode.y === undefined
@@ -483,7 +525,42 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
     return () => {
       window.cancelAnimationFrame(animationFrame);
     };
-  }, [dimensions.height, dimensions.width, selectedNode]);
+  }, [dimensions.height, dimensions.width, selectedNode, suppressSelectionFocus]);
+
+  // Fit to the full graph extent shortly after mount — not at literal
+  // tick-zero (a rAF fires essentially immediately, before the simulation
+  // has run even one tick, when most/all nodes can still be sitting at
+  // nearly identical default positions; zoomToFit against that
+  // near-zero-area point cloud forces an extreme zoom scale, which is
+  // what broke pan/zoom, node rendering, and the badges entirely) and not
+  // waiting for full settle either (onEngineStop's alpha-decay-based stop
+  // event can take 10+ seconds to fire, reading as an abrupt, unexplained
+  // jump once it finally does). A short fixed delay is enough ticks for
+  // positions to become sane without either failure mode. Only relevant
+  // when camera-follow is suppressed (Stories); the camera never moves
+  // again after this fit, so the nodes settle within a fixed frame.
+  const hasFitOnMountRef = useRef(false);
+  const FIT_ON_MOUNT_DELAY_MS = 300;
+
+  useEffect(() => {
+    if (
+      !suppressSelectionFocus ||
+      !hasDimensions ||
+      hasFitOnMountRef.current
+    ) {
+      return;
+    }
+
+    hasFitOnMountRef.current = true;
+
+    const timeoutId = window.setTimeout(() => {
+      graphRef.current?.zoomToFit(0, 60);
+    }, FIT_ON_MOUNT_DELAY_MS);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [suppressSelectionFocus, hasDimensions]);
 
   // ===========================================================================
   // Event Handlers
@@ -727,7 +804,7 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
     fg.d3Force("link")?.distance(() => 8);
-  
+
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions, graphViewMode]);
 
@@ -788,7 +865,7 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
                 : "fit-graph-button"
             }
             type="button"
-            onClick={() => setGraphViewMode("connections")}
+            onClick={() => handleViewModeChange("connections")}
           >
             Connections
           </button>
@@ -800,7 +877,7 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
                 : "fit-graph-button"
             }
             type="button"
-            onClick={() => setGraphViewMode("clusters")}
+            onClick={() => handleViewModeChange("clusters")}
           >
             Clusters
           </button>
@@ -883,8 +960,10 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
                 context.stroke();
               }
 
-              // Draw the selection ring around the selected node.
-              if (node.id === selectedNode?.id) {
+              // Draw the selection ring around the selected node (skipped
+              // in story mode — the pathway badge below carries that
+              // emphasis instead).
+              if (!suppressSelectionFocus && node.id === selectedNode?.id) {
                 const ringGap = 4 / globalScale;
                 const ringRadius = nodeRadius + ringGap;
             
@@ -896,23 +975,27 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
               }
 
               // Draw a step-number badge on nodes that are part of the
-              // active traced pathway.
+              // active traced pathway. In story mode, the badge for the
+              // currently selected/focused step renders green and larger
+              // instead of drawing a separate selection ring.
               if (pathwayNodeIndex.has(node.id)) {
                 const stepNumber = (pathwayNodeIndex.get(node.id) as number) + 1;
-                const badgeRadius = 8 / globalScale;
+                const isCurrentStoryStep =
+                  suppressSelectionFocus && node.id === selectedNode?.id;
+                const badgeRadius = (isCurrentStoryStep ? 11 : 8) / globalScale;
                 const badgeX = node.x + nodeRadius * 0.7;
                 const badgeY = node.y - nodeRadius * 0.7;
 
                 context.beginPath();
                 context.arc(badgeX, badgeY, badgeRadius, 0, 2 * Math.PI);
-                context.fillStyle = "#ffb703";
+                context.fillStyle = isCurrentStoryStep ? "#9FE2BF" : "#ffb703";
                 context.fill();
                 context.strokeStyle = "#181818";
                 context.lineWidth = 1.5 / globalScale;
                 context.stroke();
 
                 context.fillStyle = "#181818";
-                context.font = `${9 / globalScale}px sans-serif`;
+                context.font = `${(isCurrentStoryStep ? 10 : 9) / globalScale}px sans-serif`;
                 context.textAlign = "center";
                 context.textBaseline = "middle";
                 context.fillText(String(stepNumber), badgeX, badgeY);
@@ -931,6 +1014,7 @@ const [graphViewMode, setGraphViewMode] = useState<"clusters" | "connections">(
               onRelationshipOpen(link.id)
             }
             backgroundColor="#181818"
+            enableNodeDrag={!disableNodeDrag}
             autoPauseRedraw={!isExploding}
             onBackgroundClick={onSelectionClear}
             onNodeClick={(node: GraphNode) => onNodeSelect(node)}

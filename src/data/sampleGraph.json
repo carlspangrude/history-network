@@ -3097,6 +3097,185 @@
         "Information Theory",
         "Telecommunications"
       ]
+    },
+    {
+      "id": "alexander-friedmann",
+      "name": "Alexander Friedmann",
+      "type": "person",
+      "importance": 8,
+      "description": "Russian mathematician and physicist who derived solutions to Einstein's general relativity field equations showing that the universe must be either expanding or contracting rather than static, laying the mathematical foundation for modern cosmology. He died of typhoid fever at 37, before his work gained wide recognition.",
+      "startYear": 1888,
+      "endYear": 1925,
+      "disciplines": [
+        "Physics",
+        "Mathematics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Friedmann Equations",
+        "Expanding Universe",
+        "General Relativity",
+        "Cosmology"
+      ]
+    },
+    {
+      "id": "friedmann-equations",
+      "name": "Friedmann Equations",
+      "type": "theory",
+      "importance": 8,
+      "description": "A set of equations derived from general relativity describing how the universe expands or contracts over time, depending on its mass-energy content and curvature. They provided the first rigorous mathematical demonstration that a static universe was not the only solution Einstein's theory permitted.",
+      "startYear": 1922,
+      "disciplines": [
+        "Physics",
+        "Astronomy",
+        "Mathematics"
+      ],
+      "tags": [
+        "Expanding Universe",
+        "General Relativity",
+        "Cosmology"
+      ]
+    },
+    {
+      "id": "georges-lemaitre",
+      "name": "Georges Lemaître",
+      "type": "person",
+      "importance": 9,
+      "description": "Belgian priest, astronomer, and physicist who proposed that the universe originated from the explosive expansion of a single primordial concentration of matter he called the \"primeval atom\" — the first clear statement of what became known as the Big Bang theory.",
+      "startYear": 1894,
+      "endYear": 1966,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Big Bang",
+        "Primeval Atom",
+        "Expanding Universe",
+        "Cosmology"
+      ]
+    },
+    {
+      "id": "big-bang-theory",
+      "name": "Big Bang Theory",
+      "type": "theory",
+      "importance": 10,
+      "description": "The theory that the universe began from an extremely hot, dense state roughly 13.8 billion years ago and has been expanding and cooling ever since. It explains the observed expansion of the universe, the abundance of light elements, and the cosmic microwave background radiation.",
+      "startYear": 1931,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Cosmology",
+        "Expanding Universe",
+        "Cosmic Origin"
+      ]
+    },
+    {
+      "id": "edwin-hubble",
+      "name": "Edwin Hubble",
+      "type": "person",
+      "importance": 9,
+      "description": "American astronomer who demonstrated that many observed nebulae are entire galaxies well beyond the Milky Way, and discovered that these galaxies are receding from us at speeds proportional to their distance — the first direct observational evidence that the universe is expanding.",
+      "startYear": 1889,
+      "endYear": 1953,
+      "disciplines": [
+        "Astronomy",
+        "Physics"
+      ],
+      "tags": [
+        "Expanding Universe",
+        "Galaxies",
+        "Observational Astronomy"
+      ]
+    },
+    {
+      "id": "hubbles-law",
+      "name": "Hubble's Law",
+      "type": "theory",
+      "importance": 9,
+      "description": "The observed relationship that galaxies recede from us at velocities proportional to their distance, providing the first direct observational evidence that the universe is expanding rather than static.",
+      "startYear": 1929,
+      "disciplines": [
+        "Astronomy",
+        "Physics"
+      ],
+      "tags": [
+        "Expanding Universe",
+        "Redshift",
+        "Observational Astronomy"
+      ]
+    },
+    {
+      "id": "george-gamow",
+      "name": "George Gamow",
+      "type": "person",
+      "importance": 8,
+      "description": "Russian-American physicist who extended Lemaître's primeval-atom idea into a detailed physical theory of the early universe, explaining the formation of light elements in the first minutes after the Big Bang and predicting, with Ralph Alpher and Robert Herman, that the event should have left behind a faint afterglow of radiation still detectable today.",
+      "startYear": 1904,
+      "endYear": 1968,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Big Bang",
+        "Nucleosynthesis",
+        "Cosmic Microwave Background"
+      ]
+    },
+    {
+      "id": "cosmic-microwave-background",
+      "name": "Cosmic Microwave Background",
+      "type": "theory",
+      "importance": 9,
+      "description": "A faint, uniform glow of microwave radiation filling all of space, understood as the cooled afterglow of the hot, dense early universe roughly 380,000 years after the Big Bang. Its accidental detection provided the decisive observational confirmation of Big Bang cosmology over competing theories.",
+      "startYear": 1965,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Big Bang",
+        "Radiation",
+        "Early Universe"
+      ]
+    },
+    {
+      "id": "arno-penzias",
+      "name": "Arno Penzias",
+      "type": "person",
+      "importance": 8,
+      "description": "German-American radio astronomer who, with Robert Wilson, accidentally detected the cosmic microwave background radiation while investigating unexplained noise in a radio antenna, providing decisive observational confirmation of the Big Bang theory.",
+      "startYear": 1933,
+      "endYear": 2024,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Cosmic Microwave Background",
+        "Radio Astronomy",
+        "Big Bang"
+      ]
+    },
+    {
+      "id": "robert-wilson",
+      "name": "Robert Wilson",
+      "type": "person",
+      "importance": 8,
+      "description": "American radio astronomer who, with Arno Penzias, accidentally detected the cosmic microwave background radiation while investigating unexplained noise in a radio antenna, providing decisive observational confirmation of the Big Bang theory.",
+      "startYear": 1936,
+      "disciplines": [
+        "Physics",
+        "Astronomy"
+      ],
+      "tags": [
+        "Cosmic Microwave Background",
+        "Radio Astronomy",
+        "Big Bang"
+      ]
     }
   ],
   "edges": [
@@ -5877,6 +6056,167 @@
       "description": "Computational power and data storage enabled by the Information Age became essential to DNA sequencing, genomics, and the large-scale data analysis central to modern molecular biology.",
       "confidence": 0.85,
       "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "general-relativity-friedmann-equations",
+      "source": "general-relativity",
+      "target": "friedmann-equations",
+      "relationship": "enabled",
+      "description": "The Friedmann equations are derived directly from Einstein's general relativity field equations, applied to a universe assumed to be uniform and isotropic.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "alexander-friedmann-friedmann-equations",
+      "source": "alexander-friedmann",
+      "target": "friedmann-equations",
+      "relationship": "proposed",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "friedmann-equations-georges-lemaitre",
+      "source": "friedmann-equations",
+      "target": "georges-lemaitre",
+      "relationship": "influenced",
+      "description": "Lemaître derived expanding-universe solutions closely related to Friedmann's earlier work, and explicitly built on this mathematical foundation in proposing that the universe originated from a single primordial state.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "georges-lemaitre-big-bang-theory",
+      "source": "georges-lemaitre",
+      "target": "big-bang-theory",
+      "relationship": "proposed",
+      "description": "Lemaître proposed that the universe began from the explosive expansion of a single primordial concentration of matter and energy, the first clear statement of Big Bang cosmology.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "edwin-hubble-hubbles-law",
+      "source": "edwin-hubble",
+      "target": "hubbles-law",
+      "relationship": "discovered",
+      "description": "Hubble observed that the redshift of distant galaxies increases with their distance, revealing a pattern already present in the data rather than a constructed theoretical framework.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "hubbles-law-big-bang-theory",
+      "source": "hubbles-law",
+      "target": "big-bang-theory",
+      "relationship": "supported",
+      "description": "Hubble's observation of galactic recession provided the first direct observational evidence for the expanding universe Lemaître's theory predicted.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-gamow-big-bang-theory",
+      "source": "george-gamow",
+      "target": "big-bang-theory",
+      "relationship": "developed",
+      "description": "Gamow extended Lemaître's primeval-atom concept into a detailed physical theory of the early universe's temperature, density, and nuclear reactions.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-gamow-cosmic-microwave-background",
+      "source": "george-gamow",
+      "target": "cosmic-microwave-background",
+      "relationship": "anticipated",
+      "description": "Gamow, with Ralph Alpher and Robert Herman, predicted in the late 1940s that the early universe's radiation should still be detectable today as a faint cosmic afterglow — roughly seventeen years before it was actually observed.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "arno-penzias-cosmic-microwave-background",
+      "source": "arno-penzias",
+      "target": "cosmic-microwave-background",
+      "relationship": "discovered",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "robert-wilson-cosmic-microwave-background",
+      "source": "robert-wilson",
+      "target": "cosmic-microwave-background",
+      "relationship": "discovered",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "cosmic-microwave-background-big-bang-theory",
+      "source": "cosmic-microwave-background",
+      "target": "big-bang-theory",
+      "relationship": "supported",
+      "description": "The detection of the cosmic microwave background matched the specific temperature and properties Gamow's theory had predicted, providing decisive observational confirmation of Big Bang cosmology over competing steady-state theories.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "alexander-friedmann-modern-physics",
+      "source": "alexander-friedmann",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "georges-lemaitre-modern-physics",
+      "source": "georges-lemaitre",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "edwin-hubble-modern-physics",
+      "source": "edwin-hubble",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-gamow-modern-physics",
+      "source": "george-gamow",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "arno-penzias-modern-physics",
+      "source": "arno-penzias",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "robert-wilson-modern-physics",
+      "source": "robert-wilson",
+      "target": "modern-physics",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
       "evidenceType": "scholarly_consensus"
     }
   ],
