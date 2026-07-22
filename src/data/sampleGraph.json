@@ -3276,6 +3276,472 @@
         "Radio Astronomy",
         "Big Bang"
       ]
+    },
+    {
+      "id": "humphry-davy",
+      "name": "Humphry Davy",
+      "type": "person",
+      "importance": 8,
+      "description": "English chemist who used electrolysis to isolate several previously unknown elements, including sodium, potassium, and calcium, and invented the miners' safety lamp. As head of the Royal Institution, he took on a young bookbinder's apprentice named Michael Faraday as his laboratory assistant, launching one of the most consequential careers in the history of science.",
+      "startYear": 1778,
+      "endYear": 1829,
+      "disciplines": [
+        "Chemistry",
+        "Physics"
+      ],
+      "tags": [
+        "Electrolysis",
+        "Element Discovery",
+        "Royal Institution"
+      ]
+    },
+    {
+      "id": "electromagnetic-induction",
+      "name": "Electromagnetic Induction",
+      "type": "theory",
+      "importance": 10,
+      "description": "The phenomenon in which a changing magnetic field induces an electric current in a nearby conductor. Discovered through careful experiment rather than derived from theory, it revealed a fundamental link between electricity and magnetism and became the operating principle behind virtually all electric generators, transformers, and motors.",
+      "startYear": 1831,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Electromagnetism",
+        "Generators",
+        "Transformers"
+      ]
+    },
+    {
+      "id": "field-theory",
+      "name": "Faraday's Field Concept",
+      "type": "theory",
+      "importance": 9,
+      "description": "The idea that electric and magnetic forces are mediated by invisible \"lines of force\" filling the space around a charge or magnet, rather than acting instantaneously at a distance. Faraday, largely self-taught in mathematics, developed and defended this concept through physical intuition and experiment alone — it would later be given rigorous mathematical form by James Clerk Maxwell.",
+      "startYear": 1831,
+      "startYearApprox": true,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Field Concept",
+        "Lines of Force",
+        "Electromagnetism"
+      ]
+    },
+    {
+      "id": "electric-generator",
+      "name": "Electric Generator",
+      "type": "technology",
+      "importance": 9,
+      "description": "A device that converts mechanical motion into electrical current by exploiting electromagnetic induction. Faraday's original demonstration — a copper disk rotating between the poles of a magnet — was the first machine in history to generate a continuous electric current, and the direct ancestor of every power-station generator built since.",
+      "startYear": 1831,
+      "disciplines": [
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Faraday Disk",
+        "Electromagnetic Induction",
+        "Electrical Power"
+      ]
+    },
+    {
+      "id": "lavoisier",
+      "name": "Antoine Lavoisier",
+      "type": "person",
+      "importance": 10,
+      "description": "French chemist widely regarded as the father of modern chemistry. Through meticulous quantitative experiments, he overturned the prevailing phlogiston theory of combustion, identified and named oxygen and hydrogen, and established that mass is conserved in chemical reactions. He was executed during the Terror in 1794, at the height of his scientific career.",
+      "startYear": 1743,
+      "endYear": 1794,
+      "disciplines": [
+        "Chemistry"
+      ],
+      "tags": [
+        "Conservation of Mass",
+        "Oxygen",
+        "Combustion",
+        "Quantitative Chemistry"
+      ]
+    },
+    {
+      "id": "conservation-of-mass",
+      "name": "Law of Conservation of Mass",
+      "type": "theory",
+      "importance": 9,
+      "description": "The principle that matter is neither created nor destroyed in a chemical reaction — the total mass of the reactants equals the total mass of the products. Established through Lavoisier's careful weighing of substances before and after reaction, it made chemistry a genuinely quantitative science for the first time.",
+      "startYear": 1789,
+      "disciplines": [
+        "Chemistry"
+      ],
+      "tags": [
+        "Quantitative Chemistry",
+        "Chemical Reactions"
+      ]
+    },
+    {
+      "id": "dalton",
+      "name": "John Dalton",
+      "type": "person",
+      "importance": 9,
+      "description": "English chemist and physicist who proposed that each chemical element consists of identical atoms of a specific, characteristic mass, and that compounds form from atoms combining in fixed whole-number ratios. His atomic theory gave the ancient philosophical idea of the atom a rigorous, testable scientific foundation.",
+      "startYear": 1766,
+      "endYear": 1844,
+      "disciplines": [
+        "Chemistry",
+        "Physics"
+      ],
+      "tags": [
+        "Atomic Theory",
+        "Atomic Weight"
+      ]
+    },
+    {
+      "id": "atomic-theory",
+      "name": "Atomic Theory",
+      "type": "theory",
+      "importance": 10,
+      "description": "The theory that all matter is composed of discrete atoms, with each element defined by a characteristic atomic mass, and that chemical compounds form when atoms combine in fixed proportions. It transformed the atom from a philosophical speculation dating back to ancient Greece into a precise, quantifiable scientific concept.",
+      "startYear": 1803,
+      "disciplines": [
+        "Chemistry",
+        "Physics"
+      ],
+      "tags": [
+        "Atoms",
+        "Atomic Weight",
+        "Chemical Compounds"
+      ]
+    },
+    {
+      "id": "mendeleev",
+      "name": "Dmitri Mendeleev",
+      "type": "person",
+      "importance": 9,
+      "description": "Russian chemist who organized the known chemical elements into a periodic table based on atomic weight and recurring chemical properties. Famously, he left gaps for elements not yet discovered and predicted their properties in advance — predictions later confirmed with remarkable accuracy, which did more than anything else to validate his system.",
+      "startYear": 1834,
+      "endYear": 1907,
+      "disciplines": [
+        "Chemistry"
+      ],
+      "tags": [
+        "Periodic Table",
+        "Element Prediction",
+        "Atomic Weight"
+      ]
+    },
+    {
+      "id": "periodic-table",
+      "name": "Periodic Table",
+      "type": "theory",
+      "importance": 10,
+      "description": "A systematic arrangement of the chemical elements by atomic weight and recurring chemical properties, revealing an underlying periodic pattern in how elements behave. It remains the organizing framework of chemistry, with later additions of atomic number and electron structure only refining a structure Mendeleev first correctly discerned.",
+      "startYear": 1869,
+      "disciplines": [
+        "Chemistry"
+      ],
+      "tags": [
+        "Elements",
+        "Atomic Weight",
+        "Chemical Properties"
+      ]
+    },
+    {
+      "id": "adam-smith",
+      "name": "Adam Smith",
+      "type": "person",
+      "importance": 10,
+      "description": "Scottish economist and moral philosopher widely regarded as the father of modern economics. In The Wealth of Nations, he argued that specialization, free exchange, and self-interested individuals coordinated by market competition — the \"invisible hand\" — produce greater collective prosperity than centralized control, laying the intellectual foundation for classical economics.",
+      "startYear": 1723,
+      "endYear": 1790,
+      "disciplines": [
+        "Economics",
+        "Philosophy"
+      ],
+      "tags": [
+        "Invisible Hand",
+        "Division of Labor",
+        "Free Markets",
+        "Scottish Enlightenment"
+      ]
+    },
+    {
+      "id": "wealth-of-nations",
+      "name": "The Wealth of Nations",
+      "type": "publication",
+      "importance": 10,
+      "description": "Adam Smith's 1776 treatise on political economy, arguing that national prosperity arises from the productivity gains of specialized labor and free exchange rather than a nation's stock of gold or silver. It is generally regarded as the foundational text of modern economics.",
+      "startYear": 1776,
+      "disciplines": [
+        "Economics"
+      ],
+      "tags": [
+        "Invisible Hand",
+        "Division of Labor",
+        "Free Trade"
+      ]
+    },
+    {
+      "id": "classical-economics",
+      "name": "Classical Economics",
+      "type": "theory",
+      "importance": 9,
+      "description": "The theory that free markets, driven by individual self-interest and coordinated through competition and price signals, allocate resources more effectively than centralized direction — and that a nation's wealth is best measured by its productive capacity rather than its accumulated gold and silver.",
+      "startYear": 1776,
+      "disciplines": [
+        "Economics"
+      ],
+      "tags": [
+        "Free Markets",
+        "Invisible Hand",
+        "Division of Labor"
+      ]
+    },
+    {
+      "id": "karl-marx",
+      "name": "Karl Marx",
+      "type": "person",
+      "importance": 10,
+      "description": "German philosopher and economist who argued that capitalism, for all its productive power, systematically extracts surplus value from workers and generates recurring crises, and that this internal contradiction would eventually drive its own collapse. His critique of classical economics and capitalism reshaped economic and political thought worldwide.",
+      "startYear": 1818,
+      "endYear": 1883,
+      "disciplines": [
+        "Economics",
+        "Philosophy",
+        "History"
+      ],
+      "tags": [
+        "Capitalism",
+        "Historical Materialism",
+        "Class Struggle"
+      ]
+    },
+    {
+      "id": "das-kapital",
+      "name": "Das Kapital",
+      "type": "publication",
+      "importance": 9,
+      "description": "Karl Marx's multi-volume critique of political economy, analyzing capitalism as a historically specific system built on the extraction of surplus value from labor. The first volume, published in 1867, remains one of the most influential works of economic and political theory ever written.",
+      "startYear": 1867,
+      "disciplines": [
+        "Economics"
+      ],
+      "tags": [
+        "Capitalism",
+        "Surplus Value",
+        "Class Struggle"
+      ]
+    },
+    {
+      "id": "marxist-economics",
+      "name": "Marxist Economics",
+      "type": "theory",
+      "importance": 9,
+      "description": "A critique and alternative to classical economics holding that capitalist production systematically extracts surplus value from labor, that economic systems evolve through recurring internal contradictions, and that capitalism's own dynamics would eventually produce its replacement by a socialist system.",
+      "startYear": 1867,
+      "disciplines": [
+        "Economics"
+      ],
+      "tags": [
+        "Capitalism",
+        "Surplus Value",
+        "Historical Materialism"
+      ]
+    },
+    {
+      "id": "royal-society",
+      "name": "Royal Society",
+      "type": "institution",
+      "importance": 10,
+      "description": "Founded in London in 1660, the Royal Society is one of the oldest scientific institutions in continuous existence, and among the most influential. Its fellows have included Newton, Faraday, Maxwell, and Darwin, and its early motto — \"Nullius in verba,\" take nobody's word for it — became a founding statement of the experimental scientific method.",
+      "startYear": 1660,
+      "isOngoing": true,
+      "disciplines": [
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Mathematics"
+      ],
+      "tags": [
+        "Scientific Method",
+        "Fellowship",
+        "London"
+      ]
+    },
+    {
+      "id": "library-of-alexandria",
+      "name": "Library of Alexandria",
+      "type": "institution",
+      "importance": 9,
+      "description": "Founded in Ptolemaic Egypt in the third century BCE, the Library of Alexandria was the greatest center of scholarship in the ancient Mediterranean world, attracting and housing scholars, texts, and research across mathematics, astronomy, medicine, and literature. Its gradual decline over several centuries — through fire, neglect, and political upheaval — remains one of history's most cited losses of accumulated knowledge.",
+      "startYear": -295,
+      "startYearApprox": true,
+      "endYear": 400,
+      "endYearApprox": true,
+      "disciplines": [
+        "Mathematics",
+        "Astronomy",
+        "History",
+        "Literature"
+      ],
+      "tags": [
+        "Hellenistic Scholarship",
+        "Ancient Library",
+        "Ptolemaic Egypt"
+      ]
+    },
+    {
+      "id": "john-bardeen",
+      "name": "John Bardeen",
+      "type": "person",
+      "importance": 9,
+      "description": "American physicist who co-invented the transistor at Bell Labs and later co-developed the theory of superconductivity — work that earned him two Nobel Prizes in Physics, the only person to have won the same Nobel science prize twice.",
+      "startYear": 1908,
+      "endYear": 1991,
+      "disciplines": [
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Transistor",
+        "Semiconductor Physics",
+        "Bell Labs"
+      ]
+    },
+    {
+      "id": "walter-brattain",
+      "name": "Walter Brattain",
+      "type": "person",
+      "importance": 8,
+      "description": "American physicist who, working alongside John Bardeen at Bell Labs, built the first working point-contact transistor, demonstrating that a solid-state device could amplify an electrical signal without the fragility, heat, and bulk of a vacuum tube.",
+      "startYear": 1902,
+      "endYear": 1987,
+      "disciplines": [
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Transistor",
+        "Semiconductor Physics",
+        "Bell Labs"
+      ]
+    },
+    {
+      "id": "william-shockley",
+      "name": "William Shockley",
+      "type": "person",
+      "importance": 8,
+      "description": "American physicist who led the Bell Labs team that invented the transistor and later developed the junction transistor design that made the technology practical to manufacture at scale, directly enabling the modern semiconductor industry.",
+      "startYear": 1910,
+      "endYear": 1989,
+      "disciplines": [
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Transistor",
+        "Semiconductor Physics",
+        "Bell Labs"
+      ]
+    },
+    {
+      "id": "transistor",
+      "name": "Transistor",
+      "type": "technology",
+      "importance": 10,
+      "description": "A solid-state device that can amplify or switch electrical signals, invented at Bell Labs in 1947. Far smaller, more reliable, and more energy-efficient than the vacuum tubes it replaced, the transistor is the foundational building block of every modern computer, and its inventors shared the 1956 Nobel Prize in Physics.",
+      "startYear": 1947,
+      "disciplines": [
+        "Physics",
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "Semiconductor",
+        "Bell Labs",
+        "Solid-State Electronics"
+      ]
+    },
+    {
+      "id": "vint-cerf",
+      "name": "Vint Cerf",
+      "type": "person",
+      "importance": 9,
+      "description": "American computer scientist who, with Bob Kahn, co-designed the TCP/IP protocol suite that allows independent computer networks to interconnect as a single network of networks — the technical foundation of what became the Internet.",
+      "startYear": 1943,
+      "disciplines": [
+        "Computer Science"
+      ],
+      "tags": [
+        "TCP/IP",
+        "Internet Protocol",
+        "Networking"
+      ]
+    },
+    {
+      "id": "bob-kahn",
+      "name": "Bob Kahn",
+      "type": "person",
+      "importance": 9,
+      "description": "American computer scientist who, with Vint Cerf, co-designed the TCP/IP protocol suite, solving the fundamental problem of how separately built computer networks could reliably exchange data as a unified system.",
+      "startYear": 1938,
+      "disciplines": [
+        "Computer Science"
+      ],
+      "tags": [
+        "TCP/IP",
+        "Internet Protocol",
+        "Networking"
+      ]
+    },
+    {
+      "id": "internet",
+      "name": "Internet",
+      "type": "technology",
+      "importance": 10,
+      "description": "A global network of interconnected computer networks, built on the TCP/IP protocol suite that allows data to move reliably between independently administered networks. Growing out of the earlier ARPANET, it became the shared infrastructure underlying nearly every subsequent digital technology.",
+      "startYear": 1969,
+      "startYearApprox": true,
+      "disciplines": [
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "TCP/IP",
+        "Networking",
+        "ARPANET"
+      ]
+    },
+    {
+      "id": "tim-berners-lee",
+      "name": "Tim Berners-Lee",
+      "type": "person",
+      "importance": 9,
+      "description": "English computer scientist who, while working at CERN, invented the World Wide Web — a system of linked hypertext documents accessible over the Internet — and wrote the first web browser and web server to demonstrate it.",
+      "startYear": 1955,
+      "disciplines": [
+        "Computer Science"
+      ],
+      "tags": [
+        "World Wide Web",
+        "Hypertext",
+        "CERN"
+      ]
+    },
+    {
+      "id": "world-wide-web",
+      "name": "World Wide Web",
+      "type": "technology",
+      "importance": 10,
+      "description": "A system of interlinked hypertext documents accessed over the Internet, invented in 1989–91. By giving ordinary people an easy way to publish and navigate linked information, it transformed the Internet from a specialist research network into the everyday medium billions now use.",
+      "startYear": 1989,
+      "disciplines": [
+        "Computer Science"
+      ],
+      "tags": [
+        "Hypertext",
+        "Internet",
+        "CERN"
+      ]
     }
   ],
   "edges": [
@@ -6216,6 +6682,445 @@
       "target": "modern-physics",
       "relationship": "advanced",
       "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "humphry-davy-michael-faraday",
+      "source": "humphry-davy",
+      "target": "michael-faraday",
+      "relationship": "mentored",
+      "description": "Davy hired Faraday as his laboratory assistant at the Royal Institution in 1813, giving him direct access to leading chemical research and the scientific community despite Faraday's lack of formal education.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "michael-faraday-electromagnetic-induction",
+      "source": "michael-faraday",
+      "target": "electromagnetic-induction",
+      "relationship": "discovered",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "michael-faraday-field-theory",
+      "source": "michael-faraday",
+      "target": "field-theory",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "michael-faraday-electric-generator",
+      "source": "michael-faraday",
+      "target": "electric-generator",
+      "relationship": "invented",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "michael-faraday-maxwell",
+      "source": "michael-faraday",
+      "target": "maxwell",
+      "relationship": "influenced",
+      "description": "Maxwell explicitly set out to translate Faraday's physical field concept, which Faraday himself could not express mathematically, into a rigorous mathematical theory of electromagnetism.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "electromagnetic-induction-electromagnetism",
+      "source": "electromagnetic-induction",
+      "target": "electromagnetism",
+      "relationship": "enabled",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "field-theory-electromagnetism",
+      "source": "field-theory",
+      "target": "electromagnetism",
+      "relationship": "enabled",
+      "description": "Maxwell took Faraday's physical, non-mathematical field concept as the starting point for the mathematical field equations that define classical electromagnetism.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "michael-faraday-industrial-revolution",
+      "source": "michael-faraday",
+      "target": "industrial-revolution",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "lavoisier-conservation-of-mass",
+      "source": "lavoisier",
+      "target": "conservation-of-mass",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "lavoisier-humphry-davy",
+      "source": "lavoisier",
+      "target": "humphry-davy",
+      "relationship": "influenced",
+      "description": "Davy's systematic, quantitative approach to isolating new elements through electrolysis built directly on the rigorous experimental standards Lavoisier had established for chemistry a generation earlier.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "lavoisier-dalton",
+      "source": "lavoisier",
+      "target": "dalton",
+      "relationship": "influenced",
+      "description": "Dalton's atomic theory built on the quantitative foundation Lavoisier established — particularly the conservation of mass, which Dalton's fixed atomic ratios needed to hold true.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dalton-atomic-theory",
+      "source": "dalton",
+      "target": "atomic-theory",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "atomic-theory-mendeleev",
+      "source": "atomic-theory",
+      "target": "mendeleev",
+      "relationship": "influenced",
+      "description": "Mendeleev's periodic table relies on Dalton's concept of a characteristic atomic weight for each element as its fundamental organizing variable.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "mendeleev-periodic-table",
+      "source": "mendeleev",
+      "target": "periodic-table",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "david-hume-adam-smith",
+      "source": "david-hume",
+      "target": "adam-smith",
+      "relationship": "influenced",
+      "description": "Hume and Smith were close friends and intellectual companions within the Scottish Enlightenment; Smith's empiricist approach to human behavior and his skepticism of centralized authority both bear Hume's clear imprint.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "adam-smith-wealth-of-nations",
+      "source": "adam-smith",
+      "target": "wealth-of-nations",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "adam-smith-classical-economics",
+      "source": "adam-smith",
+      "target": "classical-economics",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "wealth-of-nations-classical-economics",
+      "source": "wealth-of-nations",
+      "target": "classical-economics",
+      "relationship": "formalized",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "adam-smith-enlightenment",
+      "source": "adam-smith",
+      "target": "enlightenment",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "classical-economics-industrial-revolution",
+      "source": "classical-economics",
+      "target": "industrial-revolution",
+      "relationship": "influenced",
+      "description": "Smith's arguments for free markets and specialized labor provided much of the intellectual justification for the industrial and economic transformations already gathering pace as the book was published.",
+      "confidence": 0.82,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "classical-economics-karl-marx",
+      "source": "classical-economics",
+      "target": "karl-marx",
+      "relationship": "influenced",
+      "description": "Marx engaged closely and critically with classical economics, particularly Smith's labor theory of value, before developing his own account of how capitalism extracts surplus value from workers.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "karl-marx-das-kapital",
+      "source": "karl-marx",
+      "target": "das-kapital",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "karl-marx-classical-economics",
+      "source": "karl-marx",
+      "target": "classical-economics",
+      "relationship": "criticized",
+      "description": "Marx argued that classical economics, including Smith's own framework, failed to recognize that labor itself is the source of the surplus value capitalists extract as profit.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "karl-marx-marxist-economics",
+      "source": "karl-marx",
+      "target": "marxist-economics",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "das-kapital-marxist-economics",
+      "source": "das-kapital",
+      "target": "marxist-economics",
+      "relationship": "formalized",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "newton-royal-society",
+      "source": "newton",
+      "target": "royal-society",
+      "relationship": "belonged_to",
+      "description": "Newton served as President of the Royal Society from 1703 until his death in 1727.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "michael-faraday-royal-society",
+      "source": "michael-faraday",
+      "target": "royal-society",
+      "relationship": "belonged_to",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "maxwell-royal-society",
+      "source": "maxwell",
+      "target": "royal-society",
+      "relationship": "belonged_to",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "euclid-library-of-alexandria",
+      "source": "euclid",
+      "target": "library-of-alexandria",
+      "relationship": "belonged_to",
+      "description": "Euclid is traditionally understood to have taught and worked in Alexandria, where he likely composed the Elements.",
+      "confidence": 0.75,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ptolemy-library-of-alexandria",
+      "source": "ptolemy",
+      "target": "library-of-alexandria",
+      "relationship": "belonged_to",
+      "description": "Ptolemy lived and worked in Alexandria, where he carried out the astronomical observations underlying the Almagest.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "john-bardeen-transistor",
+      "source": "john-bardeen",
+      "target": "transistor",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "walter-brattain-transistor",
+      "source": "walter-brattain",
+      "target": "transistor",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "william-shockley-transistor",
+      "source": "william-shockley",
+      "target": "transistor",
+      "relationship": "invented",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "transistor-information-age",
+      "source": "transistor",
+      "target": "information-age",
+      "relationship": "enabled",
+      "description": "The transistor's small size, reliability, and low power consumption made it possible to build computers far more powerful and affordable than anything achievable with vacuum tubes, directly enabling the scale of computing the Information Age depends on.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "john-bardeen-information-age",
+      "source": "john-bardeen",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "walter-brattain-information-age",
+      "source": "walter-brattain",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "william-shockley-information-age",
+      "source": "william-shockley",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "vint-cerf-internet",
+      "source": "vint-cerf",
+      "target": "internet",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "bob-kahn-internet",
+      "source": "bob-kahn",
+      "target": "internet",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "transistor-internet",
+      "source": "transistor",
+      "target": "internet",
+      "relationship": "enabled",
+      "description": "The routers, switches, and computers that make up the Internet's physical infrastructure all depend on transistor-based electronics.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "internet-information-age",
+      "source": "internet",
+      "target": "information-age",
+      "relationship": "enabled",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "vint-cerf-information-age",
+      "source": "vint-cerf",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "bob-kahn-information-age",
+      "source": "bob-kahn",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "tim-berners-lee-world-wide-web",
+      "source": "tim-berners-lee",
+      "target": "world-wide-web",
+      "relationship": "invented",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "internet-world-wide-web",
+      "source": "internet",
+      "target": "world-wide-web",
+      "relationship": "enabled",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "world-wide-web-information-age",
+      "source": "world-wide-web",
+      "target": "information-age",
+      "relationship": "enabled",
+      "description": "The Web gave ordinary people an accessible way to publish and navigate linked information over the Internet, turning it from a specialist research tool into the everyday medium that defines the Information Age for most people.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "tim-berners-lee-information-age",
+      "source": "tim-berners-lee",
+      "target": "information-age",
+      "relationship": "advanced",
+      "confidence": 0.92,
       "directness": "direct",
       "evidenceType": "scholarly_consensus"
     }

@@ -181,10 +181,18 @@ function StoriesListView({
             onClick={() => onSelectStory(story.id)}
           >
             <h3>{story.title}</h3>
-            <p>{story.teaser}</p>
+
             <span className="story-card-meta">
               {story.steps.length} Story Points
             </span>
+
+            <p>{story.teaser}</p>
+
+            <div className="tag-list story-card-tags">
+              {story.disciplines.map((discipline) => (
+                <span key={discipline}>{discipline}</span>
+              ))}
+            </div>
           </button>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { forceCollide } from "d3-force";
+import { forceCollide, forceManyBody } from "d3-force";
 import ForceGraph2D, {
   type ForceGraphMethods,
   type LinkObject,
@@ -247,10 +247,6 @@ const explodeSnapshotRef = useRef<
 // Tracks the previous anchoredNodeIds value so the release effect can
 // diff and detect exactly which node(s) were just removed (released).
 const previousAnchoredNodeIdsRef = useRef<Set<string>>(new Set());
-
-// Whether the "N anchors" stat is currently being hovered while it's
-// acting as a button — swaps its label to "Clear all".
-const [isAnchorsButtonHovered, setIsAnchorsButtonHovered] = useState(false);
 
 // Controls how strongly nodes push apart in the collision force — see the
 // collision-force effect below. Optionally-controlled: when the parent
@@ -785,7 +781,7 @@ const handleViewModeChange = (mode: "clusters" | "connections") => {
     return linkCurvature.get(link.id) ?? 0;
   };
   
-  // configure collision + link-distance forces
+  // configure collision + link-distance + repulsion forces
   useEffect(() => {
     const fg = graphRef.current;
   
@@ -804,10 +800,13 @@ const handleViewModeChange = (mode: "clusters" | "connections") => {
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
     fg.d3Force("link")?.distance(() => 8);
+    // Bounded repulsion — caps how far apart nodes push each other so the
+    // graph stays more contained overall instead of sprawling, without
+    // changing its topology. Adopted from what was Test Mode 3.
+    fg.d3Force("charge", forceManyBody().strength(-80).distanceMax(260));
 
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions, graphViewMode]);
-
 
   // ===========================================================================
   // Render
@@ -848,12 +847,13 @@ const handleViewModeChange = (mode: "clusters" | "connections") => {
                 className="clear-all-anchors-button"
                 type="button"
                 onClick={onUnanchorAll}
-                onMouseEnter={() => setIsAnchorsButtonHovered(true)}
-                onMouseLeave={() => setIsAnchorsButtonHovered(false)}
               >
-                {isAnchorsButtonHovered
-                  ? "Clear all"
-                  : `${visibleAnchoredCount} anchors`}
+                <span className="clear-all-anchors-button-default">
+                  {visibleAnchoredCount} anchors
+                </span>
+                <span className="clear-all-anchors-button-hover">
+                  Clear all
+                </span>
               </button>
             );
           })()}
