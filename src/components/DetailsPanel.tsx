@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { formatHistoricalYearRange } from "../utils/formatHistoricalDate";
+import { findStoryPointForNode } from "../data/stories";
 import type {
   GraphNode,
   KnowledgeEdge,
@@ -29,6 +30,9 @@ interface DetailsPanelProps {
   onPathwayClear: () => void;
   anchoredNodeIds: Set<string>;
   onNodeUnanchor: (nodeId: string) => void;
+  // Called when the story-point button is clicked — App.tsx implements
+  // this as "open that story at that step and switch to the Stories tab".
+  onNavigateToStoryPoint: (storyId: string, stepIndex: number) => void;
 }
 
 interface RelationshipGroup {
@@ -56,6 +60,27 @@ function ConnectedPathIcon() {
         stroke="#ffb703"
         strokeWidth="1.5"
         strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+// The open-book icon from the uploaded Noun Project SVG (attribution
+// lives in the Citations tab), cropped to its own bounding box and
+// recolored via currentColor so the button's CSS controls default vs.
+// hover color.
+function BookIcon() {
+  return (
+    <svg
+      width="32"
+      height="30"
+      viewBox="8.33 11.19 83.34 77.63"
+      aria-hidden="true"
+    >
+      <path
+        d="m19.746 11.188c-1.8438 0.09375-3.4492 1.6641-3.4492 3.5586v46.125c0 2.0195 1.5273 3.707 3.5703 3.8438 6.6875 0.45312 19.461 1.0742 27.617 13.996 0.17188 0.27344 0.39453 0.53906 0.66016 0.77344l0.003907-55.891c-9.1016-11.141-21.977-11.992-28.031-12.402h-0.37109zm60.508 0h-0.37109c-6.0547 0.41016-18.93 1.2578-28.027 12.398v55.891c0.26562-0.23437 0.48828-0.5 0.66016-0.77344 8.1562-12.918 20.93-13.539 27.617-13.992 2.043-0.12891 3.5703-1.8242 3.5703-3.8438v-46.125c0-1.8945-1.6094-3.4766-3.4492-3.5547zm-67.66 9.7617c-0.24219 0-0.47266 0.019531-0.6875 0.035156-2.0977 0.12891-3.5742 1.8711-3.5742 3.8867v43.516c0 2.0117 1.875 3.6367 3.8125 3.5117 5.082-0.32813 20.246-0.054688 29.371 14.457 0.96484 1.5352 2.4648 2.4609 4.3672 2.4609h8.2383c1.8984 0 3.3984-0.92578 4.3672-2.4609 9.1211-14.52 24.285-14.785 29.371-14.457 1.9375 0.12891 3.8125-1.4961 3.8125-3.5117l-0.003906-43.516c0-2.0156-1.4766-3.75-3.5742-3.8867-0.21484 0-0.44531-0.019531-0.6875-0.035156v39.918c0 4.0078-2.9336 7.2656-7.0234 7.5391-6.7539 0.46094-17.5 0.8125-24.734 12.273-0.92969 1.4688-2.9297 3.2383-5.6406 3.2383-2.7109 0-4.7148-1.7656-5.6445-3.2383-7.2422-11.461-17.992-11.812-24.746-12.273-4.0859-0.27344-7.0234-3.5273-7.0234-7.5391z"
+        fillRule="evenodd"
+        fill="currentColor"
       />
     </svg>
   );
@@ -180,6 +205,7 @@ function DetailsPanel({
   onPathwayClear,
   anchoredNodeIds,
   onNodeUnanchor,
+  onNavigateToStoryPoint,
 }: DetailsPanelProps) {
   
   // ===========================================================================
@@ -346,6 +372,13 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
   const pathwayTargetNode = activePathway
     ? graphNodeById.get(activePathway.targetId)
     : undefined;
+
+  // Only nodes that actually appear as a step in some story get the
+  // story-point button at all.
+  const storyPoint = useMemo(
+    () => (selectedNode ? findStoryPointForNode(selectedNode.id) : null),
+    [selectedNode],
+  );
 
   // ===========================================================================
   // Helpers
@@ -767,7 +800,26 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
             renderPathwayResult()
           ) : (
             <>
-              <p className="eyebrow">Selection</p>
+              <div className="selection-header-row">
+                <p className="eyebrow">Selection</p>
+
+                {storyPoint && (
+                  <button
+                    className="story-point-corner-button"
+                    type="button"
+                    title="Story point"
+                    aria-label="View this node's story point"
+                    onClick={() =>
+                      onNavigateToStoryPoint(
+                        storyPoint.storyId,
+                        storyPoint.stepIndex,
+                      )
+                    }
+                  >
+                    <BookIcon />
+                  </button>
+                )}
+              </div>
 
               {selectedNode ? (
                 <article className="node-details">
@@ -775,15 +827,6 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                     <span className="details-node-type">
                       {selectedNode.type}
                     </span>
-
-                    <button
-                      className="find-path-button"
-                      type="button"
-                      onClick={onPathwaySearchStart}
-                    >
-                      Find a path
-                      <ConnectedPathIcon />
-                    </button>
                   </div>
 
                   <div className="node-details-actions">
@@ -793,6 +836,15 @@ const [pathwaySearchQuery, setPathwaySearchQuery] = useState("");
                       onClick={onSelectionClear}
                     >
                       Clear
+                    </button>
+
+                    <button
+                      className="find-path-button"
+                      type="button"
+                      onClick={onPathwaySearchStart}
+                    >
+                      Find a path
+                      <ConnectedPathIcon />
                     </button>
 
                     {selectedNode.type === "movement" &&

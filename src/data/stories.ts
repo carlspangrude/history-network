@@ -96,3 +96,25 @@ export const STORIES: Story[] = [
     ],
   },
 ];
+
+export interface StoryPointLocation {
+  storyId: string;
+  stepIndex: number;
+}
+
+// Used by DetailsPanel to determine whether a node has a "story point"
+// button to show at all, and if so, where clicking it should navigate to.
+// Checks stories in order and returns the first match — a node appearing
+// in more than one story isn't expected currently, but if it ever
+// happens, this deterministically picks the earliest-defined story.
+export function findStoryPointForNode(
+  nodeId: string,
+): StoryPointLocation | null {
+  for (const story of STORIES) {
+    const stepIndex = story.steps.findIndex((step) => step.nodeId === nodeId);
+    if (stepIndex !== -1) {
+      return { storyId: story.id, stepIndex };
+    }
+  }
+  return null;
+}

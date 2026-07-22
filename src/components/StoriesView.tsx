@@ -122,9 +122,9 @@ function renderNarrative(
   return segments;
 }
 
-// Matches the on-graph pathway badge's green "current step" treatment —
-// same fill, dark stroke and text — rendered as a standalone SVG for
-// the narrative panel instead of drawn on the canvas.
+// Matches the on-graph pathway badge's color exactly — same fill, dark
+// stroke and text — rendered as a standalone SVG for the narrative panel
+// instead of drawn on the canvas.
 function StepBadge({ stepNumber }: { stepNumber: number }) {
   return (
     <svg
@@ -183,7 +183,7 @@ function StoriesListView({
             <h3>{story.title}</h3>
             <p>{story.teaser}</p>
             <span className="story-card-meta">
-              {story.steps.length} steps
+              {story.steps.length} Story Points
             </span>
           </button>
         ))}

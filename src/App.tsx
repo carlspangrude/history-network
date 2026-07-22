@@ -126,6 +126,14 @@ function App() {
     setActiveView("explore");
   };
 
+  // The reverse direction: from a node's details in Explore, jump to
+  // where it appears as a step in a story and switch to the Stories tab.
+  const handleNavigateToStoryPoint = (storyId: string, stepIndex: number) => {
+    setActiveStoryId(storyId);
+    setStoryStepIndex(stepIndex);
+    setActiveView("stories");
+  };
+
   // ===========================================================================
   // Render
   // ===========================================================================
@@ -248,6 +256,7 @@ function App() {
             onPathwayClear={handlePathwayClear}
             anchoredNodeIds={anchoredNodeIds}
             onNodeUnanchor={handleNodeUnanchor}
+            onNavigateToStoryPoint={handleNavigateToStoryPoint}
           />
         </main>
 
