@@ -1076,7 +1076,7 @@ function TimelineCanvas({
               onClick={handleFitTimeline}
               disabled={isYearRangeAtFullExtent}
             >
-              {isFitEngaged ? "Show Full Timeline" : "Fit Timeline"}
+              {isFitEngaged ? "Show full timeline" : "Fit timeline"}
             </button>
 
             <button

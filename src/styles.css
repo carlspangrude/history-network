@@ -189,6 +189,212 @@ h2 {
 }
 
 /* ==========================================================================
+   Citations & Evidence View
+   ========================================================================== */
+
+.citations-view {
+  height: 100%;
+  overflow-y: auto;
+  padding: 32px;
+}
+
+.citations-header {
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+.citations-intro {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.citations-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.citations-stats span {
+  padding: 7px 10px;
+  border: 1px solid var(--border-pill);
+  border-radius: var(--radius-pill);
+  background: rgba(30, 30, 30, 0.82);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+}
+
+.citations-controls {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.citations-search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.citations-search-input {
+  width: auto;
+  flex: 1;
+}
+
+.citations-filter-count {
+  margin-left: auto;
+  padding: 1px 7px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  color: var(--text-dim);
+  font-size: 0.66rem;
+}
+
+.citations-list {
+  display: grid;
+  gap: 14px;
+  max-width: 860px;
+}
+
+.citations-empty {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+.citation-row {
+  padding: 16px 18px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-medium);
+  background: var(--background-panel-alt);
+}
+
+.citation-row-relationship {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.citation-row-verb {
+  color: var(--relationship-highlight);
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.citation-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The confidence bar is this view's one deliberate signature element —
+   a warm, parchment-toned fill (the same gold used for publication-type
+   nodes elsewhere in the app) rather than a red/yellow/green traffic
+   light, since the metaphor here is "how solid is the historical
+   record," not a pass/fail dashboard metric. */
+.citation-confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.citation-confidence-track {
+  overflow: hidden;
+  width: 72px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-default);
+}
+
+.citation-confidence-fill {
+  display: block;
+  height: 100%;
+  background: var(--node-publication);
+}
+
+.citation-confidence-label {
+  color: var(--text-subtle);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.citation-badge {
+  padding: 3px 9px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  color: var(--text-body);
+  font-size: 0.68rem;
+}
+
+.citation-badge--unclassified {
+  border-style: dashed;
+  color: var(--text-dim);
+}
+
+.citation-row-description {
+  margin-top: 10px;
+  color: var(--text-description);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.citations-sources {
+  max-width: 720px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-default);
+}
+
+.citations-sources h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.citations-sources-note {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.citations-sources-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.citations-source-item {
+  padding: 12px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-medium);
+  background: var(--background-panel-alt);
+  font-size: 0.82rem;
+}
+
+.citations-source-title {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.citations-source-authors,
+.citations-source-year,
+.citations-source-publisher {
+  color: var(--text-muted);
+}
+
+.citations-source-note {
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
    Stories
    ========================================================================== */
 
@@ -344,6 +550,7 @@ h2 {
   font: inherit;
   font-size: inherit;
   line-height: inherit;
+  text-align: left;
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: transparent;

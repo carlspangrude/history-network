@@ -96,21 +96,43 @@ function renderNarrative(
     const suffix = suffixMatch ? suffixMatch[0] : "";
     endIndex += suffix.length;
 
-    segments.push(
+    const linkButton = (
       <span
-        key={`narrative-link-${key++}`}
-        className="story-narrative-link-wrap"
+        className="story-narrative-link"
+        role="button"
+        tabIndex={0}
+        onClick={() => onNavigateToNode(nodeId)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onNavigateToNode(nodeId);
+          }
+        }}
       >
-        <button
-          className="story-narrative-link"
-          type="button"
-          onClick={() => onNavigateToNode(nodeId)}
-        >
-          {label}
-        </button>
-        {suffix}
-      </span>,
+        {label}
+      </span>
     );
+
+    // Only force nowrap when there's an actual suffix to glue to the
+    // link — otherwise this wrapper's white-space: nowrap inherits into
+    // the button's own text and prevents long, multi-word labels (e.g.
+    // full publication titles) from wrapping at all, forcing horizontal
+    // overflow instead of a normal line break.
+    if (suffix) {
+      segments.push(
+        <span
+          key={`narrative-link-${key++}`}
+          className="story-narrative-link-wrap"
+        >
+          {linkButton}
+          {suffix}
+        </span>,
+      );
+    } else {
+      segments.push(
+        <span key={`narrative-link-${key++}`}>{linkButton}</span>,
+      );
+    }
 
     lastIndex = endIndex;
   }

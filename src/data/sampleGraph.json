@@ -45,7 +45,7 @@
       "id": "principia",
       "name": "Philosophiæ Naturalis Principia Mathematica",
       "type": "publication",
-      "importance": 8,
+      "importance": 10,
       "description": "Newton's 1687 work presenting the laws of motion and universal gravitation.",
       "startYear": 1687,
       "disciplines": [
@@ -61,7 +61,7 @@
       "id": "laws-of-motion",
       "name": "Laws of Motion",
       "type": "theory",
-      "importance": 6,
+      "importance": 7,
       "description": "Three principles describing the relationship between force, mass, and motion.",
       "startYear": 1687,
       "disciplines": [
@@ -75,7 +75,7 @@
       "id": "universal-gravitation",
       "name": "Universal Gravitation",
       "type": "theory",
-      "importance": 7,
+      "importance": 9,
       "description": "The principle that every mass attracts every other mass.",
       "startYear": 1687,
       "disciplines": [
@@ -107,7 +107,7 @@
       "id": "electromagnetism",
       "name": "Classical Electromagnetism",
       "type": "theory",
-      "importance": 8,
+      "importance": 9,
       "description": "A unified account of electric and magnetic phenomena expressed through Maxwell's equations.",
       "startYear": 1865,
       "disciplines": [
@@ -254,7 +254,7 @@
       "id": "aristotelian-physics",
       "name": "Aristotelian Physics",
       "type": "theory",
-      "importance": 7,
+      "importance": 6,
       "description": "An influential ancient framework for understanding motion, change, causation, matter, and the structure of the natural world.",
       "startYear": -350,
       "disciplines": [
@@ -426,7 +426,7 @@
       "id": "novum-organum",
       "name": "Novum Organum",
       "type": "publication",
-      "importance": 7,
+      "importance": 8,
       "description": "Bacon's 1620 work proposing a reformed method of inquiry centered on systematic observation, induction, and the correction of intellectual error.",
       "startYear": 1620,
       "disciplines": [
@@ -510,7 +510,7 @@
       "id": "the-social-contract",
       "name": "The Social Contract",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Rousseau's 1762 work examining legitimate political authority, popular sovereignty, freedom, and the general will.",
       "startYear": 1762,
       "disciplines": [
@@ -682,7 +682,7 @@
       "id": "laws-of-planetary-motion",
       "name": "Kepler's Laws of Planetary Motion",
       "type": "theory",
-      "importance": 8,
+      "importance": 9,
       "description": "Kepler's Three Laws of Planetary Motion describe how planets move around the Sun in elliptical orbits at varying speeds and in mathematically predictable periods. Derived from Tycho's precise observations, these laws replaced centuries of circular-orbit models and became one of the foundational achievements of the Scientific Revolution, later providing the empirical basis for Newton's theory of universal gravitation.",
       "startYear": 1609,
       "endYear": 1621,
@@ -704,7 +704,7 @@
       "id": "de-revolutionibus",
       "name": "De revolutionibus orbium coelestium",
       "type": "publication",
-      "importance": 7,
+      "importance": 8,
       "description": "\"On the Revolutions of the Heavenly Spheres\" is Copernicus's landmark work proposing a heliocentric model of the cosmos. Although it retained some classical assumptions, the work fundamentally challenged the long-standing geocentric worldview and initiated a profound transformation in astronomy and natural philosophy.",
       "startYear": 1543,
       "disciplines": [
@@ -724,7 +724,7 @@
       "id": "astronomia-nova",
       "name": "Astronomia Nova",
       "type": "publication",
-      "importance": 7,
+      "importance": 8,
       "description": "\"New Astronomy\" presented Kepler's first law of planetary motion, demonstrating that planets travel in elliptical rather than circular orbits. Drawing upon Tycho's unprecedented observational data, the work transformed astronomy from a geometric model of the heavens into a mathematical science describing physical reality.",
       "startYear": 1609,
       "disciplines": [
@@ -765,7 +765,7 @@
       "id": "epitome-copernican-astronomy",
       "name": "Epitome Astronomiae Copernicanae",
       "type": "publication",
-      "importance": 7,
+      "importance": 6,
       "description": "\"Epitome of Copernican Astronomy\" describes Kepler's second law of planetary motion and presented the most complete exposition of his heliocentric astronomy. Synthesizing his discoveries into a coherent framework, it became one of the most influential astronomical textbooks of the seventeenth century and helped establish the Copernican system across Europe.",
       "startYear": 1618,
       "endYear": 1621,
@@ -835,7 +835,7 @@
       "id": "hellenistic-science",
       "name": "Hellenistic Science",
       "type": "movement",
-      "importance": 9,
+      "importance": 8,
       "description": "Hellenistic Science was an intellectual movement that flourished following the conquests of Alexander the Great, emphasizing systematic observation, mathematical reasoning, and empirical investigation to understand the natural world. Centered in institutions such as the Library of Alexandria, its scholars made foundational advances in mathematics, astronomy, engineering, geography, and medicine that influenced scientific thought for centuries.",
       "startYear": -323,
       "endYear": -31,
@@ -859,7 +859,7 @@
       "id": "enlightenment",
       "name": "The Enlightenment",
       "type": "movement",
-      "importance": 9,
+      "importance": 10,
       "description": "The Enlightenment was an intellectual movement of the seventeenth and eighteenth centuries that emphasized reason, individual liberty, scientific inquiry, and skepticism of inherited authority as the foundations of human progress. Its philosophers transformed political theory, economics, ethics, and education, inspiring democratic revolutions and shaping many of the principles underlying modern liberal societies.",
       "startYear": 1685,
       "endYear": 1815,
@@ -1713,7 +1713,7 @@
       "id": "medical-science",
       "name": "Medical Science",
       "type": "movement",
-      "importance": 10,
+      "importance": 9,
       "description": "Intellectual and practical tradition devoted to understanding the human body, explaining disease, preventing illness, and developing effective treatments through observation, anatomy, experimentation, clinical practice, and biological science. Emerging from ancient naturalistic medicine, medical science was transformed by anatomical investigation, the discovery of circulation, germ theory, antisepsis, vaccination, pharmacology, genetics, and molecular biology.",
       "startYear": -450,
       "disciplines": [
@@ -1742,7 +1742,7 @@
       "id": "evolutionary-biology",
       "name": "Evolutionary Biology",
       "type": "movement",
-      "importance": 10,
+      "importance": 9,
       "description": "Scientific movement explaining the diversity, adaptation, common ancestry, and historical transformation of living organisms through natural processes. Developed from earlier work in classification, geology, biogeography, and heredity, evolutionary biology was reshaped by natural selection and later unified with Mendelian genetics, population genetics, paleontology, systematics, ecology, and molecular biology through the modern evolutionary synthesis.",
       "startYear": 1800,
       "disciplines": [
@@ -1771,7 +1771,7 @@
       "id": "molecular-biology",
       "name": "Molecular Biology",
       "type": "movement",
-      "importance": 10,
+      "importance": 9,
       "description": "Twentieth-century scientific movement explaining biological inheritance, cellular activity, and the reproduction of living systems through the structures and interactions of molecules. By identifying DNA as hereditary material, determining its structure, explaining genetic information transfer, decoding protein synthesis, and developing sequencing technologies, molecular biology transformed genetics, medicine, biotechnology, and evolutionary science.",
       "startYear": 1930,
       "disciplines": [
@@ -2310,7 +2310,7 @@
       "id": "islamic-golden-age",
       "name": "Islamic Golden Age",
       "type": "movement",
-      "importance": 10,
+      "importance": 9,
       "description": "A period of extraordinary scientific, philosophical, and cultural achievement across the Islamic world, during which scholars preserved classical Greek learning, made foundational advances in mathematics, medicine, astronomy, and optics, and produced works that would later transform European thought.",
       "startYear": 750,
       "endYear": 1258,
@@ -2439,7 +2439,7 @@
       "id": "scientific-method",
       "name": "Scientific Method",
       "type": "theory",
-      "importance": 8,
+      "importance": 9,
       "description": "A systematic approach to inquiry combining observation, hypothesis, controlled experiment, and mathematical analysis, first rigorously demonstrated in Ibn al-Haytham's optical experiments and later central to the European Scientific Revolution.",
       "startYear": 1021,
       "disciplines": [
@@ -2490,7 +2490,7 @@
       "id": "toledo-school-translators",
       "name": "Toledo School of Translators",
       "type": "institution",
-      "importance": 8,
+      "importance": 7,
       "description": "A center of translation activity in Christian Spain where Arabic scientific and philosophical texts, including the commentaries of Ibn Rushd and the works of Ibn Sina, were rendered into Latin. It served as the principal channel through which the achievements of the Islamic Golden Age reached medieval European scholarship.",
       "startYear": 1085,
       "endYear": 1284,
@@ -2530,7 +2530,7 @@
       "id": "scholasticism",
       "name": "Scholasticism",
       "type": "movement",
-      "importance": 9,
+      "importance": 7,
       "description": "A method of critical philosophical and theological inquiry, centered on dialectical reasoning and textual commentary, that dominated medieval European universities. It sought to reconcile classical philosophy, especially Aristotle, with Christian doctrine.",
       "startYear": 1100,
       "endYear": 1700,
@@ -2612,7 +2612,7 @@
       "id": "hindu-arabic-numeral-system",
       "name": "Hindu-Arabic Numeral System",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "A positional decimal numeral system using ten digits, including zero as both placeholder and true numerical value, that enabled far more efficient arithmetic than earlier numeral systems. Developed over centuries in India and later transmitted through the Islamic world into Europe, it became the standard numeral system used throughout the modern world.",
       "startYear": 628,
       "startYearApprox": true,
@@ -2777,7 +2777,7 @@
       "id": "papermaking",
       "name": "Papermaking",
       "type": "technology",
-      "importance": 9,
+      "importance": 8,
       "description": "A process for manufacturing paper from plant fibers, refined into practical, reproducible form in Han dynasty China. It gradually spread westward along trade routes, reaching the Islamic world by the late eighth century and Europe by the twelfth, fundamentally transforming the scale and cost of written communication everywhere it arrived.",
       "startYear": 105,
       "disciplines": [
@@ -2792,7 +2792,7 @@
       "id": "movable-type-printing",
       "name": "Movable Type Printing",
       "type": "technology",
-      "importance": 8,
+      "importance": 7,
       "description": "A printing method using individually cast or carved characters that can be rearranged and reused for different texts, in contrast to fixed woodblock printing. First developed in Song dynasty China using ceramic type, it predates the independent development of movable metal type in Europe by roughly four centuries.",
       "startYear": 1040,
       "startYearApprox": true,
@@ -2810,7 +2810,7 @@
       "id": "compass",
       "name": "Compass (Magnetic)",
       "type": "technology",
-      "importance": 8,
+      "importance": 7,
       "description": "A navigational instrument using a magnetized needle to indicate direction, developed gradually in China from earlier lodestone-based divination tools. Shen Kuo's Dream Pool Essays contains the earliest known clear written description of a magnetized needle used for direction-finding, including the phenomenon of magnetic declination.",
       "startYear": 1088,
       "startYearApprox": true,
@@ -2828,7 +2828,7 @@
       "id": "dream-pool-essays",
       "name": "Dream Pool Essays",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Shen Kuo's wide-ranging collection of essays covering astronomy, mathematics, geology, meteorology, optics, and engineering, notable for containing the first known description of magnetic declination and the only surviving account of Bi Sheng's invention of movable type printing.",
       "startYear": 1088,
       "disciplines": [
@@ -2848,7 +2848,7 @@
       "id": "magnetic-declination",
       "name": "Magnetic Declination",
       "type": "theory",
-      "importance": 7,
+      "importance": 6,
       "description": "The phenomenon in which a compass needle points toward magnetic north rather than true geographic north, with the angular difference varying by location. Its first known written description appears in Shen Kuo's Dream Pool Essays, marking a foundational observation in the history of geomagnetism.",
       "startYear": 1088,
       "disciplines": [
@@ -2902,7 +2902,7 @@
       "id": "analytical-engine",
       "name": "Analytical Engine",
       "type": "technology",
-      "importance": 9,
+      "importance": 7,
       "description": "Charles Babbage's design for a mechanical, general-purpose computer, using punched cards for instructions and capable of following a sequence of operations rather than performing only a single fixed calculation. Never completed in his lifetime, its design nonetheless anticipated the stored-program concept central to later computing.",
       "startYear": 1837,
       "startYearApprox": true,
@@ -2920,7 +2920,7 @@
       "id": "notes-on-the-analytical-engine",
       "name": "Notes on the Analytical Engine",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Ada Lovelace's extensive annotations on Babbage's Analytical Engine, including a detailed method for calculating Bernoulli numbers now widely recognized as the first algorithm published for execution by a machine, along with a broader argument that such machines could process symbols of any kind, not only numbers.",
       "startYear": 1843,
       "disciplines": [
@@ -2973,7 +2973,7 @@
       "id": "turing-machine",
       "name": "Turing Machine (Computability Theory)",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "A formal mathematical model of computation consisting of a simple machine manipulating symbols on an infinite tape according to a fixed set of rules, capable of simulating any algorithmic process. It defined the theoretical limits of what can be computed and became the foundational model underlying all of theoretical computer science.",
       "startYear": 1936,
       "disciplines": [
@@ -3027,7 +3027,7 @@
       "id": "information-theory",
       "name": "Information Theory",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "A mathematical framework for quantifying information, measuring the capacity of communication channels, and determining the limits of data compression and reliable transmission in the presence of noise. It became foundational to digital communication, computing, and data storage.",
       "startYear": 1948,
       "disciplines": [
@@ -3159,7 +3159,7 @@
       "id": "big-bang-theory",
       "name": "Big Bang Theory",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "The theory that the universe began from an extremely hot, dense state roughly 13.8 billion years ago and has been expanding and cooling ever since. It explains the observed expansion of the universe, the abundance of light elements, and the cosmic microwave background radiation.",
       "startYear": 1931,
       "disciplines": [
@@ -3299,7 +3299,7 @@
       "id": "electromagnetic-induction",
       "name": "Electromagnetic Induction",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "The phenomenon in which a changing magnetic field induces an electric current in a nearby conductor. Discovered through careful experiment rather than derived from theory, it revealed a fundamental link between electricity and magnetism and became the operating principle behind virtually all electric generators, transformers, and motors.",
       "startYear": 1831,
       "disciplines": [
@@ -3332,7 +3332,7 @@
       "id": "electric-generator",
       "name": "Electric Generator",
       "type": "technology",
-      "importance": 9,
+      "importance": 8,
       "description": "A device that converts mechanical motion into electrical current by exploiting electromagnetic induction. Faraday's original demonstration — a copper disk rotating between the poles of a magnet — was the first machine in history to generate a continuous electric current, and the direct ancestor of every power-station generator built since.",
       "startYear": 1831,
       "disciplines": [
@@ -3433,7 +3433,7 @@
       "id": "periodic-table",
       "name": "Periodic Table",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "A systematic arrangement of the chemical elements by atomic weight and recurring chemical properties, revealing an underlying periodic pattern in how elements behave. It remains the organizing framework of chemistry, with later additions of atomic number and electron structure only refining a structure Mendeleev first correctly discerned.",
       "startYear": 1869,
       "disciplines": [
@@ -3468,7 +3468,7 @@
       "id": "wealth-of-nations",
       "name": "The Wealth of Nations",
       "type": "publication",
-      "importance": 10,
+      "importance": 9,
       "description": "Adam Smith's 1776 treatise on political economy, arguing that national prosperity arises from the productivity gains of specialized labor and free exchange rather than a nation's stock of gold or silver. It is generally regarded as the foundational text of modern economics.",
       "startYear": 1776,
       "disciplines": [
@@ -3551,7 +3551,7 @@
       "id": "royal-society",
       "name": "Royal Society",
       "type": "institution",
-      "importance": 10,
+      "importance": 8,
       "description": "Founded in London in 1660, the Royal Society is one of the oldest scientific institutions in continuous existence, and among the most influential. Its fellows have included Newton, Faraday, Maxwell, and Darwin, and its early motto — \"Nullius in verba,\" take nobody's word for it — became a founding statement of the experimental scientific method.",
       "startYear": 1660,
       "isOngoing": true,
@@ -3571,7 +3571,7 @@
       "id": "library-of-alexandria",
       "name": "Library of Alexandria",
       "type": "institution",
-      "importance": 9,
+      "importance": 8,
       "description": "Founded in Ptolemaic Egypt in the third century BCE, the Library of Alexandria was the greatest center of scholarship in the ancient Mediterranean world, attracting and housing scholars, texts, and research across mathematics, astronomy, medicine, and literature. Its gradual decline over several centuries — through fire, neglect, and political upheaval — remains one of history's most cited losses of accumulated knowledge.",
       "startYear": -295,
       "startYearApprox": true,
@@ -3731,7 +3731,7 @@
       "id": "world-wide-web",
       "name": "World Wide Web",
       "type": "technology",
-      "importance": 10,
+      "importance": 9,
       "description": "A system of interlinked hypertext documents accessed over the Internet, invented in 1989–91. By giving ordinary people an easy way to publish and navigate linked information, it transformed the Internet from a specialist research network into the everyday medium billions now use.",
       "startYear": 1989,
       "disciplines": [
@@ -3765,7 +3765,7 @@
       "id": "man-and-nature",
       "name": "Man and Nature",
       "type": "publication",
-      "importance": 8,
+      "importance": 6,
       "description": "George Perkins Marsh's 1864 book documenting how human activity — logging, agriculture, drainage — had measurably degraded landscapes across history, from ancient Mediterranean deforestation to contemporary America. It was among the first widely read arguments that nature was not an inexhaustible resource.",
       "startYear": 1864,
       "disciplines": [
@@ -3799,7 +3799,7 @@
       "id": "sierra-club",
       "name": "Sierra Club",
       "type": "institution",
-      "importance": 8,
+      "importance": 6,
       "description": "Founded by John Muir in 1892 to support the preservation of the Sierra Nevada and other wild places, the Sierra Club became one of the most influential environmental advocacy organizations in the United States and remains active today.",
       "startYear": 1892,
       "isOngoing": true,
@@ -3835,7 +3835,7 @@
       "id": "conservationism",
       "name": "Conservationism",
       "type": "theory",
-      "importance": 8,
+      "importance": 7,
       "description": "The philosophy that natural resources should be managed scientifically for sustained, efficient human use rather than either exploited without limit or preserved untouched. It became the guiding principle of U.S. federal land management for much of the twentieth century.",
       "startYear": 1905,
       "startYearApprox": true,
@@ -3872,7 +3872,7 @@
       "id": "silent-spring",
       "name": "Silent Spring",
       "type": "publication",
-      "importance": 10,
+      "importance": 9,
       "description": "Rachel Carson's 1962 book documenting the ecological damage caused by synthetic pesticides, particularly DDT. Meticulously researched and aimed at a general audience, it directly shaped public opinion and policy, leading to a nationwide ban on DDT and the founding of the Environmental Protection Agency.",
       "startYear": 1962,
       "disciplines": [
@@ -3889,7 +3889,7 @@
       "id": "environmental-protection-agency",
       "name": "Environmental Protection Agency",
       "type": "institution",
-      "importance": 8,
+      "importance": 6,
       "description": "A U.S. federal agency created in 1970 in direct response to rising public concern over pollution and pesticide use, tasked with writing and enforcing regulations to protect human health and the environment. It remains the primary federal environmental regulator in the United States.",
       "startYear": 1970,
       "isOngoing": true,
@@ -3908,7 +3908,7 @@
       "id": "environmentalism",
       "name": "Environmentalism",
       "type": "movement",
-      "importance": 9,
+      "importance": 8,
       "description": "A movement advocating for the protection of the natural environment from the damaging effects of human activity, spanning wilderness preservation, resource conservation, pollution control, and — more recently — climate change. Though its intellectual roots reach back to the nineteenth century, its modern, mass political form is usually dated to the early 1960s.",
       "startYear": 1962,
       "startYearApprox": true,
@@ -3964,7 +3964,7 @@
       "id": "deep-ecology",
       "name": "Deep Ecology",
       "type": "theory",
-      "importance": 8,
+      "importance": 7,
       "description": "The position that all living things possess intrinsic value independent of their usefulness to humans, and that ecological problems stem from a deeper, mistaken assumption that humans stand apart from and above the rest of nature. It goes beyond conventional environmentalism's focus on managing pollution and resources, calling instead for a fundamental shift away from human-centered thinking.",
       "startYear": 1973,
       "disciplines": [
@@ -4050,7 +4050,7 @@
       "id": "tao-te-ching",
       "name": "Tao Te Ching",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "A foundational text of Taoism, traditionally attributed to Laozi, consisting of concise, often paradoxical verses on following the natural order (the Tao) through simplicity, humility, and effortless action. Its actual authorship and date of composition remain debated among scholars.",
       "startYear": -400,
       "startYearApprox": true,
@@ -4137,7 +4137,7 @@
       "id": "sushruta-samhita",
       "name": "Sushruta Samhita",
       "type": "publication",
-      "importance": 7,
+      "importance": 6,
       "description": "A foundational Sanskrit text of Ayurvedic medicine, containing extraordinarily detailed descriptions of surgical procedures, instruments, and techniques, including reconstructive and cataract surgery. Compiled and expanded over centuries, it stands alongside the roughly contemporary Greek medical tradition as one of the ancient world's most systematic surgical texts.",
       "startYear": -600,
       "startYearApprox": true,
@@ -4188,7 +4188,7 @@
       "id": "quantum-theory",
       "name": "Quantum Theory",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "The proposal that energy is emitted and absorbed not continuously but in discrete packets, or quanta. Max Planck introduced this idea in 1900 to solve the \"ultraviolet catastrophe\" — a failure of classical physics to correctly predict the radiation emitted by heated objects — reluctantly, as a mathematical device he did not initially believe described physical reality. It became the seed from which all of quantum mechanics grew.",
       "startYear": 1900,
       "disciplines": [
@@ -4270,7 +4270,7 @@
       "id": "uncertainty-principle",
       "name": "Uncertainty Principle",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "The principle that certain pairs of physical properties — most famously a particle's position and momentum — cannot both be known to arbitrary precision at the same time, not merely due to measurement limitations but as a fundamental feature of nature itself. It struck at the heart of classical physics' assumption that a system's future could in principle always be predicted exactly.",
       "startYear": 1927,
       "disciplines": [
@@ -4443,7 +4443,7 @@
       "id": "archimedes-principle",
       "name": "Archimedes' Principle",
       "type": "theory",
-      "importance": 8,
+      "importance": 7,
       "description": "The principle that a body submerged in fluid experiences an upward buoyant force equal to the weight of fluid it displaces — famously said to have occurred to Archimedes in the bath, prompting him to run through the streets shouting \"Eureka.\" It remains the foundation of hydrostatics and ship design to this day.",
       "startYear": -250,
       "startYearApprox": true,
@@ -4461,7 +4461,7 @@
       "id": "confessions",
       "name": "Confessions",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Augustine's autobiographical account of his conversion to Christianity, written around 397–400 CE. Combining personal narrative with philosophical reflection on memory, time, and the nature of God, it is widely regarded as one of the first Western autobiographies and a foundational text of Christian theology.",
       "startYear": 397,
       "disciplines": [
@@ -4478,7 +4478,7 @@
       "id": "consolation-of-philosophy",
       "name": "The Consolation of Philosophy",
       "type": "publication",
-      "importance": 8,
+      "importance": 6,
       "description": "Written by Boethius while awaiting execution on charges of treason, this dialogue between the imprisoned author and the personified figure of Philosophy addresses fate, fortune, and the nature of true happiness. It became one of the most widely read and translated works of the Middle Ages.",
       "startYear": 523,
       "disciplines": [
@@ -4494,7 +4494,7 @@
       "id": "incoherence-of-the-philosophers",
       "name": "The Incoherence of the Philosophers",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Al-Ghazali's critique of the Aristotelian-influenced rationalist philosophy practiced by Islamic philosophers including Ibn Sina, arguing that key metaphysical claims — such as the eternity of the world — could not be established by reason alone and conflicted with religious teaching. It provoked Ibn Rushd's famous rebuttal, The Incoherence of the Incoherence, decades later.",
       "startYear": 1095,
       "startYearApprox": true,
@@ -4511,7 +4511,7 @@
       "id": "the-prince",
       "name": "The Prince",
       "type": "publication",
-      "importance": 9,
+      "importance": 8,
       "description": "Machiavelli's treatise on political power, arguing that a ruler should be judged by the practical effectiveness of their actions rather than by conventional moral standards — that it is sometimes necessary to act immorally to maintain stability and power. Its unflinching realism made \"Machiavellian\" a byword for cunning, amoral political strategy.",
       "startYear": 1513,
       "disciplines": [
@@ -4528,7 +4528,7 @@
       "id": "in-praise-of-folly",
       "name": "In Praise of Folly",
       "type": "publication",
-      "importance": 8,
+      "importance": 7,
       "description": "Erasmus's satirical essay, narrated by the personification of Folly herself, mocking the corruption and hypocrisy of the clergy, scholars, and society of his day. Written quickly as a diversion while staying with Thomas More, it became one of the most influential and widely read works of Christian humanism.",
       "startYear": 1509,
       "disciplines": [
@@ -4545,7 +4545,7 @@
       "id": "treatise-of-human-nature",
       "name": "A Treatise of Human Nature",
       "type": "publication",
-      "importance": 9,
+      "importance": 8,
       "description": "Hume's foundational work of empiricist philosophy, arguing that all human knowledge derives from sensory experience and that even seemingly certain concepts like causation are ultimately habits of the mind rather than logically necessary truths. Its skeptical conclusions about induction and causation would later shake Kant out of what he called his \"dogmatic slumber.\"",
       "startYear": 1739,
       "disciplines": [
@@ -4579,7 +4579,7 @@
       "id": "seismoscope",
       "name": "Seismoscope",
       "type": "technology",
-      "importance": 8,
+      "importance": 6,
       "description": "The first known instrument capable of detecting the occurrence and approximate direction of distant earthquakes, invented by Zhang Heng in Han dynasty China. A pendulum inside a bronze vessel would dislodge one of eight dragon-mouthed levers to drop a ball into a toad's mouth below, indicating the earthquake's direction — reportedly detecting a quake whose tremors were not felt in the capital.",
       "startYear": 132,
       "disciplines": [
@@ -4613,7 +4613,7 @@
       "id": "ac-induction-motor",
       "name": "AC Induction Motor",
       "type": "technology",
-      "importance": 9,
+      "importance": 8,
       "description": "Nikola Tesla's motor design using alternating current to generate a rotating magnetic field, allowing efficient, reliable conversion of electrical current into mechanical motion without the sparking brushes required by direct-current motors. It underpinned Tesla's broader AC power system, which won out over Edison's competing direct-current system in the \"War of the Currents.\"",
       "startYear": 1887,
       "disciplines": [
@@ -4630,7 +4630,7 @@
       "id": "incandescent-light-bulb",
       "name": "Incandescent Light Bulb",
       "type": "technology",
-      "importance": 9,
+      "importance": 8,
       "description": "Thomas Edison's practical, long-lasting incandescent light bulb, using a carbonized bamboo filament that could burn for hundreds of hours — the culmination of extensive testing of thousands of filament materials, rather than the invention of incandescent lighting itself, which earlier inventors had already demonstrated in short-lived forms.",
       "startYear": 1879,
       "disciplines": [
@@ -4645,12 +4645,11 @@
     },
     {
       "id": "psychology",
-      "name": "Psychology",
+      "name": "The New Psychology",
       "type": "movement",
-      "importance": 9,
-      "description": "The scientific study of the mind and behavior, established as a distinct experimental discipline in the late nineteenth century after centuries of being treated as a branch of philosophy. It fractured early into competing schools of thought — psychoanalysis, behaviorism, and later cognitive science — before gradually integrating into a broader, evidence-based science of mental life.",
+      "importance": 8,
+      "description": "A movement, centered on Wilhelm Wundt's Leipzig laboratory, that recast psychology as an experimental natural science rather than a branch of philosophy pursued through introspection and argument alone. Contemporaries used exactly this term — \"the new psychology\" — to describe the shift, which spread rapidly from Germany to the United States and established the university laboratory as psychology's basic institutional form.",
       "startYear": 1879,
-      "isOngoing": true,
       "disciplines": [
         "Psychology",
         "Philosophy",
@@ -4660,7 +4659,8 @@
         "Mind",
         "Behavior",
         "Experimental Method"
-      ]
+      ],
+      "endYear": 1910
     },
     {
       "id": "wilhelm-wundt",
@@ -4702,7 +4702,7 @@
       "id": "interpretation-of-dreams",
       "name": "The Interpretation of Dreams",
       "type": "publication",
-      "importance": 9,
+      "importance": 8,
       "description": "Freud's 1899 book (dated 1900) arguing that dreams are disguised expressions of unconscious wishes, and introducing techniques for analyzing their symbolic content. Though initially selling poorly, it became the foundational text of psychoanalysis.",
       "startYear": 1899,
       "disciplines": [
@@ -4772,7 +4772,7 @@
       "id": "artificial-intelligence",
       "name": "Artificial Intelligence",
       "type": "movement",
-      "importance": 10,
+      "importance": 9,
       "description": "The field concerned with building machines capable of tasks that would normally require human intelligence — reasoning, learning, perception, and language. Founded as a distinct research field at a 1956 workshop at Dartmouth College, it cycled through waves of optimism and disillusionment (the so-called \"AI winters\") for decades before the deep learning breakthroughs of the 2010s and 2020s drove it to the center of global technological and economic attention.",
       "startYear": 1956,
       "isOngoing": true,
@@ -4861,7 +4861,7 @@
       "id": "deep-learning",
       "name": "Deep Learning",
       "type": "theory",
-      "importance": 10,
+      "importance": 9,
       "description": "A machine learning approach using artificial neural networks with many layers to automatically learn increasingly abstract representations of data, rather than relying on hand-crafted rules. After decades as a marginal approach within AI research, it became dominant in the 2010s as larger datasets and greater computing power made training deep networks practical, driving breakthroughs in image recognition, language processing, and beyond.",
       "startYear": 1986,
       "startYearApprox": true,
@@ -4873,6 +4873,348 @@
         "Neural Networks",
         "Backpropagation",
         "Machine Learning"
+      ]
+    },
+    {
+      "id": "cognitive-revolution",
+      "name": "Cognitive Revolution",
+      "type": "movement",
+      "importance": 9,
+      "description": "A paradigm shift in psychology, beginning in the mid-1950s, away from behaviorism's insistence on studying only observable behavior and toward the scientific study of internal mental processes — memory, language, attention, reasoning — treated as legitimate objects of investigation in their own right. It drew heavily on concepts borrowed from linguistics and the emerging science of computing, particularly the idea of the mind as an information-processing system.",
+      "startYear": 1956,
+      "endYear": 1975,
+      "disciplines": [
+        "Psychology",
+        "Computer Science",
+        "Philosophy"
+      ],
+      "tags": [
+        "Information Processing",
+        "Mental Representation",
+        "Behaviorism"
+      ]
+    },
+    {
+      "id": "cognitive-psychology",
+      "name": "Cognitive Psychology",
+      "type": "theory",
+      "importance": 9,
+      "description": "The study of mental processes — perception, memory, language, reasoning, problem-solving — as legitimate scientific subjects in their own right, often modeled on the idea of the mind as a system that takes in, stores, and transforms information. It restored the study of internal mental life to psychology after decades in which behaviorism had declared such questions unanswerable and therefore out of bounds.",
+      "startYear": 1967,
+      "disciplines": [
+        "Psychology"
+      ],
+      "tags": [
+        "Information Processing",
+        "Mental Representation",
+        "Memory"
+      ]
+    },
+    {
+      "id": "noam-chomsky",
+      "name": "Noam Chomsky",
+      "type": "person",
+      "importance": 9,
+      "description": "American linguist whose 1959 review of B. F. Skinner's Verbal Behavior argued that behaviorist stimulus-response conditioning could not plausibly account for how children rapidly acquire language, and that some innate cognitive structure specific to language must be involved. The review is widely credited as a landmark event in turning psychology away from strict behaviorism and toward the study of internal mental structure.",
+      "startYear": 1928,
+      "disciplines": [
+        "Philosophy",
+        "Psychology"
+      ],
+      "tags": [
+        "Linguistics",
+        "Universal Grammar",
+        "Verbal Behavior Review"
+      ]
+    },
+    {
+      "id": "george-miller",
+      "name": "George A. Miller",
+      "type": "person",
+      "importance": 8,
+      "description": "American psychologist whose 1956 paper on the limited capacity of short-term memory became one of the founding works of cognitive psychology, popularizing the idea of the mind as an information-processing system with measurable capacity limits rather than a black box whose contents were scientifically off-limits.",
+      "startYear": 1920,
+      "endYear": 2012,
+      "disciplines": [
+        "Psychology"
+      ],
+      "tags": [
+        "Short-Term Memory",
+        "Information Processing"
+      ]
+    },
+    {
+      "id": "magical-number-seven",
+      "name": "The Magical Number Seven, Plus or Minus Two",
+      "type": "publication",
+      "importance": 8,
+      "description": "George Miller's 1956 paper arguing that short-term memory is limited to holding roughly seven discrete items at once, regardless of how much information each item contains — a finding that made the capacity of the mind itself a subject open to precise experimental measurement.",
+      "startYear": 1956,
+      "disciplines": [
+        "Psychology"
+      ],
+      "tags": [
+        "Short-Term Memory",
+        "Information Processing"
+      ]
+    },
+    {
+      "id": "ulric-neisser",
+      "name": "Ulric Neisser",
+      "type": "person",
+      "importance": 8,
+      "description": "American psychologist often called the father of cognitive psychology, whose 1967 textbook Cognitive Psychology gave the emerging field its name and its first systematic synthesis, treating perception, memory, and thought as processes that could be studied experimentally in their own right rather than dismissed as unobservable.",
+      "startYear": 1928,
+      "endYear": 2012,
+      "disciplines": [
+        "Psychology"
+      ],
+      "tags": [
+        "Cognitive Psychology",
+        "Perception",
+        "Memory"
+      ]
+    },
+    {
+      "id": "symbolic-ai",
+      "name": "Symbolic AI",
+      "type": "theory",
+      "importance": 8,
+      "description": "The approach to artificial intelligence dominant from the field's founding through the 1980s, representing knowledge as explicit symbols and rules that a program manipulates through logical inference — for example, encoding facts and if-then rules for a computer to reason over directly, rather than learning patterns from data. It produced early successes in game-playing and theorem-proving but struggled with tasks humans find effortless, like recognizing images or understanding ordinary language.",
+      "startYear": 1956,
+      "disciplines": [
+        "Computer Science",
+        "Mathematics",
+        "Philosophy"
+      ],
+      "tags": [
+        "Rule-Based Reasoning",
+        "Logic",
+        "Expert Systems"
+      ]
+    },
+    {
+      "id": "frank-rosenblatt",
+      "name": "Frank Rosenblatt",
+      "type": "person",
+      "importance": 8,
+      "description": "American psychologist and computer scientist who built the Perceptron, the first artificial neural network capable of learning from examples rather than following explicit rules. Its early promise made headlines, but its fundamental mathematical limitations — demonstrated a decade later by Marvin Minsky and Seymour Papert — contributed to a long period in which neural-network research was largely abandoned, before the same basic idea, extended to many layers, became the foundation of deep learning decades later.",
+      "startYear": 1928,
+      "endYear": 1971,
+      "disciplines": [
+        "Computer Science",
+        "Psychology"
+      ],
+      "tags": [
+        "Neural Networks",
+        "Perceptron",
+        "Machine Learning"
+      ]
+    },
+    {
+      "id": "perceptron",
+      "name": "Perceptron",
+      "type": "technology",
+      "importance": 7,
+      "description": "An early artificial neural network, built in 1958, that could learn to classify simple patterns by adjusting internal weights based on examples rather than following programmed rules. Restricted to a single layer of computation, it could not solve problems requiring more complex reasoning — a limitation that, once rigorously proven, curtailed neural-network research for over a decade.",
+      "startYear": 1958,
+      "disciplines": [
+        "Computer Science"
+      ],
+      "tags": [
+        "Neural Networks",
+        "Machine Learning"
+      ]
+    },
+    {
+      "id": "linear-perspective",
+      "name": "Linear Perspective",
+      "type": "theory",
+      "importance": 8,
+      "description": "A mathematical system for representing three-dimensional space on a flat surface, in which parallel lines are drawn to converge toward a vanishing point, creating a convincing illusion of depth. Brunelleschi demonstrated the technique around 1415 using a panel painting of the Florence Baptistery viewed through a mirror, and it was quickly adopted and extended by other Renaissance artists, transforming European painting's approach to spatial realism.",
+      "startYear": 1415,
+      "startYearApprox": true,
+      "disciplines": [
+        "Visual Art",
+        "Mathematics"
+      ],
+      "tags": [
+        "Vanishing Point",
+        "Spatial Realism",
+        "Renaissance Art"
+      ]
+    },
+    {
+      "id": "claude-monet",
+      "name": "Claude Monet",
+      "type": "person",
+      "importance": 8,
+      "description": "French painter whose 1872 work Impression, Sunrise — showing a hazy harbor scene in loose, visible brushstrokes rather than precise detail — gave Impressionism its name, after a critic used the painting's title dismissively to mock the whole exhibiting group's style. Monet spent decades painting the same subjects repeatedly under different light and weather conditions, treating the changing appearance of a scene as being as worth capturing as the scene itself.",
+      "startYear": 1840,
+      "endYear": 1926,
+      "disciplines": [
+        "Visual Art"
+      ],
+      "tags": [
+        "Impressionism",
+        "Plein Air Painting",
+        "Light and Color"
+      ]
+    },
+    {
+      "id": "impressionism",
+      "name": "Impressionism",
+      "type": "movement",
+      "importance": 8,
+      "description": "A movement of painters, centered in France, who rejected the precise detail and formal subject matter of academic painting in favor of capturing fleeting impressions of light, color, and movement, often working outdoors and completing paintings quickly to catch a specific momentary effect. Initially mocked by critics and rejected by the official Paris art establishment, it became one of the most popular and influential movements in the history of Western painting.",
+      "startYear": 1872,
+      "endYear": 1886,
+      "disciplines": [
+        "Visual Art"
+      ],
+      "tags": [
+        "Plein Air Painting",
+        "Light and Color",
+        "Paris"
+      ]
+    },
+    {
+      "id": "george-boole",
+      "name": "George Boole",
+      "type": "person",
+      "importance": 9,
+      "description": "English mathematician and logician who showed that logical reasoning itself — statements that are true or false, combined with AND, OR, and NOT — could be reduced to a symbolic algebra and manipulated with the same rigor as ordinary equations. He had no way to know it at the time, but this reduction of logic to a two-valued system would turn out, a century later, to be exactly the mathematical language digital circuits speak.",
+      "startYear": 1815,
+      "endYear": 1864,
+      "disciplines": [
+        "Mathematics",
+        "Philosophy"
+      ],
+      "tags": [
+        "Boolean Algebra",
+        "Symbolic Logic",
+        "Binary Logic"
+      ]
+    },
+    {
+      "id": "boolean-algebra",
+      "name": "Boolean Algebra",
+      "type": "theory",
+      "importance": 9,
+      "description": "A system of algebra in which variables take only two values — true or false, 1 or 0 — combined using the logical operations AND, OR, and NOT rather than arithmetic ones. Introduced in Boole's 1854 The Laws of Thought as a mathematical account of reasoning itself, it turned out decades later to describe exactly how electrical switching circuits, and therefore all digital computers, actually work.",
+      "startYear": 1854,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Symbolic Logic",
+        "Binary Logic",
+        "Switching Circuits"
+      ]
+    },
+    {
+      "id": "symbolic-analysis-relay-switching-circuits",
+      "name": "A Symbolic Analysis of Relay and Switching Circuits",
+      "type": "publication",
+      "importance": 9,
+      "description": "Claude Shannon's 1937 master's thesis, showing that George Boole's century-old algebra of true and false was exactly the right mathematical tool for designing and simplifying electrical switching circuits — the circuits that make up every digital computer. Often called the most important master's thesis of the twentieth century, it is the direct bridge between Boole's abstract logic and every computer built since.",
+      "startYear": 1937,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science",
+        "Engineering"
+      ],
+      "tags": [
+        "Switching Circuits",
+        "Boolean Algebra",
+        "Digital Logic"
+      ]
+    },
+    {
+      "id": "richard-feynman",
+      "name": "Richard Feynman",
+      "type": "person",
+      "importance": 9,
+      "description": "American physicist whose 1981 talk \"Simulating Physics with Computers\" argued that classical computers are fundamentally unable to efficiently simulate quantum systems — because the amount of information needed grows exponentially with the number of particles — and proposed that only a computer built from quantum mechanical components could do the job. The talk is widely regarded as launching the field of quantum computing.",
+      "startYear": 1918,
+      "endYear": 1988,
+      "disciplines": [
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Quantum Simulation",
+        "Quantum Computing"
+      ]
+    },
+    {
+      "id": "david-deutsch",
+      "name": "David Deutsch",
+      "type": "person",
+      "importance": 8,
+      "description": "British physicist who gave quantum computing its rigorous theoretical foundation, defining a \"universal quantum computer\" and showing that it could, in principle, simulate any physical process — extending Alan Turing's own universal computing machine and the Church-Turing thesis into the quantum realm for the first time.",
+      "startYear": 1953,
+      "disciplines": [
+        "Physics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Quantum Turing Machine",
+        "Universal Quantum Computer"
+      ]
+    },
+    {
+      "id": "peter-shor",
+      "name": "Peter Shor",
+      "type": "person",
+      "importance": 9,
+      "description": "American mathematician whose 1994 algorithm showed that a quantum computer could factor large numbers exponentially faster than any known classical algorithm — a result with direct consequences for cryptography, since factoring large numbers is exactly what much of modern encryption relies on being hard. It transformed quantum computing from a theoretical curiosity into a subject of urgent practical and strategic interest.",
+      "startYear": 1959,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Cryptography",
+        "Factoring",
+        "Quantum Algorithms"
+      ]
+    },
+    {
+      "id": "shors-algorithm",
+      "name": "Shor's Algorithm",
+      "type": "theory",
+      "importance": 9,
+      "description": "A quantum algorithm for finding the prime factors of large numbers exponentially faster than the best known classical methods. Because widely used encryption depends on factoring being computationally infeasible for classical computers, the algorithm demonstrated for the first time that a sufficiently powerful quantum computer could break cryptographic systems the modern world depends on.",
+      "startYear": 1994,
+      "disciplines": [
+        "Mathematics",
+        "Computer Science"
+      ],
+      "tags": [
+        "Cryptography",
+        "Factoring",
+        "Quantum Algorithms"
+      ]
+    },
+    {
+      "id": "quantum-computing",
+      "name": "Quantum Computing",
+      "type": "theory",
+      "importance": 9,
+      "description": "A model of computation that uses quantum mechanical phenomena — superposition and entanglement — to represent and manipulate information in ways no classical computer can efficiently replicate. Certain problems, like factoring large numbers or simulating quantum systems themselves, can in principle be solved exponentially faster than on any classical machine, though building a large-scale, reliable quantum computer remains a major unsolved engineering challenge.",
+      "startYear": 1981,
+      "isOngoing": true,
+      "disciplines": [
+        "Physics",
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "Superposition",
+        "Entanglement",
+        "Quantum Algorithms"
       ]
     }
   ],
@@ -8860,15 +9202,6 @@
       "evidenceType": "primary_source"
     },
     {
-      "id": "bf-skinner-psychology",
-      "source": "bf-skinner",
-      "target": "psychology",
-      "relationship": "advanced",
-      "confidence": 0.88,
-      "directness": "direct",
-      "evidenceType": "scholarly_consensus"
-    },
-    {
       "id": "bf-skinner-behaviorism",
       "source": "bf-skinner",
       "target": "behaviorism",
@@ -8971,6 +9304,297 @@
       "confidence": 0.8,
       "directness": "indirect",
       "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "psychology-cognitive-revolution",
+      "source": "psychology",
+      "target": "cognitive-revolution",
+      "relationship": "enabled",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "noam-chomsky-behaviorism",
+      "source": "noam-chomsky",
+      "target": "behaviorism",
+      "relationship": "criticized",
+      "description": "Chomsky's 1959 review of Skinner's Verbal Behavior argued that stimulus-response conditioning could not account for the rapid, rule-governed way children acquire language, striking directly at behaviorism's core claim that all behavior — including language — could be explained without appeal to internal mental structure.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "noam-chomsky-cognitive-revolution",
+      "source": "noam-chomsky",
+      "target": "cognitive-revolution",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-miller-magical-number-seven",
+      "source": "george-miller",
+      "target": "magical-number-seven",
+      "relationship": "authored",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "george-miller-cognitive-revolution",
+      "source": "george-miller",
+      "target": "cognitive-revolution",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "magical-number-seven-cognitive-psychology",
+      "source": "magical-number-seven",
+      "target": "cognitive-psychology",
+      "relationship": "enabled",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ulric-neisser-cognitive-psychology",
+      "source": "ulric-neisser",
+      "target": "cognitive-psychology",
+      "relationship": "founded",
+      "description": "Neisser's 1967 textbook Cognitive Psychology gave the emerging field its name and first systematic synthesis.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "ulric-neisser-cognitive-revolution",
+      "source": "ulric-neisser",
+      "target": "cognitive-revolution",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "cognitive-psychology-behaviorism",
+      "source": "cognitive-psychology",
+      "target": "behaviorism",
+      "relationship": "challenged",
+      "description": "Cognitive psychology directly challenged behaviorism's foundational claim that mental processes were unobservable and therefore outside the bounds of legitimate scientific study.",
+      "confidence": 0.88,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "john-mccarthy-symbolic-ai",
+      "source": "john-mccarthy",
+      "target": "symbolic-ai",
+      "relationship": "proposed",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "marvin-minsky-symbolic-ai",
+      "source": "marvin-minsky",
+      "target": "symbolic-ai",
+      "relationship": "developed",
+      "confidence": 0.87,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "symbolic-ai-artificial-intelligence",
+      "source": "symbolic-ai",
+      "target": "artificial-intelligence",
+      "relationship": "enabled",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "frank-rosenblatt-perceptron",
+      "source": "frank-rosenblatt",
+      "target": "perceptron",
+      "relationship": "invented",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "frank-rosenblatt-artificial-intelligence",
+      "source": "frank-rosenblatt",
+      "target": "artificial-intelligence",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "marvin-minsky-perceptron",
+      "source": "marvin-minsky",
+      "target": "perceptron",
+      "relationship": "criticized",
+      "description": "Minsky and Seymour Papert's 1969 book Perceptrons mathematically proved that single-layer perceptrons could not solve problems requiring nonlinear reasoning (such as computing XOR), a result widely credited with curtailing neural-network research funding for over a decade.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "perceptron-deep-learning",
+      "source": "perceptron",
+      "target": "deep-learning",
+      "relationship": "anticipated",
+      "description": "The perceptron's basic learning mechanism foreshadowed deep learning by decades, though direct research continuity was interrupted for most of that time — deep learning revived and extended the same core idea to many layers.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "filippo-brunelleschi-linear-perspective",
+      "source": "filippo-brunelleschi",
+      "target": "linear-perspective",
+      "relationship": "proposed",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "linear-perspective-renaissance",
+      "source": "linear-perspective",
+      "target": "renaissance",
+      "relationship": "enabled",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "claude-monet-impressionism",
+      "source": "claude-monet",
+      "target": "impressionism",
+      "relationship": "founded",
+      "description": "Monet's 1872 painting Impression, Sunrise directly gave the movement its name.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-boole-boolean-algebra",
+      "source": "george-boole",
+      "target": "boolean-algebra",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "boolean-algebra-shannon-thesis",
+      "source": "boolean-algebra",
+      "target": "symbolic-analysis-relay-switching-circuits",
+      "relationship": "enabled",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "claude-shannon-symbolic-analysis",
+      "source": "claude-shannon",
+      "target": "symbolic-analysis-relay-switching-circuits",
+      "relationship": "authored",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "symbolic-analysis-information-age",
+      "source": "symbolic-analysis-relay-switching-circuits",
+      "target": "information-age",
+      "relationship": "enabled",
+      "description": "By showing how to design and simplify switching circuits using Boolean algebra, Shannon's thesis provided the basic engineering language every subsequent digital circuit, and therefore every digital computer, has been designed in.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "richard-feynman-quantum-computing",
+      "source": "richard-feynman",
+      "target": "quantum-computing",
+      "relationship": "founded",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "turing-machine-quantum-computing",
+      "source": "turing-machine",
+      "target": "quantum-computing",
+      "relationship": "anticipated",
+      "description": "David Deutsch explicitly extended Turing's universal computing machine and the Church-Turing thesis into the quantum realm, making Turing's abstract framework the direct conceptual ancestor of quantum computing's own theoretical foundation.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "david-deutsch-quantum-computing",
+      "source": "david-deutsch",
+      "target": "quantum-computing",
+      "relationship": "formalized",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "peter-shor-shors-algorithm",
+      "source": "peter-shor",
+      "target": "shors-algorithm",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "shors-algorithm-quantum-computing",
+      "source": "shors-algorithm",
+      "target": "quantum-computing",
+      "relationship": "transformed",
+      "description": "Shor's Algorithm shifted quantum computing from a theoretical curiosity into a subject of urgent practical and strategic interest by showing it could break widely used cryptographic systems.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "algebra-george-boole",
+      "source": "algebra",
+      "target": "george-boole",
+      "relationship": "influenced",
+      "description": "Boole explicitly modeled his logical calculus on the form of ordinary algebra — hence \"Boolean algebra\" — drawing on the broader algebraic tradition of manipulating symbols according to fixed rules that traces back through Al-Khwarizmi's foundational work.",
+      "confidence": 0.75,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "claude-shannon-alan-turing",
+      "source": "claude-shannon",
+      "target": "alan-turing",
+      "relationship": "collaborated_with",
+      "description": "Shannon and Turing met repeatedly over tea and lunch at Bell Labs in 1943, where Turing was consulting on cryptography, and discussed the possibility of machines that could think — a conversation both men later said influenced their subsequent work.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "deep-learning-quantum-computing",
+      "source": "deep-learning",
+      "target": "quantum-computing",
+      "relationship": "influenced",
+      "description": "Deep learning's success in the 2010s — demonstrating that a fundamentally different computing paradigm could achieve things once thought to require symbolic reasoning — helped drive the surge of research investment and public attention that quantum computing also began receiving in the same period, and the two fields increasingly overlap directly in quantum machine learning research.",
+      "confidence": 0.65,
+      "directness": "indirect",
+      "evidenceType": "editorial_summary"
     }
   ],
   "sources": [
