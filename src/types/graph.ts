@@ -77,6 +77,7 @@ export type Discipline =
   | "Mathematics"
   | "Medicine"
   | "Philosophy"
+  | "Psychology"
   | "Physics"
   | "Visual Art";
 

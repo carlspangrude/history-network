@@ -434,6 +434,22 @@ h2 {
 
 .timeline-range-slider {
   flex: 0 0 auto;
+  /* Relief between the play/reset button row above and the slider bar,
+     making room for the playback-progress triangle to sit above the
+     track without crowding the buttons. */
+  margin-top: 16px;
+}
+
+.timeline-playback-triangle {
+  position: absolute;
+  top: -12px;
+  width: 0;
+  height: 0;
+  margin-left: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #ffffff;
+  pointer-events: none;
 }
 
 .timeline-range-track {
@@ -481,6 +497,36 @@ h2 {
   margin-top: 4px;
   color: var(--text-dim);
   font-size: 0.66rem;
+}
+
+.timeline-range-label-input {
+  width: 3.6em;
+  padding: 1px 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.66rem;
+  text-align: center;
+}
+
+.timeline-range-label-input:last-child {
+  text-align: right;
+}
+
+.timeline-range-label-input:first-child {
+  text-align: left;
+}
+
+.timeline-range-label-input:hover {
+  border-color: var(--border-medium);
+}
+
+.timeline-range-label-input:focus {
+  border-color: var(--text-link);
+  color: var(--text-primary);
+  outline: none;
 }
 
 .canvas--compact .force-graph-container {
@@ -1559,6 +1605,20 @@ h2 {
 }
 
 .fit-graph-button:disabled:hover {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+/* Visually matches :disabled exactly, but the button stays clickable —
+   used by "Fit Timeline" during an animation session (playing or
+   paused), where pressing it should still work to cancel the session,
+   not be blocked by the disabled attribute. */
+.fit-graph-button--session-active {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.fit-graph-button--session-active:hover {
   background: transparent;
   color: var(--text-secondary);
 }

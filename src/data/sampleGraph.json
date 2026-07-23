@@ -7,7 +7,7 @@
         "text": "Measure what is measurable, and make measurable what is not so."
       },
       "type": "person",
-      "importance": 7,
+      "importance": 9,
       "description": "Italian astronomer and physicist whose observations and experiments helped transform early modern science.",
       "startYear": 1564,
       "endYear": 1642,
@@ -91,7 +91,7 @@
       "id": "maxwell",
       "name": "James Clerk Maxwell",
       "type": "person",
-      "importance": 8,
+      "importance": 9,
       "description": "Scottish physicist who unified electricity, magnetism, and light in a single mathematical framework.",
       "startYear": 1831,
       "endYear": 1879,
@@ -334,7 +334,7 @@
       "id": "thomas-hobbes",
       "name": "Thomas Hobbes",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "English philosopher who developed a materialist account of human nature and an influential theory of political authority grounded in social agreement.",
       "startYear": 1588,
       "endYear": 1679,
@@ -352,7 +352,7 @@
       "id": "john-locke",
       "name": "John Locke",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "English philosopher whose work on knowledge, natural rights, consent, and limited government strongly shaped empiricism and liberal political thought.",
       "startYear": 1632,
       "endYear": 1704,
@@ -370,7 +370,7 @@
       "id": "david-hume",
       "name": "David Hume",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Scottish philosopher whose empiricism and skepticism examined causation, induction, personal identity, morality, and the limits of human understanding.",
       "startYear": 1711,
       "endYear": 1776,
@@ -388,7 +388,7 @@
       "id": "jean-jacques-rousseau",
       "name": "Jean-Jacques Rousseau",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Genevan philosopher whose work examined freedom, inequality, political legitimacy, education, and the tensions between society and human nature.",
       "startYear": 1712,
       "endYear": 1778,
@@ -407,7 +407,7 @@
       "id": "immanuel-kant",
       "name": "Immanuel Kant",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "German philosopher who transformed epistemology, metaphysics, ethics, and aesthetics by examining the conditions that make experience and knowledge possible.",
       "startYear": 1724,
       "endYear": 1804,
@@ -613,7 +613,7 @@
         "text": "At rest, however, in the middle of everything is the Sun."
       },
       "type": "person",
-      "importance": 7,
+      "importance": 8,
       "description": "Polish astronomer whose heliocentric model placed the Sun, rather than the Earth, at the center of the known planetary system. His work challenged centuries of geocentric tradition inherited from Aristotle and Ptolemy, initiating the Scientific Revolution and fundamentally transforming humanity's understanding of its place in the universe.",
       "startYear": 1473,
       "endYear": 1543,
@@ -637,7 +637,7 @@
         "text": "Those who study the stars have God for a teacher."
       },
       "type": "person",
-      "importance": 7,
+      "importance": 6,
       "description": "Danish astronomer renowned for the most precise astronomical observations of the pre-telescopic era. His measurements of planetary positions provided the empirical foundation that enabled Kepler to discover the laws of planetary motion, marking a pivotal transition from speculative cosmology to data-driven science.",
       "startYear": 1546,
       "endYear": 1601,
@@ -660,7 +660,7 @@
         "text": "To discover the rational order and harmony... revealed to us in the language of mathematics."
       },
       "type": "person",
-      "importance": 7,
+      "importance": 8,
       "description": "German mathematician and astronomer who discovered that planets move in elliptical orbits governed by mathematical laws. Building upon Tycho's observations and Copernicus's heliocentric model, Kepler demonstrated that the heavens obey universal mathematical principles, laying essential groundwork for Isaac Newton's theory of gravitation.",
       "startYear": 1571,
       "endYear": 1630,
@@ -957,7 +957,7 @@
       "id": "archimedes",
       "name": "Archimedes",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Greek mathematician, physicist, and engineer who made foundational discoveries in geometry, hydrostatics, mechanics, and the mathematical treatment of physical problems. By combining rigorous proof with practical investigation, he became one of the most influential scientists of the ancient world.",
       "startYear": -287,
       "endYear": -212,
@@ -1002,7 +1002,7 @@
       "id": "eratosthenes",
       "name": "Eratosthenes",
       "type": "person",
-      "importance": 7,
+      "importance": 6,
       "description": "Greek mathematician, astronomer, and geographer who calculated the circumference of the Earth using geometry and observations of sunlight. As head of the Library of Alexandria, he also advanced cartography, chronology, and the systematic measurement of the known world.",
       "startYear": -276,
       "endYear": -194,
@@ -1047,7 +1047,7 @@
       "id": "herophilus",
       "name": "Herophilus",
       "type": "person",
-      "importance": 7,
+      "importance": 6,
       "description": "Greek physician and anatomist associated with Alexandria who advanced medicine through systematic anatomical investigation. His studies distinguished nerves from blood vessels, examined the brain and nervous system, and helped establish anatomy as an empirical field of medical inquiry.",
       "startYear": -335,
       "endYear": -280,
@@ -1069,7 +1069,7 @@
       "id": "michael-faraday",
       "name": "Michael Faraday",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "English physicist and chemist whose experimental investigations transformed the understanding of electricity and magnetism. Through discoveries such as electromagnetic induction, the electric motor, and the field concept, he established the experimental foundations of electromagnetism and modern electrical science, profoundly influencing Maxwell, Einstein, and the development of modern physics.",
       "startYear": 1791,
       "endYear": 1867,
@@ -1121,7 +1121,7 @@
         "text": "I can think of nothing else but this machine."
       },
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Scottish inventor and mechanical engineer whose improvements to the steam engine dramatically increased its efficiency and practicality. His innovations made steam power economically viable for factories, transportation, and mining, becoming one of the principal technological drivers of the Industrial Revolution.",
       "startYear": 1736,
       "endYear": 1819,
@@ -1170,7 +1170,7 @@
         "text": "Results! Why, man, I have gotten a lot of results. I know several thousand things that won't work."
       },
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "American inventor and entrepreneur who developed practical electric lighting, sound recording, and numerous commercial technologies. Through industrial research laboratories and large-scale innovation, he helped establish the modern model of technological development and commercialization.",
       "startYear": 1847,
       "endYear": 1931,
@@ -1195,7 +1195,7 @@
         "text": "The present is theirs; the future, for which I really worked, is mine."
       },
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Serbian-American inventor and electrical engineer whose work on alternating current power systems, induction motors, and high-voltage electrical technologies revolutionized the generation and transmission of electricity, helping define the modern electrical age.",
       "startYear": 1856,
       "endYear": 1943,
@@ -1241,7 +1241,7 @@
       "id": "max-planck",
       "name": "Max Planck",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "German theoretical physicist who founded quantum theory by proposing that electromagnetic energy is emitted and absorbed in discrete quantities called quanta. His solution to the black-body radiation problem introduced Planck's constant and marked a decisive break from classical physics, providing the conceptual starting point for quantum mechanics.",
       "epigraph": {
         "text": "A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die."
@@ -1265,7 +1265,7 @@
       "id": "marie-curie",
       "name": "Marie Curie",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Polish-born French physicist and chemist who pioneered the scientific study of radioactivity and discovered the elements polonium and radium with Pierre Curie. Her research demonstrated that radiation originated within atoms, helping overturn the conception of atoms as indivisible and establishing foundations for nuclear physics, radiochemistry, and radiation medicine.",
       "epigraph": {
         "text": "Nothing in life is to be feared; it is only to be understood."
@@ -1292,7 +1292,7 @@
       "id": "ernest-rutherford",
       "name": "Ernest Rutherford",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "New Zealand-born British physicist who established the nuclear model of the atom through experimental investigations of radioactivity and alpha-particle scattering. He distinguished major forms of radiation, demonstrated radioactive transmutation, discovered the atomic nucleus, and helped establish nuclear physics as a distinct scientific field.",
       "epigraph": {
         "text": "We haven't got the money, so we've got to think."
@@ -1318,7 +1318,7 @@
       "id": "niels-bohr",
       "name": "Niels Bohr",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Danish theoretical physicist who developed a quantum model of the atom and became a principal architect of the Copenhagen interpretation of quantum mechanics. His concepts of quantized atomic states, complementarity, and the relationship between measurement and physical description shaped both atomic physics and the philosophical interpretation of quantum theory.",
       "epigraph": {
         "text": "The opposite of a profound truth may well be another profound truth."
@@ -1347,7 +1347,7 @@
       "id": "erwin-schrodinger",
       "name": "Erwin Schrödinger",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Austrian theoretical physicist who developed wave mechanics and formulated the Schrödinger equation, which describes how quantum states evolve over time. His work supplied one of the central mathematical foundations of quantum mechanics, while his thought experiments exposed enduring problems concerning measurement, probability, and physical reality.",
       "epigraph": {
         "text": "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees."
@@ -1376,7 +1376,7 @@
       "id": "werner-heisenberg",
       "name": "Werner Heisenberg",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "German theoretical physicist who created matrix mechanics, one of the first complete mathematical formulations of quantum mechanics, and formulated the uncertainty principle. His work established fundamental limits on simultaneously determining certain physical properties and helped replace classical descriptions of particles with an explicitly quantum framework.",
       "epigraph": {
         "text": "What we observe is not nature itself, but nature exposed to our method of questioning."
@@ -1403,7 +1403,7 @@
       "id": "paul-dirac",
       "name": "Paul Dirac",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "English theoretical physicist who united quantum mechanics with special relativity through the Dirac equation and predicted the existence of antimatter. His mathematically elegant formulations helped establish quantum electrodynamics, clarified the quantum behavior of electrons, and profoundly influenced particle physics and quantum field theory.",
       "epigraph": {
         "text": "The aim of science is to make difficult things understandable in a simpler way."
@@ -1430,7 +1430,7 @@
       "id": "ptolemy",
       "name": "Claudius Ptolemy",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Greco-Egyptian mathematician, astronomer, and geographer who synthesized centuries of Greek scientific knowledge into comprehensive works on astronomy, geography, and optics. His geocentric model of the universe dominated astronomical thought for over fourteen centuries, providing both the framework that guided medieval astronomy and the system later overturned during the Scientific Revolution.",
       "epigraph": {
         "text": "I know that I am mortal by nature and ephemeral; but when I trace at my pleasure the windings to and fro of the heavenly bodies, my feet no longer touch the earth."
@@ -1490,7 +1490,7 @@
       "id": "petrarch",
       "name": "Petrarch",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Italian poet, scholar, and humanist who promoted the recovery and study of classical Latin literature while developing a deeply introspective form of poetry. Often regarded as a foundational figure of Renaissance humanism, he encouraged scholars to engage directly with ancient texts and helped redirect European intellectual culture toward classical learning, individual experience, and historical self-awareness.",
       "epigraph": {
         "text": "I am like one who, separated from his own people, travels by night with a small and flickering light."
@@ -1517,7 +1517,7 @@
       "id": "filippo-brunelleschi",
       "name": "Filippo Brunelleschi",
       "type": "person",
-      "importance": 9,
+      "importance": 6,
       "description": "Italian architect, engineer, and designer who helped establish Renaissance architecture through the revival of classical forms, mathematical proportion, and innovative structural engineering. His construction of the dome of Florence Cathedral demonstrated new methods of architectural planning and became an enduring symbol of Renaissance ingenuity, while his experiments with linear perspective transformed European visual representation.",
       "epigraph": {
         "text": "Do not share your inventions with many; share them only with the few who understand and love the sciences."
@@ -1569,7 +1569,7 @@
       "id": "leonardo-da-vinci",
       "name": "Leonardo da Vinci",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Italian artist, engineer, anatomist, and natural philosopher whose work embodied the Renaissance integration of art, observation, science, and invention. Through paintings such as the Mona Lisa and The Last Supper, extensive anatomical studies, investigations of natural phenomena, and designs for mechanical devices, he demonstrated how disciplined observation and visual reasoning could reveal underlying structures in both nature and technology.",
       "epigraph": {
         "text": "Those sciences are vain and full of errors which are not born of experience, mother of all certainty."
@@ -1599,7 +1599,7 @@
       "id": "michelangelo",
       "name": "Michelangelo Buonarroti",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Italian sculptor, painter, architect, and poet whose monumental works united anatomical precision, emotional intensity, and idealized human form. Through sculptures such as David and the Pietà, the ceiling of the Sistine Chapel, and his architectural work on Saint Peter's Basilica, he helped define the artistic ambitions of the High Renaissance and profoundly influenced subsequent European art.",
       "epigraph": {
         "text": "The true work of art is but a shadow of the divine perfection."
@@ -1626,7 +1626,7 @@
       "id": "raphael",
       "name": "Raphael",
       "type": "person",
-      "importance": 9,
+      "importance": 6,
       "description": "Italian painter, architect, and designer whose balanced compositions, harmonious figures, and synthesis of classical and Christian imagery became defining expressions of the High Renaissance. Drawing upon the innovations of Leonardo da Vinci and Michelangelo, he developed an influential visual language exemplified by the School of Athens and his Madonna paintings.",
       "epigraph": {
         "text": "In order to paint one beautiful woman, I would have to see several beautiful women, provided that you were with me to choose the best."
@@ -1652,7 +1652,7 @@
       "id": "machiavelli",
       "name": "Niccolò Machiavelli",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Italian political philosopher, diplomat, historian, and humanist who analyzed political power through historical experience and practical observation rather than idealized moral principles alone. In The Prince and Discourses on Livy, he examined statecraft, conflict, civic virtue, republican government, and the preservation of political institutions, helping establish a distinctively modern tradition of political analysis.",
       "epigraph": {
         "text": "It is much safer to be feared than loved, if one must dispense with one of the two."
@@ -1683,7 +1683,7 @@
       "id": "erasmus",
       "name": "Desiderius Erasmus",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Dutch humanist, theologian, philologist, and educator who became the leading intellectual representative of Northern Renaissance humanism. He combined classical scholarship with Christian reform, promoted education and individual moral improvement, produced an influential critical edition of the Greek New Testament, and used the expanding European print culture to circulate scholarship, satire, and arguments for moderation and peace.",
       "epigraph": {
         "text": "The chief hope of a nation lies in the proper education of its youth."
@@ -1802,7 +1802,7 @@
       "id": "hippocrates",
       "name": "Hippocrates",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Greek physician traditionally associated with establishing medicine as a systematic field grounded in natural explanations, clinical observation, prognosis, and professional ethics. The Hippocratic medical tradition rejected purely supernatural accounts of disease and encouraged physicians to examine symptoms, environment, diet, and the progression of illness.",
       "startYear": -460,
       "endYear": -370,
@@ -1826,7 +1826,7 @@
       "id": "galen",
       "name": "Galen",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Greek physician, anatomist, and philosopher in the Roman Empire whose extensive writings synthesized Hippocratic medicine with anatomical investigation and philosophical theories of bodily function. His accounts of anatomy, physiology, disease, and treatment dominated medical education in Europe and the Islamic world for more than a millennium.",
       "startYear": 129,
       "endYear": 216,
@@ -1848,7 +1848,7 @@
       "id": "andreas-vesalius",
       "name": "Andreas Vesalius",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Flemish anatomist and physician who transformed the study of the human body through direct dissection and detailed anatomical illustration. His work On the Fabric of the Human Body corrected numerous inherited anatomical errors and challenged physicians to privilege observed human anatomy over unquestioned textual authority.",
       "startYear": 1514,
       "endYear": 1564,
@@ -1870,7 +1870,7 @@
       "id": "william-harvey",
       "name": "William Harvey",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "English physician and anatomist who demonstrated that the heart pumps blood continuously through a closed circulatory system. Through anatomical observation, vivisection, comparative study, and quantitative reasoning, he replaced older accounts of blood production and movement with a mechanical explanation of systemic circulation.",
       "startYear": 1578,
       "endYear": 1657,
@@ -1893,7 +1893,7 @@
       "id": "louis-pasteur",
       "name": "Louis Pasteur",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "French chemist and microbiologist who demonstrated the role of microorganisms in fermentation and disease, challenged spontaneous generation, and helped establish germ theory. His work supported pasteurization, laboratory microbiology, vaccination, and a new understanding of infectious disease as a biological process caused by specific living agents.",
       "startYear": 1822,
       "endYear": 1895,
@@ -1917,7 +1917,7 @@
       "id": "alfred-russel-wallace",
       "name": "Alfred Russel Wallace",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "British naturalist, explorer, and biogeographer who independently developed a theory of evolution through natural selection. His studies of species distribution in the Amazon and Malay Archipelago helped establish biogeography, while his correspondence with Darwin prompted the joint presentation of their theories in 1858.",
       "startYear": 1823,
       "endYear": 1913,
@@ -1940,7 +1940,7 @@
       "id": "gregor-mendel",
       "name": "Gregor Mendel",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Moravian naturalist, Augustinian friar, and experimental biologist who identified mathematical patterns governing the inheritance of traits through controlled breeding experiments with pea plants. His concepts of discrete hereditary factors, segregation, and independent assortment became foundational to genetics and later enabled the genetic reformulation of evolutionary theory.",
       "startYear": 1822,
       "endYear": 1884,
@@ -1964,7 +1964,7 @@
       "id": "ronald-fisher",
       "name": "Ronald Fisher",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "British statistician, geneticist, and evolutionary biologist who demonstrated mathematically how Mendelian inheritance and Darwinian natural selection could operate together. His work helped establish population genetics, quantitative genetics, modern statistical inference, and the theoretical foundations of the modern evolutionary synthesis.",
       "startYear": 1890,
       "endYear": 1962,
@@ -1989,7 +1989,7 @@
       "id": "theodosius-dobzhansky",
       "name": "Theodosius Dobzhansky",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Ukrainian-born American geneticist and evolutionary biologist who connected laboratory genetics with the study of natural populations. His research on fruit-fly variation and his synthesis of genetics with natural selection helped establish the modern evolutionary synthesis and demonstrated that evolution could be studied through changing gene frequencies in populations.",
       "startYear": 1900,
       "endYear": 1975,
@@ -2014,7 +2014,7 @@
       "id": "oswald-avery",
       "name": "Oswald Avery",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Canadian-born American physician and bacteriologist whose experiments with Colin MacLeod and Maclyn McCarty demonstrated that DNA could transmit hereditary traits between bacteria. Their identification of DNA as the transforming principle provided decisive evidence that nucleic acid, rather than protein, carries genetic information.",
       "startYear": 1877,
       "endYear": 1955,
@@ -2038,7 +2038,7 @@
       "id": "rosalind-franklin",
       "name": "Rosalind Franklin",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "British chemist and X-ray crystallographer whose precise diffraction studies revealed essential structural properties of DNA, including its helical organization and dimensions. Her experimental work provided critical evidence used in constructing the double-helix model, and she later made important contributions to understanding the molecular structures of viruses.",
       "startYear": 1920,
       "endYear": 1958,
@@ -2064,7 +2064,7 @@
       "id": "francis-crick",
       "name": "Francis Crick",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "British molecular biologist, biophysicist, and neuroscientist who helped determine the double-helical structure of DNA and explain how molecular structure permits genetic information to be copied. He later contributed to the concepts of information transfer from DNA through RNA to protein and helped clarify the nature of the genetic code.",
       "startYear": 1916,
       "endYear": 2004,
@@ -2090,7 +2090,7 @@
       "id": "marshall-nirenberg",
       "name": "Marshall Nirenberg",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "American biochemist and geneticist who helped decipher the genetic code linking nucleotide sequences in RNA to amino acids in proteins. Beginning with experiments using synthetic RNA, he and his collaborators identified codon assignments and helped explain how cells translate genetic information into protein structure.",
       "startYear": 1927,
       "endYear": 2010,
@@ -2115,7 +2115,7 @@
       "id": "frederick-sanger",
       "name": "Frederick Sanger",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "British biochemist who developed methods for determining the sequences of proteins and nucleic acids. After establishing the amino-acid sequence of insulin, he created an influential DNA sequencing method that enabled researchers to read genetic information directly and helped establish modern genomics.",
       "startYear": 1918,
       "endYear": 2013,
@@ -2227,7 +2227,7 @@
       "id": "plotinus",
       "name": "Plotinus",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "Roman-Egyptian philosopher whose systematic development of Plato's ideas founded Neoplatonism, one of the most influential philosophical traditions of late antiquity.",
       "startYear": 204,
       "endYear": 270,
@@ -2266,7 +2266,7 @@
       "id": "boethius",
       "name": "Boethius",
       "type": "person",
-      "importance": 8,
+      "importance": 6,
       "description": "Roman senator and philosopher whose Latin translations and commentaries on Aristotle's logical works preserved classical learning through the collapse of the Western Roman Empire, earning him the title 'the last of the Romans, first of the Scholastics.' Wrote his most famous work, The Consolation of Philosophy, while imprisoned awaiting execution.",
       "startYear": 480,
       "endYear": 524,
@@ -2333,7 +2333,7 @@
       "id": "al-khwarizmi",
       "name": "Al-Khwarizmi",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Persian mathematician and astronomer at the House of Wisdom whose systematic treatment of equations founded algebra as a discipline and whose name gave rise to the term 'algorithm.' He also played a central role in popularizing the Hindu-Arabic numeral system.",
       "startYear": 780,
       "endYear": 850,
@@ -2369,7 +2369,7 @@
       "id": "ibn-sina",
       "name": "Ibn Sina (Avicenna)",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Persian polymath and physician whose systematic synthesis of Aristotelian philosophy, Galenic medicine, and his own clinical observation produced the most influential medical text in history and a body of philosophical work that shaped both Islamic and European scholastic thought.",
       "startYear": 980,
       "endYear": 1037,
@@ -2403,7 +2403,7 @@
       "id": "ibn-al-haytham",
       "name": "Ibn al-Haytham (Alhazen)",
       "type": "person",
-      "importance": 10,
+      "importance": 8,
       "description": "Arab mathematician and astronomer whose rigorous experimental investigation of light and vision is widely regarded as the earliest fully developed application of the scientific method. His work directly shaped the later optical theories of Kepler and the broader European scientific tradition.",
       "startYear": 965,
       "endYear": 1040,
@@ -2455,7 +2455,7 @@
       "id": "ibn-rushd",
       "name": "Ibn Rushd (Averroes)",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Andalusian philosopher and jurist whose extensive commentaries on Aristotle became so authoritative in medieval Europe that he was simply known as 'The Commentator.' His work was translated into Latin and directly shaped the philosophy of Thomas Aquinas and the scholastic tradition.",
       "startYear": 1126,
       "endYear": 1198,
@@ -2473,7 +2473,7 @@
       "id": "al-ghazali",
       "name": "Al-Ghazali",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "Persian theologian and philosopher whose influential critique of Aristotelian philosophy argued that reason alone could not establish many of philosophy's central metaphysical claims, provoking a famous rebuttal from Ibn Rushd and reshaping the relationship between philosophy and theology in the Islamic world.",
       "startYear": 1058,
       "endYear": 1111,
@@ -2509,7 +2509,7 @@
       "id": "augustine",
       "name": "Augustine of Hippo",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Roman North African philosopher and theologian whose synthesis of Neoplatonic philosophy and Christian doctrine became the dominant intellectual framework of Western Christianity for nearly a millennium, and whose method of rigorous inquiry into faith and reason directly shaped later scholastic thought.",
       "startYear": 354,
       "endYear": 430,
@@ -2574,7 +2574,7 @@
       "id": "aryabhata",
       "name": "Aryabhata",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Indian mathematician and astronomer whose Aryabhatiya introduced an early positional numeral system, an accurate approximation of pi, and systematic trigonometric methods, while proposing that Earth rotates on its axis to explain the apparent motion of the stars.",
       "startYear": 476,
       "endYear": 550,
@@ -2630,7 +2630,7 @@
       "id": "brahmagupta",
       "name": "Brahmagupta",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Indian mathematician and astronomer whose Brahmasphutasiddhanta gave the first known systematic rules for arithmetic with zero and negative numbers, alongside methods for solving quadratic equations and significant contributions to astronomy.",
       "startYear": 598,
       "endYear": 668,
@@ -2700,7 +2700,7 @@
       "id": "zhang-heng",
       "name": "Zhang Heng",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Han dynasty polymath — astronomer, mathematician, engineer, and geographer — who invented the first seismoscope capable of detecting the direction of distant earthquakes and built an early water-powered armillary sphere for astronomical observation. He also produced an influential star catalog and calculated an accurate approximation of pi.",
       "startYear": 78,
       "endYear": 139,
@@ -2720,7 +2720,7 @@
       "id": "shen-kuo",
       "name": "Shen Kuo",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "Song dynasty polymath — scientist, mathematician, astronomer, and engineer — whose Dream Pool Essays recorded the first known description of magnetic declination, documented the earliest known use of a magnetized needle for navigation, and preserved the account of Bi Sheng's invention of movable type printing. His wide-ranging observations spanned geology, meteorology, optics, and engineering.",
       "startYear": 1031,
       "endYear": 1095,
@@ -2759,7 +2759,7 @@
       "id": "cai-lun",
       "name": "Cai Lun",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "Han dynasty court official traditionally credited with refining and systematizing papermaking into a practical, reproducible process using tree bark, hemp, rags, and fishing nets. Although rudimentary paper existed before him, his process made paper cheap and widespread enough to transform writing and record-keeping across East Asia and, eventually, the world.",
       "startYear": 50,
       "startYearApprox": true,
@@ -2865,7 +2865,7 @@
       "id": "charles-babbage",
       "name": "Charles Babbage",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "English mathematician and mechanical engineer who designed the Difference Engine and the Analytical Engine, a general-purpose mechanical computer capable of following instructions to perform any calculation. Though never completed in his lifetime, the Analytical Engine's design anticipated core concepts of programmable computing over a century before electronic computers existed.",
       "startYear": 1791,
       "endYear": 1871,
@@ -2884,7 +2884,7 @@
       "id": "ada-lovelace",
       "name": "Ada Lovelace",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "English mathematician who wrote extensive notes on Babbage's Analytical Engine, including what is widely recognized as the first published algorithm intended for execution by a machine. She was among the first to recognize that such a machine could manipulate symbols and patterns generally, not merely calculate numbers.",
       "startYear": 1815,
       "endYear": 1852,
@@ -3044,7 +3044,7 @@
       "id": "john-von-neumann",
       "name": "John von Neumann",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Hungarian-American mathematician and polymath who proposed the stored-program computer architecture underlying nearly all modern computers, rigorously formalized the mathematical foundations of quantum mechanics using Hilbert space theory, and made major contributions to game theory and the Manhattan Project.",
       "startYear": 1903,
       "endYear": 1957,
@@ -3102,7 +3102,7 @@
       "id": "alexander-friedmann",
       "name": "Alexander Friedmann",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "Russian mathematician and physicist who derived solutions to Einstein's general relativity field equations showing that the universe must be either expanding or contracting rather than static, laying the mathematical foundation for modern cosmology. He died of typhoid fever at 37, before his work gained wide recognition.",
       "startYear": 1888,
       "endYear": 1925,
@@ -3140,7 +3140,7 @@
       "id": "georges-lemaitre",
       "name": "Georges Lemaître",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Belgian priest, astronomer, and physicist who proposed that the universe originated from the explosive expansion of a single primordial concentration of matter he called the \"primeval atom\" — the first clear statement of what became known as the Big Bang theory.",
       "startYear": 1894,
       "endYear": 1966,
@@ -3176,7 +3176,7 @@
       "id": "edwin-hubble",
       "name": "Edwin Hubble",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "American astronomer who demonstrated that many observed nebulae are entire galaxies well beyond the Milky Way, and discovered that these galaxies are receding from us at speeds proportional to their distance — the first direct observational evidence that the universe is expanding.",
       "startYear": 1889,
       "endYear": 1953,
@@ -3211,7 +3211,7 @@
       "id": "george-gamow",
       "name": "George Gamow",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "Russian-American physicist who extended Lemaître's primeval-atom idea into a detailed physical theory of the early universe, explaining the formation of light elements in the first minutes after the Big Bang and predicting, with Ralph Alpher and Robert Herman, that the event should have left behind a faint afterglow of radiation still detectable today.",
       "startYear": 1904,
       "endYear": 1968,
@@ -3246,7 +3246,7 @@
       "id": "arno-penzias",
       "name": "Arno Penzias",
       "type": "person",
-      "importance": 8,
+      "importance": 6,
       "description": "German-American radio astronomer who, with Robert Wilson, accidentally detected the cosmic microwave background radiation while investigating unexplained noise in a radio antenna, providing decisive observational confirmation of the Big Bang theory.",
       "startYear": 1933,
       "endYear": 2024,
@@ -3264,7 +3264,7 @@
       "id": "robert-wilson",
       "name": "Robert Wilson",
       "type": "person",
-      "importance": 8,
+      "importance": 6,
       "description": "American radio astronomer who, with Arno Penzias, accidentally detected the cosmic microwave background radiation while investigating unexplained noise in a radio antenna, providing decisive observational confirmation of the Big Bang theory.",
       "startYear": 1936,
       "disciplines": [
@@ -3281,7 +3281,7 @@
       "id": "humphry-davy",
       "name": "Humphry Davy",
       "type": "person",
-      "importance": 8,
+      "importance": 6,
       "description": "English chemist who used electrolysis to isolate several previously unknown elements, including sodium, potassium, and calcium, and invented the miners' safety lamp. As head of the Royal Institution, he took on a young bookbinder's apprentice named Michael Faraday as his laboratory assistant, launching one of the most consequential careers in the history of science.",
       "startYear": 1778,
       "endYear": 1829,
@@ -3349,7 +3349,7 @@
       "id": "lavoisier",
       "name": "Antoine Lavoisier",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "French chemist widely regarded as the father of modern chemistry. Through meticulous quantitative experiments, he overturned the prevailing phlogiston theory of combustion, identified and named oxygen and hydrogen, and established that mass is conserved in chemical reactions. He was executed during the Terror in 1794, at the height of his scientific career.",
       "startYear": 1743,
       "endYear": 1794,
@@ -3382,7 +3382,7 @@
       "id": "dalton",
       "name": "John Dalton",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "English chemist and physicist who proposed that each chemical element consists of identical atoms of a specific, characteristic mass, and that compounds form from atoms combining in fixed whole-number ratios. His atomic theory gave the ancient philosophical idea of the atom a rigorous, testable scientific foundation.",
       "startYear": 1766,
       "endYear": 1844,
@@ -3416,7 +3416,7 @@
       "id": "mendeleev",
       "name": "Dmitri Mendeleev",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "Russian chemist who organized the known chemical elements into a periodic table based on atomic weight and recurring chemical properties. Famously, he left gaps for elements not yet discovered and predicted their properties in advance — predictions later confirmed with remarkable accuracy, which did more than anything else to validate his system.",
       "startYear": 1834,
       "endYear": 1907,
@@ -3449,7 +3449,7 @@
       "id": "adam-smith",
       "name": "Adam Smith",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "Scottish economist and moral philosopher widely regarded as the father of modern economics. In The Wealth of Nations, he argued that specialization, free exchange, and self-interested individuals coordinated by market competition — the \"invisible hand\" — produce greater collective prosperity than centralized control, laying the intellectual foundation for classical economics.",
       "startYear": 1723,
       "endYear": 1790,
@@ -3500,7 +3500,7 @@
       "id": "karl-marx",
       "name": "Karl Marx",
       "type": "person",
-      "importance": 10,
+      "importance": 9,
       "description": "German philosopher and economist who argued that capitalism, for all its productive power, systematically extracts surplus value from workers and generates recurring crises, and that this internal contradiction would eventually drive its own collapse. His critique of classical economics and capitalism reshaped economic and political thought worldwide.",
       "startYear": 1818,
       "endYear": 1883,
@@ -3593,7 +3593,7 @@
       "id": "john-bardeen",
       "name": "John Bardeen",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "American physicist who co-invented the transistor at Bell Labs and later co-developed the theory of superconductivity — work that earned him two Nobel Prizes in Physics, the only person to have won the same Nobel science prize twice.",
       "startYear": 1908,
       "endYear": 1991,
@@ -3611,7 +3611,7 @@
       "id": "walter-brattain",
       "name": "Walter Brattain",
       "type": "person",
-      "importance": 8,
+      "importance": 6,
       "description": "American physicist who, working alongside John Bardeen at Bell Labs, built the first working point-contact transistor, demonstrating that a solid-state device could amplify an electrical signal without the fragility, heat, and bulk of a vacuum tube.",
       "startYear": 1902,
       "endYear": 1987,
@@ -3629,7 +3629,7 @@
       "id": "william-shockley",
       "name": "William Shockley",
       "type": "person",
-      "importance": 8,
+      "importance": 7,
       "description": "American physicist who led the Bell Labs team that invented the transistor and later developed the junction transistor design that made the technology practical to manufacture at scale, directly enabling the modern semiconductor industry.",
       "startYear": 1910,
       "endYear": 1989,
@@ -3665,7 +3665,7 @@
       "id": "vint-cerf",
       "name": "Vint Cerf",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "American computer scientist who, with Bob Kahn, co-designed the TCP/IP protocol suite that allows independent computer networks to interconnect as a single network of networks — the technical foundation of what became the Internet.",
       "startYear": 1943,
       "disciplines": [
@@ -3681,7 +3681,7 @@
       "id": "bob-kahn",
       "name": "Bob Kahn",
       "type": "person",
-      "importance": 9,
+      "importance": 7,
       "description": "American computer scientist who, with Vint Cerf, co-designed the TCP/IP protocol suite, solving the fundamental problem of how separately built computer networks could reliably exchange data as a unified system.",
       "startYear": 1938,
       "disciplines": [
@@ -3715,7 +3715,7 @@
       "id": "tim-berners-lee",
       "name": "Tim Berners-Lee",
       "type": "person",
-      "importance": 9,
+      "importance": 8,
       "description": "English computer scientist who, while working at CERN, invented the World Wide Web — a system of linked hypertext documents accessible over the Internet — and wrote the first web browser and web server to demonstrate it.",
       "startYear": 1955,
       "disciplines": [
@@ -3741,6 +3741,1138 @@
         "Hypertext",
         "Internet",
         "CERN"
+      ]
+    },
+    {
+      "id": "george-perkins-marsh",
+      "name": "George Perkins Marsh",
+      "type": "person",
+      "importance": 6,
+      "description": "American diplomat and scholar whose book Man and Nature argued, well ahead of his time, that human activity could permanently and destructively alter the natural landscape — deforestation, soil erosion, and the draining of wetlands chief among his examples. The book is widely credited with launching the American conservation movement.",
+      "startYear": 1801,
+      "endYear": 1882,
+      "disciplines": [
+        "Geography",
+        "History"
+      ],
+      "tags": [
+        "Conservation",
+        "Deforestation",
+        "Environmental Impact"
+      ]
+    },
+    {
+      "id": "man-and-nature",
+      "name": "Man and Nature",
+      "type": "publication",
+      "importance": 8,
+      "description": "George Perkins Marsh's 1864 book documenting how human activity — logging, agriculture, drainage — had measurably degraded landscapes across history, from ancient Mediterranean deforestation to contemporary America. It was among the first widely read arguments that nature was not an inexhaustible resource.",
+      "startYear": 1864,
+      "disciplines": [
+        "Geography"
+      ],
+      "tags": [
+        "Conservation",
+        "Deforestation",
+        "Environmental Impact"
+      ]
+    },
+    {
+      "id": "john-muir",
+      "name": "John Muir",
+      "type": "person",
+      "importance": 8,
+      "description": "Scottish-American naturalist and writer who argued that wilderness held intrinsic value beyond any practical use and should be preserved untouched rather than managed for resource extraction. His advocacy helped establish Yosemite and other areas as protected national parks, and he founded the Sierra Club to organize support for wilderness preservation.",
+      "startYear": 1838,
+      "endYear": 1914,
+      "disciplines": [
+        "Geography",
+        "Biology"
+      ],
+      "tags": [
+        "Wilderness Preservation",
+        "National Parks",
+        "Yosemite"
+      ]
+    },
+    {
+      "id": "sierra-club",
+      "name": "Sierra Club",
+      "type": "institution",
+      "importance": 8,
+      "description": "Founded by John Muir in 1892 to support the preservation of the Sierra Nevada and other wild places, the Sierra Club became one of the most influential environmental advocacy organizations in the United States and remains active today.",
+      "startYear": 1892,
+      "isOngoing": true,
+      "disciplines": [
+        "Geography",
+        "Biology"
+      ],
+      "tags": [
+        "Wilderness Preservation",
+        "Advocacy",
+        "National Parks"
+      ]
+    },
+    {
+      "id": "gifford-pinchot",
+      "name": "Gifford Pinchot",
+      "type": "person",
+      "importance": 6,
+      "description": "First chief of the U.S. Forest Service, who argued that natural resources should be actively and scientifically managed for sustained use rather than left untouched — \"the greatest good for the greatest number for the longest time.\" His conservationist philosophy put him in direct, public conflict with John Muir's preservationism, most famously over the damming of Hetch Hetchy valley in Yosemite.",
+      "startYear": 1865,
+      "endYear": 1946,
+      "disciplines": [
+        "Geography",
+        "Economics"
+      ],
+      "tags": [
+        "Forest Service",
+        "Resource Management",
+        "Hetch Hetchy"
+      ]
+    },
+    {
+      "id": "conservationism",
+      "name": "Conservationism",
+      "type": "theory",
+      "importance": 8,
+      "description": "The philosophy that natural resources should be managed scientifically for sustained, efficient human use rather than either exploited without limit or preserved untouched. It became the guiding principle of U.S. federal land management for much of the twentieth century.",
+      "startYear": 1905,
+      "startYearApprox": true,
+      "disciplines": [
+        "Geography",
+        "Economics"
+      ],
+      "tags": [
+        "Resource Management",
+        "Forestry",
+        "Sustained Yield"
+      ]
+    },
+    {
+      "id": "rachel-carson",
+      "name": "Rachel Carson",
+      "type": "person",
+      "importance": 9,
+      "description": "American marine biologist and writer whose book Silent Spring documented how the pesticide DDT accumulated through food chains, devastating bird populations and threatening human health. Her work is widely credited with launching the modern environmental movement, prompting a nationwide ban on DDT and the creation of the U.S. Environmental Protection Agency.",
+      "startYear": 1907,
+      "endYear": 1964,
+      "disciplines": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "Pesticides",
+        "DDT",
+        "Ecology",
+        "Silent Spring"
+      ]
+    },
+    {
+      "id": "silent-spring",
+      "name": "Silent Spring",
+      "type": "publication",
+      "importance": 10,
+      "description": "Rachel Carson's 1962 book documenting the ecological damage caused by synthetic pesticides, particularly DDT. Meticulously researched and aimed at a general audience, it directly shaped public opinion and policy, leading to a nationwide ban on DDT and the founding of the Environmental Protection Agency.",
+      "startYear": 1962,
+      "disciplines": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "Pesticides",
+        "DDT",
+        "Ecology"
+      ]
+    },
+    {
+      "id": "environmental-protection-agency",
+      "name": "Environmental Protection Agency",
+      "type": "institution",
+      "importance": 8,
+      "description": "A U.S. federal agency created in 1970 in direct response to rising public concern over pollution and pesticide use, tasked with writing and enforcing regulations to protect human health and the environment. It remains the primary federal environmental regulator in the United States.",
+      "startYear": 1970,
+      "isOngoing": true,
+      "disciplines": [
+        "Geography",
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "Environmental Regulation",
+        "Pollution",
+        "Federal Agency"
+      ]
+    },
+    {
+      "id": "environmentalism",
+      "name": "Environmentalism",
+      "type": "movement",
+      "importance": 9,
+      "description": "A movement advocating for the protection of the natural environment from the damaging effects of human activity, spanning wilderness preservation, resource conservation, pollution control, and — more recently — climate change. Though its intellectual roots reach back to the nineteenth century, its modern, mass political form is usually dated to the early 1960s.",
+      "startYear": 1962,
+      "startYearApprox": true,
+      "isOngoing": true,
+      "disciplines": [
+        "Geography",
+        "Biology",
+        "Chemistry",
+        "Economics"
+      ],
+      "tags": [
+        "Conservation",
+        "Pollution",
+        "Climate Change",
+        "Ecology"
+      ]
+    },
+    {
+      "id": "buddhist-philosophy",
+      "name": "Buddhist Philosophy",
+      "type": "theory",
+      "importance": 7,
+      "description": "A philosophical tradition originating in ancient India, central to which is the teaching of dependent origination — that all phenomena arise interdependently, with no being possessing a separate, permanent self. Combined with an ethic of compassion extended to all sentient life, this framework has been widely drawn upon by later ecological thinkers as a philosophical foundation for rejecting a strictly human-centered view of nature.",
+      "startYear": -500,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Dependent Origination",
+        "Interconnectedness",
+        "Compassion"
+      ]
+    },
+    {
+      "id": "arne-naess",
+      "name": "Arne Naess",
+      "type": "person",
+      "importance": 6,
+      "description": "Norwegian philosopher who coined the term \"deep ecology,\" arguing that mainstream environmentalism's focus on pollution and resource depletion for human benefit — which he called \"shallow ecology\" — did not go far enough. He drew explicitly on Buddhist and Spinozist philosophy in arguing that all living things possess intrinsic value independent of their usefulness to humans, and that genuine ecological thinking requires rejecting human-centered assumptions altogether.",
+      "startYear": 1912,
+      "endYear": 2009,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Deep Ecology",
+        "Ecocentrism",
+        "Intrinsic Value"
+      ]
+    },
+    {
+      "id": "deep-ecology",
+      "name": "Deep Ecology",
+      "type": "theory",
+      "importance": 8,
+      "description": "The position that all living things possess intrinsic value independent of their usefulness to humans, and that ecological problems stem from a deeper, mistaken assumption that humans stand apart from and above the rest of nature. It goes beyond conventional environmentalism's focus on managing pollution and resources, calling instead for a fundamental shift away from human-centered thinking.",
+      "startYear": 1973,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Ecocentrism",
+        "Intrinsic Value",
+        "Shallow Ecology"
+      ]
+    },
+    {
+      "id": "siddhartha-gautama",
+      "name": "Siddhartha Gautama",
+      "type": "person",
+      "importance": 10,
+      "description": "The historical Buddha, a prince of the Shakya clan in what is now Nepal who renounced his position to seek an end to suffering, and whose teachings on impermanence, non-self, and dependent origination became the foundation of Buddhism. His traditional dates are widely cited but not settled with certainty among historians.",
+      "startYear": -563,
+      "startYearApprox": true,
+      "endYear": -483,
+      "endYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Buddhism",
+        "Dependent Origination",
+        "Non-Self"
+      ]
+    },
+    {
+      "id": "confucius",
+      "name": "Confucius",
+      "type": "person",
+      "importance": 10,
+      "description": "Chinese philosopher and teacher whose emphasis on moral cultivation, filial piety, ritual propriety, and just governance shaped Chinese ethical and political thought for over two thousand years, becoming the basis of the imperial civil service examination system and remaining deeply influential across East Asia.",
+      "startYear": -551,
+      "endYear": -479,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Confucianism",
+        "Ethics",
+        "Governance"
+      ]
+    },
+    {
+      "id": "confucianism",
+      "name": "Confucianism",
+      "type": "theory",
+      "importance": 9,
+      "description": "An ethical and philosophical system emphasizing moral self-cultivation, respect for family and social hierarchy, ritual propriety, and virtuous governance. It became the official state philosophy of imperial China for most of the last two thousand years and remains a foundational influence on social and political thought across East Asia.",
+      "startYear": -500,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Ethics",
+        "Governance",
+        "Filial Piety"
+      ]
+    },
+    {
+      "id": "laozi",
+      "name": "Laozi",
+      "type": "person",
+      "importance": 7,
+      "description": "Traditional founder of Taoism and reputed author of the Tao Te Ching, credited with a philosophy of following the natural way (the Tao) through simplicity, humility, and non-action (wu wei). His historical existence is disputed among scholars — some regard him as a composite or legendary figure rather than a single historical individual — and the traditional sixth-century-BCE dating is itself uncertain.",
+      "startYear": -604,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Taoism",
+        "Wu Wei",
+        "The Tao"
+      ]
+    },
+    {
+      "id": "tao-te-ching",
+      "name": "Tao Te Ching",
+      "type": "publication",
+      "importance": 8,
+      "description": "A foundational text of Taoism, traditionally attributed to Laozi, consisting of concise, often paradoxical verses on following the natural order (the Tao) through simplicity, humility, and effortless action. Its actual authorship and date of composition remain debated among scholars.",
+      "startYear": -400,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Taoism",
+        "Wu Wei",
+        "The Tao"
+      ]
+    },
+    {
+      "id": "taoism",
+      "name": "Taoism",
+      "type": "theory",
+      "importance": 8,
+      "description": "A Chinese philosophical and religious tradition centered on living in harmony with the Tao — the natural, underlying order of the universe — through simplicity, humility, and wu wei, or effortless non-striving action. Alongside Confucianism, it became one of the two dominant strands of classical Chinese thought.",
+      "startYear": -400,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Wu Wei",
+        "The Tao",
+        "Naturalness"
+      ]
+    },
+    {
+      "id": "adi-shankara",
+      "name": "Adi Shankara",
+      "type": "person",
+      "importance": 7,
+      "description": "Indian philosopher and theologian who systematized Advaita Vedanta, traveling across India to debate rival schools and establish monasteries that preserved and spread his teaching. His work gave rigorous philosophical structure to ideas found in the much older Upanishads, and remains foundational to Hindu philosophy.",
+      "startYear": 788,
+      "startYearApprox": true,
+      "endYear": 820,
+      "endYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Advaita Vedanta",
+        "Non-Dualism",
+        "Upanishads"
+      ]
+    },
+    {
+      "id": "advaita-vedanta",
+      "name": "Advaita Vedanta",
+      "type": "theory",
+      "importance": 8,
+      "description": "A non-dualist school of Hindu philosophy holding that the individual self (atman) and the ultimate reality (Brahman) are not fundamentally distinct — that the perceived separateness of self and world is a form of ignorance to be overcome through direct realization. It remains one of the most influential schools of Hindu philosophical thought.",
+      "startYear": 800,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Non-Dualism",
+        "Brahman",
+        "Upanishads"
+      ]
+    },
+    {
+      "id": "sushruta",
+      "name": "Sushruta",
+      "type": "person",
+      "importance": 6,
+      "description": "Ancient Indian physician traditionally regarded as the father of surgery, credited with the Sushruta Samhita's detailed descriptions of surgical techniques, instruments, and procedures — including early forms of plastic and cataract surgery. His historical dates are highly uncertain, and the text attributed to him was likely compiled and expanded over several centuries rather than written by one person at one time.",
+      "startYear": -600,
+      "startYearApprox": true,
+      "disciplines": [
+        "Medicine"
+      ],
+      "tags": [
+        "Ayurveda",
+        "Surgery",
+        "Ancient Medicine"
+      ]
+    },
+    {
+      "id": "sushruta-samhita",
+      "name": "Sushruta Samhita",
+      "type": "publication",
+      "importance": 7,
+      "description": "A foundational Sanskrit text of Ayurvedic medicine, containing extraordinarily detailed descriptions of surgical procedures, instruments, and techniques, including reconstructive and cataract surgery. Compiled and expanded over centuries, it stands alongside the roughly contemporary Greek medical tradition as one of the ancient world's most systematic surgical texts.",
+      "startYear": -600,
+      "startYearApprox": true,
+      "disciplines": [
+        "Medicine"
+      ],
+      "tags": [
+        "Ayurveda",
+        "Surgery",
+        "Ancient Medicine"
+      ]
+    },
+    {
+      "id": "dogen",
+      "name": "Dōgen",
+      "type": "person",
+      "importance": 7,
+      "description": "Japanese Buddhist monk who studied Chan Buddhism in China before returning to found the Sōtō school of Zen in Japan, emphasizing seated meditation (zazen) as itself the expression of enlightenment rather than merely a means toward it. His writings remain foundational to Zen Buddhist practice and philosophy.",
+      "startYear": 1200,
+      "endYear": 1253,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Zen",
+        "Meditation",
+        "Sōtō School"
+      ]
+    },
+    {
+      "id": "zen-buddhism",
+      "name": "Zen Buddhism",
+      "type": "theory",
+      "importance": 8,
+      "description": "A school of Mahayana Buddhism, transmitted from China to Japan, emphasizing direct experiential insight through seated meditation over textual study or doctrine. It later became one of the most internationally recognized forms of Buddhism, significantly shaping twentieth-century Western engagement with Buddhist thought.",
+      "startYear": 1227,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Meditation",
+        "Zazen",
+        "Mahayana Buddhism"
+      ]
+    },
+    {
+      "id": "quantum-theory",
+      "name": "Quantum Theory",
+      "type": "theory",
+      "importance": 10,
+      "description": "The proposal that energy is emitted and absorbed not continuously but in discrete packets, or quanta. Max Planck introduced this idea in 1900 to solve the \"ultraviolet catastrophe\" — a failure of classical physics to correctly predict the radiation emitted by heated objects — reluctantly, as a mathematical device he did not initially believe described physical reality. It became the seed from which all of quantum mechanics grew.",
+      "startYear": 1900,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Quanta",
+        "Blackbody Radiation",
+        "Planck's Constant"
+      ]
+    },
+    {
+      "id": "radioactivity",
+      "name": "Radioactivity",
+      "type": "theory",
+      "importance": 9,
+      "description": "The spontaneous emission of particles or radiation from unstable atomic nuclei. First observed by Henri Becquerel in 1896, it was Marie Curie — working with her husband Pierre — who coined the term, developed techniques to measure it precisely, and discovered two new radioactive elements, polonium and radium, through years of painstaking extraction from tons of ore.",
+      "startYear": 1898,
+      "disciplines": [
+        "Physics",
+        "Chemistry"
+      ],
+      "tags": [
+        "Radium",
+        "Polonium",
+        "Nuclear Physics"
+      ]
+    },
+    {
+      "id": "rutherford-model",
+      "name": "Rutherford Model",
+      "type": "theory",
+      "importance": 9,
+      "description": "The discovery, via the gold foil experiment, that an atom's positive charge and nearly all its mass are concentrated in a tiny, dense central nucleus, with the rest of the atom being mostly empty space. It overturned the prevailing \"plum pudding\" model of the atom and established the basic nuclear structure every later atomic model would build on.",
+      "startYear": 1911,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Atomic Nucleus",
+        "Gold Foil Experiment",
+        "Nuclear Physics"
+      ]
+    },
+    {
+      "id": "bohr-model",
+      "name": "Bohr Model",
+      "type": "theory",
+      "importance": 9,
+      "description": "A model of the atom in which electrons orbit the nucleus only at specific, quantized energy levels rather than at arbitrary distances, jumping between levels by absorbing or emitting a precise quantum of energy. It combined Rutherford's nuclear structure with Planck's quantization to correctly explain the spectral lines of hydrogen for the first time.",
+      "startYear": 1913,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Quantized Orbits",
+        "Atomic Spectra",
+        "Nuclear Physics"
+      ]
+    },
+    {
+      "id": "schrodinger-equation",
+      "name": "Schrödinger Equation",
+      "type": "theory",
+      "importance": 9,
+      "description": "A fundamental equation describing how the quantum state of a physical system evolves over time, treating particles as spread-out wave functions rather than points with definite trajectories. It provided quantum mechanics with a continuous, wave-based mathematical formulation and remains the central equation of non-relativistic quantum mechanics.",
+      "startYear": 1926,
+      "disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "tags": [
+        "Wave Mechanics",
+        "Wave Function",
+        "Quantum State"
+      ]
+    },
+    {
+      "id": "uncertainty-principle",
+      "name": "Uncertainty Principle",
+      "type": "theory",
+      "importance": 10,
+      "description": "The principle that certain pairs of physical properties — most famously a particle's position and momentum — cannot both be known to arbitrary precision at the same time, not merely due to measurement limitations but as a fundamental feature of nature itself. It struck at the heart of classical physics' assumption that a system's future could in principle always be predicted exactly.",
+      "startYear": 1927,
+      "disciplines": [
+        "Physics"
+      ],
+      "tags": [
+        "Position and Momentum",
+        "Quantum Indeterminacy",
+        "Matrix Mechanics"
+      ]
+    },
+    {
+      "id": "dirac-equation",
+      "name": "Dirac Equation",
+      "type": "theory",
+      "importance": 9,
+      "description": "An equation unifying quantum mechanics with special relativity to describe the behavior of electrons moving at relativistic speeds. Its mathematics implied the existence of a previously unknown particle identical to the electron but with opposite charge — antimatter — which was experimentally confirmed with the discovery of the positron in 1932.",
+      "startYear": 1928,
+      "disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "tags": [
+        "Antimatter",
+        "Positron",
+        "Special Relativity"
+      ]
+    },
+    {
+      "id": "quantum-mechanics",
+      "name": "Quantum Mechanics",
+      "type": "theory",
+      "importance": 10,
+      "description": "The branch of physics describing nature at the scale of atoms and subatomic particles, where energy comes in discrete units, outcomes are fundamentally probabilistic rather than determined, and particles exhibit both wave-like and particle-like behavior. Built up over three decades from Planck's original quantum hypothesis through the atomic models of Rutherford and Bohr to the full mathematical formulations of Schrödinger, Heisenberg, and Dirac, it remains the most thoroughly tested theory in the history of science.",
+      "startYear": 1925,
+      "startYearApprox": true,
+      "disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "tags": [
+        "Quanta",
+        "Wave-Particle Duality",
+        "Probabilistic Physics"
+      ]
+    },
+    {
+      "id": "leibniz",
+      "name": "Gottfried Wilhelm Leibniz",
+      "type": "person",
+      "importance": 9,
+      "description": "German mathematician and philosopher who independently developed calculus around the same time as Newton, using a different notation — including the dx/dy and integral sign notation still used today. The question of priority between Newton and Leibniz became one of the most bitter disputes in the history of science, though it is now understood that each arrived at the ideas independently.",
+      "startYear": 1646,
+      "endYear": 1716,
+      "disciplines": [
+        "Mathematics",
+        "Philosophy"
+      ],
+      "tags": [
+        "Calculus",
+        "Notation",
+        "Priority Dispute"
+      ]
+    },
+    {
+      "id": "calculus",
+      "name": "Calculus",
+      "type": "theory",
+      "importance": 10,
+      "description": "A branch of mathematics concerned with continuous change, built on the twin concepts of the derivative (instantaneous rate of change) and the integral (accumulation of quantity over an interval), and the fundamental theorem connecting them. It became the essential mathematical language of physics, enabling the precise description of motion, force, and change that classical mechanics depends on.",
+      "startYear": 1670,
+      "startYearApprox": true,
+      "disciplines": [
+        "Mathematics",
+        "Physics"
+      ],
+      "tags": [
+        "Derivatives",
+        "Integrals",
+        "Rate of Change"
+      ]
+    },
+    {
+      "id": "printing-press",
+      "name": "Printing Press",
+      "type": "technology",
+      "importance": 10,
+      "description": "A mechanical device using movable metal type to reproduce text quickly and cheaply, invented by Johannes Gutenberg around 1440. By making written material dramatically cheaper and faster to produce than hand copying, it transformed the spread of ideas across Europe and is widely regarded as one of the most consequential inventions in human history.",
+      "startYear": 1440,
+      "startYearApprox": true,
+      "disciplines": [
+        "Engineering",
+        "Literature"
+      ],
+      "tags": [
+        "Movable Type",
+        "Mass Communication",
+        "Renaissance"
+      ]
+    },
+    {
+      "id": "mendelian-genetics",
+      "name": "Mendelian Genetics",
+      "type": "theory",
+      "importance": 10,
+      "description": "The laws of inheritance derived from Gregor Mendel's meticulous pea plant breeding experiments: that traits are passed on as discrete units (later called genes), inherited independently of one another, in predictable statistical ratios. Published in 1866, the work was almost entirely ignored for over three decades before being rediscovered around 1900 and recognized as the foundation of modern genetics.",
+      "startYear": 1866,
+      "disciplines": [
+        "Biology"
+      ],
+      "tags": [
+        "Heredity",
+        "Genes",
+        "Pea Plants"
+      ]
+    },
+    {
+      "id": "james-watson",
+      "name": "James Watson",
+      "type": "person",
+      "importance": 9,
+      "description": "American molecular biologist who, working with Francis Crick at Cambridge's Cavendish Laboratory, proposed the double helix structure of DNA in 1953, drawing on Rosalind Franklin's X-ray diffraction images and Erwin Chargaff's base-pairing ratios. He later directed Cold Spring Harbor Laboratory and helped launch the Human Genome Project, though his legacy is also marked by widely condemned racist and sexist public statements in his later life.",
+      "startYear": 1928,
+      "endYear": 2025,
+      "disciplines": [
+        "Biology"
+      ],
+      "tags": [
+        "DNA",
+        "Double Helix",
+        "Human Genome Project"
+      ]
+    },
+    {
+      "id": "maurice-wilkins",
+      "name": "Maurice Wilkins",
+      "type": "person",
+      "importance": 7,
+      "description": "New Zealand-born physicist and molecular biologist at King's College London whose X-ray crystallography work on DNA, alongside Rosalind Franklin's, provided essential experimental evidence for its structure. He shared Franklin's unpublished data and imagery with Watson without her knowledge, a decision central to later debates over how fully her contribution was credited at the time.",
+      "startYear": 1916,
+      "endYear": 2004,
+      "disciplines": [
+        "Physics",
+        "Biology"
+      ],
+      "tags": [
+        "DNA",
+        "X-Ray Crystallography",
+        "King's College London"
+      ]
+    },
+    {
+      "id": "dna-structure",
+      "name": "DNA Double Helix",
+      "type": "theory",
+      "importance": 10,
+      "description": "The discovery that DNA consists of two complementary strands wound around each other in a helical structure, held together by base pairing between adenine-thymine and guanine-cytosine. Proposed by Watson and Crick in 1953, it immediately suggested how genetic information could be both stored and precisely copied, becoming the foundation of modern molecular biology and genetics.",
+      "startYear": 1953,
+      "disciplines": [
+        "Biology",
+        "Chemistry"
+      ],
+      "tags": [
+        "Base Pairing",
+        "Genetic Code",
+        "Heredity"
+      ]
+    },
+    {
+      "id": "archimedes-principle",
+      "name": "Archimedes' Principle",
+      "type": "theory",
+      "importance": 8,
+      "description": "The principle that a body submerged in fluid experiences an upward buoyant force equal to the weight of fluid it displaces — famously said to have occurred to Archimedes in the bath, prompting him to run through the streets shouting \"Eureka.\" It remains the foundation of hydrostatics and ship design to this day.",
+      "startYear": -250,
+      "startYearApprox": true,
+      "disciplines": [
+        "Physics",
+        "Mathematics"
+      ],
+      "tags": [
+        "Buoyancy",
+        "Hydrostatics",
+        "Displacement"
+      ]
+    },
+    {
+      "id": "confessions",
+      "name": "Confessions",
+      "type": "publication",
+      "importance": 8,
+      "description": "Augustine's autobiographical account of his conversion to Christianity, written around 397–400 CE. Combining personal narrative with philosophical reflection on memory, time, and the nature of God, it is widely regarded as one of the first Western autobiographies and a foundational text of Christian theology.",
+      "startYear": 397,
+      "disciplines": [
+        "Philosophy",
+        "History"
+      ],
+      "tags": [
+        "Christian Theology",
+        "Autobiography",
+        "Conversion"
+      ]
+    },
+    {
+      "id": "consolation-of-philosophy",
+      "name": "The Consolation of Philosophy",
+      "type": "publication",
+      "importance": 8,
+      "description": "Written by Boethius while awaiting execution on charges of treason, this dialogue between the imprisoned author and the personified figure of Philosophy addresses fate, fortune, and the nature of true happiness. It became one of the most widely read and translated works of the Middle Ages.",
+      "startYear": 523,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Fate",
+        "Fortune",
+        "Happiness"
+      ]
+    },
+    {
+      "id": "incoherence-of-the-philosophers",
+      "name": "The Incoherence of the Philosophers",
+      "type": "publication",
+      "importance": 8,
+      "description": "Al-Ghazali's critique of the Aristotelian-influenced rationalist philosophy practiced by Islamic philosophers including Ibn Sina, arguing that key metaphysical claims — such as the eternity of the world — could not be established by reason alone and conflicted with religious teaching. It provoked Ibn Rushd's famous rebuttal, The Incoherence of the Incoherence, decades later.",
+      "startYear": 1095,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Rationalism",
+        "Islamic Philosophy",
+        "Metaphysics"
+      ]
+    },
+    {
+      "id": "the-prince",
+      "name": "The Prince",
+      "type": "publication",
+      "importance": 9,
+      "description": "Machiavelli's treatise on political power, arguing that a ruler should be judged by the practical effectiveness of their actions rather than by conventional moral standards — that it is sometimes necessary to act immorally to maintain stability and power. Its unflinching realism made \"Machiavellian\" a byword for cunning, amoral political strategy.",
+      "startYear": 1513,
+      "disciplines": [
+        "Philosophy",
+        "History"
+      ],
+      "tags": [
+        "Political Realism",
+        "Power",
+        "Statecraft"
+      ]
+    },
+    {
+      "id": "in-praise-of-folly",
+      "name": "In Praise of Folly",
+      "type": "publication",
+      "importance": 8,
+      "description": "Erasmus's satirical essay, narrated by the personification of Folly herself, mocking the corruption and hypocrisy of the clergy, scholars, and society of his day. Written quickly as a diversion while staying with Thomas More, it became one of the most influential and widely read works of Christian humanism.",
+      "startYear": 1509,
+      "disciplines": [
+        "Philosophy",
+        "Literature"
+      ],
+      "tags": [
+        "Satire",
+        "Christian Humanism",
+        "Clerical Corruption"
+      ]
+    },
+    {
+      "id": "treatise-of-human-nature",
+      "name": "A Treatise of Human Nature",
+      "type": "publication",
+      "importance": 9,
+      "description": "Hume's foundational work of empiricist philosophy, arguing that all human knowledge derives from sensory experience and that even seemingly certain concepts like causation are ultimately habits of the mind rather than logically necessary truths. Its skeptical conclusions about induction and causation would later shake Kant out of what he called his \"dogmatic slumber.\"",
+      "startYear": 1739,
+      "disciplines": [
+        "Philosophy"
+      ],
+      "tags": [
+        "Empiricism",
+        "Causation",
+        "Skepticism"
+      ]
+    },
+    {
+      "id": "renaissance-humanism",
+      "name": "Renaissance Humanism",
+      "type": "theory",
+      "importance": 8,
+      "description": "An intellectual approach centered on the study of classical Greek and Roman texts as a model for eloquence, ethics, and human potential, in contrast to the more narrowly theological focus of medieval scholasticism. Petrarch's rediscovery and passionate advocacy for classical literature is widely credited with launching the movement.",
+      "startYear": 1341,
+      "startYearApprox": true,
+      "disciplines": [
+        "Philosophy",
+        "Literature"
+      ],
+      "tags": [
+        "Classical Antiquity",
+        "Rhetoric",
+        "Human Potential"
+      ]
+    },
+    {
+      "id": "seismoscope",
+      "name": "Seismoscope",
+      "type": "technology",
+      "importance": 8,
+      "description": "The first known instrument capable of detecting the occurrence and approximate direction of distant earthquakes, invented by Zhang Heng in Han dynasty China. A pendulum inside a bronze vessel would dislodge one of eight dragon-mouthed levers to drop a ball into a toad's mouth below, indicating the earthquake's direction — reportedly detecting a quake whose tremors were not felt in the capital.",
+      "startYear": 132,
+      "disciplines": [
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Earthquake Detection",
+        "Han Dynasty",
+        "Pendulum"
+      ]
+    },
+    {
+      "id": "steam-engine",
+      "name": "Steam Engine (Watt Design)",
+      "type": "technology",
+      "importance": 10,
+      "description": "James Watt's dramatically improved steam engine, adding a separate condensing chamber that avoided the huge energy losses of earlier designs like Newcomen's, which repeatedly heated and cooled the same cylinder. Watt's design made steam power efficient and versatile enough to drive factories, mines, and eventually locomotives, becoming the central mechanical engine of the Industrial Revolution.",
+      "startYear": 1776,
+      "disciplines": [
+        "Engineering",
+        "Physics"
+      ],
+      "tags": [
+        "Steam Power",
+        "Separate Condenser",
+        "Industrial Revolution"
+      ]
+    },
+    {
+      "id": "ac-induction-motor",
+      "name": "AC Induction Motor",
+      "type": "technology",
+      "importance": 9,
+      "description": "Nikola Tesla's motor design using alternating current to generate a rotating magnetic field, allowing efficient, reliable conversion of electrical current into mechanical motion without the sparking brushes required by direct-current motors. It underpinned Tesla's broader AC power system, which won out over Edison's competing direct-current system in the \"War of the Currents.\"",
+      "startYear": 1887,
+      "disciplines": [
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Alternating Current",
+        "Rotating Magnetic Field",
+        "War of the Currents"
+      ]
+    },
+    {
+      "id": "incandescent-light-bulb",
+      "name": "Incandescent Light Bulb",
+      "type": "technology",
+      "importance": 9,
+      "description": "Thomas Edison's practical, long-lasting incandescent light bulb, using a carbonized bamboo filament that could burn for hundreds of hours — the culmination of extensive testing of thousands of filament materials, rather than the invention of incandescent lighting itself, which earlier inventors had already demonstrated in short-lived forms.",
+      "startYear": 1879,
+      "disciplines": [
+        "Physics",
+        "Engineering"
+      ],
+      "tags": [
+        "Electric Lighting",
+        "Filament",
+        "Menlo Park"
+      ]
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology",
+      "type": "movement",
+      "importance": 9,
+      "description": "The scientific study of the mind and behavior, established as a distinct experimental discipline in the late nineteenth century after centuries of being treated as a branch of philosophy. It fractured early into competing schools of thought — psychoanalysis, behaviorism, and later cognitive science — before gradually integrating into a broader, evidence-based science of mental life.",
+      "startYear": 1879,
+      "isOngoing": true,
+      "disciplines": [
+        "Psychology",
+        "Philosophy",
+        "Medicine"
+      ],
+      "tags": [
+        "Mind",
+        "Behavior",
+        "Experimental Method"
+      ]
+    },
+    {
+      "id": "wilhelm-wundt",
+      "name": "Wilhelm Wundt",
+      "type": "person",
+      "importance": 8,
+      "description": "German physician and philosopher who founded the first formal laboratory dedicated to psychological research, at the University of Leipzig in 1879, marking psychology's emergence as an independent experimental science distinct from philosophy. He trained a generation of students who carried his methods across Europe and the United States.",
+      "startYear": 1832,
+      "endYear": 1920,
+      "disciplines": [
+        "Psychology",
+        "Philosophy"
+      ],
+      "tags": [
+        "Experimental Psychology",
+        "Leipzig",
+        "Introspection"
+      ]
+    },
+    {
+      "id": "sigmund-freud",
+      "name": "Sigmund Freud",
+      "type": "person",
+      "importance": 9,
+      "description": "Austrian neurologist who proposed that much of human thought and behavior is shaped by unconscious drives and conflicts inaccessible to conscious awareness, and developed psychoanalysis as both a theory of the mind and a clinical method for treating psychological distress through techniques like free association and dream interpretation. Though many of his specific theories are no longer widely accepted, his emphasis on unconscious mental life profoundly shaped twentieth-century thought.",
+      "startYear": 1856,
+      "endYear": 1939,
+      "disciplines": [
+        "Psychology",
+        "Medicine"
+      ],
+      "tags": [
+        "Unconscious Mind",
+        "Psychoanalysis",
+        "Dream Interpretation"
+      ]
+    },
+    {
+      "id": "interpretation-of-dreams",
+      "name": "The Interpretation of Dreams",
+      "type": "publication",
+      "importance": 9,
+      "description": "Freud's 1899 book (dated 1900) arguing that dreams are disguised expressions of unconscious wishes, and introducing techniques for analyzing their symbolic content. Though initially selling poorly, it became the foundational text of psychoanalysis.",
+      "startYear": 1899,
+      "disciplines": [
+        "Psychology",
+        "Medicine"
+      ],
+      "tags": [
+        "Dreams",
+        "Unconscious Mind",
+        "Wish Fulfillment"
+      ]
+    },
+    {
+      "id": "psychoanalysis",
+      "name": "Psychoanalysis",
+      "type": "theory",
+      "importance": 9,
+      "description": "A theory of the mind and therapeutic method holding that psychological distress often stems from unconscious conflicts, frequently rooted in early childhood experience, which can be brought to conscious awareness and resolved through techniques such as free association and dream analysis.",
+      "startYear": 1899,
+      "disciplines": [
+        "Psychology",
+        "Medicine"
+      ],
+      "tags": [
+        "Unconscious Mind",
+        "Free Association",
+        "Talk Therapy"
+      ]
+    },
+    {
+      "id": "bf-skinner",
+      "name": "B. F. Skinner",
+      "type": "person",
+      "importance": 7,
+      "description": "American psychologist who argued that psychology should concern itself only with observable behavior and the environmental conditions that shape it, not unobservable internal mental states like those central to psychoanalysis. His research on operant conditioning — how behavior is strengthened or weakened by its consequences — made behaviorism the dominant force in American psychology for decades.",
+      "startYear": 1904,
+      "endYear": 1990,
+      "disciplines": [
+        "Psychology",
+        "Biology"
+      ],
+      "tags": [
+        "Operant Conditioning",
+        "Behaviorism",
+        "Reinforcement"
+      ]
+    },
+    {
+      "id": "behaviorism",
+      "name": "Behaviorism",
+      "type": "theory",
+      "importance": 9,
+      "description": "The position that psychology should study only observable behavior and its relationship to environmental stimuli, treating the mind's internal, unobservable states as scientifically inaccessible and therefore outside psychology's proper concern. It dominated American psychology for much of the early-to-mid twentieth century before giving ground to cognitive approaches.",
+      "startYear": 1930,
+      "startYearApprox": true,
+      "disciplines": [
+        "Psychology",
+        "Biology"
+      ],
+      "tags": [
+        "Observable Behavior",
+        "Operant Conditioning",
+        "Reinforcement"
+      ]
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "type": "movement",
+      "importance": 10,
+      "description": "The field concerned with building machines capable of tasks that would normally require human intelligence — reasoning, learning, perception, and language. Founded as a distinct research field at a 1956 workshop at Dartmouth College, it cycled through waves of optimism and disillusionment (the so-called \"AI winters\") for decades before the deep learning breakthroughs of the 2010s and 2020s drove it to the center of global technological and economic attention.",
+      "startYear": 1956,
+      "isOngoing": true,
+      "disciplines": [
+        "Computer Science",
+        "Mathematics",
+        "Psychology"
+      ],
+      "tags": [
+        "Machine Learning",
+        "Neural Networks",
+        "Dartmouth Workshop"
+      ]
+    },
+    {
+      "id": "turing-test",
+      "name": "Turing Test",
+      "type": "theory",
+      "importance": 9,
+      "description": "Alan Turing's proposal for evaluating whether a machine can exhibit intelligent behavior indistinguishable from a human's: a human judge holds text conversations with both a machine and a person, without seeing either, and tries to determine which is which. Introduced in 1950, six years before the field of artificial intelligence was formally founded, it remains one of the most widely known thought experiments in the philosophy of mind and computing.",
+      "startYear": 1950,
+      "disciplines": [
+        "Computer Science",
+        "Philosophy"
+      ],
+      "tags": [
+        "Machine Intelligence",
+        "Imitation Game",
+        "Philosophy of Mind"
+      ]
+    },
+    {
+      "id": "john-mccarthy",
+      "name": "John McCarthy",
+      "type": "person",
+      "importance": 8,
+      "description": "American computer scientist who coined the term \"artificial intelligence\" and organized the 1956 Dartmouth workshop that formally launched the field as an area of research, bringing together the researchers who would define its early decades. He also invented the LISP programming language, which became the dominant language of AI research for many years.",
+      "startYear": 1927,
+      "endYear": 2011,
+      "disciplines": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "Dartmouth Workshop",
+        "LISP",
+        "Symbolic AI"
+      ]
+    },
+    {
+      "id": "marvin-minsky",
+      "name": "Marvin Minsky",
+      "type": "person",
+      "importance": 6,
+      "description": "American cognitive scientist and co-founder of MIT's Artificial Intelligence Laboratory, whose research spanned symbolic reasoning, robotics, and theories of how the mind itself might be organized as a collection of simpler interacting processes. He was one of the small group of researchers who attended the founding 1956 Dartmouth workshop.",
+      "startYear": 1927,
+      "endYear": 2016,
+      "disciplines": [
+        "Computer Science",
+        "Psychology"
+      ],
+      "tags": [
+        "MIT AI Lab",
+        "Symbolic AI",
+        "Cognitive Science"
+      ]
+    },
+    {
+      "id": "geoffrey-hinton",
+      "name": "Geoffrey Hinton",
+      "type": "person",
+      "importance": 9,
+      "description": "British-Canadian computer scientist whose decades of work on artificial neural networks, particularly the backpropagation algorithm for training them, laid the groundwork for the deep learning revolution of the 2010s. Long a minority voice while symbolic approaches dominated AI research, his methods eventually became the foundation of modern AI systems, earning him the 2024 Nobel Prize in Physics.",
+      "startYear": 1947,
+      "disciplines": [
+        "Computer Science",
+        "Psychology"
+      ],
+      "tags": [
+        "Deep Learning",
+        "Neural Networks",
+        "Backpropagation"
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "name": "Deep Learning",
+      "type": "theory",
+      "importance": 10,
+      "description": "A machine learning approach using artificial neural networks with many layers to automatically learn increasingly abstract representations of data, rather than relying on hand-crafted rules. After decades as a marginal approach within AI research, it became dominant in the 2010s as larger datasets and greater computing power made training deep networks practical, driving breakthroughs in image recognition, language processing, and beyond.",
+      "startYear": 1986,
+      "startYearApprox": true,
+      "disciplines": [
+        "Computer Science",
+        "Mathematics"
+      ],
+      "tags": [
+        "Neural Networks",
+        "Backpropagation",
+        "Machine Learning"
       ]
     }
   ],
@@ -3808,7 +4940,7 @@
       "id": "socrates-plato",
       "source": "socrates",
       "target": "plato",
-      "relationship": "influenced",
+      "relationship": "mentored",
       "description": "Plato made Socrates a central figure in many dialogues and developed philosophy through sustained engagement with Socratic questioning.",
       "confidence": 0.9
     },
@@ -4731,7 +5863,7 @@
       "id": "ernest-rutherford-niels-bohr",
       "source": "ernest-rutherford",
       "target": "niels-bohr",
-      "relationship": "influenced",
+      "relationship": "mentored",
       "description": "Rutherford's discovery of the atomic nucleus provided the physical structure that Bohr incorporated into his quantum model of the atom.",
       "confidence": 1,
       "directness": "direct"
@@ -4749,7 +5881,7 @@
       "id": "niels-bohr-werner-heisenberg",
       "source": "niels-bohr",
       "target": "werner-heisenberg",
-      "relationship": "influenced",
+      "relationship": "mentored",
       "description": "Bohr's atomic theory, correspondence principle, and approach to quantum phenomena strongly shaped Heisenberg's development and interpretation of quantum mechanics.",
       "confidence": 1,
       "directness": "direct"
@@ -4845,8 +5977,8 @@
       "directness": "direct"
     },
     {
-      "id": "gutenberg-renaissance",
-      "source": "johannes-gutenberg",
+      "id": "printing-press-renaissance",
+      "source": "printing-press",
       "target": "renaissance",
       "relationship": "enabled",
       "description": "Gutenberg's mechanical printing system enabled Renaissance texts, classical works, artistic ideas, and humanist scholarship to circulate throughout Europe at unprecedented speed and scale.",
@@ -4935,8 +6067,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gutenberg-erasmus",
-      "source": "johannes-gutenberg",
+      "id": "printing-press-erasmus",
+      "source": "printing-press",
       "target": "erasmus",
       "relationship": "enabled",
       "description": "Gutenberg's printing technology enabled Erasmus to circulate humanist scholarship, educational writings, satire, and his Greek New Testament to a large international readership.",
@@ -4944,8 +6076,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gutenberg-machiavelli",
-      "source": "johannes-gutenberg",
+      "id": "printing-press-machiavelli",
+      "source": "printing-press",
       "target": "machiavelli",
       "relationship": "enabled",
       "description": "The European print culture enabled by Gutenberg allowed Machiavelli's political writings to circulate far beyond Florence and exert a lasting influence on political thought.",
@@ -5059,15 +6191,6 @@
       "description": "Wallace independently developed the theory of evolution through natural selection and established biogeography as a major source of evolutionary evidence.",
       "confidence": 1,
       "directness": "direct"
-    },
-    {
-      "id": "gregor-mendel-evolutionary-biology",
-      "source": "gregor-mendel",
-      "target": "evolutionary-biology",
-      "relationship": "enabled",
-      "description": "Mendel's discovery of discrete inheritance mechanisms enabled evolutionary theory to develop a rigorous genetic explanation of variation and heredity.",
-      "confidence": 1,
-      "directness": "indirect"
     },
     {
       "id": "ronald-fisher-evolutionary-biology",
@@ -5187,9 +6310,9 @@
       "directness": "direct"
     },
     {
-      "id": "gregor-mendel-charles-darwin",
-      "source": "gregor-mendel",
-      "target": "charles-darwin",
+      "id": "mendelian-genetics-evolutionary-biology-complement",
+      "source": "mendelian-genetics",
+      "target": "evolutionary-biology",
       "relationship": "complemented",
       "description": "Mendel's particulate account of inheritance later supplied the hereditary mechanism missing from Darwin's original theory, although Darwin did not meaningfully incorporate Mendel's work.",
       "confidence": 0.95,
@@ -5205,8 +6328,8 @@
       "directness": "direct"
     },
     {
-      "id": "gregor-mendel-ronald-fisher",
-      "source": "gregor-mendel",
+      "id": "mendelian-genetics-ronald-fisher",
+      "source": "mendelian-genetics",
       "target": "ronald-fisher",
       "relationship": "influenced",
       "description": "Mendelian inheritance provided the genetic framework Fisher used to explain how natural selection acts on hereditary variation in populations.",
@@ -5232,8 +6355,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gregor-mendel-theodosius-dobzhansky",
-      "source": "gregor-mendel",
+      "id": "mendelian-genetics-theodosius-dobzhansky",
+      "source": "mendelian-genetics",
       "target": "theodosius-dobzhansky",
       "relationship": "enabled",
       "description": "Mendelian inheritance enabled Dobzhansky to interpret evolution as changes in hereditary variation and gene frequencies within natural populations.",
@@ -5241,8 +6364,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gregor-mendel-oswald-avery",
-      "source": "gregor-mendel",
+      "id": "mendelian-genetics-oswald-avery",
+      "source": "mendelian-genetics",
       "target": "oswald-avery",
       "relationship": "enabled",
       "description": "Mendel's demonstration that inheritance involves discrete hereditary factors established the problem that Avery's work helped resolve at the molecular level by identifying DNA as genetic material.",
@@ -5268,11 +6391,11 @@
       "directness": "indirect"
     },
     {
-      "id": "rosalind-franklin-francis-crick",
+      "id": "rosalind-franklin-dna-structure",
       "source": "rosalind-franklin",
-      "target": "francis-crick",
+      "target": "dna-structure",
       "relationship": "enabled",
-      "description": "Franklin's X-ray diffraction measurements and structural analysis supplied critical constraints used by Crick and Watson in constructing the DNA double-helix model.",
+      "description": "Franklin's X-ray diffraction images, particularly Photo 51, provided crucial experimental evidence for the helical structure, though her role was substantially under-credited at the time.",
       "confidence": 1,
       "directness": "direct"
     },
@@ -5322,8 +6445,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gregor-mendel-molecular-biology",
-      "source": "gregor-mendel",
+      "id": "mendelian-genetics-molecular-biology",
+      "source": "mendelian-genetics",
       "target": "molecular-biology",
       "relationship": "enabled",
       "description": "Mendel's discovery of discrete hereditary factors defined the conceptual units that molecular biology later identified with genes encoded in DNA.",
@@ -5430,8 +6553,8 @@
       "directness": "indirect"
     },
     {
-      "id": "gutenberg-scientific-revolution",
-      "source": "johannes-gutenberg",
+      "id": "printing-press-scientific-revolution",
+      "source": "printing-press",
       "target": "scientific-revolution",
       "relationship": "enabled",
       "description": "The printing press accelerated the dissemination, replication, and criticism of scientific ideas across Europe.",
@@ -7122,6 +8245,731 @@
       "relationship": "advanced",
       "confidence": 0.92,
       "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "george-perkins-marsh-man-and-nature",
+      "source": "george-perkins-marsh",
+      "target": "man-and-nature",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "man-and-nature-john-muir",
+      "source": "man-and-nature",
+      "target": "john-muir",
+      "relationship": "influenced",
+      "description": "Marsh's account of human-caused environmental degradation was widely read by the first generation of American conservationists, including Muir.",
+      "confidence": 0.78,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "john-muir-sierra-club",
+      "source": "john-muir",
+      "target": "sierra-club",
+      "relationship": "founded",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "john-muir-environmentalism",
+      "source": "john-muir",
+      "target": "environmentalism",
+      "relationship": "founded",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "gifford-pinchot-conservationism",
+      "source": "gifford-pinchot",
+      "target": "conservationism",
+      "relationship": "proposed",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "gifford-pinchot-john-muir",
+      "source": "gifford-pinchot",
+      "target": "john-muir",
+      "relationship": "challenged",
+      "description": "Pinchot's utilitarian conservationism directly and publicly opposed Muir's preservationism, culminating in their famous dispute over damming the Hetch Hetchy valley for San Francisco's water supply.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "gifford-pinchot-environmentalism",
+      "source": "gifford-pinchot",
+      "target": "environmentalism",
+      "relationship": "advanced",
+      "confidence": 0.83,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "rachel-carson-silent-spring",
+      "source": "rachel-carson",
+      "target": "silent-spring",
+      "relationship": "authored",
+      "confidence": 1,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "silent-spring-environmental-protection-agency",
+      "source": "silent-spring",
+      "target": "environmental-protection-agency",
+      "relationship": "enabled",
+      "description": "The public reaction to Silent Spring's documentation of pesticide harm was a direct and widely cited catalyst for the creation of the EPA in 1970.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "rachel-carson-environmentalism",
+      "source": "rachel-carson",
+      "target": "environmentalism",
+      "relationship": "founded",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "industrial-revolution-environmentalism",
+      "source": "industrial-revolution",
+      "target": "environmentalism",
+      "relationship": "influenced",
+      "description": "Environmentalism emerged substantially as a reaction to the ecological consequences of industrialization — deforestation, pollution, and resource extraction at unprecedented scale.",
+      "confidence": 0.8,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "buddhist-philosophy-arne-naess",
+      "source": "buddhist-philosophy",
+      "target": "arne-naess",
+      "relationship": "influenced",
+      "description": "Naess explicitly cited Buddhist philosophy, alongside Spinoza, as a source for deep ecology's argument that all living things have intrinsic value independent of human interests.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "arne-naess-deep-ecology",
+      "source": "arne-naess",
+      "target": "deep-ecology",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "arne-naess-environmentalism",
+      "source": "arne-naess",
+      "target": "environmentalism",
+      "relationship": "advanced",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "siddhartha-gautama-buddhist-philosophy",
+      "source": "siddhartha-gautama",
+      "target": "buddhist-philosophy",
+      "relationship": "proposed",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "confucius-confucianism",
+      "source": "confucius",
+      "target": "confucianism",
+      "relationship": "proposed",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "laozi-taoism",
+      "source": "laozi",
+      "target": "taoism",
+      "relationship": "proposed",
+      "confidence": 0.65,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "laozi-tao-te-ching",
+      "source": "laozi",
+      "target": "tao-te-ching",
+      "relationship": "authored",
+      "description": "Traditional attribution; the text's actual authorship and composition history are debated among scholars.",
+      "confidence": 0.5,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "tao-te-ching-taoism",
+      "source": "tao-te-ching",
+      "target": "taoism",
+      "relationship": "formalized",
+      "confidence": 0.8,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "adi-shankara-advaita-vedanta",
+      "source": "adi-shankara",
+      "target": "advaita-vedanta",
+      "relationship": "formalized",
+      "description": "Shankara systematized and rigorously argued for non-dualist ideas already present in the older Upanishads, rather than originating the concept of Brahman-atman identity from nothing.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "sushruta-sushruta-samhita",
+      "source": "sushruta",
+      "target": "sushruta-samhita",
+      "relationship": "authored",
+      "description": "Traditional attribution to a single author; the text was likely compiled and expanded by multiple hands over centuries.",
+      "confidence": 0.55,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "buddhist-philosophy-dogen",
+      "source": "buddhist-philosophy",
+      "target": "dogen",
+      "relationship": "influenced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dogen-zen-buddhism",
+      "source": "dogen",
+      "target": "zen-buddhism",
+      "relationship": "developed",
+      "description": "Dōgen studied Chan Buddhism in China and adapted and extended it into a distinctly Japanese tradition centered on zazen as the direct expression of enlightenment.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "max-planck-quantum-theory",
+      "source": "max-planck",
+      "target": "quantum-theory",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "marie-curie-radioactivity",
+      "source": "marie-curie",
+      "target": "radioactivity",
+      "relationship": "discovered",
+      "description": "Becquerel first observed radioactivity in 1896; Curie's subsequent systematic study, precise measurement techniques, and discovery of polonium and radium established radioactivity as a distinct field of study.",
+      "confidence": 0.85,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "ernest-rutherford-rutherford-model",
+      "source": "ernest-rutherford",
+      "target": "rutherford-model",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "niels-bohr-bohr-model",
+      "source": "niels-bohr",
+      "target": "bohr-model",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "rutherford-model-bohr-model",
+      "source": "rutherford-model",
+      "target": "bohr-model",
+      "relationship": "enabled",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "quantum-theory-bohr-model",
+      "source": "quantum-theory",
+      "target": "bohr-model",
+      "relationship": "enabled",
+      "description": "Bohr applied Planck's principle of quantization directly to electron orbits to explain why atoms only emit light at specific spectral frequencies.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "erwin-schrodinger-schrodinger-equation",
+      "source": "erwin-schrodinger",
+      "target": "schrodinger-equation",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "werner-heisenberg-uncertainty-principle",
+      "source": "werner-heisenberg",
+      "target": "uncertainty-principle",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "paul-dirac-dirac-equation",
+      "source": "paul-dirac",
+      "target": "dirac-equation",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "quantum-theory-quantum-mechanics",
+      "source": "quantum-theory",
+      "target": "quantum-mechanics",
+      "relationship": "enabled",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "bohr-model-quantum-mechanics",
+      "source": "bohr-model",
+      "target": "quantum-mechanics",
+      "relationship": "enabled",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "schrodinger-equation-quantum-mechanics",
+      "source": "schrodinger-equation",
+      "target": "quantum-mechanics",
+      "relationship": "formalized",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "uncertainty-principle-quantum-mechanics",
+      "source": "uncertainty-principle",
+      "target": "quantum-mechanics",
+      "relationship": "formalized",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dirac-equation-quantum-mechanics",
+      "source": "dirac-equation",
+      "target": "quantum-mechanics",
+      "relationship": "extended",
+      "description": "Dirac's equation extended quantum mechanics to be consistent with special relativity, resolving a major inconsistency in the earlier non-relativistic formulations.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "newton-calculus",
+      "source": "newton",
+      "target": "calculus",
+      "relationship": "proposed",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "leibniz-calculus",
+      "source": "leibniz",
+      "target": "calculus",
+      "relationship": "proposed",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "newton-leibniz",
+      "source": "newton",
+      "target": "leibniz",
+      "relationship": "converged_with",
+      "description": "Newton and Leibniz developed calculus independently within a few years of each other, using different notation and methods, with no evidence either copied from the other despite the ensuing priority dispute.",
+      "confidence": 0.9,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "johannes-gutenberg-printing-press",
+      "source": "johannes-gutenberg",
+      "target": "printing-press",
+      "relationship": "invented",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "gregor-mendel-mendelian-genetics",
+      "source": "gregor-mendel",
+      "target": "mendelian-genetics",
+      "relationship": "discovered",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "james-watson-dna-structure",
+      "source": "james-watson",
+      "target": "dna-structure",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "francis-crick-dna-structure",
+      "source": "francis-crick",
+      "target": "dna-structure",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "james-watson-francis-crick",
+      "source": "james-watson",
+      "target": "francis-crick",
+      "relationship": "collaborated_with",
+      "description": "Watson and Crick worked together directly at Cambridge's Cavendish Laboratory, jointly building physical models of the molecule and co-authoring the 1953 Nature paper announcing the structure.",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "maurice-wilkins-dna-structure",
+      "source": "maurice-wilkins",
+      "target": "dna-structure",
+      "relationship": "enabled",
+      "description": "Wilkins shared Franklin's X-ray diffraction image (\"Photo 51\") and unpublished data with Watson without her knowledge, evidence Watson later credited as decisive in recognizing the helical structure.",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "dna-structure-molecular-biology",
+      "source": "dna-structure",
+      "target": "molecular-biology",
+      "relationship": "enabled",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "archimedes-archimedes-principle",
+      "source": "archimedes",
+      "target": "archimedes-principle",
+      "relationship": "discovered",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "archimedes-calculus",
+      "source": "archimedes",
+      "target": "calculus",
+      "relationship": "anticipated",
+      "description": "Archimedes' method of exhaustion for computing areas and volumes by summing infinitely many small pieces foreshadowed integral calculus by nearly two thousand years, though it lacked calculus's general algebraic machinery.",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "augustine-confessions",
+      "source": "augustine",
+      "target": "confessions",
+      "relationship": "authored",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "boethius-consolation-of-philosophy",
+      "source": "boethius",
+      "target": "consolation-of-philosophy",
+      "relationship": "authored",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "al-ghazali-incoherence-of-the-philosophers",
+      "source": "al-ghazali",
+      "target": "incoherence-of-the-philosophers",
+      "relationship": "authored",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "machiavelli-the-prince",
+      "source": "machiavelli",
+      "target": "the-prince",
+      "relationship": "authored",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "erasmus-in-praise-of-folly",
+      "source": "erasmus",
+      "target": "in-praise-of-folly",
+      "relationship": "authored",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "david-hume-treatise-of-human-nature",
+      "source": "david-hume",
+      "target": "treatise-of-human-nature",
+      "relationship": "authored",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "petrarch-renaissance-humanism",
+      "source": "petrarch",
+      "target": "renaissance-humanism",
+      "relationship": "founded",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "zhang-heng-seismoscope",
+      "source": "zhang-heng",
+      "target": "seismoscope",
+      "relationship": "invented",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "james-watt-steam-engine",
+      "source": "james-watt",
+      "target": "steam-engine",
+      "relationship": "improved",
+      "description": "Watt's separate condenser dramatically improved on Thomas Newcomen's earlier atmospheric steam engine, cutting fuel consumption enormously and making steam power practical for a far wider range of uses.",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "nikola-tesla-ac-induction-motor",
+      "source": "nikola-tesla",
+      "target": "ac-induction-motor",
+      "relationship": "invented",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "thomas-edison-incandescent-light-bulb",
+      "source": "thomas-edison",
+      "target": "incandescent-light-bulb",
+      "relationship": "invented",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "thomas-edison-nikola-tesla",
+      "source": "thomas-edison",
+      "target": "nikola-tesla",
+      "relationship": "challenged",
+      "description": "Edison waged a public campaign against Tesla's alternating current system — including staged demonstrations of AC's dangers — in the \"War of the Currents,\" fighting to preserve the dominance of his own direct-current system.",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "wilhelm-wundt-psychology",
+      "source": "wilhelm-wundt",
+      "target": "psychology",
+      "relationship": "founded",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "sigmund-freud-psychology",
+      "source": "sigmund-freud",
+      "target": "psychology",
+      "relationship": "advanced",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "sigmund-freud-interpretation-of-dreams",
+      "source": "sigmund-freud",
+      "target": "interpretation-of-dreams",
+      "relationship": "authored",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "sigmund-freud-psychoanalysis",
+      "source": "sigmund-freud",
+      "target": "psychoanalysis",
+      "relationship": "proposed",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "interpretation-of-dreams-psychoanalysis",
+      "source": "interpretation-of-dreams",
+      "target": "psychoanalysis",
+      "relationship": "formalized",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "bf-skinner-psychology",
+      "source": "bf-skinner",
+      "target": "psychology",
+      "relationship": "advanced",
+      "confidence": 0.88,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "bf-skinner-behaviorism",
+      "source": "bf-skinner",
+      "target": "behaviorism",
+      "relationship": "proposed",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "bf-skinner-psychoanalysis",
+      "source": "bf-skinner",
+      "target": "psychoanalysis",
+      "relationship": "challenged",
+      "description": "Behaviorism explicitly rejected psychoanalysis's focus on unobservable unconscious mental states, insisting psychology should study only observable behavior and its environmental causes.",
+      "confidence": 0.87,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "alan-turing-turing-test",
+      "source": "alan-turing",
+      "target": "turing-test",
+      "relationship": "proposed",
+      "confidence": 0.97,
+      "directness": "direct",
+      "evidenceType": "primary_source"
+    },
+    {
+      "id": "turing-test-artificial-intelligence",
+      "source": "turing-test",
+      "target": "artificial-intelligence",
+      "relationship": "anticipated",
+      "description": "Turing's proposal for evaluating machine intelligence predated the formal founding of AI as a field by six years, framing the central question the field would organize itself around.",
+      "confidence": 0.88,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "john-mccarthy-artificial-intelligence",
+      "source": "john-mccarthy",
+      "target": "artificial-intelligence",
+      "relationship": "founded",
+      "description": "McCarthy coined the term \"artificial intelligence\" and organized the 1956 Dartmouth workshop widely regarded as the field's founding event.",
+      "confidence": 0.95,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "marvin-minsky-artificial-intelligence",
+      "source": "marvin-minsky",
+      "target": "artificial-intelligence",
+      "relationship": "advanced",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "transistor-artificial-intelligence",
+      "source": "transistor",
+      "target": "artificial-intelligence",
+      "relationship": "enabled",
+      "confidence": 0.85,
+      "directness": "indirect",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "geoffrey-hinton-deep-learning",
+      "source": "geoffrey-hinton",
+      "target": "deep-learning",
+      "relationship": "proposed",
+      "confidence": 0.9,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "geoffrey-hinton-artificial-intelligence",
+      "source": "geoffrey-hinton",
+      "target": "artificial-intelligence",
+      "relationship": "advanced",
+      "confidence": 0.93,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "deep-learning-artificial-intelligence",
+      "source": "deep-learning",
+      "target": "artificial-intelligence",
+      "relationship": "transformed",
+      "description": "Deep learning's success from the 2010s onward shifted the entire field's center of gravity away from symbolic, rule-based approaches toward learned statistical models trained on large datasets.",
+      "confidence": 0.92,
+      "directness": "direct",
+      "evidenceType": "scholarly_consensus"
+    },
+    {
+      "id": "internet-deep-learning",
+      "source": "internet",
+      "target": "deep-learning",
+      "relationship": "enabled",
+      "description": "The Internet's role in generating and distributing the vast datasets deep learning models are trained on was a key enabling condition for the field's 2010s breakthroughs.",
+      "confidence": 0.8,
+      "directness": "indirect",
       "evidenceType": "scholarly_consensus"
     }
   ],

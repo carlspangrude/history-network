@@ -114,6 +114,42 @@ function traceHexagon(
   context.closePath();
 }
 
+// Node base size scales continuously with importance (1-10) rather than
+// the old binary "8-10 is big, 1-7 is small" split — that made every node
+// from 1 to 7 visually identical and gave no sense of gradation among the
+// (now much more common) 6-9 range. Linear in RADIUS, not area, since
+// radius is closer to how size differences actually get perceived; area
+// is derived by squaring it wherever the code needs area specifically.
+//
+// Tune these two constants directly to adjust the overall feel:
+//   MIN_NODE_RADIUS               radius at importance 1
+//   RADIUS_STEP_PER_IMPORTANCE    how much radius grows per importance point
+// Current values give: importance 6 -> radius 10.5, importance 8 -> 13.5,
+// importance 10 -> 16.5.
+const MIN_NODE_RADIUS = 3;
+const RADIUS_STEP_PER_IMPORTANCE = 1.5;
+
+function getRadiusForImportance(importance: number | undefined): number {
+  const clamped = Math.max(1, Math.min(10, importance ?? 5));
+  return MIN_NODE_RADIUS + (clamped - 1) * RADIUS_STEP_PER_IMPORTANCE;
+}
+
+// Bounded repulsion — caps how far apart nodes push each other so the
+// graph stays more contained overall instead of sprawling, without
+// changing its topology. Adopted from what was Test Mode 3, then rescaled
+// here to match the node-size increase above: at importance 8 (the most
+// common value in this dataset), radius is ~13.5 vs. the ~8.95 these
+// values were originally tuned against, roughly a 1.5x increase — both
+// REPULSION_STRENGTH and REPULSION_DISTANCE_MAX are scaled up to match.
+// If MIN_NODE_RADIUS/RADIUS_STEP_PER_IMPORTANCE change again, rescale
+// these two by roughly the same ratio to keep the same relative
+// "boundedness" feel rather than having repulsion reach proportionally
+// less (or more) far than intended.
+const REPULSION_STRENGTH = -110;
+const REPULSION_DISTANCE_MAX = 390;
+
+
+
 function traceDiamond(
   context: CanvasRenderingContext2D,
   x: number,
@@ -650,10 +686,8 @@ const handleViewModeChange = (mode: "clusters" | "connections") => {
   };
 
   const getNodeSize = (node: GraphNode) => {
-    const importance = node.importance ?? 5;
-    const isKeyNode = importance >= 8;
-  
-    let area = isKeyNode ? 110 : 24;
+    const baseRadius = getRadiusForImportance(node.importance);
+    let area = baseRadius * baseRadius;
 
     if (isPathwayActive) {
       area = pathwayNodeIndex.has(node.id) ? area * 1.6 : area * 0.7;
@@ -792,18 +826,14 @@ const handleViewModeChange = (mode: "clusters" | "connections") => {
     const collisionPadding = graphViewMode === "connections" ? 60 : 5;
 
     const getBaseRadius = (node: GraphNode) => {
-      const importance = node.importance ?? 5;
-      const baseArea = importance >= 8 ? 110 : 24;
+      const baseArea = getRadiusForImportance(node.importance) ** 2;
       const area = node.type === "movement" ? baseArea * 2 : baseArea;
       return Math.sqrt(area) + collisionPadding;
     };
   
     fg.d3Force("collide", forceCollide(getBaseRadius).iterations(2));
     fg.d3Force("link")?.distance(() => 8);
-    // Bounded repulsion — caps how far apart nodes push each other so the
-    // graph stays more contained overall instead of sprawling, without
-    // changing its topology. Adopted from what was Test Mode 3.
-    fg.d3Force("charge", forceManyBody().strength(-80).distanceMax(260));
+    fg.d3Force("charge", forceManyBody().strength(REPULSION_STRENGTH).distanceMax(REPULSION_DISTANCE_MAX));
 
     fg.d3ReheatSimulation();
   }, [graphData, hasDimensions, graphViewMode]);

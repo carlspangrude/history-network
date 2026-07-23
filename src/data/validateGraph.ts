@@ -34,6 +34,7 @@ const VALID_DISCIPLINES = new Set<Discipline>([
   "Mathematics",
   "Medicine",
   "Philosophy",
+  "Psychology",
   "Physics",
   "Visual Art",
 ]);

@@ -61,7 +61,6 @@ const PLAYBACK_DURATION_MS = 12000;
 const PLAYBACK_STEP_MS = 200;
 const PLAYBACK_STEP_COUNT = PLAYBACK_DURATION_MS / PLAYBACK_STEP_MS;
 const MIN_YEAR_RANGE = 10;
-const MIN_CHART_DOMAIN_SPAN = 200;
 
 function getEndpointId(endpoint: string | GraphNode): string {
   return typeof endpoint === "string" ? endpoint : endpoint.id;
@@ -134,6 +133,13 @@ interface TimelineRangeSliderProps {
   onChange: (range: [number, number]) => void;
   marginLeft: number;
   marginRight: number;
+  // Non-null for the whole duration of a playback session — including
+  // while paused, not just while actively ticking — so the thumbs/fill
+  // stay pinned at the filter bounds captured when the session started,
+  // and the triangle marker stays visible, until the session truly ends
+  // (natural completion, Reset, or a manual drag). Null the rest of the
+  // time, when the slider behaves exactly as a normal filter control.
+  playbackPinnedRange: [number, number] | null;
 }
 
 function TimelineRangeSlider({
@@ -142,9 +148,15 @@ function TimelineRangeSlider({
   onChange,
   marginLeft,
   marginRight,
+  playbackPinnedRange,
 }: TimelineRangeSliderProps) {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const draggingHandleRef = useRef<"min" | "max" | null>(null);
+  // Mirrors draggingHandleRef for the sole purpose of being readable
+  // during render (see displayRange below) — reading ref.current
+  // directly during render isn't safe, since React can't guarantee the
+  // render reflects the ref's value at commit time.
+  const [isDragging, setIsDragging] = useState(false);
 
   // The thumbs track this local state while dragging — cheap, visual only.
   // The parent's `range` (which drives filtering the whole graph and
@@ -208,6 +220,7 @@ function TimelineRangeSlider({
         onChangeRef.current(liveRangeRef.current);
       }
       draggingHandleRef.current = null;
+      setIsDragging(false);
     };
 
     window.addEventListener("pointermove", handleWindowPointerMove);
@@ -224,7 +237,17 @@ function TimelineRangeSlider({
 
   const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     const handle = event.currentTarget.dataset.handle as "min" | "max";
+    // yearRange (and therefore liveRange, synced from it) is left at
+    // wherever the animation was paused, not the original filter bounds
+    // — playbackPinnedRange holds those instead. Re-priming liveRange
+    // from it here, right as the drag begins, ensures both the handle
+    // being dragged and the other one start from the correct bounds
+    // rather than the stale mid-animation position.
+    if (playbackPinnedRange !== null) {
+      setLiveRange(playbackPinnedRange);
+    }
     draggingHandleRef.current = handle;
+    setIsDragging(true);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -238,18 +261,93 @@ function TimelineRangeSlider({
 
     event.preventDefault();
 
+    // range itself is left at the stale mid-animation position during a
+    // paused session — use the pinned bounds as the basis instead, same
+    // reasoning as handlePointerDown above.
+    const basis = playbackPinnedRange ?? range;
+
     // Keyboard adjustments aren't high-frequency like drag, so commit immediately.
     if (handle === "min") {
-      const maxAllowed = Math.max(range[1] - MIN_YEAR_RANGE, bounds[0]);
-      onChange([Math.min(range[0] + delta, maxAllowed), range[1]]);
+      const maxAllowed = Math.max(basis[1] - MIN_YEAR_RANGE, bounds[0]);
+      onChange([Math.min(basis[0] + delta, maxAllowed), basis[1]]);
     } else {
-      const minAllowed = Math.min(range[0] + MIN_YEAR_RANGE, bounds[1]);
-      onChange([range[0], Math.max(range[1] + delta, minAllowed)]);
+      const minAllowed = Math.min(basis[0] + MIN_YEAR_RANGE, bounds[1]);
+      onChange([basis[0], Math.max(basis[1] + delta, minAllowed)]);
     }
   };
 
-  const minPercent = yearToPercent(liveRange[0], bounds);
-  const maxPercent = yearToPercent(liveRange[1], bounds);
+  // While playing or paused, thumbs/fill are pinned at the range
+  // captured when playback started (see TimelineCanvas's
+  // playbackPinnedRange) rather than following the live, ticking `range`
+  // prop — that's the whole point of separating the slider's "filter
+  // bounds" role from the triangle's "live animation position" role.
+  // Except during an active drag, which should always be reflected
+  // immediately regardless of session state — otherwise the thumb
+  // visually freezes at the pinned position while the user is mid-drag
+  // (the label still updates, since it reads liveRange directly), only
+  // jumping to the real position on release. Not playing/paused and not
+  // dragging: unchanged, same liveRange-driven behavior as before.
+  const displayRange = isDragging ? liveRange : (playbackPinnedRange ?? liveRange);
+  const minPercent = yearToPercent(displayRange[0], bounds);
+  const maxPercent = yearToPercent(displayRange[1], bounds);
+
+  // The triangle tracks the LIVE range (not the pinned display range) —
+  // range[1] is exactly what playback's interval tick is continuously
+  // updating, so this is always "the most recent data added." It moves
+  // in the same density-weighted bursts as the data reveal itself,
+  // deliberately — a smooth, constant-rate version was tried and felt
+  // disconnected from the actual pacing of the data.
+  const triangleYear = range[1];
+  const trianglePercent = yearToPercent(triangleYear, bounds);
+
+  // --- Editable year labels -------------------------------------------
+  const [minInputText, setMinInputText] = useState(
+    String(Math.round(liveRange[0])),
+  );
+  const [maxInputText, setMaxInputText] = useState(
+    String(Math.round(liveRange[1])),
+  );
+  const [isMinInputFocused, setIsMinInputFocused] = useState(false);
+  const [isMaxInputFocused, setIsMaxInputFocused] = useState(false);
+
+  // Keep the displayed text in sync with the live range, but only while
+  // the user isn't actively typing into it — otherwise an external
+  // change (playback ticking, a drag, Reset) would overwrite
+  // partially-typed input out from under them.
+  if (!isMinInputFocused) {
+    const rounded = String(Math.round(liveRange[0]));
+    if (rounded !== minInputText) {
+      setMinInputText(rounded);
+    }
+  }
+  if (!isMaxInputFocused) {
+    const rounded = String(Math.round(liveRange[1]));
+    if (rounded !== maxInputText) {
+      setMaxInputText(rounded);
+    }
+  }
+
+  const commitMinInput = () => {
+    const parsed = Number(minInputText);
+    if (!Number.isFinite(parsed)) {
+      setMinInputText(String(Math.round(range[0])));
+      return;
+    }
+    const maxAllowed = Math.max(range[1] - MIN_YEAR_RANGE, bounds[0]);
+    const clamped = Math.min(Math.max(Math.round(parsed), bounds[0]), maxAllowed);
+    onChange([clamped, range[1]]);
+  };
+
+  const commitMaxInput = () => {
+    const parsed = Number(maxInputText);
+    if (!Number.isFinite(parsed)) {
+      setMaxInputText(String(Math.round(range[1])));
+      return;
+    }
+    const minAllowed = Math.min(range[0] + MIN_YEAR_RANGE, bounds[1]);
+    const clamped = Math.max(Math.min(Math.round(parsed), bounds[1]), minAllowed);
+    onChange([range[0], clamped]);
+  };
 
   return (
     <div className="timeline-range-slider">
@@ -258,6 +356,14 @@ function TimelineRangeSlider({
         ref={trackRef}
         style={{ marginLeft, marginRight }}
       >
+        {playbackPinnedRange !== null && (
+          <div
+            className="timeline-playback-triangle"
+            style={{ left: `${trianglePercent}%` }}
+            aria-hidden="true"
+          />
+        )}
+
         <div
           className="timeline-range-fill"
           style={{ left: `${minPercent}%`, width: `${maxPercent - minPercent}%` }}
@@ -272,7 +378,7 @@ function TimelineRangeSlider({
           aria-label="Filter from year"
           aria-valuemin={bounds[0]}
           aria-valuemax={bounds[1]}
-          aria-valuenow={liveRange[0]}
+          aria-valuenow={displayRange[0]}
           tabIndex={0}
         />
         <div
@@ -285,14 +391,60 @@ function TimelineRangeSlider({
           aria-label="Filter to year"
           aria-valuemin={bounds[0]}
           aria-valuemax={bounds[1]}
-          aria-valuenow={liveRange[1]}
+          aria-valuenow={displayRange[1]}
           tabIndex={0}
         />
       </div>
 
       <div className="timeline-range-labels" style={{ marginLeft, marginRight }}>
-        <span>{Math.round(liveRange[0])}</span>
-        <span>{Math.round(liveRange[1])}</span>
+        <input
+          className="timeline-range-label-input"
+          type="text"
+          inputMode="numeric"
+          value={minInputText}
+          onChange={(event) => setMinInputText(event.target.value)}
+          onFocus={() => {
+            setIsMinInputFocused(true);
+          }}
+          onBlur={() => {
+            setIsMinInputFocused(false);
+            setMinInputText(String(Math.round(range[0])));
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.currentTarget.blur();
+              commitMinInput();
+            } else if (event.key === "Escape") {
+              setMinInputText(String(Math.round(range[0])));
+              event.currentTarget.blur();
+            }
+          }}
+          aria-label="Filter from year, editable"
+        />
+        <input
+          className="timeline-range-label-input"
+          type="text"
+          inputMode="numeric"
+          value={maxInputText}
+          onChange={(event) => setMaxInputText(event.target.value)}
+          onFocus={() => {
+            setIsMaxInputFocused(true);
+          }}
+          onBlur={() => {
+            setIsMaxInputFocused(false);
+            setMaxInputText(String(Math.round(range[1])));
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.currentTarget.blur();
+              commitMaxInput();
+            } else if (event.key === "Escape") {
+              setMaxInputText(String(Math.round(range[1])));
+              event.currentTarget.blur();
+            }
+          }}
+          aria-label="Filter to year, editable"
+        />
       </div>
     </div>
   );
@@ -364,9 +516,32 @@ function TimelineCanvas({
   // sync is what makes resuming correctly respect any manual slider drag
   // made while paused, instead of silently reverting to a stale position.
   const [isPlaying, setIsPlaying] = useState(false);
+  // Whether the chart's plotted domain should stretch to fit the
+  // currently-filtered subset — toggled by the Fit Timeline / Show Full
+  // Timeline button, which shows whichever label describes the action
+  // NOT currently in effect. Defaults to false — dragging a filter shows
+  // blank space at the stable, full-range domain until the user
+  // explicitly asks for a fit, rather than auto-stretching, which is
+  // what caused the domain to visibly jump between two different
+  // reference frames the moment animation started or stopped. Also
+  // forced back to false by starting playback, a manual drag, or
+  // pressing Reset — each of those already invalidates whatever was
+  // previously fitted.
+  const [isFitEngaged, setIsFitEngaged] = useState(false);
   const playbackIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const playbackNodeIndexRef = useRef(0);
   const playbackLowerBoundRef = useRef(yearBounds[0]);
+  const playbackUpperBoundRef = useRef(yearBounds[1]);
+  // Mirrors playbackLowerBoundRef/playbackUpperBoundRef for the sole
+  // purpose of passing down to TimelineRangeSlider's render — reading
+  // ref.current directly during render isn't safe (React can't guarantee
+  // the render reflects the ref's value at commit time), so this state
+  // is set at the same moment the refs are finalized in
+  // handlePlaybackToggle, and the refs remain the source of truth used
+  // inside the interval callback itself.
+  const [playbackPinnedRange, setPlaybackPinnedRange] = useState<
+    [number, number] | null
+  >(null);
 
   useEffect(() => {
     return () => {
@@ -432,46 +607,42 @@ function TimelineCanvas({
     return years;
   }, [nodesIgnoringYearFilter]);
 
-  // Auto-fit the chart's plotted domain to whatever data is currently
-  // visible (after type/discipline/year filters) — similar to "Fit graph".
-  // yearBounds (the full, fixed dataset extent) is left untouched here and
-  // continues to define the slider's own draggable range separately.
-  const chartYearDomain = useMemo<[number, number]>(() => {
-    // While actively playing, compute the domain from the stable,
-    // year-unfiltered node population instead of the currently-visible
-    // datedNodes — otherwise the domain briefly collapses to whatever's
-    // within the animation's current (near-zero-width, at the start)
-    // yearRange, and the axis has to "catch up" over the first frame or
-    // two. The moment playback isn't active — paused, finished, or a
-    // manual slider drag — this reverts to the existing auto-fit behavior
-    // exactly as before.
-    const sourceNodes = isPlaying ? nodesIgnoringYearFilter : datedNodes;
+  // The chart's plotted domain either stretches to fit the currently
+  // filtered subset (when the user has explicitly pressed "Fit
+  // Timeline") or shows the stable, full-range domain — used by default,
+  // and always used during an animation session (playing or paused), so
+  // the reference frame never has to jump between "stretched to a
+  // narrow filter" and "the whole dataset" mid-playback. yearBounds (the
+  // full, fixed dataset extent) is left untouched here and continues to
+  // define the slider's own draggable range separately.
+  const isAnimationSessionActive = isPlaying || playbackPinnedRange !== null;
 
-    const years = sourceNodes.flatMap((node) => {
-      const values: number[] = [];
-      if (node.startYear !== undefined) values.push(node.startYear);
-      const effectiveEnd = getEffectiveEndYear(node);
-      if (effectiveEnd !== undefined) values.push(effectiveEnd);
-      return values;
-    });
+  const chartYearDomain = useMemo<[number, number]>(() => {
+    const sourceNodes =
+      !isAnimationSessionActive && isFitEngaged ? datedNodes : nodesIgnoringYearFilter;
+
+    // One value per node — the same representative year each node is
+    // actually plotted at (getNodeYear: startYear, falling back to
+    // endYear only if no startYear exists). Previously this pushed BOTH
+    // startYear and endYear per node, so a long-lived node whose
+    // startYear fell inside the filter but whose endYear extended far
+    // beyond it (e.g. an ongoing movement or institution) would stretch
+    // the domain's right edge out to that distant endYear — a variable,
+    // right-side-only buffer with no relation to where the plotted data
+    // actually sits.
+    const years = sourceNodes
+      .map((node) => getNodeYear(node))
+      .filter((year): year is number => year !== undefined);
 
     if (years.length === 0) {
       return yearBounds;
     }
 
-    let min = Math.min(...years);
-    let max = Math.max(...years);
-
-    const span = max - min;
-
-    if (span < MIN_CHART_DOMAIN_SPAN) {
-      const center = (min + max) / 2;
-      min = center - MIN_CHART_DOMAIN_SPAN / 2;
-      max = center + MIN_CHART_DOMAIN_SPAN / 2;
-    }
+    const min = Math.min(...years);
+    const max = Math.max(...years);
 
     return [min, max];
-  }, [isPlaying, datedNodes, nodesIgnoringYearFilter, yearBounds]);
+  }, [isAnimationSessionActive, isFitEngaged, datedNodes, nodesIgnoringYearFilter, yearBounds]);
 
   const lanes = useMemo(() => {
     const typesPresent = new Set(
@@ -706,6 +877,32 @@ function TimelineCanvas({
   const isYearRangeAtFullExtent =
     yearRange[0] === yearBounds[0] && yearRange[1] === yearBounds[1];
 
+  // Reachable at any time the button isn't fully disabled — including
+  // mid-animation (playing or paused), where it cancels the session
+  // entirely: stops any running interval, restores yearRange to the
+  // full range that was originally captured for this session (rather
+  // than leaving it at whatever partial year the animation had reached),
+  // and engages the fitted view for that restored range.
+  const handleFitTimeline = () => {
+    const hadActiveSession = playbackPinnedRange !== null;
+
+    stopPlayback();
+
+    if (hadActiveSession) {
+      onYearRangeChange([
+        playbackLowerBoundRef.current,
+        playbackUpperBoundRef.current,
+      ]);
+      setPlaybackPinnedRange(null);
+      setIsFitEngaged(true);
+      return;
+    }
+
+    // No active session to cancel — toggle between the stretched-to-fit
+    // view and the full, stable view.
+    setIsFitEngaged((current) => !current);
+  };
+
   const stopPlayback = () => {
     if (playbackIntervalRef.current !== null) {
       clearInterval(playbackIntervalRef.current);
@@ -716,63 +913,80 @@ function TimelineCanvas({
 
   const handleResetYearRange = () => {
     stopPlayback();
+    setPlaybackPinnedRange(null);
+    setIsFitEngaged(false);
     onYearRangeChange(yearBounds);
   };
 
-  // Any manual drag on the slider should interrupt an active playback,
-  // otherwise the interval's next tick would immediately fight the user's
-  // own change. No need to reset any internal playback position here —
-  // handlePlaybackToggle always re-syncs from the current yearRange prop
-  // when Play is next pressed, so whatever the user just dragged to is
-  // exactly what gets picked up.
+  // Any manual drag on the slider should interrupt an active playback and
+  // end the session entirely (not leave it paused-and-resumable) —
+  // otherwise the interval's next tick would fight the user's own change,
+  // and resuming later would use bounds the user just deliberately
+  // overrode. handlePlaybackToggle treats a null playbackPinnedRange as
+  // "start fresh," so whatever the user just dragged to is exactly what
+  // gets picked up next time Play is pressed.
   const handleManualYearRangeChange = (range: [number, number]) => {
     if (isPlaying) {
       stopPlayback();
     }
+    setPlaybackPinnedRange(null);
+    setIsFitEngaged(false);
     onYearRangeChange(range);
   };
 
-  // Play/Pause/Resume. Pausing freezes in place. Pressing play again
-  // re-syncs from whatever's CURRENTLY displayed — not a remembered
-  // pre-pause position — so: resuming with no changes continues exactly
-  // where it was; resuming after dragging the right handle continues from
-  // the new position; resuming after dragging the left handle forward
-  // keeps that new left position in place while the right handle keeps
-  // advancing from where it was. Reaching the end (or pressing play when
-  // already at the end) restarts from the start.
+  // Pressing Play behaves one of two ways:
+  // - No active session (playbackPinnedRange is null — a fresh press, or
+  //   the previous session ended via natural completion / Reset / a
+  //   manual drag): capture the current slider bounds as a new session
+  //   and start from the left.
+  // - Paused mid-session (playbackPinnedRange is still set): resume the
+  //   interval from exactly where playbackNodeIndexRef left off, reusing
+  //   the same captured bounds rather than re-reading yearRange — which,
+  //   while paused, reflects the mid-animation position, not the
+  //   original filter bounds.
   const handlePlaybackToggle = () => {
     if (isPlaying) {
       stopPlayback();
       return;
     }
 
+    setIsFitEngaged(false);
+
     if (sortedNodeYears.length === 0) {
       return;
     }
 
-    let resumeIndex = sortedNodeYears.findIndex(
-      (year) => year > yearRange[1],
-    );
-    if (resumeIndex === -1) {
-      resumeIndex = sortedNodeYears.length;
+    const isResuming = playbackPinnedRange !== null;
+
+    if (!isResuming) {
+      const lowerBound = yearRange[0];
+      const upperBound = yearRange[1];
+
+      playbackLowerBoundRef.current = lowerBound;
+      playbackUpperBoundRef.current = upperBound;
+      setPlaybackPinnedRange([lowerBound, upperBound]);
+
+      // Start at the first node year at or after the left bound — not
+      // "wherever a previous animation left off."
+      let startIndex = sortedNodeYears.findIndex((year) => year >= lowerBound);
+      if (startIndex === -1) {
+        startIndex = sortedNodeYears.length;
+      }
+      playbackNodeIndexRef.current = startIndex;
+
+      onYearRangeChange([lowerBound, lowerBound]);
     }
-
-    let lowerBound = yearRange[0];
-
-    // Nothing left to play forward to — restart fresh from the beginning.
-    if (resumeIndex >= sortedNodeYears.length) {
-      resumeIndex = 0;
-      lowerBound = yearBounds[0];
-      onYearRangeChange([yearBounds[0], yearBounds[0]]);
-    }
-
-    playbackNodeIndexRef.current = resumeIndex;
-    playbackLowerBoundRef.current = lowerBound;
+    // else resuming: playbackNodeIndexRef/playbackLowerBoundRef/
+    // playbackUpperBoundRef are all already exactly where they were when
+    // paused — nothing to re-capture.
 
     setIsPlaying(true);
 
     // Node-density-weighted timing: advance by a fixed fraction of the
-    // total node population each tick, not a fixed year amount.
+    // total node population each tick, not a fixed year amount. The
+    // triangle tracks this directly (see TimelineRangeSlider), moving in
+    // the same bursts as the data reveal rather than at a smooth,
+    // constant rate.
     const indexIncrement = Math.max(
       1,
       sortedNodeYears.length / PLAYBACK_STEP_COUNT,
@@ -781,18 +995,24 @@ function TimelineCanvas({
     playbackIntervalRef.current = setInterval(() => {
       playbackNodeIndexRef.current += indexIncrement;
 
-      if (playbackNodeIndexRef.current >= sortedNodeYears.length) {
-        onYearRangeChange([playbackLowerBoundRef.current, yearBounds[1]]);
+      const reachedEndOfData =
+        playbackNodeIndexRef.current >= sortedNodeYears.length;
+      const currentYear = reachedEndOfData
+        ? yearBounds[1]
+        : sortedNodeYears[Math.floor(playbackNodeIndexRef.current)];
+      const reachedTarget = currentYear >= playbackUpperBoundRef.current;
+
+      if (reachedEndOfData || reachedTarget) {
+        const finalYear = Math.min(playbackUpperBoundRef.current, yearBounds[1]);
+        onYearRangeChange([playbackLowerBoundRef.current, finalYear]);
         if (playbackIntervalRef.current !== null) {
           clearInterval(playbackIntervalRef.current);
           playbackIntervalRef.current = null;
         }
         setIsPlaying(false);
+        setPlaybackPinnedRange(null);
         return;
       }
-
-      const currentYear =
-        sortedNodeYears[Math.floor(playbackNodeIndexRef.current)];
 
       onYearRangeChange([playbackLowerBoundRef.current, currentYear]);
     }, PLAYBACK_STEP_MS);
@@ -847,6 +1067,19 @@ function TimelineCanvas({
             </button>
 
             <button
+              className={
+                isPlaying || playbackPinnedRange !== null
+                  ? "fit-graph-button fit-graph-button--session-active"
+                  : "fit-graph-button"
+              }
+              type="button"
+              onClick={handleFitTimeline}
+              disabled={isYearRangeAtFullExtent}
+            >
+              {isFitEngaged ? "Show Full Timeline" : "Fit Timeline"}
+            </button>
+
+            <button
               className="fit-graph-button"
               type="button"
               onClick={handleResetYearRange}
@@ -870,6 +1103,7 @@ function TimelineCanvas({
               onChange={handleManualYearRangeChange}
               marginLeft={MARGIN.left}
               marginRight={MARGIN.right}
+              playbackPinnedRange={playbackPinnedRange}
             />
 
           <div className="force-graph-container" ref={containerRef}>
