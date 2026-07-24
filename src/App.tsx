@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import DetailsPanel from "./components/DetailsPanel";
 import GraphCanvas from "./components/GraphCanvas";
 import Header from "./components/Header";
@@ -7,8 +7,13 @@ import TimelineCanvas from "./components/TimelineCanvas";
 import { useKnowledgeGraph } from "./hooks/useKnowledgeGraph";
 import CitationsView from "./components/CitationsView";
 import StoriesView from "./components/StoriesView";
+// Lazy-loaded: MapView's import chain pulls in Three.js, a large
+// dependency only needed by this one tab. Splitting it out keeps Three.js
+// out of the main bundle entirely for anyone who never opens the Map tab,
+// rather than everyone paying for it upfront regardless of use.
+const MapView = lazy(() => import("./components/MapView"));
 
-type AppView = "explore" | "stories" | "citations";
+type AppView = "explore" | "map" | "stories" | "citations";
 
 function App() {
   // ===========================================================================
@@ -33,7 +38,18 @@ function App() {
   const [storyStepIndex, setStoryStepIndex] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const [isTimelineOpen, setIsTimelineOpen] = useState(true);
+  // Independent per-tab, not a single shared boolean — Explore defaults
+  // open (existing behavior), Map defaults collapsed (the timeline matters
+  // less there until you're actually scrubbing/animating). Each is
+  // remembered once toggled, same as Stories' lifted state elsewhere in
+  // this file, rather than being forced back to its default on every
+  // switch.
+  const [isExploreTimelineOpen, setIsExploreTimelineOpen] = useState(true);
+  const [isMapTimelineOpen, setIsMapTimelineOpen] = useState(false);
+  const isTimelineOpen =
+    activeView === "map" ? isMapTimelineOpen : isExploreTimelineOpen;
+  const setIsTimelineOpen =
+    activeView === "map" ? setIsMapTimelineOpen : setIsExploreTimelineOpen;
 
   // ===========================================================================
   // Knowledge Graph
@@ -162,6 +178,19 @@ function App() {
 
         <button
           className={
+            activeView === "map"
+              ? "app-tab app-tab--active"
+              : "app-tab"
+          }
+          type="button"
+          aria-current={activeView === "map" ? "page" : undefined}
+          onClick={() => setActiveView("map")}
+        >
+          Map
+        </button>
+
+        <button
+          className={
             activeView === "stories"
               ? "app-tab app-tab--active"
               : "app-tab"
@@ -189,11 +218,11 @@ function App() {
 
       <div
         className={
-          activeView === "explore"
+          activeView === "explore" || activeView === "map"
             ? "explore-view"
             : "explore-view explore-view--hidden"
         }
-        aria-hidden={activeView !== "explore"}
+        aria-hidden={activeView !== "explore" && activeView !== "map"}
         style={
           {
             "--timeline-height": isTimelineOpen ? "275px" : "44px",
@@ -220,19 +249,37 @@ function App() {
             onToggle={() => setIsSidebarOpen((current) => !current)}
           />
 
-          <GraphCanvas
-            graphData={graphData}
-            selectedNode={selectedNode}
-            selectedRelationshipId={selectedRelationshipId}
-            onNodeSelect={handleNodeSelect}
-            onRelationshipOpen={handleRelationshipOpen}
-            onSelectionClear={handleSelectionClear}
-            pathwayNodeIds={pathwayNodeIds}
-            pathwayLinkIds={pathwayLinkIds}
-            anchoredNodeIds={anchoredNodeIds}
-            onNodeAnchored={handleNodeAnchored}
-            onUnanchorAll={handleUnanchorAll}
-          />
+          {activeView === "explore" ? (
+            <GraphCanvas
+              graphData={graphData}
+              selectedNode={selectedNode}
+              selectedRelationshipId={selectedRelationshipId}
+              onNodeSelect={handleNodeSelect}
+              onRelationshipOpen={handleRelationshipOpen}
+              onSelectionClear={handleSelectionClear}
+              pathwayNodeIds={pathwayNodeIds}
+              pathwayLinkIds={pathwayLinkIds}
+              anchoredNodeIds={anchoredNodeIds}
+              onNodeAnchored={handleNodeAnchored}
+              onUnanchorAll={handleUnanchorAll}
+            />
+          ) : (
+            <Suspense
+              fallback={
+                <section className="canvas map-canvas">
+                  <div className="map-loading-fallback">Loading map…</div>
+                </section>
+              }
+            >
+              <MapView
+                graphData={graphData}
+                selectedNode={selectedNode}
+                yearRange={yearRange}
+                onNodeSelect={handleNodeSelect}
+                onSelectionClear={handleSelectionClear}
+              />
+            </Suspense>
+          )}
 
           <DetailsPanel
             isOpen={isDetailsOpen}

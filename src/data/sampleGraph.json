@@ -18,6 +18,22 @@
       "tags": [
         "Scientific Revolution",
         "Heliocentrism"
+      ],
+      "locations": [
+        {
+          "place": "Padua, Italy",
+          "lat": 45.41,
+          "lng": 11.88,
+          "startYear": 1592,
+          "endYear": 1610
+        },
+        {
+          "place": "Florence, Italy",
+          "lat": 43.77,
+          "lng": 11.26,
+          "startYear": 1610,
+          "endYear": 1642
+        }
       ]
     },
     {
@@ -39,6 +55,28 @@
       "tags": [
         "Scientific Revolution",
         "Classical Mechanics"
+      ],
+      "locations": [
+        {
+          "place": "Woolsthorpe Manor, England",
+          "lat": 52.81,
+          "lng": -0.63,
+          "startYear": 1665,
+          "endYear": 1667
+        },
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1667,
+          "endYear": 1696
+        },
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1696
+        }
       ]
     },
     {
@@ -101,6 +139,15 @@
       ],
       "tags": [
         "Electromagnetism"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1871,
+          "endYear": 1879
+        }
       ]
     },
     {
@@ -136,6 +183,29 @@
       "tags": [
         "Relativity",
         "Quantum Theory"
+      ],
+      "locations": [
+        {
+          "place": "Bern, Switzerland",
+          "lat": 46.95,
+          "lng": 7.45,
+          "startYear": 1902,
+          "endYear": 1909
+        },
+        {
+          "place": "Berlin, Germany",
+          "lat": 52.52,
+          "lng": 13.4,
+          "startYear": 1914,
+          "endYear": 1933
+        },
+        {
+          "place": "Princeton, United States",
+          "lat": 40.35,
+          "lng": -74.66,
+          "startYear": 1933,
+          "endYear": 1955
+        }
       ]
     },
     {
@@ -171,6 +241,15 @@
         "Ancient Greece",
         "Ethics",
         "Socratic Method"
+      ],
+      "locations": [
+        {
+          "place": "Athens, Greece",
+          "lat": 37.98,
+          "lng": 23.73,
+          "startYear": -450,
+          "endYear": -399
+        }
       ]
     },
     {
@@ -191,6 +270,15 @@
         "Ancient Greece",
         "Platonism",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Athens, Greece",
+          "lat": 37.98,
+          "lng": 23.73,
+          "startYear": -387,
+          "endYear": -348
+        }
       ]
     },
     {
@@ -230,6 +318,15 @@
         "Aristotelianism",
         "Logic",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Athens, Greece",
+          "lat": 37.98,
+          "lng": 23.73,
+          "startYear": -335,
+          "endYear": -322
+        }
       ]
     },
     {
@@ -285,6 +382,15 @@
         "Aristotelianism",
         "Theology",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Paris, France",
+          "lat": 48.85,
+          "lng": 2.35,
+          "startYear": 1245,
+          "endYear": 1274
+        }
       ]
     },
     {
@@ -306,6 +412,15 @@
         "Scientific Revolution",
         "Induction",
         "Scientific Method"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1584,
+          "endYear": 1626
+        }
       ]
     },
     {
@@ -328,6 +443,15 @@
         "Rationalism",
         "Cartesianism",
         "Scientific Revolution"
+      ],
+      "locations": [
+        {
+          "place": "Amsterdam, Dutch Republic",
+          "lat": 52.37,
+          "lng": 4.9,
+          "startYear": 1629,
+          "endYear": 1649
+        }
       ]
     },
     {
@@ -346,6 +470,15 @@
         "Materialism",
         "Sovereignty",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1637,
+          "endYear": 1679
+        }
       ]
     },
     {
@@ -364,6 +497,15 @@
         "Natural Rights",
         "Liberalism",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1667,
+          "endYear": 1704
+        }
       ]
     },
     {
@@ -382,6 +524,15 @@
         "Empiricism",
         "Skepticism",
         "Scottish Enlightenment"
+      ],
+      "locations": [
+        {
+          "place": "Edinburgh, Scotland",
+          "lat": 55.95,
+          "lng": -3.19,
+          "startYear": 1751,
+          "endYear": 1776
+        }
       ]
     },
     {
@@ -401,6 +552,15 @@
         "Republicanism",
         "Enlightenment",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Paris, France",
+          "lat": 48.85,
+          "lng": 2.35,
+          "startYear": 1742,
+          "endYear": 1778
+        }
       ]
     },
     {
@@ -420,6 +580,15 @@
         "Transcendental Idealism",
         "Ethics",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Königsberg, Prussia (modern Kaliningrad)",
+          "lat": 54.71,
+          "lng": 20.51,
+          "startYear": 1740,
+          "endYear": 1804
+        }
       ]
     },
     {
@@ -628,6 +797,15 @@
         "Cosmology",
         "Planetary Motion",
         "Astronomical Models"
+      ],
+      "locations": [
+        {
+          "place": "Frombork, Poland",
+          "lat": 54.35,
+          "lng": 19.67,
+          "startYear": 1510,
+          "endYear": 1543
+        }
       ]
     },
     {
@@ -651,6 +829,15 @@
         "Precision Measurement",
         "Planetary Motion",
         "Data Collection"
+      ],
+      "locations": [
+        {
+          "place": "Uraniborg, Hven (modern Sweden)",
+          "lat": 55.9,
+          "lng": 12.69,
+          "startYear": 1576,
+          "endYear": 1597
+        }
       ]
     },
     {
@@ -676,6 +863,15 @@
         "Kepler's Laws",
         "Celestial Mechanics",
         "Mathematical Physics"
+      ],
+      "locations": [
+        {
+          "place": "Prague, Holy Roman Empire",
+          "lat": 50.09,
+          "lng": 14.42,
+          "startYear": 1600,
+          "endYear": 1612
+        }
       ]
     },
     {
@@ -901,6 +1097,15 @@
         "Ethics",
         "Logic",
         "Political Theory"
+      ],
+      "locations": [
+        {
+          "place": "Athens, Greece",
+          "lat": 37.98,
+          "lng": 23.73,
+          "startYear": -300,
+          "endYear": -262
+        }
       ]
     },
     {
@@ -927,7 +1132,16 @@
         "Metaphysics"
       ],
       "startYearApprox": true,
-      "endYearApprox": true
+      "endYearApprox": true,
+      "locations": [
+        {
+          "place": "Elea, Magna Graecia (modern Italy)",
+          "lat": 40.15,
+          "lng": 15.17,
+          "startYear": -460,
+          "endYear": -430
+        }
+      ]
     },
     {
       "id": "euclid",
@@ -951,7 +1165,15 @@
         "Geometry"
       ],
       "startYearApprox": true,
-      "endYearApprox": true
+      "endYearApprox": true,
+      "locations": [
+        {
+          "place": "Alexandria, Egypt",
+          "lat": 31.2,
+          "lng": 29.92,
+          "startYear": -300
+        }
+      ]
     },
     {
       "id": "archimedes",
@@ -974,6 +1196,15 @@
         "Buoyancy",
         "Levers",
         "Mathematical Physics"
+      ],
+      "locations": [
+        {
+          "place": "Syracuse, Sicily",
+          "lat": 37.07,
+          "lng": 15.29,
+          "startYear": -287,
+          "endYear": -212
+        }
       ]
     },
     {
@@ -996,6 +1227,15 @@
         "Solar System",
         "Celestial Measurement",
         "Samos"
+      ],
+      "locations": [
+        {
+          "place": "Alexandria, Egypt",
+          "lat": 31.2,
+          "lng": 29.92,
+          "startYear": -280,
+          "endYear": -230
+        }
       ]
     },
     {
@@ -1019,6 +1259,15 @@
         "Geometry",
         "Library of Alexandria",
         "Sieve of Eratosthenes"
+      ],
+      "locations": [
+        {
+          "place": "Alexandria, Egypt",
+          "lat": 31.2,
+          "lng": 29.92,
+          "startYear": -245,
+          "endYear": -194
+        }
       ]
     },
     {
@@ -1041,6 +1290,15 @@
         "Trigonometry",
         "Celestial Motion",
         "Precision Measurement"
+      ],
+      "locations": [
+        {
+          "place": "Rhodes, Greece",
+          "lat": 36.44,
+          "lng": 28.22,
+          "startYear": -150,
+          "endYear": -120
+        }
       ]
     },
     {
@@ -1063,6 +1321,15 @@
         "Empirical Observation",
         "Alexandrian Medicine",
         "Physiology"
+      ],
+      "locations": [
+        {
+          "place": "Alexandria, Egypt",
+          "lat": 31.2,
+          "lng": 29.92,
+          "startYear": -300,
+          "endYear": -280
+        }
       ]
     },
     {
@@ -1085,6 +1352,15 @@
         "Field Theory",
         "Electrochemistry",
         "Experimental Physics"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1813,
+          "endYear": 1867
+        }
       ]
     },
     {
@@ -1134,6 +1410,15 @@
         "Industrial Revolution",
         "Manufacturing",
         "Innovation"
+      ],
+      "locations": [
+        {
+          "place": "Birmingham, England",
+          "lat": 52.48,
+          "lng": -1.9,
+          "startYear": 1774,
+          "endYear": 1819
+        }
       ]
     },
     {
@@ -1161,6 +1446,15 @@
         "Natural History",
         "Geology",
         "Botany"
+      ],
+      "locations": [
+        {
+          "place": "Down House, Kent, England",
+          "lat": 51.33,
+          "lng": 0.2,
+          "startYear": 1842,
+          "endYear": 1882
+        }
       ]
     },
     {
@@ -1186,6 +1480,15 @@
         "Entrepreneurship",
         "Electrical Engineering",
         "Inventing"
+      ],
+      "locations": [
+        {
+          "place": "Menlo Park, New Jersey, United States",
+          "lat": 40.44,
+          "lng": -74.36,
+          "startYear": 1876,
+          "endYear": 1931
+        }
       ]
     },
     {
@@ -1210,6 +1513,15 @@
         "Wireless Power",
         "Innovation",
         "Electrical Engineering"
+      ],
+      "locations": [
+        {
+          "place": "New York City, United States",
+          "lat": 40.71,
+          "lng": -74.01,
+          "startYear": 1884,
+          "endYear": 1943
+        }
       ]
     },
     {
@@ -1259,6 +1571,15 @@
         "Thermodynamics",
         "Statistical Mechanics",
         "Theoretical Physics"
+      ],
+      "locations": [
+        {
+          "place": "Berlin, Germany",
+          "lat": 52.52,
+          "lng": 13.4,
+          "startYear": 1889,
+          "endYear": 1947
+        }
       ]
     },
     {
@@ -1286,6 +1607,15 @@
         "Radiochemistry",
         "Medical Physics",
         "Nuclear Physics"
+      ],
+      "locations": [
+        {
+          "place": "Paris, France",
+          "lat": 48.85,
+          "lng": 2.35,
+          "startYear": 1891,
+          "endYear": 1934
+        }
       ]
     },
     {
@@ -1312,6 +1642,15 @@
         "Experimental Physics",
         "Atomic Physics",
         "Nuclear Physics"
+      ],
+      "locations": [
+        {
+          "place": "Manchester, England",
+          "lat": 53.48,
+          "lng": -2.24,
+          "startYear": 1907,
+          "endYear": 1919
+        }
       ]
     },
     {
@@ -1341,6 +1680,15 @@
         "Atomic Physics",
         "Quantum Mechanics",
         "Philosophy of Science"
+      ],
+      "locations": [
+        {
+          "place": "Copenhagen, Denmark",
+          "lat": 55.68,
+          "lng": 12.57,
+          "startYear": 1916,
+          "endYear": 1962
+        }
       ]
     },
     {
@@ -1370,6 +1718,15 @@
         "Quantum Mechanics",
         "Statistical Mechanics",
         "Philosophy of Science"
+      ],
+      "locations": [
+        {
+          "place": "Zurich, Switzerland",
+          "lat": 47.37,
+          "lng": 8.54,
+          "startYear": 1921,
+          "endYear": 1926
+        }
       ]
     },
     {
@@ -1397,6 +1754,15 @@
         "Quantum Mechanics",
         "Nuclear Physics",
         "Philosophy of Science"
+      ],
+      "locations": [
+        {
+          "place": "Copenhagen, Denmark",
+          "lat": 55.68,
+          "lng": 12.57,
+          "startYear": 1926,
+          "endYear": 1927
+        }
       ]
     },
     {
@@ -1424,6 +1790,15 @@
         "Theoretical Physics",
         "Quantum Mechanics",
         "Particle Physics"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1925,
+          "endYear": 1969
+        }
       ]
     },
     {
@@ -1452,7 +1827,16 @@
         "Star Catalog"
       ],
       "startYearApprox": true,
-      "endYearApprox": true
+      "endYearApprox": true,
+      "locations": [
+        {
+          "place": "Alexandria, Egypt",
+          "lat": 31.2,
+          "lng": 29.92,
+          "startYear": 127,
+          "endYear": 170
+        }
+      ]
     },
     {
       "id": "renaissance",
@@ -1511,6 +1895,15 @@
         "Antiquity",
         "Poetry",
         "Philology"
+      ],
+      "locations": [
+        {
+          "place": "Avignon, France",
+          "lat": 43.95,
+          "lng": 4.81,
+          "startYear": 1327,
+          "endYear": 1353
+        }
       ]
     },
     {
@@ -1538,6 +1931,15 @@
         "Mathematical Proportion",
         "Florence",
         "Architecture"
+      ],
+      "locations": [
+        {
+          "place": "Florence, Italy",
+          "lat": 43.77,
+          "lng": 11.26,
+          "startYear": 1420,
+          "endYear": 1446
+        }
       ]
     },
     {
@@ -1563,6 +1965,15 @@
         "Literacy",
         "Knowledge Dissemination",
         "Manufacturing"
+      ],
+      "locations": [
+        {
+          "place": "Mainz, Germany",
+          "lat": 49.99,
+          "lng": 8.27,
+          "startYear": 1440,
+          "endYear": 1468
+        }
       ]
     },
     {
@@ -1593,6 +2004,22 @@
         "Renaissance Polymath",
         "Natural Philosophy",
         "Architecture"
+      ],
+      "locations": [
+        {
+          "place": "Florence, Italy",
+          "lat": 43.77,
+          "lng": 11.26,
+          "startYear": 1472,
+          "endYear": 1482
+        },
+        {
+          "place": "Milan, Italy",
+          "lat": 45.46,
+          "lng": 9.19,
+          "startYear": 1482,
+          "endYear": 1499
+        }
       ]
     },
     {
@@ -1620,6 +2047,22 @@
         "Monumental Art",
         "Architecture",
         "Poetry"
+      ],
+      "locations": [
+        {
+          "place": "Florence, Italy",
+          "lat": 43.77,
+          "lng": 11.26,
+          "startYear": 1490,
+          "endYear": 1505
+        },
+        {
+          "place": "Rome, Italy",
+          "lat": 41.9,
+          "lng": 12.5,
+          "startYear": 1505,
+          "endYear": 1564
+        }
       ]
     },
     {
@@ -1646,6 +2089,15 @@
         "Humanism",
         "Architecture",
         "Design"
+      ],
+      "locations": [
+        {
+          "place": "Rome, Italy",
+          "lat": 41.9,
+          "lng": 12.5,
+          "startYear": 1508,
+          "endYear": 1520
+        }
       ]
     },
     {
@@ -1677,6 +2129,15 @@
         "Political Philosophy",
         "Political Theory",
         "Diplomacy"
+      ],
+      "locations": [
+        {
+          "place": "Florence, Italy",
+          "lat": 43.77,
+          "lng": 11.26,
+          "startYear": 1498,
+          "endYear": 1527
+        }
       ]
     },
     {
@@ -1707,6 +2168,15 @@
         "Humanism",
         "Theology",
         "Philology"
+      ],
+      "locations": [
+        {
+          "place": "Basel, Switzerland",
+          "lat": 47.56,
+          "lng": 7.59,
+          "startYear": 1521,
+          "endYear": 1536
+        }
       ]
     },
     {
@@ -1820,7 +2290,16 @@
         "Pathology"
       ],
       "startYearApprox": true,
-      "endYearApprox": true
+      "endYearApprox": true,
+      "locations": [
+        {
+          "place": "Kos, Greece",
+          "lat": 36.89,
+          "lng": 27.29,
+          "startYear": -420,
+          "endYear": -370
+        }
+      ]
     },
     {
       "id": "galen",
@@ -1842,6 +2321,15 @@
         "Animal Dissection",
         "Medical Synthesis",
         "Pharmacology"
+      ],
+      "locations": [
+        {
+          "place": "Rome, Roman Empire",
+          "lat": 41.9,
+          "lng": 12.5,
+          "startYear": 162,
+          "endYear": 216
+        }
       ]
     },
     {
@@ -1864,6 +2352,15 @@
         "Renaissance Medicine",
         "Anatomy",
         "Surgery"
+      ],
+      "locations": [
+        {
+          "place": "Padua, Italy",
+          "lat": 45.41,
+          "lng": 11.88,
+          "startYear": 1537,
+          "endYear": 1543
+        }
       ]
     },
     {
@@ -1887,6 +2384,15 @@
         "Anatomy",
         "Physiology",
         "Embryology"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1615,
+          "endYear": 1657
+        }
       ]
     },
     {
@@ -1911,6 +2417,15 @@
         "Spontaneous Generation",
         "Microbiology",
         "Immunology"
+      ],
+      "locations": [
+        {
+          "place": "Paris, France",
+          "lat": 48.85,
+          "lng": 2.35,
+          "startYear": 1857,
+          "endYear": 1895
+        }
       ]
     },
     {
@@ -1934,6 +2449,15 @@
         "Evolutionary Biology",
         "Natural History",
         "Zoology"
+      ],
+      "locations": [
+        {
+          "place": "Malay Archipelago (modern Singapore/Malaysia region)",
+          "lat": 1.35,
+          "lng": 103.82,
+          "startYear": 1854,
+          "endYear": 1862
+        }
       ]
     },
     {
@@ -1958,6 +2482,15 @@
         "Experimental Biology",
         "Genetics",
         "Botany"
+      ],
+      "locations": [
+        {
+          "place": "Brno, Moravia (modern Czech Republic)",
+          "lat": 49.2,
+          "lng": 16.61,
+          "startYear": 1856,
+          "endYear": 1884
+        }
       ]
     },
     {
@@ -1983,6 +2516,15 @@
         "Evolutionary Biology",
         "Statistics",
         "Quantitative Genetics"
+      ],
+      "locations": [
+        {
+          "place": "Rothamsted, England",
+          "lat": 51.81,
+          "lng": -0.35,
+          "startYear": 1919,
+          "endYear": 1933
+        }
       ]
     },
     {
@@ -2008,6 +2550,15 @@
         "Genetics",
         "Population Genetics",
         "Zoology"
+      ],
+      "locations": [
+        {
+          "place": "New York City, United States",
+          "lat": 40.71,
+          "lng": -74.01,
+          "startYear": 1927,
+          "endYear": 1975
+        }
       ]
     },
     {
@@ -2032,6 +2583,15 @@
         "Molecular Biology",
         "Genetics",
         "Bacteriology"
+      ],
+      "locations": [
+        {
+          "place": "New York City, United States",
+          "lat": 40.71,
+          "lng": -74.01,
+          "startYear": 1913,
+          "endYear": 1955
+        }
       ]
     },
     {
@@ -2058,6 +2618,15 @@
         "Coal Structure",
         "Molecular Biology",
         "Virology"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1951,
+          "endYear": 1958
+        }
       ]
     },
     {
@@ -2084,6 +2653,15 @@
         "Genetics",
         "Biophysics",
         "Neuroscience"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1949,
+          "endYear": 1958
+        }
       ]
     },
     {
@@ -2109,6 +2687,15 @@
         "Biochemistry",
         "Genetics",
         "Neurobiology"
+      ],
+      "locations": [
+        {
+          "place": "Bethesda, Maryland, United States",
+          "lat": 38.98,
+          "lng": -77.1,
+          "startYear": 1957,
+          "endYear": 2010
+        }
       ]
     },
     {
@@ -2132,6 +2719,15 @@
         "Molecular Biology",
         "Biochemistry",
         "Genetics"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1943,
+          "endYear": 1983
+        }
       ]
     },
     {
@@ -2243,7 +2839,16 @@
       ],
       "epigraph": {
         "text": "Beauty is the true goal for which we are striving."
-      }
+      },
+      "locations": [
+        {
+          "place": "Rome, Roman Empire",
+          "lat": 41.9,
+          "lng": 12.5,
+          "startYear": 245,
+          "endYear": 270
+        }
+      ]
     },
     {
       "id": "neoplatonism",
@@ -2282,7 +2887,16 @@
       ],
       "epigraph": {
         "text": "Nothing is miserable unless you think it so."
-      }
+      },
+      "locations": [
+        {
+          "place": "Rome, Ostrogothic Kingdom",
+          "lat": 41.9,
+          "lng": 12.5,
+          "startYear": 500,
+          "endYear": 524
+        }
+      ]
     },
     {
       "id": "house-of-wisdom",
@@ -2304,7 +2918,9 @@
         "Translation Movement",
         "Bayt al-Hikma"
       ],
-      "startYearApprox": true
+      "startYearApprox": true,
+      "lat": 33.31,
+      "lng": 44.36
     },
     {
       "id": "islamic-golden-age",
@@ -2347,6 +2963,15 @@
         "Algorithm",
         "Hindu-Arabic Numerals",
         "House of Wisdom"
+      ],
+      "locations": [
+        {
+          "place": "Baghdad, Abbasid Caliphate",
+          "lat": 33.31,
+          "lng": 44.36,
+          "startYear": 813,
+          "endYear": 850
+        }
       ]
     },
     {
@@ -2381,6 +3006,15 @@
         "Canon of Medicine",
         "Avicennism",
         "Peripatetic Philosophy"
+      ],
+      "locations": [
+        {
+          "place": "Bukhara (modern Uzbekistan)",
+          "lat": 39.77,
+          "lng": 64.42,
+          "startYear": 997,
+          "endYear": 1037
+        }
       ]
     },
     {
@@ -2417,6 +3051,15 @@
         "Experimental Method",
         "Vision",
         "Book of Optics"
+      ],
+      "locations": [
+        {
+          "place": "Cairo, Fatimid Caliphate",
+          "lat": 30.04,
+          "lng": 31.24,
+          "startYear": 1010,
+          "endYear": 1040
+        }
       ]
     },
     {
@@ -2467,6 +3110,15 @@
         "Aristotelian Commentary",
         "Al-Andalus",
         "Incoherence of the Incoherence"
+      ],
+      "locations": [
+        {
+          "place": "Córdoba, Al-Andalus (modern Spain)",
+          "lat": 37.89,
+          "lng": -4.78,
+          "startYear": 1160,
+          "endYear": 1198
+        }
       ]
     },
     {
@@ -2484,6 +3136,15 @@
         "Incoherence of the Philosophers",
         "Theology",
         "Sufism"
+      ],
+      "locations": [
+        {
+          "place": "Baghdad, Seljuk Empire",
+          "lat": 33.31,
+          "lng": 44.36,
+          "startYear": 1091,
+          "endYear": 1111
+        }
       ]
     },
     {
@@ -2503,7 +3164,9 @@
         "Translation Movement",
         "Latin Europe",
         "Gerard of Cremona"
-      ]
+      ],
+      "lat": 39.86,
+      "lng": -4.03
     },
     {
       "id": "augustine",
@@ -2524,7 +3187,16 @@
       ],
       "epigraph": {
         "text": "Our heart is restless until it rests in you."
-      }
+      },
+      "locations": [
+        {
+          "place": "Hippo Regius (modern Annaba, Algeria)",
+          "lat": 36.9,
+          "lng": 7.77,
+          "startYear": 396,
+          "endYear": 430
+        }
+      ]
     },
     {
       "id": "scholasticism",
@@ -2588,6 +3260,15 @@
         "Trigonometry",
         "Earth's Rotation",
         "Gupta Era"
+      ],
+      "locations": [
+        {
+          "place": "Kusumapura (modern Patna, India)",
+          "lat": 25.61,
+          "lng": 85.14,
+          "startYear": 499,
+          "endYear": 550
+        }
       ]
     },
     {
@@ -2643,6 +3324,15 @@
         "Zero",
         "Negative Numbers",
         "Quadratic Equations"
+      ],
+      "locations": [
+        {
+          "place": "Bhillamala (modern Bhinmal, India)",
+          "lat": 25.0,
+          "lng": 72.27,
+          "startYear": 628,
+          "endYear": 668
+        }
       ]
     },
     {
@@ -2714,6 +3404,15 @@
         "Armillary Sphere",
         "Han Dynasty",
         "Star Catalog"
+      ],
+      "locations": [
+        {
+          "place": "Luoyang, Han dynasty China",
+          "lat": 34.68,
+          "lng": 112.45,
+          "startYear": 100,
+          "endYear": 139
+        }
       ]
     },
     {
@@ -2735,6 +3434,15 @@
         "Magnetic Declination",
         "Song Dynasty",
         "Polymath"
+      ],
+      "locations": [
+        {
+          "place": "Bianjing (modern Kaifeng, China)",
+          "lat": 34.8,
+          "lng": 114.3,
+          "startYear": 1080,
+          "endYear": 1095
+        }
       ]
     },
     {
@@ -2771,6 +3479,15 @@
         "Papermaking",
         "Han Dynasty",
         "Manufacturing"
+      ],
+      "locations": [
+        {
+          "place": "Luoyang, Han dynasty China",
+          "lat": 34.68,
+          "lng": 112.45,
+          "startYear": 89,
+          "endYear": 121
+        }
       ]
     },
     {
@@ -2786,7 +3503,9 @@
       "tags": [
         "Manufacturing",
         "Writing Materials"
-      ]
+      ],
+      "lat": 34.68,
+      "lng": 112.45
     },
     {
       "id": "movable-type-printing",
@@ -2878,6 +3597,15 @@
         "Difference Engine",
         "Mechanical Computing",
         "Victorian Era"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1828,
+          "endYear": 1871
+        }
       ]
     },
     {
@@ -2896,6 +3624,15 @@
         "First Algorithm",
         "Symbolic Computation",
         "Victorian Era"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1833,
+          "endYear": 1852
+        }
       ]
     },
     {
@@ -2914,7 +3651,9 @@
         "Mechanical Computing",
         "Punched Cards",
         "Programmable Machine"
-      ]
+      ],
+      "lat": 51.51,
+      "lng": -0.13
     },
     {
       "id": "notes-on-the-analytical-engine",
@@ -2950,6 +3689,22 @@
         "Enigma",
         "Artificial Intelligence",
         "Bletchley Park"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1931,
+          "endYear": 1938
+        },
+        {
+          "place": "Bletchley Park, England",
+          "lat": 51.997,
+          "lng": -0.74,
+          "startYear": 1939,
+          "endYear": 1945
+        }
       ]
     },
     {
@@ -3004,6 +3759,15 @@
         "Boolean Logic",
         "Digital Circuits",
         "Bell Labs"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1941,
+          "endYear": 1972
+        }
       ]
     },
     {
@@ -3058,6 +3822,15 @@
         "Stored-Program Computer",
         "Quantum Mechanics",
         "Game Theory"
+      ],
+      "locations": [
+        {
+          "place": "Princeton, New Jersey, United States",
+          "lat": 40.35,
+          "lng": -74.66,
+          "startYear": 1933,
+          "endYear": 1957
+        }
       ]
     },
     {
@@ -3116,6 +3889,15 @@
         "Expanding Universe",
         "General Relativity",
         "Cosmology"
+      ],
+      "locations": [
+        {
+          "place": "Petrograd, Russia (modern St. Petersburg)",
+          "lat": 59.93,
+          "lng": 30.34,
+          "startYear": 1920,
+          "endYear": 1925
+        }
       ]
     },
     {
@@ -3153,6 +3935,15 @@
         "Primeval Atom",
         "Expanding Universe",
         "Cosmology"
+      ],
+      "locations": [
+        {
+          "place": "Leuven, Belgium",
+          "lat": 50.88,
+          "lng": 4.7,
+          "startYear": 1925,
+          "endYear": 1966
+        }
       ]
     },
     {
@@ -3188,6 +3979,15 @@
         "Expanding Universe",
         "Galaxies",
         "Observational Astronomy"
+      ],
+      "locations": [
+        {
+          "place": "Pasadena, California, United States",
+          "lat": 34.15,
+          "lng": -118.14,
+          "startYear": 1919,
+          "endYear": 1953
+        }
       ]
     },
     {
@@ -3223,6 +4023,15 @@
         "Big Bang",
         "Nucleosynthesis",
         "Cosmic Microwave Background"
+      ],
+      "locations": [
+        {
+          "place": "Washington, D.C., United States",
+          "lat": 38.89,
+          "lng": -77.03,
+          "startYear": 1934,
+          "endYear": 1956
+        }
       ]
     },
     {
@@ -3258,6 +4067,15 @@
         "Cosmic Microwave Background",
         "Radio Astronomy",
         "Big Bang"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1961,
+          "endYear": 2024
+        }
       ]
     },
     {
@@ -3275,6 +4093,14 @@
         "Cosmic Microwave Background",
         "Radio Astronomy",
         "Big Bang"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1963
+        }
       ]
     },
     {
@@ -3293,6 +4119,15 @@
         "Electrolysis",
         "Element Discovery",
         "Royal Institution"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1801,
+          "endYear": 1829
+        }
       ]
     },
     {
@@ -3343,7 +4178,9 @@
         "Faraday Disk",
         "Electromagnetic Induction",
         "Electrical Power"
-      ]
+      ],
+      "lat": 51.51,
+      "lng": -0.13
     },
     {
       "id": "lavoisier",
@@ -3361,6 +4198,15 @@
         "Oxygen",
         "Combustion",
         "Quantitative Chemistry"
+      ],
+      "locations": [
+        {
+          "place": "Paris, France",
+          "lat": 48.85,
+          "lng": 2.35,
+          "startYear": 1768,
+          "endYear": 1794
+        }
       ]
     },
     {
@@ -3393,6 +4239,15 @@
       "tags": [
         "Atomic Theory",
         "Atomic Weight"
+      ],
+      "locations": [
+        {
+          "place": "Manchester, England",
+          "lat": 53.48,
+          "lng": -2.24,
+          "startYear": 1793,
+          "endYear": 1844
+        }
       ]
     },
     {
@@ -3427,6 +4282,15 @@
         "Periodic Table",
         "Element Prediction",
         "Atomic Weight"
+      ],
+      "locations": [
+        {
+          "place": "St. Petersburg, Russia",
+          "lat": 59.93,
+          "lng": 30.34,
+          "startYear": 1869,
+          "endYear": 1907
+        }
       ]
     },
     {
@@ -3462,6 +4326,15 @@
         "Division of Labor",
         "Free Markets",
         "Scottish Enlightenment"
+      ],
+      "locations": [
+        {
+          "place": "Edinburgh, Scotland",
+          "lat": 55.95,
+          "lng": -3.19,
+          "startYear": 1748,
+          "endYear": 1790
+        }
       ]
     },
     {
@@ -3513,6 +4386,15 @@
         "Capitalism",
         "Historical Materialism",
         "Class Struggle"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1849,
+          "endYear": 1883
+        }
       ]
     },
     {
@@ -3565,7 +4447,9 @@
         "Scientific Method",
         "Fellowship",
         "London"
-      ]
+      ],
+      "lat": 51.51,
+      "lng": -0.13
     },
     {
       "id": "library-of-alexandria",
@@ -3587,7 +4471,9 @@
         "Hellenistic Scholarship",
         "Ancient Library",
         "Ptolemaic Egypt"
-      ]
+      ],
+      "lat": 31.2,
+      "lng": 29.92
     },
     {
       "id": "john-bardeen",
@@ -3605,6 +4491,15 @@
         "Transistor",
         "Semiconductor Physics",
         "Bell Labs"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1945,
+          "endYear": 1951
+        }
       ]
     },
     {
@@ -3623,6 +4518,15 @@
         "Transistor",
         "Semiconductor Physics",
         "Bell Labs"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1929,
+          "endYear": 1967
+        }
       ]
     },
     {
@@ -3641,6 +4545,15 @@
         "Transistor",
         "Semiconductor Physics",
         "Bell Labs"
+      ],
+      "locations": [
+        {
+          "place": "Murray Hill, New Jersey, United States",
+          "lat": 40.68,
+          "lng": -74.4,
+          "startYear": 1936,
+          "endYear": 1955
+        }
       ]
     },
     {
@@ -3659,7 +4572,9 @@
         "Semiconductor",
         "Bell Labs",
         "Solid-State Electronics"
-      ]
+      ],
+      "lat": 40.68,
+      "lng": -74.4
     },
     {
       "id": "vint-cerf",
@@ -3675,6 +4590,15 @@
         "TCP/IP",
         "Internet Protocol",
         "Networking"
+      ],
+      "locations": [
+        {
+          "place": "Stanford, California, United States",
+          "lat": 37.43,
+          "lng": -122.17,
+          "startYear": 1972,
+          "endYear": 1976
+        }
       ]
     },
     {
@@ -3691,6 +4615,15 @@
         "TCP/IP",
         "Internet Protocol",
         "Networking"
+      ],
+      "locations": [
+        {
+          "place": "Arlington, Virginia, United States",
+          "lat": 38.88,
+          "lng": -77.11,
+          "startYear": 1972,
+          "endYear": 1986
+        }
       ]
     },
     {
@@ -3709,7 +4642,9 @@
         "TCP/IP",
         "Networking",
         "ARPANET"
-      ]
+      ],
+      "lat": 38.88,
+      "lng": -77.11
     },
     {
       "id": "tim-berners-lee",
@@ -3725,6 +4660,15 @@
         "World Wide Web",
         "Hypertext",
         "CERN"
+      ],
+      "locations": [
+        {
+          "place": "Geneva, Switzerland",
+          "lat": 46.23,
+          "lng": 6.05,
+          "startYear": 1989,
+          "endYear": 1994
+        }
       ]
     },
     {
@@ -3741,7 +4685,9 @@
         "Hypertext",
         "Internet",
         "CERN"
-      ]
+      ],
+      "lat": 46.23,
+      "lng": 6.05
     },
     {
       "id": "george-perkins-marsh",
@@ -3759,6 +4705,15 @@
         "Conservation",
         "Deforestation",
         "Environmental Impact"
+      ],
+      "locations": [
+        {
+          "place": "Woodstock, Vermont, United States",
+          "lat": 43.62,
+          "lng": -72.52,
+          "startYear": 1801,
+          "endYear": 1882
+        }
       ]
     },
     {
@@ -3793,6 +4748,15 @@
         "Wilderness Preservation",
         "National Parks",
         "Yosemite"
+      ],
+      "locations": [
+        {
+          "place": "San Francisco / Yosemite, California, United States",
+          "lat": 37.77,
+          "lng": -122.42,
+          "startYear": 1868,
+          "endYear": 1914
+        }
       ]
     },
     {
@@ -3811,7 +4775,9 @@
         "Wilderness Preservation",
         "Advocacy",
         "National Parks"
-      ]
+      ],
+      "lat": 37.77,
+      "lng": -122.42
     },
     {
       "id": "gifford-pinchot",
@@ -3829,6 +4795,15 @@
         "Forest Service",
         "Resource Management",
         "Hetch Hetchy"
+      ],
+      "locations": [
+        {
+          "place": "Washington, D.C., United States",
+          "lat": 38.89,
+          "lng": -77.03,
+          "startYear": 1898,
+          "endYear": 1946
+        }
       ]
     },
     {
@@ -3866,6 +4841,15 @@
         "DDT",
         "Ecology",
         "Silent Spring"
+      ],
+      "locations": [
+        {
+          "place": "Washington, D.C., United States",
+          "lat": 38.89,
+          "lng": -77.03,
+          "startYear": 1936,
+          "endYear": 1964
+        }
       ]
     },
     {
@@ -3902,7 +4886,9 @@
         "Environmental Regulation",
         "Pollution",
         "Federal Agency"
-      ]
+      ],
+      "lat": 38.89,
+      "lng": -77.03
     },
     {
       "id": "environmentalism",
@@ -3958,6 +4944,15 @@
         "Deep Ecology",
         "Ecocentrism",
         "Intrinsic Value"
+      ],
+      "locations": [
+        {
+          "place": "Oslo, Norway",
+          "lat": 59.91,
+          "lng": 10.75,
+          "startYear": 1939,
+          "endYear": 2009
+        }
       ]
     },
     {
@@ -3993,6 +4988,15 @@
         "Buddhism",
         "Dependent Origination",
         "Non-Self"
+      ],
+      "locations": [
+        {
+          "place": "Bodh Gaya region, India",
+          "lat": 24.7,
+          "lng": 84.99,
+          "startYear": -528,
+          "endYear": -483
+        }
       ]
     },
     {
@@ -4010,6 +5014,14 @@
         "Confucianism",
         "Ethics",
         "Governance"
+      ],
+      "locations": [
+        {
+          "place": "Qufu, State of Lu (modern Shandong, China)",
+          "lat": 35.6,
+          "lng": 116.99,
+          "startYear": -551
+        }
       ]
     },
     {
@@ -4097,6 +5109,15 @@
         "Advaita Vedanta",
         "Non-Dualism",
         "Upanishads"
+      ],
+      "locations": [
+        {
+          "place": "Sringeri, India",
+          "lat": 13.42,
+          "lng": 75.25,
+          "startYear": 800,
+          "endYear": 820
+        }
       ]
     },
     {
@@ -4165,6 +5186,15 @@
         "Zen",
         "Meditation",
         "Sōtō School"
+      ],
+      "locations": [
+        {
+          "place": "Eihei-ji, Fukui, Japan",
+          "lat": 36.06,
+          "lng": 136.22,
+          "startYear": 1244,
+          "endYear": 1253
+        }
       ]
     },
     {
@@ -4333,6 +5363,15 @@
         "Calculus",
         "Notation",
         "Priority Dispute"
+      ],
+      "locations": [
+        {
+          "place": "Hanover, Holy Roman Empire",
+          "lat": 52.37,
+          "lng": 9.73,
+          "startYear": 1676,
+          "endYear": 1716
+        }
       ]
     },
     {
@@ -4369,7 +5408,9 @@
         "Movable Type",
         "Mass Communication",
         "Renaissance"
-      ]
+      ],
+      "lat": 49.99,
+      "lng": 8.27
     },
     {
       "id": "mendelian-genetics",
@@ -4402,6 +5443,15 @@
         "DNA",
         "Double Helix",
         "Human Genome Project"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, England",
+          "lat": 52.2,
+          "lng": 0.12,
+          "startYear": 1951,
+          "endYear": 1953
+        }
       ]
     },
     {
@@ -4420,6 +5470,15 @@
         "DNA",
         "X-Ray Crystallography",
         "King's College London"
+      ],
+      "locations": [
+        {
+          "place": "London, England",
+          "lat": 51.51,
+          "lng": -0.13,
+          "startYear": 1946,
+          "endYear": 1970
+        }
       ]
     },
     {
@@ -4590,7 +5649,9 @@
         "Earthquake Detection",
         "Han Dynasty",
         "Pendulum"
-      ]
+      ],
+      "lat": 34.68,
+      "lng": 112.45
     },
     {
       "id": "steam-engine",
@@ -4607,7 +5668,9 @@
         "Steam Power",
         "Separate Condenser",
         "Industrial Revolution"
-      ]
+      ],
+      "lat": 52.48,
+      "lng": -1.9
     },
     {
       "id": "ac-induction-motor",
@@ -4624,7 +5687,9 @@
         "Alternating Current",
         "Rotating Magnetic Field",
         "War of the Currents"
-      ]
+      ],
+      "lat": 40.71,
+      "lng": -74.01
     },
     {
       "id": "incandescent-light-bulb",
@@ -4641,7 +5706,9 @@
         "Electric Lighting",
         "Filament",
         "Menlo Park"
-      ]
+      ],
+      "lat": 40.44,
+      "lng": -74.36
     },
     {
       "id": "psychology",
@@ -4678,6 +5745,15 @@
         "Experimental Psychology",
         "Leipzig",
         "Introspection"
+      ],
+      "locations": [
+        {
+          "place": "Leipzig, Germany",
+          "lat": 51.34,
+          "lng": 12.37,
+          "startYear": 1879,
+          "endYear": 1920
+        }
       ]
     },
     {
@@ -4696,6 +5772,15 @@
         "Unconscious Mind",
         "Psychoanalysis",
         "Dream Interpretation"
+      ],
+      "locations": [
+        {
+          "place": "Vienna, Austria",
+          "lat": 48.21,
+          "lng": 16.37,
+          "startYear": 1886,
+          "endYear": 1939
+        }
       ]
     },
     {
@@ -4748,6 +5833,15 @@
         "Operant Conditioning",
         "Behaviorism",
         "Reinforcement"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, Massachusetts, United States",
+          "lat": 42.37,
+          "lng": -71.12,
+          "startYear": 1948,
+          "endYear": 1990
+        }
       ]
     },
     {
@@ -4820,6 +5914,15 @@
         "Dartmouth Workshop",
         "LISP",
         "Symbolic AI"
+      ],
+      "locations": [
+        {
+          "place": "Stanford, California, United States",
+          "lat": 37.43,
+          "lng": -122.17,
+          "startYear": 1962,
+          "endYear": 2011
+        }
       ]
     },
     {
@@ -4838,6 +5941,15 @@
         "MIT AI Lab",
         "Symbolic AI",
         "Cognitive Science"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, Massachusetts, United States",
+          "lat": 42.36,
+          "lng": -71.09,
+          "startYear": 1958,
+          "endYear": 2016
+        }
       ]
     },
     {
@@ -4855,6 +5967,14 @@
         "Deep Learning",
         "Neural Networks",
         "Backpropagation"
+      ],
+      "locations": [
+        {
+          "place": "Toronto, Canada",
+          "lat": 43.66,
+          "lng": -79.4,
+          "startYear": 1987
+        }
       ]
     },
     {
@@ -4925,6 +6045,14 @@
         "Linguistics",
         "Universal Grammar",
         "Verbal Behavior Review"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, Massachusetts, United States",
+          "lat": 42.36,
+          "lng": -71.09,
+          "startYear": 1955
+        }
       ]
     },
     {
@@ -4941,6 +6069,15 @@
       "tags": [
         "Short-Term Memory",
         "Information Processing"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, Massachusetts, United States",
+          "lat": 42.37,
+          "lng": -71.12,
+          "startYear": 1951,
+          "endYear": 1967
+        }
       ]
     },
     {
@@ -4973,6 +6110,15 @@
         "Cognitive Psychology",
         "Perception",
         "Memory"
+      ],
+      "locations": [
+        {
+          "place": "Ithaca, New York, United States",
+          "lat": 42.44,
+          "lng": -76.5,
+          "startYear": 1967,
+          "endYear": 1983
+        }
       ]
     },
     {
@@ -5009,6 +6155,15 @@
         "Neural Networks",
         "Perceptron",
         "Machine Learning"
+      ],
+      "locations": [
+        {
+          "place": "Buffalo, New York, United States",
+          "lat": 42.9,
+          "lng": -78.85,
+          "startYear": 1957,
+          "endYear": 1971
+        }
       ]
     },
     {
@@ -5024,7 +6179,9 @@
       "tags": [
         "Neural Networks",
         "Machine Learning"
-      ]
+      ],
+      "lat": 42.9,
+      "lng": -78.85
     },
     {
       "id": "linear-perspective",
@@ -5059,6 +6216,15 @@
         "Impressionism",
         "Plein Air Painting",
         "Light and Color"
+      ],
+      "locations": [
+        {
+          "place": "Giverny, France",
+          "lat": 49.08,
+          "lng": 1.53,
+          "startYear": 1883,
+          "endYear": 1926
+        }
       ]
     },
     {
@@ -5094,6 +6260,15 @@
         "Boolean Algebra",
         "Symbolic Logic",
         "Binary Logic"
+      ],
+      "locations": [
+        {
+          "place": "Cork, Ireland",
+          "lat": 51.9,
+          "lng": -8.47,
+          "startYear": 1849,
+          "endYear": 1864
+        }
       ]
     },
     {
@@ -5146,6 +6321,15 @@
       "tags": [
         "Quantum Simulation",
         "Quantum Computing"
+      ],
+      "locations": [
+        {
+          "place": "Pasadena, California, United States",
+          "lat": 34.15,
+          "lng": -118.14,
+          "startYear": 1950,
+          "endYear": 1988
+        }
       ]
     },
     {
@@ -5162,6 +6346,14 @@
       "tags": [
         "Quantum Turing Machine",
         "Universal Quantum Computer"
+      ],
+      "locations": [
+        {
+          "place": "Oxford, England",
+          "lat": 51.75,
+          "lng": -1.26,
+          "startYear": 1985
+        }
       ]
     },
     {
@@ -5179,6 +6371,14 @@
         "Cryptography",
         "Factoring",
         "Quantum Algorithms"
+      ],
+      "locations": [
+        {
+          "place": "Cambridge, Massachusetts, United States",
+          "lat": 42.36,
+          "lng": -71.09,
+          "startYear": 1994
+        }
       ]
     },
     {

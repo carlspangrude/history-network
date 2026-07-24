@@ -77,8 +77,8 @@ export type Discipline =
   | "Mathematics"
   | "Medicine"
   | "Philosophy"
-  | "Psychology"
   | "Physics"
+  | "Psychology"
   | "Visual Art";
 
 export interface KnowledgeSource {
@@ -96,20 +96,50 @@ export interface Epigraph {
   text: string;
   attribution?: string;
 }
+export interface PersonLocation {
+  place: string;
+  lat: number;
+  lng: number;
+  startYear: number;
+  // Omit on a person's final/only location entry to mean "until death" —
+  // avoids redundantly restating a year already implied by the node's
+  // own endYear.
+  endYear?: number;
+  confidence?: number;
+}
+
 export interface KnowledgeNode {
   id: string;
   name: string;
   type: NodeType;
   description: string;
   startYear?: number;
-  startYearApprox?: boolean;
   endYear?: number;
+  // Marks startYear/endYear as scholarly estimates rather than precisely
+  // documented dates — display code should render these with a "c." prefix.
+  startYearApprox?: boolean;
   endYearApprox?: boolean;
+  // For entities with no fixed end (e.g. a field of study still active
+  // today): omit endYear and set this instead. Anywhere the app needs a
+  // concrete numeric "effective end year" for computation, it should
+  // resolve this to the current calendar year at runtime rather than
+  // relying on a stored value that goes stale — see
+  // src/utils/getEffectiveEndYear.ts.
   isOngoing?: boolean;
   importance?: number;
   disciplines?: Discipline[];
   tags?: string[];
   epigraph?: Epigraph;
+  // Fixed single location — institutions and technologies only (they
+  // don't move). People use `locations` below instead, since most moved
+  // at least once over a documented career.
+  lat?: number;
+  lng?: number;
+  // Person nodes only. Ordered chronologically. A node with no
+  // `locations` (and no lat/lng) simply doesn't render on the map — an
+  // honest gap for disputed/undocumented figures (e.g. Laozi, Sushruta)
+  // rather than a fabricated placement.
+  locations?: PersonLocation[];
 }
 
 export interface KnowledgeEdge {
